@@ -1,0 +1,49 @@
+---
+import Image from "astro/components/Image.astro";
+
+
+---
+
+<section class="intro-section fb-col-wrapper">
+  <div class="copy-wrapper">
+    <h2>Digitale groei zonder gedoe</h2>
+    <p>Je weet dat er meer in zit. Meer leads, meer omzet, meer vrijheid. Maar je website? Die werkt niet zo hard als jij. Tijd om daar korte metten mee te maken. Ik ontwerp websites voor ondernemers met ambitie. Geen standaard templates of loze beloftes, maar websites met een duidelijk doel: online groei.   Het resultaat: een website die werkt, zonder dat jij er omkijken naar hebt</p>
+  </div>
+  <div class="img-wrapper">
+    <Image src="/images/about-image.png" alt="" width={500} height={500} />
+  </div>
+</section>
+
+
+<style>
+
+  .intro-section {
+  }
+
+  .copy-wrapper {
+    grid-column: 2 / 8;
+    justify-self: stretch;
+    align-self: center;
+    display: grid;
+    gap: var(--size-2);
+
+    h2 {
+      font-size: var(--fs-700);
+    }
+  }
+
+  .img-wrapper {
+    grid-column: 8 / -1;
+    object-fit: cover;
+    justify-self: stretch;
+    align-self: stretch;
+    height: 45rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+</style>

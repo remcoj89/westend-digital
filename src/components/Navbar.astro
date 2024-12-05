@@ -1,0 +1,119 @@
+---
+import { Image } from "astro:assets";
+import { BurgerMenu } from "../assets/icons.jsx";
+import Button from "./Button.astro";
+const logo = '/assets/logos/logo-westend-digital-transparant.webp'
+
+---
+
+<nav class="fb-col-wrapper">
+  <a class="logo" href="/">
+    <Image src={logo} alt="Westend Digital logo" width={600} height={250} id="logo-img"/>
+    </a>
+  <ul role="list" class="nav-list">
+      <li class="nav-link"><a href="/projecten">Portfolio</a></li>
+      <li class="nav-link"><a href="/over-ons">Over Ons</a></li>
+      <li class="nav-link"><a href="/contact">Contact</a></li>
+      <li class="nav-link"><a href="/contact">Blog</a></li>
+      <li class="nav-link cta-link"><a href="/gratis-website-check">Gratis Website Check</a></li>
+  </ul>
+
+  <Button buttonStyle="nav-btn">
+    <BurgerMenu iconFill="white"/>
+  </Button>
+
+</nav>
+
+<style>
+
+  nav {
+    align-items: center;
+    background-color: transparent;
+    color: var(--clr-primary-100);
+    font-weight: var(--fw-semi-bold);
+    text-transform: capitalize;
+    height: 9.6rem;
+    position: fixed;
+    top: 0;
+    inset-inline: 0;
+    z-index: 9999;
+
+    .logo {
+      grid-column: 2;
+      height: 8.8rem;
+
+      #logo-img {
+        object-fit: contain;
+        height: 100%;
+      }
+    }
+
+    .nav-list {
+        align-items: center;
+        color: var(--clr-primary-100);
+        display: none;
+        justify-content: start;
+        gap: 1.8rem;
+        line-height: 2;
+        position: absolute;
+        background-color: var(--clr-primary-900);
+        top: 9.6rem;
+        height: calc(100vh - 9.6rem);
+        inset-inline: 0;
+        flex-direction: column;
+        padding-block-start: 5%;
+
+      .nav-link {
+        display: inline-block;
+        height: fit-content;
+
+        a {
+          text-decoration: none;
+        }
+
+        &:hover,
+        &:active {
+          color: var(--clr-secondary-900);
+        }
+      }
+
+      .cta-link {
+        background-color: var(--clr-secondary-900);
+        border-radius: var(--border-radius-btn);
+        padding-block: 1rem;
+        padding-inline: 2.4rem;
+
+        &:hover,
+        &:active {
+          color: var(--clr-primary-900);
+        }
+      }
+    }
+
+    @media (width > 699px) {
+      .logo {
+        grid-column: 2 / 4;
+      }
+
+
+    }
+    @media (width > 999px) {
+      .logo {
+        grid-column: 2 / 5;
+      }
+      .nav-list {
+        grid-column: -2 / 5;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: unset;
+        padding: unset;
+        position: static;
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+
+</style>

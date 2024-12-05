@@ -1,0 +1,43 @@
+---
+
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+
+export async function getStaticPaths() {
+  const blogs = await getCollection("blog")
+
+  return blogs.map((blog) => ({
+    params: {
+      slug: blog.slug
+    },
+    props: {
+      blogData: blog.data
+    }
+  }))
+
+}
+
+const { slug } = Astro.params;
+
+const blogs = await getCollection("blog");
+const blogData = blogs.find(blog => blog.slug === slug)
+
+if (!blogData) {
+  throw new Error('Blog not found');
+}
+---
+
+
+
+<Layout title="Blog post | Westend Digital">
+  <h1>{blogData.data.title}</h1>
+  <img
+  src={blogData.data.image}
+  width={500}
+  height={500 / 1.5}
+  alt={blogData.data.title}
+/>
+
+
+</Layout>

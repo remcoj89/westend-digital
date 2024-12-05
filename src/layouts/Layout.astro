@@ -1,89 +1,38 @@
 ---
-interface Props {
-    title: string;
-  }
+import Navbar from '../components/Navbar.astro';
+import '../styles/globals.css'
 
 const {
-
- title
+ title = "Rythm Nation",
+ description =  "A demo blog for a community of music producers and enthusiasts",
+ image = ""
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+    <!-- Google tag (gtag.js) -->
+  <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-702CFG42DP"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-702CFG42DP');
+    </script>
+
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="public/favicon.ico" />
-		<meta name="generator" content={
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+    <meta name="description" content={description}>
+    <meta property="og:image" content={image}>
 
-Astro.generator
-} />
-		<title>{
-
-title
-}</title>
 	</head>
 	<body>
+    <Navbar />
 		<slot />
 	</body>
 </html>
-
-
-<style is:global>
-  @font-face {
-    font-display: swap;
-    font-family: "Bellefair", serif;
-    font-style: normal;
-    font-weight: 400;
-    src: url('/public/assets/fonts/Bellefair-Regular.ttf');
-  }
-
-	:root {
-    --ff-header: "Bellefair", serif;
-    --fs-body: 1.6rem;
-    --fw-neutral: 400;
-    --clr-neutral-100: rgb(245, 245, 245);
-    --clr-neutral-900: rgb(7, 19, 51);
-    --clr-yellow-500: rgb(219, 177, 113);
-  }
-
-  *,
-  *::before,
-  *::after{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html {
-    font-size: 67.5%;
-  }
-
-  body {
-    background-color: var(--clr-neutral-900);
-    color: var(--clr-neutral-100);
-    font-size: var(--fs-body);
-    line-height: 1.6;
-  }
-
-  [role = "list"] {
-    list-style: none;
-  }
-
-  a {
-    color: inherit;
-  }
-
-  .wrapper {
-    max-width: 114rem;
-    margin: auto;
-    display: grid;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-  }
-
-</style>

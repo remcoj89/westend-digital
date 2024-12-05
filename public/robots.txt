@@ -1,0 +1,4 @@
+Sitemap: https://www.westend-digital.nl/sitemap.xml
+
+User-agent: *
+

@@ -1,32 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Header from '../components/Header.astro';
+import IntroSection from '../sections/IntroSection.astro';
+import UspSection from '../sections/UspSection.astro';
+import HowWeWorkSection from '../sections/HowWeWorkSection.astro';
+import ReviewSection from '../sections/ReviewSection.astro';
+import FaqSection from '../sections/FaqSection.astro';
 ---
 
 <Layout title="Westend Digital">
-	<main class="wrapper">
-      <img src="public/assets/logos/Original Logo.svg" alt="Logo Westend Digtal">
-      <h1>Op dit moment werken wij hard aan ons portfolio en aan onze website</h1>
-      <h2>De geplande lanceer datum is 01-01-2025</h2>
-      <div>
-        <p>Wil je alvast een inkijk je in ons porfolio of contact met ons op nemen?</p>
-        <ul role="list">
-          <li>Kijk dan hier <a href="www.remcojonk.nl">Porfolio van Remco Jonk</a></li>
-          <li>Of mail naar remco@westend-digital.nl</li>
-        </ul>
-      </div>
+  <Header>
+    <div>
+      <h1>Winstgevende websites voor ondernemers met ambitie</h1>
+      <span>Je bent klaar voor de volgende stap: van ambitie naar groei. Je wilt een website
+        die doet wat ‘ie moet doen: leads genereren en je bedrijf laten groeien.
+        Geen onnodige toeters en bellen, alleen resultaten. Zo simpel is het.</span>
+
+    </div>
+  </Header>
+	<main>
+    <IntroSection />
+    <UspSection />
+    <HowWeWorkSection />
+    <ReviewSection />
+    <FaqSection />
 	</main>
 </Layout>
-
-<style>
-	main {
-
-    img {
-      width:100%
-    }
-
-    div {
-      margin-block-start: 3rem;
-    }
-	}
-</style>
