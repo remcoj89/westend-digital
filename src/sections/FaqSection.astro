@@ -29,23 +29,6 @@ const faqs = [
 ]
 ---
 
-<script>
-const faqWrapper = document.querySelector(".faq-wrapper");
-const accordions = document.querySelectorAll(".accordion");
-
-faqWrapper.addEventListener("click", (e) => {
-  const accordionHeader = e.target.closest("li")
-  const accordion = e.target.closest(".accordion")
-
-  accordions.forEach(a => {
-      a.classList.remove("is__open")
-  })
-
-  accordion.classList.toggle("is__open")
-})
-
-</script>
-
 <section class="fb-col-wrapper">
 <SectionTitle sectionTitle={title} />
 <span class="section-subtitle">Niet het antwoord dat je zoekt? Je kunt ook
@@ -97,3 +80,23 @@ faqWrapper.addEventListener("click", (e) => {
     width: 100%;
   }
 </style>
+
+<script>
+  const faqWrapper = document.querySelector(".faq-wrapper");
+  const accordions = document.querySelectorAll(".accordion");
+
+  faqWrapper.addEventListener("click", (e) => {
+    const accordionHeader = e.target.closest("li")
+    const accordion = e.target.closest(".accordion")
+    const isOpen = accordion.classList.contains("is__open");
+
+    accordions.forEach(a => {
+        a.classList.remove("is__open")
+    })
+
+    if (!isOpen) {
+        accordion.classList.add("is__open");
+      }
+  })
+
+  </script>

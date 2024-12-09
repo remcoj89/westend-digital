@@ -5,9 +5,11 @@ import react from '@astrojs/react';
 
 export default defineConfig({
     site: 'https://westend-digital.nl/',
-    integrations: [partytown({
+    integrations: [
+      partytown({
         config: {
           forward: ["dataLayer.push"],
         },
-    }), react()],
+      }),
+       react()],
 });

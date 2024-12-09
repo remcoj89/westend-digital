@@ -25,7 +25,7 @@ const usps = [
 ]
 ---
 
-<section class="fb-col-wrapper">
+<section class="wrapper" id="usp-section">
   <SectionTitle sectionTitle={title} />
   <div class="usp-wrapper">
     {usps.map(usp => {
@@ -48,20 +48,24 @@ const usps = [
 
 
 <style>
+  #usp-section {
+    flex-direction: column;
+    gap :var(--size-3);
+  }
+  
   .usp-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: var(--size-2);
-    grid-column: 2 / -2;
+    gap: var(--size-1);
 
     h3 {
       font-size: var(--fs-600);
     }
 
     img {
-      height: 15rem;
+      height: 12rem;
       margin-inline: auto;
-      width: 15rem;
+      width: 12rem;
     }
   }
 </style>
