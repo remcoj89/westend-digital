@@ -27,15 +27,19 @@ const faqs = [
     answer: "Lorem ipsum dolor sit amet consectetur. Viverra pellentesque leo congue volutpat vitae lorem mus porta vitae. Leo ipsum quis feugiat eget vulputate cursus. Vestibulum facilisi condimentum ipsum justo ipsum. Dignissim nibh blandit tellus nunc quisque euismod. Vitae vitae convallis elementum cum pellentesque consequat. Sem massa donec mattis tincidunt consequat elementum facilisis viverra. Consequat sodales et vitae aliquet leo sit integer. Ridiculus cursus nunc adipiscing nunc sodales eget in nunc. Enim nullam vitae tortor nibh lorem integer. Eu sit eget libero velit. Fermentum arcu phasellus nisi nunc accumsan tellus fringilla. Consequat blandit amet sapien parturient.",
   },
 ]
+
+const {
+  sectionId
+} = Astro.props
 ---
 
-<section class="fb-col-wrapper">
+<section class="fb-col-wrapper" id={sectionId}>
 <SectionTitle sectionTitle={title} />
 <span class="section-subtitle">Niet het antwoord dat je zoekt? Je kunt ook
   <a href="mailto:info@westend-digital.nl">mailen.</a>
 </span>
 
-<div></div>
+
 <ul class="faq-wrapper" role="list">
   {faqs.map((faq, i) => {
     return (
@@ -58,6 +62,10 @@ const faqs = [
 </section>
 
 <style>
+  #webcheck-faq {
+    margin-block-end: var(--size-10);
+  }
+
   .section-subtitle {
     grid-column: 2 / -2;
     text-align: center;

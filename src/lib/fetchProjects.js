@@ -1,0 +1,37 @@
+export default async function fetchProjects() {
+  const query = `
+    query getProjects {
+      posts(where: {categoryId: 1}) {
+        edges {
+          node {
+            id
+            title
+            content(format: RENDERED)
+            featuredImage {
+              node {
+                altText
+                mediaItemUrl
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const res = await fetch("http://localhost:10003/graphql", { // Update the URL to your GraphQL endpoint
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ query }), // Send the query as JSON
+  });
+
+  if (!res.ok) {
+    throw new Error(`Network response was not ok: ${res.statusText}`);
+  }
+
+  const { data } = await res.json(); // Destructure the data from the response
+
+  return data.posts.edges; // Return the posts from the response
+}

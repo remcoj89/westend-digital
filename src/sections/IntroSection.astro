@@ -1,16 +1,21 @@
 ---
 import Image from "astro/components/Image.astro";
 
-
+const {
+  title,
+  paragraph,
+  imageUrl,
+  altText
+} = Astro.props
 ---
 
 <section class="intro-section fb-col-wrapper">
   <div class="copy-wrapper">
-    <h2>Digitale groei zonder gedoe</h2>
-    <p>Je weet dat er meer in zit. Meer leads, meer omzet, meer vrijheid. Maar je website? Die werkt niet zo hard als jij. Tijd om daar korte metten mee te maken. Ik ontwerp websites voor ondernemers met ambitie. Geen standaard templates of loze beloftes, maar websites met een duidelijk doel: online groei.   Het resultaat: een website die werkt, zonder dat jij er omkijken naar hebt</p>
+    <h2>{title}</h2>
+    <p>{paragraph}</p>
   </div>
   <div class="img-wrapper">
-    <Image src="/images/about-image.png" alt="" width={500} height={500} />
+    <Image src={imageUrl} alt={altText} width={500} height={500} />
   </div>
 </section>
 

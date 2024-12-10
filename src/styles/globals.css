@@ -49,6 +49,7 @@
 
   --lh-200: 125%;
   --lh-300: 150%;
+  --lh-400: 175%;
 
   --fs-200: 1.2rem;
   --fs-300: 1.4rem;
@@ -168,7 +169,7 @@ img {
 .wrapper {
   display: flex;
   margin-inline: auto;
-  width: calc((min(100% - 4rem, 114rem)));
+  width: calc((min(100% - 4rem, 124rem)));
 }
 
 @media (width >= 43.75em) {
@@ -179,7 +180,7 @@ img {
   }
 
   .wrapper {
-    width: calc((min(100% - 8rem, 114rem)));
+    width: calc((min(100% - 8rem, 124rem)));
   }
 
 }
@@ -190,12 +191,32 @@ img {
   }
 
   .wrapper {
-    width: calc((min(100% - 8rem, 114rem)));
+    width: calc((min(100% - 8rem, 124rem)));
   }
 
 }
 
 
 section {
-  margin-top: var(--size-9);
+  margin-block-start: var(--size-10);
+}
+
+.grid {
+  display: grid;
+  row-gap: var(--size-5);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--size-2);
+  justify-content: space-between;
+  gap: var(--size-4);
+}
+
+.flex-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: var(--size-4);
 }

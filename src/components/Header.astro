@@ -15,14 +15,20 @@
     background-size: cover;
     color: var(--clr-primary-100);
     display: grid;
-    padding-block: 24rem 8.8rem;
+    padding-block: 24rem var(--size-10);
     place-items: center;
 
     div {
+      align-content: center;
+      display: grid;
+      gap: var(--size-3);
+      justify-content: center;
       max-width: 85ch;
       text-align: center;
-      display: grid;
-      gap: var(--size-3)
+
+      button {
+        margin-inline: auto;
+      }
     }
 
     h1 {

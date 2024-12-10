@@ -18,6 +18,8 @@ const {
     cursor: pointer;
     padding-block: 1rem;
     padding-inline: var(--size-3);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-semi-bold);
     text-align: center;
     text-decoration: none;
   }
@@ -42,6 +44,7 @@ const {
   .btn-secondary {
     background-color: var(--clr-secondary-900);
     color: var(--clr-secondary-100);
+    max-width: 65ch;
   }
 
   .btn-secondary-open {
@@ -52,11 +55,11 @@ const {
 
   .nav-btn {
     background-color: transparent;
-    padding: 0;
-    width: fit-content;
     grid-column: -3;
     margin-inline-start: auto;
-  }
+    padding: 0;
+    width: fit-content;
+   }
 
   .arrow-btn {
     background-color: transparent;
