@@ -32,8 +32,8 @@ export function PlusIcon() {
 export function ArrowButtonLeft({iconFill}) {
   const color = iconFill || "white"
   return (
-    <svg width="39" height="46" viewBox="0 0 39 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-       <path d="M37.5 42.5982L3 22.6796L37.5 2.76098L37.5 42.5982Z" stroke={color} strokeWidth="3"/>
+    <svg width="39" height="46" viewBox="0 0 39 46" fill="none" xmlns="http://www.w3.org/2000/svg" >
+       <path d="M37.5 42.5982L3 22.6796L37.5 2.76098L37.5 42.5982Z" stroke={color} strokeWidth="3" id="icon-arrow-left"/>
     </svg>
   )
 }
@@ -41,8 +41,8 @@ export function ArrowButtonLeft({iconFill}) {
 export function ArrowButtonRight({iconFill}) {
   const color = iconFill || "white"
   return (
-    <svg width="41" height="46" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2.58395 2.83159L37.061 22.9426L2.40579 42.7451L2.58395 2.83159Z" stroke={color} strokeWidth="3"/>
+    <svg width="41" height="46" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg" >
+      <path d="M2.58395 2.83159L37.061 22.9426L2.40579 42.7451L2.58395 2.83159Z" stroke={color} strokeWidth="3" id="icon-arrow-right"/>
     </svg>
 
   )

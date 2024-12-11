@@ -26,7 +26,7 @@ const {
   }
 
   .copy-wrapper {
-    grid-column: 2 / 8;
+    grid-column: 2 / 4;
     justify-self: stretch;
     align-self: center;
     display: grid;
@@ -38,7 +38,7 @@ const {
   }
 
   .img-wrapper {
-    grid-column: 8 / -1;
+    grid-column: 2 / -2;
     object-fit: cover;
     justify-self: stretch;
     align-self: stretch;
@@ -50,5 +50,38 @@ const {
       object-fit: cover;
     }
   }
+
+  @media (width >= 43.75em) {
+    .copy-wrapper {
+      grid-column: 2 / 4;
+
+      h2 {
+        font-size: var(--fs-700);
+      }
+    }
+
+
+    .img-wrapper {
+      grid-column: 5 / -2;
+    }
+  }
+
+  @media(width >= 62.5em) {
+
+    .copy-wrapper {
+    grid-column: 2 / 8;
+
+    h2 {
+      font-size: var(--fs-700);
+    }
+  }
+
+
+    .img-wrapper {
+    grid-column: 8 / -2;
+  }
+
+  }
+
 
 </style>

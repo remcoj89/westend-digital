@@ -1,12 +1,14 @@
 ---
 
 const {
-        buttonStyle = "btn-primary",
-        buttonType = "button"
-      } = Astro.props
+  buttonStyle = "btn-primary",
+  buttonType = "button",
+  buttonId,
+} = Astro.props
+
 ---
 
-<button type={buttonType} class={`btn ${buttonStyle}`}>
+<button type={buttonType} class={`btn ${buttonStyle}`} id={buttonId}>
   <slot />
 </button>
 
