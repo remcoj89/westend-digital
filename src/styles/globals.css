@@ -172,6 +172,28 @@ img {
   width: calc((min(100% - 4rem, 124rem)));
 }
 
+.grid {
+  display: grid;
+  row-gap: var(--size-5);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--size-2);
+  justify-content: space-between;
+  gap: var(--size-4);
+}
+
+.flex-reverse {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--size-4);
+}
+
+
 @media (width >= 43.75em) {
   .fb-col-wrapper {
     --col-count: 6;
@@ -194,29 +216,17 @@ img {
     width: calc((min(100% - 8rem, 124rem)));
   }
 
+  .flex {
+    flex-direction: row;
+  }
+
+  .flex-reverse {
+    flex-direction: row-reverse;
+  }
+
 }
 
 
 section {
   margin-block-start: var(--size-10);
-}
-
-.grid {
-  display: grid;
-  row-gap: var(--size-5);
-}
-
-.flex {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--size-2);
-  justify-content: space-between;
-  gap: var(--size-4);
-}
-
-.flex-reverse {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  gap: var(--size-4);
 }

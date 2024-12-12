@@ -5,14 +5,22 @@ const {
   title,
   paragraph,
   imageUrl,
-  altText
+  altText,
+  flexDirection = "flex"
 } = Astro.props
+
+
 ---
 
-<section class="intro-section fb-col-wrapper">
+<section class=`intro-section wrapper ${flexDirection}`>
   <div class="copy-wrapper">
     <h2>{title}</h2>
-    <p>{paragraph}</p>
+    {paragraph.map(par => {
+      return (
+         <p>{par}</p>)
+
+    })}
+
   </div>
   <div class="img-wrapper">
     <Image src={imageUrl} alt={altText} width={500} height={500} />
@@ -23,9 +31,30 @@ const {
 <style>
 
   .intro-section {
+    gap: var(--size-2);
+    height: fit-content;
+
+    .copy-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-1);
+      width: 100%;
+    }
+
+    .img-wrapper {
+      height: auto;
+      width: 100%;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 
-  .copy-wrapper {
+  /* .copy-wrapper {
     grid-column: 2 / 4;
     justify-self: stretch;
     align-self: center;
@@ -81,7 +110,7 @@ const {
     grid-column: 8 / -2;
   }
 
-  }
+  } */
 
 
 </style>
