@@ -19,7 +19,7 @@ export default async function fetchProjects() {
     }
   `;
 
-  const res = await fetch("http://localhost:10003/graphql", { // Update the URL to your GraphQL endpoint
+  const res = await fetch(import.meta.env.WP_URL, { // Update the URL to your GraphQL endpoint
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

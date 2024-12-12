@@ -1,13 +1,10 @@
 ---
-import {
-
- Image
-} from "astro:assets";
+import {Image} from "astro:assets";
 import {
  BurgerMenu,
  CloseIcon
 } from "../assets/icons.jsx";
-import Button from "./Button.astro";
+
 const logo = '/assets/logos/logo-westend-digital-transparant.webp'
 
 ---
@@ -20,18 +17,9 @@ const logo = '/assets/logos/logo-westend-digital-transparant.webp'
       <Image
         alt="logo Westend-digital"
         class="logo"
-        src={
-
-logo
-}
-        height={
-
-250
-}
-        width={
-
-250
-}
+        src={logo}
+        height={250}
+        width={250}
       />
     </a>
 
@@ -58,10 +46,20 @@ logo
 <style>
 
   .nav-wrapper {
+    --_animationStartsAfter: 100vh;
+    --_animationDistance: 160vh;
     background-color: transparent;
-    position :fixed;
+    position: fixed;
+    z-index: 1000;
     top: 0;
     inset-inline: 0;
+    animation: stickyNav linear forwards;
+
+    @supports (animation-timeline: view()) {
+      animation-timeline: view();
+      animation-range: var(--_animationStartsAfter) var(--_animationDistance);
+    }
+
 
     input {
       display: none;
@@ -166,6 +164,20 @@ logo
         }
       }
 
+    }
+  }
+  .hidden {
+    display: none;
+  }
+  .active {
+    background-color: var(--clr-primary-900);
+  }
+
+  @keyframes stickyNav {
+
+    100% {
+      background-color: var(--clr-primary-900);
+      box-shadow: 0 0 0.75rem hsl(224 76% 11% / 0.3);
     }
   }
 </style>
