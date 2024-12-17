@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import IntroSection from '../sections/IntroSection.astro';
+import UspSection from '../sections/UspSection.astro';
+import HowWeWorkSection from '../sections/HowWeWorkSection.astro';
+import ReviewSection from '../sections/ReviewSection.astro';
+import FaqSection from '../sections/FaqSection.astro';
+import CtaSection from '../sections/CtaSection.astro';
+import FooterSection from '../sections/FooterSection.astro';
+import Button from '../components/Button.astro';
+
+
+
+const pageContent = {
+  metaTitle: "",
+  metaDescription: "",
+  heroTitle: "Winstgevende websites voor ondernemers met ambitie",
+  heroSubtitle: "Je bent klaar voor de volgende stap: van ambitie naar groei. Je wilt een website die doet wat ‘ie moet doen: leads genereren en je bedrijf laten groeien. Geen onnodige toeters en bellen, alleen resultaten. Zo simpel is het.",
+  introSection: {
+      title: "Digitale groei zonder gedoe",
+      paragraph: ["Je weet dat er meer in zit. Meer leads, meer omzet, meer vrijheid. Maar je website? Die werkt niet zo hard als jij. Tijd om daar korte metten mee te maken. Ik ontwerp websites voor ondernemers met ambitie. Geen standaard templates of loze beloftes, maar websites met een duidelijk doel: online groei. Het resultaat: een website die werkt, zonder dat jij er omkijken naar hebt."],
+      imageUrl: "/images/about-image.png",
+      altText: ""
+    }
+}
+
+---
+
+<Layout title="Westend Digital">
+  <Header>
+    <div>
+      <h1>{pageContent.heroTitle}</h1>
+      <span>{pageContent.heroSubtitle}</span>
+      <Button buttonStyle="btn-secondary ">Laten we kennismaken</Button>
+    </div>
+  </Header>
+	<main>
+    <IntroSection
+      title={pageContent.introSection.title}
+      paragraph={pageContent.introSection.paragraph}
+      imageUrl={pageContent.introSection.imageUrl}
+      altText={pageContent.introSection.altText}
+    />
+    <UspSection />
+    <HowWeWorkSection />
+    <ReviewSection />
+    <FaqSection />
+    <CtaSection />
+    <FooterSection />
+	</main>
+</Layout>

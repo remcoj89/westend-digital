@@ -1,0 +1,58 @@
+---
+import Image from "astro/components/Image.astro";
+import Button from "../components/Button.astro";
+
+const ctaImage = "/images/remco.png"
+---
+
+<section class="fb-col-wrapper" id="cta-section">
+  <div class="cta-content">
+    <h2 class="cta-title">Klaar om jouw online succes te versnellen?</h2>
+    <div class="btn-wrapper">
+      <Button type="button" buttonStyle="btn-secondary">Bel me</Button>
+      <Button type="button" buttonStyle="btn-secondary-open" >Stuur een email</Button>
+    </div>
+  </div>
+  <Image
+    alt="Remco Jonk"
+    class="cta-image"
+    src={ctaImage}
+    height={500}
+    width={500}
+  />
+</section>
+
+<style>
+  #cta-section {
+    background-color: var(--clr-primary-700);
+    color: var(--clr-primary-100);
+  }
+
+  .cta-content {
+    align-content: center;
+    text-align: center;
+    grid-column: 2 / 7;
+
+
+
+    .cta-title {
+      font-size: var(--fs-700);
+      margin-block-end: var(--size-3);
+    }
+
+    .btn-wrapper {
+      display: flex;
+      gap: var(--size-1);
+      justify-content: center;
+
+      button {
+        width: 20rem;
+      }
+    }
+  }
+
+  .cta-image {
+    grid-column: -2 / 7;
+    margin-inline: auto;
+  }
+</style>

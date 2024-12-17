@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import CtaSection from "../../sections/CtaSection.astro";
+import FooterSection from "../../sections/FooterSection.astro";
+import { getCollection } from "astro:content";
+
+const blogs = await getCollection("blog")
+---
+
+<Layout title="Blog | Westend Digital">
+  <Header>
+    <h1>Blog</h1>
+  </Header>
+
+  <section class="fb-col-wrapper">
+    <div class="blog-list">
+      {
+        blogs.map(blog => (
+          <a href={`/blog/${blog.slug}`}>
+            <h2>{blog.data.title}</h2>
+            <img
+              src={blog.data.image}
+              width={500}
+              height={500}
+              alt={blog.data.title}
+            />
+            <p></p>
+          </a>
+        ) )
+
+      }
+
+    </div>
+  </section>
+  <CtaSection />
+  <FooterSection />
+</Layout>
+
+
+<style>
+
+  .blog-list {
+    grid-column: 2 / -2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
+
+    a {
+      display: grid;
+      padding: 1rem;
+      border: solid 1px black;
+      border-radius: 8px;
+
+
+      img {
+        object-position: center;
+        object-fit: cover;
+        height: auto;
+        width: 100%;
+      }
+
+      p {
+        line-clamp: 2;
+      }
+    }
+  }
+
+</style>

@@ -1,0 +1,87 @@
+---
+import Button from "../components/Button.astro"
+import SectionTitle from "../components/SectionTitle.astro"
+---
+
+<section  class="fb-col-wrapper" id="steps">
+  <SectionTitle sectionTitle="Zo pak ik het aan" />
+  <div class="steps-wrapper">
+    <ul role="list" class="steps-list">
+      <li>
+        <div class="list-title">
+          <span>1</span>
+          <h3>Grondige scan van je website</h3>
+        </div>
+        <p>Ik duik in je website en analyseer alles: van design tot techniek. Hoe gebruiksvriendelijk is je site? Werkt hij goed op alle apparaten? En belangrijker nog: spreekt hij de taal van je klanten?</p>
+
+      </li>
+      <li>
+        <div class="list-title">
+          <span>2</span>
+          <h3>Telefonisch contact binnen 2 werkdagen</h3>
+        </div>
+        <p>Geen lange wachttijden - binnen 2 werkdagen bel ik je om een persoonlijk gesprek in te plannen. Ik deel mijn bevindingen en luister naar jouw verhaal. Want alleen zo kunnen we bepalen wat écht belangrijk is voor jouw bedrijf.</p>
+
+      </li>
+      <li>
+        <div class="list-title">
+          <span>3</span>
+          <h3>Vrijblijvend advies op maat </h3>
+        </div>
+        <p>Je krijgt van mij concrete verbeterpunten, geen vaag marketingverhaal. Ik vertel je eerlijk wat goed gaat én waar kansen liggen. En het mooiste? Je bepaalt zelf wat je met dit advies doet.</p>
+
+      </li>
+      <li>
+        <div class="list-title">
+          <span>4</span>
+          <h3>Aan de slag met jouw groeiplan</h3>
+        </div>
+        <p>Wil je de verbeteringen doorvoeren? Dan maken we samen een helder plan. Stap voor stap werken we aan een website die wél aansluit bij jouw ambities - en die van je klanten.</p>
+      </li>
+    </ul>
+    <div class="btn-wrapper">
+      <Button buttonStyle="btn-secondary">Vraag een gratis Check aan</Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  #steps {
+    color: white;
+    background-color: var(--clr-primary-700);
+    padding-block: var(--size-6);
+  }
+  .steps-wrapper {
+    grid-column: 2 / -2;
+    display: grid;
+    gap: var(--size-4);
+
+    .steps-list {
+      display: flex;
+      text-align: center;
+      gap: var(--size-1);
+
+      li {
+        height: 100%;
+        padding-inline: var(--size-1);
+
+        .list-title {
+          height: 15rem;
+          margin-block-end: var(--size-2);
+        }
+
+        span {
+          font-size: var(--fs-900);
+          color: var(--clr-secondary-900);
+          line-height: 2;
+        }
+
+      };
+
+    }
+    .btn-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+  }
+</style>

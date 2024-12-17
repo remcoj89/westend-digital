@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+
+
+---
+
+<footer class="fb-col-wrapper">
+  <div class="logo-section">
+    <a href="/">
+      <Image
+        alt="logo Westend digital"
+        class="footer-image"
+        height={500}
+        src="/assets/logos/WestendDigitalLogo.svg"
+        width={500}
+      />
+    </a>
+    <p>
+      Ik help ambitieuze ondernemers om hun online doelen te bereiken. Met een doordachte strategie en technisch sterke website help ik die doelen om te zetten in concrete resultaten. Geen loze beloftes, maar meetbare groei voor jouw bedrijf.
+    </p>
+  </div>
+
+  <div class="links">
+    <div>
+      <h4>Sitemap</h4>
+      <ul role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/gratis-website-check">Gratis Website Check</a></li>
+        <li><a href="/over-mij">Over mij</a></li>
+        <li><a href="/contact">contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul role="list" id="contact-list">
+        <li>
+          <h5>Adress</h5>
+          <p>Oosteinde 10</p>
+          <p>1636XV Schermerhorn</p>
+        </li>
+        <li>
+         <p></p>
+        </li>
+        <li>
+          <h5>Neem contact met mij op</h5>
+          <p>Email: <a href="mailto:info@westend-digital.nl">info@westend-digital.nl</a></p>
+          <p>Telefoon: <a href="tel:+31623927717">+316-23927717</a></span>
+
+        </li>
+        <li>
+          <p>KVK: 88994791</p>
+          <p>BTW: NL004680898B61</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</footer>
+
+<style>
+  footer{
+    background-color: var(--clr-primary-900);
+    color: var(--clr-primary-100);
+    padding-block: var(--size-4);
+
+    .logo-section {
+      grid-column: 2 / 5;
+      text-align: center;
+
+    }
+
+    .links {
+      grid-column: -2 / 7;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      margin-top: var(--size-5);
+
+      h4,
+      h5{
+        font-weight: var(--fw-semi-bold);
+      }
+
+      h4 {
+        font-size: var(--fs-500);
+        margin-bottom: var(--size-2);
+      }
+
+      h5 {
+        font-size: var(--fs-400);
+        margin-bottom: var(--size-1);
+      }
+
+      a {
+        text-decoration: none;
+
+        &:hover,
+        &:active {
+          text-decoration: underline;
+        }
+      }
+
+      #contact-list {
+        display: grid;
+        gap: var(--size-1);
+      }
+    }
+
+  }
+</style>

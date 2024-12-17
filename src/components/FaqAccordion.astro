@@ -1,0 +1,79 @@
+---
+import { AccordionIcon } from "../assets/icons"
+
+const {
+  question,
+  answer,
+  link
+} = Astro.props
+
+const color = "var(--clr-primary-300)"
+---
+<li class="accordion">
+  <div class="accordion-header">
+    <h3 >{question} <AccordionIcon iconFill={color}/></h3>
+  </div>
+  <div class="accordion-content">
+    <div>
+      <p>{answer}</p>
+      {
+      link && <a href={`/${link}`} target="_blank">Of klik hier voor meer informatie</a>
+      }
+    </div>
+  </div>
+
+</li>
+
+<style>
+  .accordion {
+    background-color: var(--clr-primary-900);
+    border-radius: var(--border-radius-card);
+    color: var(--clr-primary-100);
+    padding: var(--size-1);
+    overflow: hidden;
+
+    .accordion-header {
+      font-size: var(--fs-500);
+      padding-block: var(--size-1);
+
+     h3 {
+        color: var(--clr-primary-100);
+        font-size: var(--fs-500);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      svg {
+        transition: transform 500ms ease-in-out;
+      }
+    }
+
+    .accordion-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 500ms ease-in-out;
+      padding-inline-end: var(--size-2);
+
+      div {
+        overflow: hidden;
+
+        p {
+          margin-block-end: var(--size-2);
+        }
+      }
+    }
+  }
+
+  .accordion.is__open {
+    background-color: var(--clr-primary-700);
+
+    .accordion-content {
+      grid-template-rows: 1fr;
+    }
+
+    svg {
+      transform: rotate(45deg);
+    }
+  }
+</style>

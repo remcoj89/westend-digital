@@ -1,0 +1,71 @@
+---
+import Image from "astro/components/Image.astro";
+import Card from "../components/Card.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+const title = "Waarom kies je voor Westend Digital?";
+const usps = [
+  {
+    iconUrl: "/images/digital-succes.webp",
+    altText: "",
+    title: "Jouw digitale succes als product",
+    text: "Een effectieve website draait om drie pijlers: de juiste techniek, een doelgerichte strategie en meetbare resultaten. Ik werk met een duidelijk plan, concrete doelen en een transparant proces. Zo zie je precies hoe we jouw digitale succes gaan realiseren."
+  },
+  {
+    iconUrl: "/images/meer-dan-een-website.webp",
+    altText: "",
+    title: "Méér dan een website",
+    text: "Ik bouw niet alleen je website - ik ben ook je sparringpartner voor je digitale groei. Door jouw bedrijf en doelgroep écht te begrijpen, creëer ik een online aanwezigheid die aansluit bij jouw doelen. We bouwen samen aan je groei: nu én in de toekomst. "
+  },
+  {
+    iconUrl: "/images/groei-motor.webp",
+    altText: "",
+    title: "Je website als groeimotor",
+    text: "Je wilt niet alleen een website die er professioneel uitziet, maar een platform dat meegroeit met je ambities. Ik bouw websites met het grotere plaatje in gedachten: een strategisch fundament dat je bedrijf versterkt. Geen holle woorden, wel meetbare resultaten."
+  }
+]
+---
+
+<section class="wrapper" id="usp-section">
+  <SectionTitle sectionTitle={title} />
+  <div class="usp-wrapper">
+    {usps.map(usp => {
+      return (
+      <Card cardStyle="primary">
+        <Image
+          alt={usp.altText}
+          height={250}
+          src={usp.iconUrl}
+          width={250}
+          />
+        <h3>{usp.title}</h3>
+        <p>{usp.text}</p>
+
+      </Card>
+      )
+    })}
+  </div>
+</section>
+
+
+<style>
+  #usp-section {
+    flex-direction: column;
+    gap :var(--size-3);
+  }
+  
+  .usp-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: var(--size-1);
+
+    h3 {
+      font-size: var(--fs-600);
+    }
+
+    img {
+      height: 12rem;
+      margin-inline: auto;
+      width: 12rem;
+    }
+  }
+</style>

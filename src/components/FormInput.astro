@@ -1,0 +1,44 @@
+---
+
+const {
+  label,
+  inputType = "text",
+  placeHolder,
+  name,
+  id,
+  formStyle = "default"
+} = Astro.props
+---
+
+<label for={name} class={formStyle} class="formStyle">
+  {label}
+  <input type={inputType} name={name} placeholder={placeHolder}/>
+</label>
+
+
+<style>
+  label {
+    width: 100%;
+
+    input {
+      border: 1px solid var(--clr-primary-800);
+      border-radius: var(--border-radius-btn);
+      color: var(--clr-primary-900);
+      display: block;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+
+    input:focus {
+      border: 1px solid var(--clr-secondary-800);
+      caret-color: var(--clr-primary-900);
+      outline: 1px solid var(--clr-secondary-800);
+    }
+
+    .input[disabled] {
+      background-color: #eee;
+      cursor: not-allowed;
+    }
+  }
+</style>

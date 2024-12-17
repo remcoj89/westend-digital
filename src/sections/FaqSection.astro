@@ -1,0 +1,110 @@
+---
+import SectionTitle from "../components/SectionTitle.astro"
+import FaqAccordion from "../components/FaqAccordion.astro"
+import Image from "astro/components/Image.astro"
+
+
+
+const title = "Heb je een vraag? check hieronder het antwoord"
+
+const faqs = [
+  {
+    question: "Hoeveel kost het om een website te maken?",
+    answer: "Lorem ipsum dolor sit amet consectetur. Viverra pellentesque leo congue volutpat vitae lorem mus porta vitae. Leo ipsum quis feugiat eget vulputate cursus. Vestibulum facilisi condimentum ipsum justo ipsum. Dignissim nibh blandit tellus nunc quisque euismod. Vitae vitae convallis elementum cum pellentesque consequat. Sem massa donec mattis tincidunt consequat elementum facilisis viverra. Consequat sodales et vitae aliquet leo sit integer. Ridiculus cursus nunc adipiscing nunc sodales eget in nunc. Enim nullam vitae tortor nibh lorem integer. Eu sit eget libero velit. Fermentum arcu phasellus nisi nunc accumsan tellus fringilla. Consequat blandit amet sapien parturient.",
+    internalLink: "/"
+  },
+  {
+    question: "Kan ik mijn website door jou laten onderhouden?",
+    answer: "Lorem ipsum dolor sit amet consectetur. Viverra pellentesque leo congue volutpat vitae lorem mus porta vitae. Leo ipsum quis feugiat eget vulputate cursus. Vestibulum facilisi condimentum ipsum justo ipsum. Dignissim nibh blandit tellus nunc quisque euismod. Vitae vitae convallis elementum cum pellentesque consequat. Sem massa donec mattis tincidunt consequat elementum facilisis viverra. Consequat sodales et vitae aliquet leo sit integer. Ridiculus cursus nunc adipiscing nunc sodales eget in nunc. Enim nullam vitae tortor nibh lorem integer. Eu sit eget libero velit. Fermentum arcu phasellus nisi nunc accumsan tellus fringilla. Consequat blandit amet sapien parturient.",
+    internalLink: "/"
+  },
+  {
+    question: "Kan ik mijn website ook bij jou hosten?",
+    answer: "Lorem ipsum dolor sit amet consectetur. Viverra pellentesque leo congue volutpat vitae lorem mus porta vitae. Leo ipsum quis feugiat eget vulputate cursus. Vestibulum facilisi condimentum ipsum justo ipsum. Dignissim nibh blandit tellus nunc quisque euismod. Vitae vitae convallis elementum cum pellentesque consequat. Sem massa donec mattis tincidunt consequat elementum facilisis viverra. Consequat sodales et vitae aliquet leo sit integer. Ridiculus cursus nunc adipiscing nunc sodales eget in nunc. Enim nullam vitae tortor nibh lorem integer. Eu sit eget libero velit. Fermentum arcu phasellus nisi nunc accumsan tellus fringilla. Consequat blandit amet sapien parturient.",
+  },
+  {
+    question: "Hoe lang duurt het om een website te laten maken?",
+    answer: "Lorem ipsum dolor sit amet consectetur. Viverra pellentesque leo congue volutpat vitae lorem mus porta vitae. Leo ipsum quis feugiat eget vulputate cursus. Vestibulum facilisi condimentum ipsum justo ipsum. Dignissim nibh blandit tellus nunc quisque euismod. Vitae vitae convallis elementum cum pellentesque consequat. Sem massa donec mattis tincidunt consequat elementum facilisis viverra. Consequat sodales et vitae aliquet leo sit integer. Ridiculus cursus nunc adipiscing nunc sodales eget in nunc. Enim nullam vitae tortor nibh lorem integer. Eu sit eget libero velit. Fermentum arcu phasellus nisi nunc accumsan tellus fringilla. Consequat blandit amet sapien parturient.",
+  },
+]
+
+const {
+  sectionId
+} = Astro.props
+---
+
+<section class="fb-col-wrapper" id={sectionId}>
+<SectionTitle sectionTitle={title} />
+<span class="section-subtitle">Niet het antwoord dat je zoekt? Je kunt ook
+  <a href="mailto:info@westend-digital.nl">mailen.</a>
+</span>
+
+
+<ul class="faq-wrapper" role="list">
+  {faqs.map((faq, i) => {
+    return (
+      <FaqAccordion
+        question={faq.question}
+        answer={faq.answer}
+        link={faq.internalLink}
+        index={i}
+      />
+    )
+  })}
+</ul>
+<Image
+  alt="",
+  class="faq-image"
+  src="/images/about-image.png"
+  height="500"
+  width="500"
+/>
+</section>
+
+<style>
+  #webcheck-faq {
+    margin-block-end: var(--size-10);
+  }
+
+  .section-subtitle {
+    grid-column: 2 / -2;
+    text-align: center;
+    font-size: var(--fs-500);
+    margin-block-end: var(--size-6);
+  }
+
+  .faq-wrapper {
+    grid-column: 2 / 8;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-2)
+  }
+
+  .faq-image {
+    grid-column: -2 / 8;
+    object-fit: cover;
+    object-position: center;
+    height: 50vh;
+    width: 100%;
+  }
+</style>
+
+<script>
+  const faqWrapper = document.querySelector(".faq-wrapper");
+  const accordions = document.querySelectorAll(".accordion");
+
+  faqWrapper.addEventListener("click", (e) => {
+    const accordionHeader = e.target.closest("li")
+    const accordion = e.target.closest(".accordion")
+    const isOpen = accordion.classList.contains("is__open");
+
+    accordions.forEach(a => {
+        a.classList.remove("is__open")
+    })
+
+    if (!isOpen) {
+        accordion.classList.add("is__open");
+      }
+  })
+
+  </script>

@@ -1,0 +1,16 @@
+---
+const {sectionTitle} = Astro.props
+---
+
+  <h2>{sectionTitle}</h2>
+
+<style>
+
+  h2 {
+    display: block;
+    grid-column: 2 / -2;
+    text-align: center;
+    font-size: var(--fs-700);
+    margin-bottom: var(--size-2);
+  }
+</style>

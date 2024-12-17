@@ -1,0 +1,88 @@
+---
+  import FormInput from "./FormInput.astro"
+
+  import Button from "../components/Button.astro"
+---
+
+
+<form action="submit">
+
+  <div class="double-field">
+
+    <FormInput
+    label="Voornaam"
+    name="name"
+    inpytType="text"
+    placeholder="Voornaam"
+    formStyle="default"
+    />
+    <FormInput
+    label="Achternaam"
+    name="last-name"
+    inpytType="text"
+    placeholder="Achternaam"
+    formStyle="default"
+    />
+  </div>
+
+  <div class="double-field">
+
+    <FormInput
+    label="Bedrijf"
+    name="company"
+    inpytType="text"
+    placeholder="Bedrijf"
+    formStyle="default"
+    />
+    <FormInput
+    label="Telefoon"
+    name="phone"
+    inpytType="tel"
+    placeholder="Telefoon"
+    formStyle="default"
+    />
+  </div>
+  <div class="double-field">
+
+    <FormInput
+    label="E-mail"
+    name="email"
+    inpytType="mail"
+    placeholder="bedrijfsnaam@email.nl"
+    formStyle="default"
+    />
+    <FormInput
+    label="Website"
+    name="website"
+    inpytType="url"
+    placeholder="www.jouw-website.nl"
+    formStyle="default"
+    />
+  </div>
+
+  <Button buttonType="submit" buttonStyle="btn-secondary" >Yes, doe mij die gratis website check maar!</Button>
+  <p class="legal-text">Door op bovenstaande knop te klikken, geef je Westend Digital toesteming om jou te contacteren en meld je je aan voor onze nieuwsbrief
+    Je contact gegevens worden conform het <a href="#">privacybeleid</a> van Westend Digital verwerkt.</p>
+</form>
+
+
+<style>
+
+  form {
+    display: grid;
+    gap: var(--size-2);
+    background-color: var(--clr-primary-900);
+    color: var(--clr-primary-100);
+    padding-block: var(--size-3);
+    padding-inline: var(--size-2);
+
+    .double-field {
+     display: flex;
+     gap: var(--size-1);
+    }
+
+    .legal-text {
+     font-size: var(--fs-200);
+    }
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+
+const {cardStyle = "primary"} = Astro.props
+---
+
+<div class={`card ${cardStyle}`}>
+  <slot />
+</div>
+
+<style>
+  .card {
+    border-radius: var(--border-radius-card);
+    padding: 2.4rem 1.6rem;
+  }
+
+  .primary {
+    align-items: center;
+    background-color: var(--clr-primary-700);
+    color: var(--clr-primary-300);
+    display: grid;
+    gap :var(--size-2);
+    justify-content: center;
+    text-align: center;
+  }
+
+  .review {
+    box-shadow: 2px 5px 9px hsl(from var(--clr-primary-700) H S L / 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-2);
+    height: fit-content;
+
+    div {
+      display: grid;
+      gap: var(--size-1);
+
+      span {
+        color: var(--clr-primary-500);
+      }
+    }
+  }
+</style>

@@ -1,0 +1,64 @@
+---
+import Image from "astro/components/Image.astro"
+
+const { flexDirection, projectContent } = Astro.props
+const { title, content, featuredImage } = await projectContent.node
+const { altText, mediaItemUrl } = await featuredImage.node
+
+---
+
+<div class={flexDirection}>
+  <div class="project-content">
+    <h2>{title}</h2>
+    <div set:html={content} class="rendered-content"/>
+  </div>
+  <Image
+    alt={altText}
+    class="project-thumbnail"
+    src={mediaItemUrl}
+    height={500}
+    width={500}
+  />
+</div>
+
+
+<style>
+  .project-content{
+    gap: var(--size-2);
+    width: 50%;
+
+    button {
+      width: fit-content;
+    }
+  }
+
+  .project-thumbnail {
+    object-fit: cover;
+    height: 35rem;
+    width: 50%;
+  }
+
+  .rendered-content {
+    display: grid;
+    gap: var(--size-2);
+
+    a {
+      border: solid 1px var(--clr-primary-900);
+      border-radius: var(--border-radius-btn);
+      color: var(--clr-primary-900);
+      cursor: pointer;
+      font-size: var(--fs-400);
+      font-weight: var(--fw-semi-bold);
+      padding-block: 1rem;
+      padding-inline: var(--size-3);
+      text-align: center;
+      text-decoration: none;
+
+      &:hover {
+        background-color: var(--clr-primary-900);
+        color: var(--clr-primary-100);
+    }
+  }
+  }
+
+</style>

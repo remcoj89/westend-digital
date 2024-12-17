@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import IntroSection from "../sections/IntroSection.astro";
+import WebCheckFormSection from "../sections/WebCheckFormSection.astro";
+import FaqSection from "../sections/FaqSection.astro";
+import WebCheckHowWeWorkSection from '../sections/WebCheckHowWeWorkSection.astro'
+import FooterSection from "../sections/FooterSection.astro";
+
+const pageContent = {
+  metaTitle: "",
+  metaDescription: "",
+  pageTitle: "Ontdek wat je website nu voor je doet én wat er beter kan",
+  introSection: {
+      title: "",
+      paragraph: ["Je bent hard gegroeid als ondernemer, maar is je website mee gegroeid? Grote kans van niet. Die zweeft waarschijnlijk nog ergens in het tijdperk van toen websites nog digitale visitekaartjes waren. Terwijl je website juist één van je beste verkopers kan zijn - eentje die 24/7 voor je werkt om nieuwe klanten aan te trekken."],
+      imageUrl: "/images/about-image.png",
+      altText: ""
+    },
+  formSection: {
+    paragraph: "Tijd voor verandering dus! Ik neem graag je website eens onder de loep. Na de check weet je precies:",
+    uspList: ["waar je website kansen laat liggen", "hoe je meer klanten uit je website haalt", "wat er nodig is om je online groei te versnellen"],
+    ctaText: "Geen theoretische taal, maar praktische tips waar je morgen al mee aan de slag kunt.",
+    ctaButton: "Yes, doe mij die gratis website check maar!"
+  }
+
+}
+
+---
+
+<Layout title="Gratis website check | Westend Digital">
+  <Header>
+    <div>
+      <h1>{pageContent.pageTitle}</h1>
+    </div>
+  </Header>
+  <IntroSection
+    altText={pageContent.introSection.altText}
+    imageUrl={pageContent.introSection.imageUrl}
+    paragraph={pageContent.introSection.paragraph}
+    title={pageContent.introSection.title}
+  />
+  <WebCheckFormSection
+    paragraph={pageContent.formSection.paragraph}
+    uspList={pageContent.formSection.uspList}
+    ctaText={pageContent.formSection.ctaText}
+    ctaButton={pageContent.formSection.ctaButton}
+  />
+  <WebCheckHowWeWorkSection />
+  <FaqSection sectionId="webcheck-faq"/>
+  <FooterSection />
+</Layout>

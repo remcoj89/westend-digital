@@ -1,0 +1,66 @@
+---
+import SectionTitle from "../components/SectionTitle.astro"
+
+const {
+  title,
+  steps
+} = Astro.props
+---
+
+<section class="wrapper" id="grow-section">
+  <SectionTitle sectionTitle={title} />
+  <div class="steps-grid">
+    {
+      steps.map((step, i) => {
+        return (
+        <div class="grid-item">
+          <span class="grid-number">{ i +1}</span>
+          <div class="grid-content">
+            <h3 class="grid-title">{step.title}</h3>
+            <p class="grid-text">{step.paragraph}</p>
+          </div>
+        </div>
+        )
+      })
+    }
+  </div>
+</section>
+
+<style>
+  #grow-section {
+    flex-direction: column;
+    gap :var(--size-3);
+
+    .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: var(--size-1);
+
+    .grid-item {
+      display: flex;
+      gap: var(--size-1);
+
+      .grid-number {
+        color: var(--clr-secondary-900);
+        font-size: var(--fs-700);
+      }
+
+        .grid-content {
+          display: grid;
+          gap: var(--size-1);
+
+          .grid-title {
+            color: var(--clr-primary-800);
+            font-size: var(--fs-600);
+          }
+
+          .grid-text {
+            max-width: 80%;
+          }
+        }
+    }
+    }
+
+  }
+
+</style>

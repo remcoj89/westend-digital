@@ -1,0 +1,183 @@
+---
+import {Image} from "astro:assets";
+import {
+ BurgerMenu,
+ CloseIcon
+} from "../assets/icons.jsx";
+
+const logo = '/assets/logos/logo-westend-digital-transparant.webp'
+
+---
+
+<nav class="nav-wrapper">
+  <div class="wrapper nav-bar">
+    <input type="radio" name="nav-radio" class="nav-button" id="cancelButton" />
+    <input type="radio" name="nav-radio" class="nav-button" id="menuButton"  />
+    <a href="/">
+      <Image
+        alt="logo Westend-digital"
+        class="logo"
+        src={logo}
+        height={250}
+        width={250}
+      />
+    </a>
+
+    <div class="nav-list-wrapper">
+      <ul role="list" class="nav-list">
+        <li class="nav-link"><a href="projecten">Portfolio</a></li>
+        <li class="nav-link"><a href="blog">Blog</a></li>
+        <li class="nav-link"><a href="over-ons">Over mij</a></li>
+        <li class="nav-link"><a href="contact">Contact</a></li>
+        <li class="nav-link cta-btn"><a href="/gratis-website-check">Gratis WebsiteCheck</a></li>
+      </ul>
+    </div>
+    <label for="cancelButton" class="cancelButton">
+      <CloseIcon iconFill="var(--clr-primary-100"/>
+    </label>
+    <label for="menuButton" class="burgerMenu">
+      <BurgerMenu iconFill="var(--clr-primary-100"/>
+    </label>
+
+  </div>
+
+</nav>
+
+<style>
+
+  .nav-wrapper {
+    --_animationStartsAfter: 100vh;
+    --_animationDistance: 160vh;
+    background-color: transparent;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    inset-inline: 0;
+    animation: stickyNav linear forwards;
+
+    @supports (animation-timeline: view()) {
+      animation-timeline: view();
+      animation-range: var(--_animationStartsAfter) var(--_animationDistance);
+    }
+
+
+    input {
+      display: none;
+    }
+
+    .nav-bar {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+      position: relative;
+
+      .logo{
+        height:var(--size-10);
+        object-fit:contain;
+      }
+
+      .nav-list-wrapper {
+        color: var(--clr-primary-100);
+        display: grid;
+        grid-template-rows: 0fr;
+        inset-block-start: var(--size-10);
+        justify-content: center;
+        position: absolute;
+        text-align: center;
+        transition: grid-template-rows 500ms ease-in-out;
+        width: 100%;
+
+        .nav-list {
+          overflow: hidden;
+        }
+
+        .nav-link {
+          cursor: pointer;
+          line-height: 250%;
+
+          &:hover,
+          &:active {
+            color: var(--clr-secondary-900);
+          }
+        }
+
+        .cta-btn {
+          background-color: var(--clr-secondary-900);
+          padding-inline: var(--size-1);
+          font-weight: var(--fw-bold);
+          border-radius: var(--border-radius-btn);
+
+          &:hover {
+            background-color: var(--clr-primary-900);
+          }
+        }
+
+        a {
+          text-decoration: none;
+        }
+      }
+
+      @media (width >= 850px) {
+
+      .nav-list-wrapper {
+      display: block;
+      grid-template-rows: unset;
+      inset-block-start: unset;
+      position: static;
+
+      .nav-list {
+        display: flex;
+        gap: var(--size-1);
+        justify-content: flex-end;
+      }
+
+    }
+    .burgerMenu {
+      display: none;
+    }
+
+}
+
+      .cancelButton {
+        display: none;
+      }
+
+      @media (width <= 850px) {
+
+        #menuButton:checked ~ .cancelButton {
+          display: block;
+        }
+
+        #menuButton:checked ~ .burgerMenu {
+          display: none;
+        }
+
+        #menuButton:checked ~ .nav-list-wrapper {
+          background-color: var(--clr-primary-900);
+          grid-template-rows: 1fr;
+          padding-block: var(--size-5);
+        }
+
+        #menuButton:checked ~ .nav-wrapper {
+          background-color: var(--clr-primary-900);
+        }
+      }
+
+    }
+  }
+  .hidden {
+    display: none;
+  }
+  .active {
+    background-color: var(--clr-primary-900);
+  }
+
+  @keyframes stickyNav {
+
+    100% {
+      background-color: var(--clr-primary-900);
+      box-shadow: 0 0 0.75rem hsl(224 76% 11% / 0.3);
+    }
+  }
+</style>

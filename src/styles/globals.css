@@ -1,0 +1,232 @@
+@font-face {
+  font-display: swap;
+  font-family: "Lora", serif;
+  font-style: normal;
+  font-weight: 400 700;
+  src: url('/public/assets/fonts/Lora-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter", sans-serif;
+  font-weight: 400 700;
+  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+
+:root {
+  interpolate-size: allow-keywords;
+
+  --border-radius-btn: 8px;
+  --border-radius-card: 8px;
+  --border-radius-img: 8px;
+
+  --clr-primary-100: hsl(0, 0%, 96%);
+  --clr-primary-300: hsl(0, 0%, 90%);
+  --clr-primary-500: hsl(224, 10%, 56%);
+  --clr-primary-700: hsl(224, 21%, 38%);
+  --clr-primary-800: hsl(224, 35%, 28%);
+  --clr-primary-900: hsl(224, 76%, 11%);
+
+  --clr-secondary-100: hsl(0, 0%, 96%);
+  --clr-secondary-300: hsl(34, 88%, 97%);
+  --clr-secondary-500: hsl(36, 57%, 85%);
+  --clr-secondary-700: hsl(36, 69%, 84%);
+  --clr-secondary-800: hsl(36, 56%, 74%);
+  --clr-secondary-900: hsl(36, 59%, 58%);
+
+  --clr-neutral-100: hsl(0, 0%, 96%);
+  --clr-neutral-300: hsl(0, 0%, 53%);
+  --clr-neutral-500: hsl(0, 0%, 34%);
+  --clr-neutral-700: hsl(230, 5%, 22%);
+  --clr-neutral-800: hsl(224, 17%, 13%);
+  --clr-neutral-900: hsl(224, 100%, 4%);
+
+  --clr-alert-green-900: hsl(106, 91%, 25%);
+  --clr-alert-yellow-900: hsl(46, 100%, 51%);
+  --clr-alert-red-900: hsl(0, 100%, 33%);
+
+
+  --lh-200: 125%;
+  --lh-300: 150%;
+  --lh-400: 175%;
+
+  --fs-200: 1.2rem;
+  --fs-300: 1.4rem;
+  --fs-400: 1.6rem;
+  --fs-500: 1.8rem;
+  --fs-600: 2.4rem;
+  --fs-700: 3.2rem;
+  --fs-800: 4rem;
+  --fs-900: 4.8rem;
+
+  --fw-regular: 400;
+  --fw-semi-bold: 700;
+  --fw-bold: 900;
+
+
+  --clr-body: var(--clr-neutral-900);
+  --clr-background: var(--clr-neurtal-100);
+  --clr-heading: var(var(--clr-primary-700));
+
+  --ff-header: "Lora", serif;
+  --ff-base: "Inter", sans-serif;
+
+
+  --size-1: 1.6rem;
+  --size-2: 2.4rem;
+  --size-3: 3.2rem;
+  --size-4: 4rem;
+  --size-5: 4.8rem;
+  --size-6: 5.6rem;
+  --size-7: 6.4rem;
+  --size-8: 7.2rem;
+  --size-9: 8rem;
+  --size-10: 8.8rem;
+
+  @media (prefers-color-scheme: dark) {
+      --clr-body: var(--clr-neutral-300);
+      --clr-background: var(--clr-neurtal-800);
+    }
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 67.5%;
+}
+
+body {
+  background-color: var(--clr-background);
+  color: var(--clr-body);
+  font-size: var(--fs-400);
+  line-height: var(--lh-100);
+  font-family: var(--ff-base);
+}
+
+[role = "list"] {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-header);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-300);
+  text-wrap: balance;
+}
+
+p,
+li {
+  line-height: var(--lh-300);
+  text-wrap: pretty;
+}
+
+p {
+  max-width: 65ch;
+}
+
+a {
+  color: inherit;
+}
+
+
+img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-style: italic;
+  height: auto;
+  max-width: 100%;
+  shape-margin: 1rem;
+  vertical-align: middle;
+}
+
+
+
+.fb-col-wrapper {
+  --col-count: 2;
+  --space-gap: 2px;
+  --space-lr: 4rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns:
+    1fr
+    repeat(var(--col-count), calc((min(100% - var(--space-lr), 114rem) - (var(--col-count) - 1) * var(--space-gap)) / var(--col-count))) 1fr;
+
+}
+
+.wrapper {
+  display: flex;
+  margin-inline: auto;
+  width: calc((min(100% - 4rem, 124rem)));
+}
+
+.grid {
+  display: grid;
+  row-gap: var(--size-5);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--size-2);
+  justify-content: space-between;
+  gap: var(--size-4);
+}
+
+.flex-reverse {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--size-4);
+}
+
+
+@media (width >= 43.75em) {
+  .fb-col-wrapper {
+    --col-count: 6;
+    --space-gap: 3px;
+    --space-lr: 8rem;
+  }
+
+  .wrapper {
+    width: calc((min(100% - 8rem, 124rem)));
+  }
+
+}
+
+@media (width >= 62.5em) {
+  .fb-col-wrapper {
+    --col-count: 12;
+  }
+
+  .wrapper {
+    width: calc((min(100% - 8rem, 124rem)));
+  }
+
+  .flex {
+    flex-direction: row;
+  }
+
+  .flex-reverse {
+    flex-direction: row-reverse;
+  }
+
+}
+
+
+section {
+  margin-block-start: var(--size-10);
+}
