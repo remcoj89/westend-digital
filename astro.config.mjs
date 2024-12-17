@@ -6,9 +6,7 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
     site: 'https://westend-digital.nl/',
     output: 'server',
-    adapter: netlify({
-      imageCDN: false,
-    }),
+    adapter: netlify(),
     image: {
       domains: ['https://mediumturquoise-sparrow-543006.hostingersite.com/']
     },
