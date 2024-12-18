@@ -1,8 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import ContactForm from "../components/ContactForm.astro";
+import ContactForm from "../components/reactComponent.ContactForm/ContactForm";
 import FooterSection from "../sections/FooterSection.astro";
+import LetterSend from '../assets/letter_send.svg';
+
+import { PhoneIcon, EmailIcon, LocationIcon} from "../assets/icons"
 ---
 
 <Layout title="Contact | Westend Digital">
@@ -13,9 +16,97 @@ import FooterSection from "../sections/FooterSection.astro";
     </div>
   </Header>
   <main>
-    <section>
-      <ContactForm />
+    <section class="wrapper">
+      <div class="flex contact-wrapper">
+        <div class="adress-wrapper">
+          <h3>Contact informatie</h3>
+          <ul role="list">
+            <li><PhoneIcon iconFill="var(--clr-primary-100)"/> +316-23927717</li>
+            <li><EmailIcon iconFill="var(--clr-primary-100)"/> info@westend-digital.nl</li>
+            <li>
+              <LocationIcon iconFill="var(--clr-primary-100)"/>
+              <span>Oosteinde 10, <br/>1636XV, Schermerhorn</span>
+            </li>
+          </ul>
+
+          <div class="circle circle-small" />
+          <div class="circle circle-big" />
+        </div>
+        <div id="contact-form">
+          <ContactForm client:load />
+          <LetterSend />
+        </div>
+      </div>
     </section>
   </main>
   <FooterSection />
 </Layout>
+
+<style>
+
+  .contact-wrapper {
+    align-items: center;
+    margin-block-end: var(--size-10);
+    width: 100%;
+
+    .adress-wrapper {
+      background-color: var(--clr-primary-900);
+      border-radius: var(--border-radius-card);
+      color: var(--clr-primary-100);
+      height: 100%;
+      overflow: hidden;
+      padding-block-end: 22.5rem;
+      padding-block-start: var(--size-4);
+      padding-inline: var(--size-4);
+      position: relative;
+      width: 40%;
+
+      h3 {
+        font-size: var(--fs-600);
+        font-weight: var(--fw-semi-bold);
+        line-height: var(--lh-200);
+       }
+      ul {
+        display: grid;
+        gap: 5rem;
+        margin-top: 15.6rem;
+
+        li {
+            align-items: center;
+            display: flex;
+            gap: var(--size-1);
+           }
+       }
+
+      .circle {
+      background-color: var(--clr-primary-100);
+      border-radius: 100%;
+      opacity: 10%;
+      position: absolute;
+     }
+
+    .circle-small {
+      --_circle-height: 13.8rem;
+      --_circle-width: 13.8rem;
+      bottom: 7.5rem;
+      height: var(--_circle-height);
+      right: 7.5rem;
+      width: var(--_circle-width);
+      z-index: 10;
+     }
+    .circle-big {
+      --_circle-height: 26.9rem;
+      --_circle-width: 26.9rem;
+      bottom: -10rem;
+      height: var(--_circle-height);
+      right: -10rem;
+      width: var(--_circle-width);
+     }
+     }
+
+    #contact-form {
+      width: 60%;
+     }
+  }
+
+</style>
