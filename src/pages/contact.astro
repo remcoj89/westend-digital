@@ -55,11 +55,11 @@ import { PhoneIcon, EmailIcon, LocationIcon} from "../assets/icons"
       color: var(--clr-primary-100);
       height: 100%;
       overflow: hidden;
-      padding-block-end: 22.5rem;
+      padding-block-end: 5rem;
       padding-block-start: var(--size-4);
       padding-inline: var(--size-4);
       position: relative;
-      width: 40%;
+      width: 100%;
 
       h3 {
         font-size: var(--fs-600);
@@ -68,8 +68,8 @@ import { PhoneIcon, EmailIcon, LocationIcon} from "../assets/icons"
        }
       ul {
         display: grid;
-        gap: 5rem;
-        margin-top: 15.6rem;
+        gap: var(--size-1);
+        margin-top: 5rem;
 
         li {
             align-items: center;
@@ -78,7 +78,7 @@ import { PhoneIcon, EmailIcon, LocationIcon} from "../assets/icons"
            }
        }
 
-      .circle {
+    .circle {
       background-color: var(--clr-primary-100);
       border-radius: 100%;
       opacity: 10%;
@@ -95,17 +95,27 @@ import { PhoneIcon, EmailIcon, LocationIcon} from "../assets/icons"
       z-index: 10;
      }
     .circle-big {
-      --_circle-height: 26.9rem;
-      --_circle-width: 26.9rem;
-      bottom: -10rem;
-      height: var(--_circle-height);
-      right: -10rem;
-      width: var(--_circle-width);
-     }
+        --_circle-height: 26.9rem;
+        --_circle-width: 26.9rem;
+        bottom: -10rem;
+        height: var(--_circle-height);
+        right: -10rem;
+        width: var(--_circle-width);
+      }
      }
 
     #contact-form {
-      width: 60%;
+      width: 100%;
+     }
+
+     @media(width >= 67.5em) {
+      .adress-wrapper {
+        width: 40%;
+      }
+
+      #contact-form {
+        width: 60%;
+      }
      }
   }
 
