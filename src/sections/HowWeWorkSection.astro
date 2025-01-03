@@ -78,60 +78,63 @@ const iconColorActive = "var(--clr-primary-300)"
 
 
 <section class="fb-col-wrapper" id="how-we-work">
-  <div class="steps-list-wrapper">
-    <h2>{title}</h2>
-    <ul role="list" class="steps-list">
-      {
-        steps.map((step, i) => {
-          return  (
-          <li class="step">0{i + 1} {step.listTitle}</li>
-        )
-        })
-      }
-    </ul>
+  <div class="how-we-work-wrapper">
 
-    <a href="/contact" class="btn btn-primary">
-      Vrijblijvende afspraak
-    </a>
+      <div class="steps-list-wrapper">
+        <h2>{title}</h2>
+        <ul role="list" class="steps-list">
+          {
+            steps.map((step, i) => {
+              return  (
+              <li class="step">0{i + 1} <span>{step.listTitle}</span> </li>
+            )
+            })
+          }
+        </ul>
 
-  </div>
+        <a href="/contact" class="btn btn-primary">
+          Vrijblijvende afspraak
+        </a>
 
-  <div class="steps">
-    <div class="steps-container">
-      {
-        steps.map((step, i) => {
-          return (
-              <div class="steps-wrapper">
-                <div class="steps-content">
-                  <h2>{step.title}</h2>
-                  <ul role="list">
-                    {
-                      step.steps.map(s => {
-                        return <li class="list-item"><div class="steps-icon"><PlusIcon /></div><p>{s}</p></li>
-                      })
-                    }
-                  </ul>
-                </div>
-                <Image
-                  alt={step.altText}
-                  class="steps-image"
-                  height="300"
-                  src={step.imageUrl}
-                  width="300"
-                  />
-              </div>
-              )
-          })
-      }
-    </div>
-    <div class="btn-wrapper">
-      <Button buttonStyle="arrow-btn" buttonId="btn-previous" >
-        <ArrowButtonLeft iconFill={iconColor} />
-      </Button>
-      <Button buttonStyle="arrow-btn" buttonId="btn-next" >
-        <ArrowButtonRight iconFill={iconColorActive} />
-      </Button>
-    </div>
+      </div>
+
+      <div class="steps">
+        <div class="steps-container">
+          {
+            steps.map((step, i) => {
+              return (
+                  <div class="steps-wrapper">
+                    <div class="steps-content">
+                      <h2>{step.title}</h2>
+                      <ul role="list">
+                        {
+                          step.steps.map(s => {
+                            return <li class="list-item"><div class="steps-icon"><PlusIcon /></div><p>{s}</p></li>
+                          })
+                        }
+                      </ul>
+                    </div>
+                    <Image
+                      alt={step.altText}
+                      class="steps-image"
+                      height="300"
+                      src={step.imageUrl}
+                      width="300"
+                      />
+                  </div>
+                  )
+              })
+          }
+        </div>
+        <div class="btn-wrapper">
+          <Button buttonStyle="arrow-btn" buttonId="btn-previous" >
+            <ArrowButtonLeft iconFill={iconColor} />
+          </Button>
+          <Button buttonStyle="arrow-btn" buttonId="btn-next" >
+            <ArrowButtonRight iconFill={iconColorActive} />
+          </Button>
+        </div>
+      </div>
   </div>
 </section>
 
@@ -234,48 +237,52 @@ const iconColorActive = "var(--clr-primary-300)"
     padding-block: var(--size-8);
   }
 
+  .how-we-work-wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / -2;
+  }
+
   .steps-list-wrapper {
-    grid-column: 2 / 6;
     display: grid;
     gap: var(--size-3);
     padding-inline-end: var(--size-3);
-    border-right: solid 1px var(--clr-primary-500);
+    width: 100%;
 
     .steps-list {
-      display: grid;
-      gap: var(--size-1);
       color: var(--clr-primary-500);
+      display: flex;
+      gap: var(--size-1);
 
       .step {
         cursor: pointer;
-      }
 
+span {
+          display: none;
+        }
+      }
     }
 
     .active {
-      font-size: var(--fw-semi-bold);
       color: var(--clr-primary-300);
+      font-size: var(--fw-semi-bold);
     }
   }
 
-
   .steps {
-    align-items: stretch;
-    grid-column: -2 / 6;
+    width: 100%;
 
     .steps-container {
       height: 90%;
 
       .steps-wrapper {
         display: none;
-
         grid-template-columns: 70% 30%;
         padding-inline-start: var(--size-3);
 
         .steps-content {
           display: flex;
           flex-direction: column;
-          gap: var(--size-3);
 
           li {
             align-items: flex-start;
@@ -284,11 +291,12 @@ const iconColorActive = "var(--clr-primary-300)"
             padding-block: 0.5rem;
 
             .steps-icon {
-              display: flex;
-              justify-content: center;
               align-items: center;
+              display: flex;
               height: var(--size-2);
+              justify-content: center;
               width: var(--size-2);
+
               svg {
                 height: 100%;
                 width: 100%;
@@ -302,11 +310,7 @@ const iconColorActive = "var(--clr-primary-300)"
         }
 
         .steps-image {
-          margin-block: auto;
-          object-fit: cover;
-          height: 25rem;
-          width: auto;
-          border-radius: var(--border-radius-img);
+          display: none;
         }
       }
 
@@ -319,190 +323,49 @@ const iconColorActive = "var(--clr-primary-300)"
       display: flex;
       gap: var(--size-1);
       margin-top: auto;
+      padding-inline-start: var(--size-3);
     }
   }
 
-
-  /* @media (width >= 43.75em) {
+  @media (width >= 43.75em) {
+    .how-we-work-wrapper {
+      flex-direction: row;
+    }
     .steps-list-wrapper {
-       grid-column: 2 / 6;
-      display: grid;
-      gap: var(--size-3);
-      padding-inline-end: var(--size-3);
-      border-right: solid 1px var(--clr-primary-500);
+      border-right: solid 1px var(--clr-primary-300);
+      width: 40%;
 
       .steps-list {
-        display: grid;
-        gap: var(--size-1);
-        color: var(--clr-primary-500);
+        flex-direction: column;
 
         .step {
-          cursor: pointer;
-        }
-
-      }
-
-      .active {
-        font-size: var(--fw-semi-bold);
-        color: var(--clr-primary-300);
-      }
-  }
-
-
-  .steps {
-    align-items: stretch;
-    grid-column: -2 / 6;
-
-    .steps-container {
-      height: 90%;
-
-      .steps-wrapper {
-        display: none;
-
-        grid-template-columns: 70% 30%;
-        padding-inline-start: var(--size-3);
-
-        .steps-content {
-          display: flex;
-          flex-direction: column;
-          gap: var(--size-3);
-
-          li {
-            align-items: flex-start;
-            display: flex;
-            gap: var(--size-1);
-            padding-block: 0.5rem;
-
-            .steps-icon {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              height: var(--size-2);
-              width: var(--size-2);
-              svg {
-                height: 100%;
-                width: 100%;
-              }
-            }
-
-            p {
-              max-width: 90%;
-            }
+          span {
+            display: inline-block;
           }
         }
-
-        .steps-image {
-          display: none;
-          margin-block: auto;
-          object-fit: cover;
-          height: 25rem;
-          width: auto;
-          border-radius: var(--border-radius-img);
-        }
-      }
-
-      .is-selected {
-        display: grid;
       }
     }
 
-    .btn-wrapper {
-      display: flex;
-      gap: var(--size-1);
-      margin-top: auto;
+    .steps {
+      width: 60%;
     }
   }
-
-
-  } */
 
   @media (width >= 62.5em) {
-
-    .steps-list-wrapper {
-    grid-column: 2 / 6;
-    display: grid;
-    gap: var(--size-3);
-    padding-inline-end: var(--size-3);
-    border-right: solid 1px var(--clr-primary-500);
-
-    .steps-list {
-      display: grid;
-      gap: var(--size-1);
-      color: var(--clr-primary-500);
-
-      .step {
-        cursor: pointer;
-      }
-
-    }
-
-    .active {
-      font-size: var(--fw-semi-bold);
-      color: var(--clr-primary-300);
-    }
-  }
-
-
-  .steps {
-    align-items: stretch;
-    grid-column: -2 / 6;
-
-    .steps-container {
-      height: 90%;
-
-      .steps-wrapper {
-        display: none;
-
-        grid-template-columns: 70% 30%;
-        padding-inline-start: var(--size-3);
-
-        .steps-content {
-          display: flex;
-          flex-direction: column;
-          gap: var(--size-3);
-
-          li {
-            align-items: flex-start;
-            display: flex;
-            gap: var(--size-1);
-            padding-block: 0.5rem;
-
-            .steps-icon {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              height: var(--size-2);
-              width: var(--size-2);
-              svg {
-                height: 100%;
-                width: 100%;
-              }
-            }
-
-            p {
-              max-width: 90%;
-            }
+    .steps {
+      .steps-container {
+        .steps-wrapper {
+          .steps-image {
+            border-radius: var(--border-radius-img);
+            display: inline-block;
+            height: 25rem;
+            margin-block: auto;
+            object-fit: cover;
+            width: auto;
           }
         }
-
-        .steps-image {
-          display: none;
-        }
-      }
-
-      .is-selected {
-        display: grid;
       }
     }
-
-    .btn-wrapper {
-      display: flex;
-      gap: var(--size-1);
-      margin-top: auto;
-    }
   }
-
-  }
-
 
 </style>
