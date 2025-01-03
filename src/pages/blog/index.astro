@@ -3,9 +3,10 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
-import { getCollection } from "astro:content";
+import fetchBlogArticles from "../../lib/fetchBlogArticles"
 
-const blogs = await getCollection("blog")
+const blogs = await fetchBlogArticles()
+console.log(blogs.featuredImage)
 ---
 
 <Layout title="Blog | Westend Digital">
@@ -17,15 +18,17 @@ const blogs = await getCollection("blog")
     <div class="blog-list">
       {
         blogs.map(blog => (
-          <a href={`/blog/${blog.slug}`}>
-            <h2>{blog.data.title}</h2>
+          <a href={`/blog/${blog.node.slug}`}>
             <img
-              src={blog.data.image}
+              src={blog.node.featuredImage.node.mediaItemUrl}
               width={500}
               height={500}
-              alt={blog.data.title}
-            />
-            <p></p>
+              alt={blog.node.featuredImage.node.altText}
+              />
+              <div class="text-wrapper">
+                <h2>{blog.node.title}</h2>
+                <div set:html={blog.node.featuredImage.node.description}></div>
+              </div>
           </a>
         ) )
 
@@ -41,27 +44,41 @@ const blogs = await getCollection("blog")
 <style>
 
   .blog-list {
-    grid-column: 2 / -2;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 1rem;
+    grid-column: 2 / -2;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 
     a {
-      display: grid;
-      padding: 1rem;
-      border: solid 1px black;
-      border-radius: 8px;
-
+      background-color: hsl(from var(--clr-primary-900) H S L / 20%);
+      border-radius: var(--border-radius-card);
+      max-height: 75rem;
+      overflow: hidden;
+      text-decoration: none;
 
       img {
-        object-position: center;
+        height: 25rem;
         object-fit: cover;
-        height: auto;
+        object-position: center;
         width: 100%;
       }
 
-      p {
-        line-clamp: 2;
+      .text-wrapper {
+        padding-inline: var(--size-1);
+        padding-block: var(--size-2);
+
+        h2 {
+          margin-block-end: var(--size-2);
+        }
+
+        div {
+          p {
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+        };
       }
     }
   }
