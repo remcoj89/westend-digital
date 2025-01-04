@@ -31,12 +31,12 @@ const usps = [
     {usps.map(usp => {
       return (
       <Card cardStyle="primary">
-        <Image
+        {/* <Image
           alt={usp.altText}
           height={250}
           src={usp.iconUrl}
           width={250}
-          />
+          /> */}
         <h3>{usp.title}</h3>
         <p>{usp.text}</p>
 
@@ -52,7 +52,7 @@ const usps = [
     flex-direction: column;
     gap :var(--size-3);
   }
-  
+
   .usp-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
