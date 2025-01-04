@@ -64,13 +64,16 @@ import { Image } from "astro:assets";
     padding-block: var(--size-4);
 
     .logo-section {
-      grid-column: 2 / 5;
+      grid-column: 2 / -2;
       text-align: center;
+      p {
+        margin-inline: auto;
+      }
 
     }
 
     .links {
-      grid-column: -2 / 7;
+      grid-column: 2 / -2;
       display: flex;
       justify-content: space-evenly;
       align-items: flex-start;
@@ -105,6 +108,27 @@ import { Image } from "astro:assets";
         gap: var(--size-1);
       }
     }
+
+    @media( width >= 43.75em ) {
+        .logo-section {
+          grid-column: 2 / -2;
+
+        }
+
+        .links {
+          grid-column: 2 / -2;
+        }
+     }
+    @media( width >= 62.5em ) {
+        .logo-section {
+          grid-column: 2 / 6;
+
+        }
+
+        .links {
+          grid-column: -2 / 6;
+        }
+     }
 
   }
 </style>
