@@ -46,20 +46,19 @@ const logo = '/assets/logos/logo-westend-digital-transparant.webp'
 <style>
 
   .nav-wrapper {
-    --_animationStartsAfter: 100vh;
     --_animationDistance: 105vh;
-    background-color: transparent;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    inset-inline: 0;
+    --_animationStartsAfter: 100vh;
     animation: stickyNav linear forwards;
+    background-color: transparent;
+    inset-inline: 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 
     @supports (animation-timeline: view()) {
-      animation-timeline: view();
       animation-range: var(--_animationStartsAfter) var(--_animationDistance);
+      animation-timeline: view();
     }
-
 
     input {
       display: none;
@@ -68,9 +67,9 @@ const logo = '/assets/logos/logo-westend-digital-transparant.webp'
     .nav-bar {
       align-items: center;
       display: flex;
-      justify-content: space-between;
-      height: 100%;
       font-size: var(--fs-500);
+      height: 100%;
+      justify-content: space-between;
       position: relative;
 
       .logo{
@@ -105,9 +104,9 @@ const logo = '/assets/logos/logo-westend-digital-transparant.webp'
 
         .cta-btn {
           background-color: var(--clr-secondary-900);
-          padding-inline: var(--size-1);
-          font-weight: var(--fw-bold);
           border-radius: var(--border-radius-btn);
+          font-weight: var(--fw-bold);
+          padding-inline: var(--size-1);
 
           &:hover {
             background-color: var(--clr-primary-900);
@@ -120,7 +119,6 @@ const logo = '/assets/logos/logo-westend-digital-transparant.webp'
       }
 
       @media (width >= 850px) {
-
       .nav-list-wrapper {
       display: block;
       grid-template-rows: unset;
@@ -132,20 +130,18 @@ const logo = '/assets/logos/logo-westend-digital-transparant.webp'
         gap: var(--size-1);
         justify-content: flex-end;
       }
-
     }
+
     .burgerMenu {
       display: none;
     }
-
-}
+    }
 
       .cancelButton {
         display: none;
       }
 
       @media (width <= 850px) {
-
         #menuButton:checked ~ .cancelButton {
           display: block;
         }
@@ -164,21 +160,27 @@ const logo = '/assets/logos/logo-westend-digital-transparant.webp'
           background-color: var(--clr-primary-900);
         }
       }
-
     }
   }
+
+  .nav-wrapper:has(#menuButton:checked) {
+    background-color: var(--clr-primary-900);
+    box-shadow: 0 0 0.75rem hsl(224 76% 11% / 0.3);
+  }
+
   .hidden {
     display: none;
   }
+
   .active {
     background-color: var(--clr-primary-900);
   }
 
   @keyframes stickyNav {
-
     100% {
       background-color: var(--clr-primary-900);
       box-shadow: 0 0 0.75rem hsl(224 76% 11% / 0.3);
     }
   }
+
 </style>
