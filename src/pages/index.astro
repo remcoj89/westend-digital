@@ -22,7 +22,16 @@ const pageContent = {
       paragraph: ["Je weet dat er meer in zit. Meer leads, meer omzet, meer vrijheid. Maar je website? Die werkt niet zo hard als jij. Tijd om daar korte metten mee te maken. Ik ontwerp websites voor ondernemers met ambitie. Geen standaard templates of loze beloftes, maar websites met een duidelijk doel: online groei. Het resultaat: een website die werkt, zonder dat jij er omkijken naar hebt."],
       imageUrl: "/images/about-image.png",
       altText: ""
-    }
+    },
+  sectionCodeToConnection: {
+      title: "Van code naar connectie",
+      paragraph: ["Het verschil tussen een website die werkt en een website die écht wat oplevert? Dat zit 'm niet in de code. Elke goede programmeur kan een werkende website bouwen. Het échte verschil zit in het begrijpen van jouw verhaal als ondernemer en dat vertalen naar online succes.",
+      "Ik geloof dat een website meer moet zijn dan alleen een digitaal visitekaartje. Het is je hardst werkende verkoper, 24/7 online. Daarom kijk ik verder dan alleen techniek - ik duik in je bedrijfsstrategie, je doelgroep en je groeikansen. Want alleen zo bouw je een website die niet alleen mooi is, maar ook resultaat oplevert.",
+      "Jij bent het liefst bezig met je vak – als telg uit een ondernemersfamilie snap ik dat als geen ander. Daarom neem ik het complete digitale proces uit handen: van strategie en design tot ontwikkeling en onderhoud. Door mijn netwerk van specialisten kan ik waar nodig extra expertise inzetten, zonder dat jij daar omkijken naar hebt. Want zo werkt dat toch? Schouders eronder, elkaar versterken en zorgen dat het gewoon goed komt - geen losse eindjes, maar een doordachte aanpak die werkt voor jouw bedrijf."
+      ],
+      imageUrl: "/images/about-image.png",
+      altText: ""
+  },
 }
 
 ---
@@ -42,6 +51,13 @@ const pageContent = {
       imageUrl={pageContent.introSection.imageUrl}
       altText={pageContent.introSection.altText}
     />
+    <IntroSection
+    title={pageContent.sectionCodeToConnection.title}
+    paragraph={pageContent.sectionCodeToConnection.paragraph}
+    imageUrl={pageContent.sectionCodeToConnection.imageUrl}
+    altText={pageContent.sectionCodeToConnection.altText}
+    flexDirection="flex-reverse"
+  />
     <UspSection />
     <HowWeWorkSection />
     <!-- <ReviewSection /> -->
