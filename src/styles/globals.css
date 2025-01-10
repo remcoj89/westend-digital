@@ -1,17 +1,15 @@
 @font-face {
   font-display: swap;
-  font-family: "Josefin Sans", serif;
+  font-family: "Quicksand";
   font-style: normal;
   font-optical-sizing: auto;
-  font-weight: 400 700;
-  src: url('/assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
   font-display: swap;
-  font-family: "Inter", sans-serif;
-  font-weight: 400 700;
-  src: url('/assets/fonts/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-family: "Josefin Sans";
+  src: url('/assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
 }
 
 
@@ -73,7 +71,7 @@
   --clr-heading: var(var(--clr-primary-700));
 
   --ff-header: "Josefin Sans", serif;
-  --ff-base: "Inter", sans-serif;
+  --ff-base: "Quicksand", serif;
 
 
   --size-1: 1.6rem;
