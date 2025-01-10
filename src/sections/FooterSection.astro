@@ -34,17 +34,12 @@ import { Image } from "astro:assets";
       <h4>Contact</h4>
       <ul role="list" id="contact-list">
         <li>
-          <h5>Adress</h5>
           <p>Oosteinde 10</p>
           <p>1636XV Schermerhorn</p>
         </li>
         <li>
-         <p></p>
-        </li>
-        <li>
-          <h5>Neem contact met mij op</h5>
           <p>Email: <a href="mailto:info@westend-digital.nl">info@westend-digital.nl</a></p>
-          <p>Telefoon: <a href="tel:+31623927717">+316-23927717</a></span>
+          <p>Telefoon: <a href="tel:+31722029324">072-2029324</a></span>
 
         </li>
         <li>
@@ -105,7 +100,6 @@ import { Image } from "astro:assets";
 
       #contact-list {
         display: grid;
-        gap: var(--size-1);
       }
     }
 
@@ -122,10 +116,10 @@ import { Image } from "astro:assets";
     @media( width >= 62.5em ) {
         .logo-section {
           grid-column: 2 / 6;
-
         }
 
         .links {
+          align-self: center;
           grid-column: -2 / 6;
         }
      }

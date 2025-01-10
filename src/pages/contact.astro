@@ -21,8 +21,8 @@ import { PhoneIcon, EmailIcon, LocationIcon} from "../assets/icons"
         <div class="adress-wrapper">
           <h3>Contact informatie</h3>
           <ul role="list">
-            <li><PhoneIcon iconFill="var(--clr-primary-100)"/> +316-23927717</li>
-            <li><EmailIcon iconFill="var(--clr-primary-100)"/> info@westend-digital.nl</li>
+            <li><a href="tel:+31722029324"><PhoneIcon iconFill="var(--clr-primary-100)"/> 072-2029324</a></li>
+            <li><a href="mailto:info@westend-digital.nl?subject=Contact verzoek"><EmailIcon iconFill="var(--clr-primary-100)"/> info@westend-digital.nl</a></li>
             <li>
               <LocationIcon iconFill="var(--clr-primary-100)"/>
               <span>Oosteinde 10, <br/>1636XV, Schermerhorn</span>
@@ -71,11 +71,17 @@ import { PhoneIcon, EmailIcon, LocationIcon} from "../assets/icons"
         gap: var(--size-1);
         margin-top: 5rem;
 
-        li {
+        li,
+        a {
             align-items: center;
             display: flex;
             gap: var(--size-1);
+            text-decoration: none;
            }
+
+        a:hover {
+          text-decoration: underline;
+        }
        }
 
     .circle {
