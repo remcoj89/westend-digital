@@ -19,6 +19,7 @@ const {
     border-radius: var(--border-radius-btn);
     cursor: pointer;
     padding-block: 1rem;
+    height: fit-content;
     padding-inline: var(--size-3);
     font-size: var(--fs-400);
     font-weight: var(--fw-semi-bold);
@@ -28,13 +29,15 @@ const {
 
   .btn-primary {
     background-color: var(--clr-primary-900);
+    border: solid 1px var(--clr-primary-900);
     box-shadow: var(--box-shadow);
     color: var(--clr-primary-100);
 
     &:hover,
     &:active {
-      background-color: var(--clr-secondary-900);
-      color: var(--clr-secondary-100);
+      background-color: transparent;
+      border: solid 1px var(--clr-primary-900);
+      color: var(--clr-primary-100);
     }
   }
 
@@ -43,13 +46,28 @@ const {
     border: solid 1px var(--clr-primary-900);
     box-shadow: var(--box-shadow);
     color: var(--clr-primary-900);
+
+    &:hover,
+    &:active {
+      background-color: var(--clr-primary-900);
+      border: solid 1px var(--clr-primary-900);
+      color: var(--clr-primary-100);
+    }
   }
 
   .btn-secondary {
     background-color: var(--clr-secondary-900);
+    border: solid 1px var(--clr-secondary-900);
     box-shadow: var(--box-shadow);
     color: var(--clr-secondary-100);
     max-width: 65ch;
+
+    &:hover,
+    &:active {
+      background-color: transparent;
+      border: solid 1px var(--clr-secondary-900);
+      color: var(--clr-secondary-900);
+    }
   }
 
   .btn-secondary-open {
@@ -57,6 +75,13 @@ const {
     border: solid 1px var(--clr-secondary-900);
     box-shadow: var(--box-shadow);
     color: var(--clr-secondary-900);
+
+    &:hover,
+    &:active {
+      background-color: var(--clr-secondary-900);
+      border: solid 1px var(--clr-secondary-900);
+      color: var(--clr-secondary-100);
+    }
   }
 
   .nav-btn {

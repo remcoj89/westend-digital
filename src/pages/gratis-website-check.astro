@@ -34,18 +34,20 @@ const pageContent = {
       <h1>{pageContent.pageTitle}</h1>
     </div>
   </Header>
-  <IntroSection
-    altText={pageContent.introSection.altText}
-    imageUrl={pageContent.introSection.imageUrl}
-    paragraph={pageContent.introSection.paragraph}
-    title={pageContent.introSection.title}
-  />
-  <WebCheckFormSection
-    paragraph={pageContent.formSection.paragraph}
-    uspList={pageContent.formSection.uspList}
-    ctaText={pageContent.formSection.ctaText}
-    ctaButton={pageContent.formSection.ctaButton}
-  />
+  <section id="web-check-form-section">
+    <IntroSection
+      altText={pageContent.introSection.altText}
+      imageUrl={pageContent.introSection.imageUrl}
+      paragraph={pageContent.introSection.paragraph}
+      title={pageContent.introSection.title}
+    />
+    <WebCheckFormSection
+     paragraph={pageContent.formSection.paragraph}
+     uspList={pageContent.formSection.uspList}
+      ctaText={pageContent.formSection.ctaText}
+      ctaButton={pageContent.formSection.ctaButton}
+    />
+  </section>
   <WebCheckHowWeWorkSection />
   <FaqSection sectionId="webcheck-faq"/>
   <FooterSection />
