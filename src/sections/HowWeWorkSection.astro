@@ -280,7 +280,7 @@ const iconColorActive = "var(--clr-primary-300)"
 
       .steps-wrapper {
         display: none;
-        grid-template-columns: 70% 30%;
+        grid-template-columns: 100%;
         margin-top: var(--size-3);
 
         .steps-content {
@@ -332,6 +332,13 @@ const iconColorActive = "var(--clr-primary-300)"
     gap: var(--size-1);
     margin-top: var(--size-3);
     padding-inline-start: var(--size-3);
+
+    .arrow-buttons{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--size-2);
+      gap: var(--size-1);
+    }
   }
 
 
@@ -361,6 +368,7 @@ const iconColorActive = "var(--clr-primary-300)"
 
       .steps-container {
             .steps-wrapper {
+              grid-template-columns: 70%;
               margin-top: unset;
             }
           }
@@ -369,6 +377,11 @@ const iconColorActive = "var(--clr-primary-300)"
     .btn-wrapper {
       grid-column: 2 / 5;
       flex-direction: row;
+
+      .arrow-buttons {
+        justify-content: flex-start;
+        margin-bottom: unset;
+      }
     }
   }
 
