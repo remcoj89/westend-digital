@@ -95,6 +95,7 @@ const logo = '/assets/logos/logo-westend-digital-transparant.webp'
         .nav-link {
           cursor: pointer;
           line-height: 250%;
+          transition: all 0.5s ease-out;
 
           &:hover,
           &:active {
@@ -104,7 +105,7 @@ const logo = '/assets/logos/logo-westend-digital-transparant.webp'
 
         .cta-btn {
           background-color: var(--clr-secondary-900);
-          border: solid 1px var(--clr-secondary-900);
+          border: solid 2px var(--clr-secondary-900);
           border-radius: var(--border-radius-btn);
           font-weight: var(--fw-semi-bold);
           padding-inline: var(--size-1);
@@ -120,23 +121,23 @@ const logo = '/assets/logos/logo-westend-digital-transparant.webp'
         }
       }
 
-      @media (width >= 850px) {
+    @media (width >= 850px) {
       .nav-list-wrapper {
-      display: block;
-      grid-template-rows: unset;
-      inset-block-start: unset;
-      position: static;
+        display: block;
+        grid-template-rows: unset;
+        inset-block-start: unset;
+        position: static;
 
-      .nav-list {
-        display: flex;
-        gap: var(--size-1);
-        justify-content: flex-end;
+        .nav-list {
+          display: flex;
+          gap: var(--size-1);
+          justify-content: flex-end;
+        }
       }
-    }
 
     .burgerMenu {
       display: none;
-    }
+      }
     }
 
       .cancelButton {
