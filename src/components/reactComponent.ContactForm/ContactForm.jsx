@@ -2,29 +2,35 @@ import { useState, useRef } from "react";
 import Styles from './contactForm.module.css'
 
 export default function Form() {
-  const [responseMessage, setReponseMessage] = useState("")
+  const [responseMessage, setResponseMessage] = useState('');
   const formRef = useRef(null);
 
-  async function submit(e) {
+  const submit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target)
-    const response = await fetch("/api/contactForm", {
-      method: "POST",
-      body: formData
-    })
+    const formData = new FormData(formRef.current);
+    try {
+      const response = await fetch('/api/contactForm', {
+        method: 'POST',
+        body: formData,
+      });
 
-    const data = await response.json()
-    if(data.message) {
-      setReponseMessage(data.message)
+      const data = await response.json();
+      setResponseMessage(data.message || '');
+      if (response.ok) {
+        formRef.current?.reset();
+      } else {
+        console.error("Server error:", response.status, data);
+        setResponseMessage("Er is een fout opgetreden bij het versturen van het formulier.")
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
+      setResponseMessage("Er is een fout opgetreden bij het versturen van het formulier.")
     }
-    if (response.status === 200) { // Check for success in the response
-      formRef.current.reset();
-    }
-  }
+  };
 
   return (
     <form ref={formRef} onSubmit={submit} className={Styles.contactForm}>
-      <div class="flex">
+      <div className="flex">
         <label htmlFor="name">
           Naam
           <input
@@ -37,7 +43,7 @@ export default function Form() {
             required
           />
         </label>
-        <label htmlFor="name">
+        <label htmlFor="lastName">
           Achternaam
           <input
             autoComplete="lastName"
@@ -51,7 +57,7 @@ export default function Form() {
         </label>
       </div>
 
-      <div class="flex">
+      <div className="flex">
         <label htmlFor="subject">
           Onderwerp
           <input
@@ -66,7 +72,7 @@ export default function Form() {
         </label>
       </div>
 
-      <div class="flex">
+      <div className="flex">
         <label htmlFor="email">
           Email
           <input
@@ -107,7 +113,7 @@ export default function Form() {
 
 
       <div className={Styles.btnWrapper}>
-        <button type="submit" className={`${Styles.btn} ${Styles.btnPrimary}`}>Send</button>
+        <button type="submit" className={`${Styles.btn} ${Styles.btnSubmit}`}>Send</button>
         {
           responseMessage && <p>{responseMessage}</p> ||
           <p>Door dit formulier te verzenden ga je akkoord met onze <a href="">Algmene voorwaarden</a></p>

@@ -6,6 +6,8 @@ export const POST = async ({request}) => {
   const lastName = data.get("lastName")
   const subject = data.get("subject")
   const email = data.get("email")
+  const domain = data.get("domain")
+  const company = data.get("company")
   const phone = data.get("phone")
   const message = data.get("message")
 
@@ -21,10 +23,21 @@ export const POST = async ({request}) => {
 
   const mailOptions = {
     from: `${name} ${lastName} <${email}>`,
+    replyTo: email,
     to: import.meta.env.EMAIL_RECIPIENT,
     subject: subject,
-    text: `Voornaam: ${name}\nAchternaam: ${lastName}\nEmail: ${email}\nTelefoon: ${phone}\nMessage: ${message}`
-};
+    html: `
+    <div style="font-family: Arial, sans-serif; font-size: 16px;">
+      <p>Je hebt een nieuw bericht van ${name} ${lastName} </p>
+      <p><b>Onderwerp:</b> ${subject}</p>
+      <p><b>Bedrijf:</b> ${company}</p>
+      <p><b>Email:</b> ${email}</p>
+      <p><b>Website:</b> ${domain}</p>
+      <p><b>Telefoon:</b> ${phone}</p>
+      <p><b>Bericht:</b> ${message}</p>
+    </div>
+  `
+  };
 
     // Validate the data - you'll probably want to do more than this
     if(!name || !email || !message) {

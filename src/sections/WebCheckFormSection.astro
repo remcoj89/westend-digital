@@ -4,18 +4,14 @@ import WebCheckForm from '../components/reactComponent.WebCheckForm/WebCheckForm
 const {
   paragraph,
   uspList,
-  ctaText,
-  ctaButton,
-
+  ctaText
 } = Astro.props
 
 ---
 
 
 <section class="wrapper flex">
-  <WebCheckForm />
-
-
+  <WebCheckForm  client:load/>
     <div>
       <p>{paragraph}</p>
       <ul role="list">

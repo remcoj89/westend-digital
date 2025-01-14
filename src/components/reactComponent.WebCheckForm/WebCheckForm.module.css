@@ -55,7 +55,7 @@
     transition: background-color 0.5s ease-out;
   }
 
-.btnPrimary {
+.btnSubmit {
   background-color: var(--clr-secondary-900);
   border: solid 2px var(--clr-secondary-900);
   color: var(--clr-primary-100);

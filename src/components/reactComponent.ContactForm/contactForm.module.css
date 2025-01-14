@@ -12,7 +12,7 @@ label {
     textarea {
       border: none;
       border-bottom: 1px solid var(--clr-primary-800);
-    
+
       caret-color: var(--clr-secondary-900);
       padding-block: var(--size-1);
       padding-inline: var(--size-1);
@@ -48,7 +48,7 @@ label {
     width: 100%;
   }
 
-.btnPrimary {
+.btnSubmit {
   background-color: var(--clr-primary-900);
   color: var(--clr-primary-100);
 
