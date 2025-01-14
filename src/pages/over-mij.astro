@@ -6,87 +6,42 @@ import FooterSection from "../sections/FooterSection.astro";
 import IntroSection from "../sections/IntroSection.astro";
 import AboutMeHelpYouGrowSection from "../sections/AboutMeHelpYouGrowSection.astro";
 
-const pageContent = {
-  metaTitle: "Over ons | Westend Digital",
-  metaDescription: "",
-  heroTitle: "Persoonlijk & doelgericht websites die werken",
-  heroSubtitle: "helder, praktisch en blijvend resultaat",
-  introSection: {
-      title: "Mijn verhaal",
-      paragraph: ["Je uniform inwisselen voor een werkoveral is al best een bijzondere stap. Maar hoe belandt zo iemand dan uiteindelijk achter een beeldscherm? Tja, dat verhaal is ongeveer net zo logisch als een webdeveloper die de salsa danst. En toch is dat precies hoe mijn carrière tot nu toe verloopt: van de strak georganiseerde wereld bij Defensie via de mechanische techniek naar websites ontwikkelen. En het grappige is: het blijkt allemaal perfect in elkaar te passen.",
-      "Als plaatsvervangend groepscommandant leerde ik dat structuur het halve werk is. Als monteur ontdekte ik de kunst van probleemoplossing. En nu? Nu bouw ik websites met militaire precisie (maar dan zonder ’s avonds onder de olie of camouflageverf thuis te komen).",
-      "Die grote switch kwam tijdens een avontuur in Azië, waar ik tussen de tempels en het streetfood in aanraking kwam met webdevelopment. Het voelde als thuiskomen: dezelfde technische puzzels, maar dan in een digitaal jasje.",
-      "En voor de volledigheid: ik sport dagelijks, ben muziekfanaat én – ja echt! - een salsadanser. Dus je krijgt het complete pakket: een techneut met ritmegevoel die jouw website behandelt als een Zwitsers uurwerk. Geen vage beloftes, maar een doelgerichte strategie die werkt. Want uiteindelijk draait het maar om één ding: jouw online succes."
-      ],
-      imageUrl: "/images/about-image.png",
-      altText: ""
-    },
-    aboutCustomerSection: {
-      title: "Wie ben jij?",
-      paragraph: [
-        "Misschien ben je die ambitieuze ondernemer die 's nachts wakker ligt van alle ideeën (met een website die er nog uitziet als een Windows 95 screensaver). Overdag ren je van klant naar klant, van project naar project. Je weet dat je online nog veel meer kunt bereiken, maar eerlijk? Je hebt je handen al vol aan het draaiend houden van de zaak.",
-        "Of je bent een UX/UI designer die precies weet hoe het design eruit moet zien, maar je zoekt een technische partner die jouw pixelperfectie kan vertalen naar een werkende website.",
-        "Het maakt eigenlijk niet zoveel uit welk pad je hierheen heeft geleid. Want of je nu een hovenier bent, een schildersbedrijf runt of prachtige designs maakt - je zoekt gewoon een partner die het technische webgedoe van je overneemt. Zodat jij kunt doen waar je écht blij van wordt: je klanten omverblazen met jouw expertise, terwijl je bedrijf lekker doorgroeit."
-      ],
-      imageUrl: "/images/kennismaking.webp",
-      altText: ""
-    },
-    growSteps: {
-      title: "Zo help ik je groeien",
-      steps: [
-        {
-          title: "Snelle response",
-          paragraph: "Geen lange wachttijden of onduidelijke communicatie. Je krijgt binnen 24 uur antwoord op je vragen en je hebt altijd direct contact met mij."
-        },
-        {
-          title: "Maatwerk",
-          paragraph: "Jouw bedrijf is uniek en dat verdient een unieke aanpak. Geen standaard templates, maar een website die perfect aansluit bij jouw bedrijf en doelgroep."
-        },
-        {
-          title: "Resultaatgericht",
-          paragraph: "Elke beslissing is gebaseerd op data en gericht op groei. We focussen op wat écht werkt voor jouw bedrijf: meer leads en meer omzet."
-        },
-        {
-          title: "Zorgeloos online",
-          paragraph: "Je website up-to-date houden, technische updates, beveiliging - ik regel het allemaal. Zodat jij je kunt richten op je eigen werk."
-        },
-        {
-          title: "Heldere aanpak",
-          paragraph: "Een duidelijk stappenplan zonder verrassingen. Je weet precies waar je aan toe bent, wat we gaan doen en wat het oplevert."
-        },
-        {
-          title: "Blijvende groei",
-          paragraph: "Je website is nooit 'af'. We blijven optimaliseren, verbeteren en aanpassen aan de groei van je bedrijf en de wensen van je klanten."
-        },
-      ]
-    }
-}
+import data from "../data/aboutMe.json"
+
+const {
+  heroTitle,
+  introSection,
+  aboutCustomerSection,
+  growSteps
+} = data.pageContent
+
+
 ---
 
 <Layout title="Over ons | Westend Digital">
   <Header >
     <div>
-      <h1>{pageContent.heroTitle}</h1>
+      <h1>{heroTitle}</h1>
     </div>
   </Header>
   <main>
     <IntroSection
-      title={pageContent.introSection.title}
-      paragraph={pageContent.introSection.paragraph}
-      imageUrl={pageContent.introSection.imageUrl}
-      altText={pageContent.introSection.altText}
+      title={introSection.title}
+      paragraph={introSection.paragraph}
+      imageUrl={introSection.imageUrl}
+      altText={introSection.altText}
       flexDirection="flex"
     />
     <IntroSection
-      title={pageContent.aboutCustomerSection.title}
-      paragraph={pageContent.aboutCustomerSection.paragraph}
-      imageUrl={pageContent.aboutCustomerSection.imageUrl}
-      altText={pageContent.aboutCustomerSection.altText}
+      title={aboutCustomerSection.title}
+      paragraph={aboutCustomerSection.paragraph}
+      imageUrl={aboutCustomerSection.imageUrl}
+      altText={aboutCustomerSection.altText}
       flexDirection="flex-reverse"
     />
     <AboutMeHelpYouGrowSection
-      title = {pageContent.growSteps.title}
-      steps = {pageContent.growSteps.steps}
+      title = {growSteps.title}
+      steps = {growSteps.steps}
     />
     <CtaSection />
   </main>
