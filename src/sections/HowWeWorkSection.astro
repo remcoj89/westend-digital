@@ -3,73 +3,11 @@ import Image from "astro/components/Image.astro";
 import Button from "../components/Button.astro";
 import {PlusIcon, ArrowButtonLeft, ArrowButtonRight} from '../assets/icons'
 
-const title = "Zo bouw ik aan jouw online succes";
-const steps = [
-  {
-    listTitle: "Boek een gesprek",
-    title: "Kennismakingsgesprek",
-    steps: [
-      "Ik leer je graag kennen: wie ben je, wat zijn je uitdagingen en wat is je doel?",
-      "Hoe kan je website je helpen om die stip op de horizon te bereiken?"
-    ],
-    imageUrl: "/images/kennismaking.png",
-    altText: "Remco in een video call"
-  },
-  {
-    listTitle: "Strategie",
-    title: "Strategie bepalen",
-    steps: [
-      "We duiken in je doelgroep: wie zijn ze en wat zoeken ze online?",
-      "Samen maken we een plan: hoe genereer je (meer) leads met je website",
-      "Je krijgt een heldere roadmap: zo gaan we jouw online doelen halen"
-    ],
-    imageUrl: "/images/kennismaking.png",
-    altText: "Remco in een video call"
-  },
-  {
-    listTitle: "Ontwerp",
-    title: "Ontwerp",
-    steps: [
-      "Je krijgt een design dat niet alleen mooi is, maar dat vooral werkt voor je klanten",
-      "We focussen op gebruiksgemak en conversie: elke bezoeker telt",
-      "Het resultaat? Een website die je doelgroep aanspreekt én die past bij je bedrijf "
-    ],
-    imageUrl: "/images/kennismaking.png",
-    altText: "Remco in een video call"
-  },
-  {
-    listTitle: "Ontwikkeling",
-    title: "Website bouwen",
-    steps: [
-      "Vervolgens bouw ik je website met oog voor techniek, snelheid en veiligheid",
-      "Alle functionaliteiten worden precies zo gebouwd als jij ze nodig hebt",
-      "Ik werk samen met professionals om voor jou een website te bouwen die niet  alleen nú werkt, maar ook in de toekomst"
-    ],
-    imageUrl: "/images/kennismaking.png",
-    altText: "Remco in een video call"
-  },
-  {
-    listTitle: "Lanceren",
-    title: "Live gaan",
-    steps: [
-      "We testen alles grondig voor de lancering",
-      "Je website wordt geoptimaliseerd voor zoekmachines",
-      "Als je wilt, leer ik je hoe je zelf content kunt beheren "
-    ],
-    imageUrl: "/images/kennismaking.png",
-    altText: "Remco in een video call"
-  },
-  {
-    listTitle: "Door ontwikkelen",
-    title: "Door ontwikkelen",
-    steps: [
-      "Je website blijft up-to-date met regelmatige updates en verbeteringen",
-      "Ik monitor de prestaties en optimaliseer waar nodig"
-    ],
-    imageUrl: "/images/kennismaking.png",
-    altText: "Remco in een video call"
-  },
-]
+const {
+  title,
+  steps
+} = Astro.props
+
 
 const iconColor = "var(--clr-primary-500)"
 const iconColorActive = "var(--clr-primary-300)"
@@ -111,13 +49,6 @@ const iconColorActive = "var(--clr-primary-300)"
                         }
                       </ul>
                     </div>
-                    {/* <Image
-                      alt={step.altText}
-                      class="steps-image"
-                      height="300"
-                      src={step.imageUrl}
-                      width="300"
-                      /> */}
                   </div>
                   )
               })
@@ -141,7 +72,7 @@ const iconColorActive = "var(--clr-primary-300)"
     </div>
 </section>
 
-<script>
+<script is:inline>
 
   const stepsContainer = document.querySelector(".steps-container")
   const stepsList = document.querySelector(".steps-list");

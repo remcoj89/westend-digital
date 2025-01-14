@@ -1,0 +1,42 @@
+{
+  "owner": "Westend Digital",
+  "siteName": "Westend Digital website",
+  "siteDescription": "Headless Wordpress website gebouwd in Astro.js",
+  "pages": [
+    {
+      "title": "Home",
+      "href": "/"
+    },
+    {
+      "title": "Portfolio",
+      "href": "/portfolio"
+    },
+    {
+      "title": "Blog",
+      "href": "/blog"
+    },
+    {
+      "title": "Over mij",
+      "href": "/over-mij"
+    },
+    {
+      "title": "Contact",
+      "href": "/contact"
+    },
+    {
+      "title": "Gratis Website Check",
+      "href": "/gratis-website-check"
+    }
+  ],
+  "adres": {
+    "street": "Oosteinde 10",
+    "adress": "1636XV Schermerhorn",
+    "email": "info@westend-digital.nl",
+    "phone": {
+      "number": "072-2029324",
+      "phoneHref": "0722029324"
+    },
+    "chamberOfCommerce": "88994791",
+    "taxId": "Oosteinde 10"
+  }
+}

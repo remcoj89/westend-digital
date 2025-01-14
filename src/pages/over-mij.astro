@@ -21,15 +21,6 @@ const pageContent = {
       imageUrl: "/images/about-image.png",
       altText: ""
     },
-    sectionCodeToConnection: {
-      title: "Van code naar connectie",
-      paragraph: ["Het verschil tussen een website die werkt en een website die écht wat oplevert? Dat zit 'm niet in de code. Elke goede programmeur kan een werkende website bouwen. Het échte verschil zit in het begrijpen van jouw verhaal als ondernemer en dat vertalen naar online succes.",
-      "Ik geloof dat een website meer moet zijn dan alleen een digitaal visitekaartje. Het is je hardst werkende verkoper, 24/7 online. Daarom kijk ik verder dan alleen techniek - ik duik in je bedrijfsstrategie, je doelgroep en je groeikansen. Want alleen zo bouw je een website die niet alleen mooi is, maar ook resultaat oplevert.",
-      "Jij bent het liefst bezig met je vak – als telg uit een ondernemersfamilie snap ik dat als geen ander. Daarom neem ik het complete digitale proces uit handen: van strategie en design tot ontwikkeling en onderhoud. Door mijn netwerk van specialisten kan ik waar nodig extra expertise inzetten, zonder dat jij daar omkijken naar hebt. Want zo werkt dat toch? Schouders eronder, elkaar versterken en zorgen dat het gewoon goed komt - geen losse eindjes, maar een doordachte aanpak die werkt voor jouw bedrijf."
-      ],
-      imageUrl: "/images/about-image.png",
-      altText: ""
-    },
     aboutCustomerSection: {
       title: "Wie ben jij?",
       paragraph: [
@@ -37,7 +28,7 @@ const pageContent = {
         "Of je bent een UX/UI designer die precies weet hoe het design eruit moet zien, maar je zoekt een technische partner die jouw pixelperfectie kan vertalen naar een werkende website.",
         "Het maakt eigenlijk niet zoveel uit welk pad je hierheen heeft geleid. Want of je nu een hovenier bent, een schildersbedrijf runt of prachtige designs maakt - je zoekt gewoon een partner die het technische webgedoe van je overneemt. Zodat jij kunt doen waar je écht blij van wordt: je klanten omverblazen met jouw expertise, terwijl je bedrijf lekker doorgroeit."
       ],
-      imageUrl: "/images/about-image.png",
+      imageUrl: "/images/kennismaking.webp",
       altText: ""
     },
     growSteps: {
@@ -76,7 +67,6 @@ const pageContent = {
   <Header >
     <div>
       <h1>{pageContent.heroTitle}</h1>
-      <!-- <span>{pageContent.heroSubtitle}</span> -->
     </div>
   </Header>
   <main>
@@ -87,13 +77,6 @@ const pageContent = {
       altText={pageContent.introSection.altText}
       flexDirection="flex"
     />
-    <!-- <IntroSection
-      title={pageContent.sectionCodeToConnection.title}
-      paragraph={pageContent.sectionCodeToConnection.paragraph}
-      imageUrl={pageContent.sectionCodeToConnection.imageUrl}
-      altText={pageContent.sectionCodeToConnection.altText}
-      flexDirection="flex-reverse"
-    /> -->
     <IntroSection
       title={pageContent.aboutCustomerSection.title}
       paragraph={pageContent.aboutCustomerSection.paragraph}
