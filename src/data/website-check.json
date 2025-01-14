@@ -1,0 +1,39 @@
+{
+  "pageContent": {
+    "metaTitle": "",
+    "metaDescription": "",
+    "pageTitle": "Ontdek wat je website nu voor je doet én wat er beter kan",
+    "introSection": {
+        "title": "",
+        "paragraph": ["Je bent hard gegroeid als ondernemer, maar is je website mee gegroeid? Grote kans van niet. Die zweeft waarschijnlijk nog ergens in het tijdperk van toen websites nog digitale visitekaartjes waren. Terwijl je website juist één van je beste verkopers kan zijn - eentje die 24/7 voor je werkt om nieuwe klanten aan te trekken."],
+        "imageUrl": "/images/about-image.png",
+        "altText": ""
+      },
+    "formSection": {
+      "paragraph": "Tijd voor verandering dus! Ik neem graag je website eens onder de loep. Na de check weet je precies:",
+      "uspList": ["waar je website kansen laat liggen", "hoe je meer klanten uit je website haalt", "wat er nodig is om je online groei te versnellen"],
+      "ctaText": "Geen theoretische taal, maar praktische tips waar je morgen al mee aan de slag kunt.",
+      "ctaButton": "Yes, doe mij die gratis website check maar!"
+    },
+    "howWeWorkSection": [
+      {
+        "title": "Grondige scan van je website",
+        "description": "Ik duik in je website en analyseer alles: van design tot techniek. Hoe gebruiksvriendelijk is je site? Werkt hij goed op alle apparaten? En belangrijker nog: spreekt hij de taal van je klanten?"
+      },
+      {
+        "title": "Telefonisch contact binnen 2 werkdagen",
+        "description": "Geen lange wachttijden - binnen 2 werkdagen bel ik je om een persoonlijk gesprek in te plannen. Ik deel mijn bevindingen en luister naar jouw verhaal. Want alleen zo kunnen we bepalen wat écht belangrijk is voor jouw bedrijf."
+      },
+      {
+        "title": "Vrijblijvend advies op maat",
+        "description": "Je krijgt van mij concrete verbeterpunten, geen vaag marketingverhaal. Ik vertel je eerlijk wat goed gaat én waar kansen liggen. En het mooiste? Je bepaalt zelf wat je met dit advies doet"
+      },
+      {
+        "title": "Aan de slag met jouw groeiplan",
+        "description": "Wil je de verbeteringen doorvoeren? Dan maken we samen een helder plan. Stap voor stap werken we aan een website die wél aansluit bij jouw ambities - en die van je klanten."
+      }
+    ],
+    "howWeWorkBtn": "Vraag een gratis Check aan"
+
+  }
+}

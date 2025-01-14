@@ -1,46 +1,28 @@
 ---
-import Button from "../components/Button.astro"
 import SectionTitle from "../components/SectionTitle.astro"
+
+const { steps, btnText } = Astro.props
 ---
 
 <section  class="fb-col-wrapper" id="steps">
   <SectionTitle sectionTitle="Zo pak ik het aan" />
   <div class="steps-wrapper">
     <ul role="list" class="steps-list">
-      <li>
-        <div class="list-title">
-          <span>1</span>
-          <h3>Grondige scan van je website</h3>
-        </div>
-        <p>Ik duik in je website en analyseer alles: van design tot techniek. Hoe gebruiksvriendelijk is je site? Werkt hij goed op alle apparaten? En belangrijker nog: spreekt hij de taal van je klanten?</p>
+      { steps.map((step, i) => {
+        return (
+        <li>
+          <div class="list-title">
+            <span>{i + 1}</span>
+            <h3>{step.title}</h3>
+          </div>
+          <p>{step.description}</p>
+        </li>
+        )
 
-      </li>
-      <li>
-        <div class="list-title">
-          <span>2</span>
-          <h3>Telefonisch contact binnen 2 werkdagen</h3>
-        </div>
-        <p>Geen lange wachttijden - binnen 2 werkdagen bel ik je om een persoonlijk gesprek in te plannen. Ik deel mijn bevindingen en luister naar jouw verhaal. Want alleen zo kunnen we bepalen wat écht belangrijk is voor jouw bedrijf.</p>
-
-      </li>
-      <li>
-        <div class="list-title">
-          <span>3</span>
-          <h3>Vrijblijvend advies op maat </h3>
-        </div>
-        <p>Je krijgt van mij concrete verbeterpunten, geen vaag marketingverhaal. Ik vertel je eerlijk wat goed gaat én waar kansen liggen. En het mooiste? Je bepaalt zelf wat je met dit advies doet.</p>
-
-      </li>
-      <li>
-        <div class="list-title">
-          <span>4</span>
-          <h3>Aan de slag met jouw groeiplan</h3>
-        </div>
-        <p>Wil je de verbeteringen doorvoeren? Dan maken we samen een helder plan. Stap voor stap werken we aan een website die wél aansluit bij jouw ambities - en die van je klanten.</p>
-      </li>
+      })}
     </ul>
     <div class="btn-wrapper">
-      <a href="#web-check-form-section" class="btn btn-secondary">Vraag een gratis Check aan</a>
+      <a href="#web-check-form-section" class="btn btn-secondary">{btnText}</a>
     </div>
   </div>
 </section>
