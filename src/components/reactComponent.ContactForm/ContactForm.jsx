@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import Styles from './contactForm.module.css'
 
-export default function Form() {
+export default function Form({submitBtnText, legal, link}) {
   const [responseMessage, setResponseMessage] = useState('');
   const formRef = useRef(null);
 
@@ -113,10 +113,10 @@ export default function Form() {
 
 
       <div className={Styles.btnWrapper}>
-        <button type="submit" className={`${Styles.btn} ${Styles.btnSubmit}`}>Send</button>
+        <button type="submit" className={`${Styles.btn} ${Styles.btnSubmit}`}>{submitBtnText}</button>
         {
           responseMessage && <p>{responseMessage}</p> ||
-          <p>Door dit formulier te verzenden ga je akkoord met onze <a href="">Algmene voorwaarden</a></p>
+          <p>{legal} <a href={link.href}>{link.title}</a></p>
         }
       </div>
 

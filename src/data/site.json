@@ -28,6 +28,16 @@
       "href": "/gratis-website-check"
     }
   ],
+  "legalPages": [
+    {
+      "title": "Algemene voorwaarden",
+      "href": "#"
+    },
+    {
+      "title": "Privacy beleid",
+      "href": "#"
+    }
+  ],
   "adress": {
     "street": "Oosteinde 10",
     "adress": "1636XV Schermerhorn",

@@ -4,8 +4,20 @@ import Header from "../components/Header.astro";
 import ContactForm from "../components/reactComponent.ContactForm/ContactForm";
 import FooterSection from "../sections/FooterSection.astro";
 import LetterSend from '../assets/letter_send.svg';
-
 import { PhoneIcon, EmailIcon, LocationIcon} from "../assets/icons"
+import siteData from '../data/site.json'
+import pageData from '../data/contact.json'
+
+const { adress, legalPages } = siteData
+const {
+  metaTitle,
+  metaDescription,
+  heroTitle,
+  heroSubtitle,
+  formTitle,
+  btnText,
+  legalText
+} = pageData.pageContent
 ---
 
 <Layout title="Contact | Westend Digital">
@@ -21,11 +33,11 @@ import { PhoneIcon, EmailIcon, LocationIcon} from "../assets/icons"
         <div class="adress-wrapper">
           <h3>Contact informatie</h3>
           <ul role="list">
-            <li><a href="tel:+31722029324"><PhoneIcon iconFill="var(--clr-primary-100)"/> 072-2029324</a></li>
-            <li><a href="mailto:info@westend-digital.nl?subject=Contact verzoek"><EmailIcon iconFill="var(--clr-primary-100)"/> info@westend-digital.nl</a></li>
+            <li><a href={`tel:${adress.phone.phoneHref}`}><PhoneIcon iconFill="var(--clr-primary-100)"/>{adress.phone.number}</a></li>
+            <li><a href={`mailto:${adress.email}?subject=Contact verzoek`}><EmailIcon iconFill="var(--clr-primary-100)"/> {adress.email}</a></li>
             <li>
               <LocationIcon iconFill="var(--clr-primary-100)"/>
-              <span>Oosteinde 10, <br/>1636XV, Schermerhorn</span>
+              <span>{adress.street}, <br/>{adress.adress}</span>
             </li>
           </ul>
 
@@ -33,7 +45,12 @@ import { PhoneIcon, EmailIcon, LocationIcon} from "../assets/icons"
           <div class="circle circle-big" />
         </div>
         <div id="contact-form">
-          <ContactForm client:load />
+          <ContactForm
+            submitBtnText={btnText}
+            legal={legalText}
+            link={legalPages[0]}
+
+          client:load />
           <LetterSend />
         </div>
       </div>
