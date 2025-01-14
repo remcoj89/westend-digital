@@ -28,15 +28,22 @@
       "href": "/gratis-website-check"
     }
   ],
-  "adres": {
+  "adress": {
     "street": "Oosteinde 10",
     "adress": "1636XV Schermerhorn",
     "email": "info@westend-digital.nl",
     "phone": {
       "number": "072-2029324",
-      "phoneHref": "0722029324"
+      "phoneHref": "+31722029324"
     },
     "chamberOfCommerce": "88994791",
     "taxId": "Oosteinde 10"
+  },
+  "footer": {
+    "logo": {
+      "url": "/assets/logos/WestendDigitalLogo.svg",
+      "altText": "logo Westend digital"
+    },
+    "footerText": "Ik help ambitieuze ondernemers om hun online doelen te bereiken. Met een doordachte strategie en technisch sterke website help ik die doelen om te zetten in concrete resultaten. Geen loze beloftes, maar meetbare groei voor jouw bedrijf."
   }
 }

@@ -1,6 +1,13 @@
 ---
 import { Image } from "astro:assets";
 
+import data from "../data/site.json"
+
+const {
+  pages,
+  adress,
+  footer
+} = data
 
 ---
 
@@ -8,43 +15,41 @@ import { Image } from "astro:assets";
   <div class="logo-section">
     <a href="/">
       <Image
-        alt="logo Westend digital"
+        alt={footer.logo.altText}
         class="footer-image"
         height={500}
-        src="/assets/logos/WestendDigitalLogo.svg"
+        src={footer.logo.url}
         width={500}
       />
     </a>
-    <p>
-      Ik help ambitieuze ondernemers om hun online doelen te bereiken. Met een doordachte strategie en technisch sterke website help ik die doelen om te zetten in concrete resultaten. Geen loze beloftes, maar meetbare groei voor jouw bedrijf.
-    </p>
+    <p>{footer.footerText}</p>
   </div>
 
   <div class="links">
     <div>
       <h4>Sitemap</h4>
       <ul role="list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/gratis-website-check">Gratis Website Check</a></li>
-        <li><a href="/over-mij">Over mij</a></li>
-        <li><a href="/contact">contact</a></li>
+        { pages.map((page) => {
+          return (
+            <li><a href={page.href}>{page.title}</a></li>
+          )
+        })}
       </ul>
     </div>
     <div>
       <h4>Contact</h4>
       <ul role="list" id="contact-list">
         <li>
-          <p>Oosteinde 10</p>
-          <p>1636XV Schermerhorn</p>
+          <p>{adress.street}</p>
+          <p>{adress.adress}</p>
         </li>
         <li>
-          <p>Email: <a href="mailto:info@westend-digital.nl">info@westend-digital.nl</a></p>
-          <p>Telefoon: <a href="tel:+31722029324">072-2029324</a></span>
-
+          <p>Email: <a href={`mailto:${adress.email}`}>{adress.email}</a></p>
+          <p>Telefoon: <a href={`tel:${adress.phone.phoneHref}`}>{adress.phone.number}</a></span>
         </li>
         <li>
-          <p>KVK: 88994791</p>
-          <p>BTW: NL004680898B61</p>
+          <p>{adress.chamberOfCommerce}</p>
+          <p>{adress.taxId}</p>
         </li>
       </ul>
     </div>
