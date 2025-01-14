@@ -27,11 +27,26 @@ const blogData = blogs.find(blog => blog.node.slug === slug)
 if (!blogData) {
   throw new Error('Blog not found');
 }
+
+const metaTitle = blogData.node.seo.title
+const metaDescription = blogData.node.seo.metaDesc
+const opengraphTitle = blogData.node.seo.opengraphTitle
+const opengraphDescription = blogData.node.seo.opengraphDescription
+const opengraphImageUrl = blogData.node.seo.opengraphImage.mediaItemUrl
+const opengraphImageAlt = blogData.node.seo.opengraphImage.altText
 ---
 
 
 
-<Layout title={`${blogData.node.title} | Westend Digital`}>
+<Layout
+  title={`${metaTitle}`}
+  description={`${metaDescription}`}
+  ogTitle={`${opengraphTitle}`}
+  ogDescription={`${opengraphDescription}`}
+  ogImageUrl={`${opengraphImageUrl}`}
+  ogImageAlt={`${opengraphImageAlt}`}
+
+>
   <Header></Header>
 
   <section class="wrapper flex">

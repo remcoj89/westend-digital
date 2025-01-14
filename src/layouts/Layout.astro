@@ -3,9 +3,12 @@ import Navbar from '../components/Navbar.astro';
 import '../styles/globals.css'
 
 const {
- title = "Rythm Nation",
- description =  "A demo blog for a community of music producers and enthusiasts",
- image = ""
+ title,
+ description,
+ ogTitle,
+ ogDescription,
+ ogImageUrl,
+ ogImageAlt,
 } = Astro.props;
 ---
 
@@ -30,7 +33,7 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
     <meta name="description" content={description}>
-    <meta property="og:image" content={image}>
+    <meta property="og:image" content={ogImageUrl}>
 
 	</head>
 	<body>

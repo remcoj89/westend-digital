@@ -15,6 +15,16 @@ export default async function fetchBlogArticles() {
                 description(format: RENDERED)
               }
             }
+            seo {
+              title
+              metaDesc
+              opengraphTitle
+              opengraphDescription
+              opengraphImage {
+                altText
+                mediaItemUrl
+              }
+            }
           }
         }
       }
