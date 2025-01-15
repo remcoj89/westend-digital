@@ -41,3 +41,26 @@ const {
 		<slot />
 	</body>
 </html>
+
+
+<script>
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry)
+      if(entry.isIntersecting) {
+        entry.target.classList.add('show')
+      }
+    })
+  })
+
+  const sections = document.querySelectorAll("section")
+  sections.forEach((section, i) => {
+    if(i !== 0 ) {
+      section.classList.add('hidden')
+    }
+  })
+
+  const hiddenEllements = document.querySelectorAll(".hidden")
+  hiddenEllements.forEach((el) => observer.observe(el))
+</script>

@@ -7,7 +7,7 @@ const { altText, mediaItemUrl } = await featuredImage.node
 
 ---
 
-<div class={flexDirection}>
+<div class={`project ${flexDirection}`}>
   <div class="project-content">
     <h2>{title}</h2>
     <div set:html={content} class="rendered-content"/>
@@ -23,6 +23,7 @@ const { altText, mediaItemUrl } = await featuredImage.node
 
 
 <style>
+
   .project-content{
     gap: var(--size-2);
     width: 100%;
@@ -33,6 +34,8 @@ const { altText, mediaItemUrl } = await featuredImage.node
   }
 
   .project-thumbnail {
+    border-radius: var(--border-radius-img);
+    box-shadow: var(--box-shadow);
     height: 35rem;
     object-fit: cover;
     width: 100%;
@@ -78,4 +81,16 @@ const { altText, mediaItemUrl } = await featuredImage.node
       width: 50%;
     }
   }
+
 </style>
+
+<script>
+  const projects = document.querySelectorAll(".project")
+
+  projects.forEach((project, i) => {
+    if(i !== 0) {
+      project.classList.add("hidden")
+    }
+  })
+  console.log(projects)
+</script>

@@ -313,3 +313,23 @@ section {
   padding: 0;
   width: fit-content;
 }
+
+
+.hidden {
+  opacity: 0;
+  filter: blur(2px);
+  transition: all 1s;
+
+}
+
+.show {
+  filter: blur(0px);
+  opacity: 1;
+}
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+    filter: blur(0);
+  }
+}
