@@ -20,18 +20,23 @@ const {
 } = pageData.pageContent
 ---
 
-<Layout title="Contact | Westend Digital">
+<Layout
+  title={`${metaTitle}`}
+  description={`${metaDescription}`}
+  ogTitle={`${metaTitle}`}
+  ogDescription={`${metaDescription}`}
+  >
   <Header>
     <div>
-      <h1>Neem contact met me op</h1>
-      <p>Ik ben benieuwd waar je mee bezig bent, waar je tegenaan loopt en hoe ik je kan helpen met je bedrijf. Als je denkt dat we een goede match zijn, neem dan hieronder contact met mij op.</p>
+      <h1>{heroTitle}</h1>
+      <span>{heroSubtitle}</span>
     </div>
   </Header>
   <main>
     <section class="wrapper">
       <div class="flex contact-wrapper">
         <div class="adress-wrapper">
-          <h3>Contact informatie</h3>
+          <h3>{formTitle}</h3>
           <ul role="list">
             <li><a href={`tel:${adress.phone.phoneHref}`}><PhoneIcon iconFill="var(--clr-primary-100)"/>{adress.phone.number}</a></li>
             <li><a href={`mailto:${adress.email}?subject=Contact verzoek`}><EmailIcon iconFill="var(--clr-primary-100)"/> {adress.email}</a></li>
