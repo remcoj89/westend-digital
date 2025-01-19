@@ -27,7 +27,7 @@
   --clr-primary-500: hsl(224, 10%, 56%);
   --clr-primary-700: hsl(224, 21%, 38%);
   --clr-primary-800: hsl(224, 35%, 28%);
-  --clr-primary-900: #071231;
+  --clr-primary-900: hsl(224, 75%, 11%);
 
   --clr-secondary-100: hsl(0, 0%, 96%);
   --clr-secondary-300: hsl(34, 88%, 97%);
@@ -190,7 +190,7 @@ img {
 
 .flex-reverse {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between;
   gap: var(--size-4);
 }
@@ -277,7 +277,7 @@ section {
   background-color: var(--clr-secondary-900);
   border: solid 2px var(--clr-secondary-900);
   box-shadow: var(--box-shadow);
-  color: var(--clr-secondary-100);
+  color: var(--clr-primary-100);
   max-width: 65ch;
 
   &:hover,

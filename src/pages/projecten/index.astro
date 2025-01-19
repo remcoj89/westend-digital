@@ -4,17 +4,27 @@ import Header from "../../components/Header.astro";
 import Project from "../../components/Project.astro";
 import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
-
+import data from '../../data/projects.json'
 import fetchProjects from "../../lib/fetchProjects";
 
 const projects = await fetchProjects()
+
+const {
+  metaTitle,
+  metaDescription,
+  heroTitle,
+  heroSubtitle,
+} = data.pageContent
 ---
 
-<Layout title="Projecten | Westend Digital">
+<Layout
+  title={metaTitle}
+  description={metaDescription}
+>
   <Header>
     <div>
-      <h1>Werk waar ik trots op ben</h1>
-      <p>Een selectie van projecten waar ik onlangs aan heb gewerkt</p>
+      <h1>{heroTitle}</h1>
+      <p>{heroSubtitle}</p>
     </div>
   </Header>
 
@@ -34,5 +44,3 @@ const projects = await fetchProjects()
   <CtaSection />
   <FooterSection />
 </Layout>
-
-

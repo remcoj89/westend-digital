@@ -10,19 +10,19 @@ const {
 ---
 
 
-<section class="wrapper flex">
-  <WebCheckForm  client:load/>
-    <div>
-      <p>{paragraph}</p>
-      <ul role="list">
-        {uspList.map(item => {
-          return (
-            <li><PlusIcon /> <span>{item}</span></li>
-          )
-        })}
+<section class="wrapper flex-reverse">
+  <div>
+    <p>{paragraph}</p>
+    <ul role="list">
+      {uspList.map(item => {
+        return (
+          <li><PlusIcon /> <span>{item}</span></li>
+        )
+      })}
       </ul>
       <p>{ctaText}</p>
     </div>
+    <WebCheckForm  client:load/>
 </section>
 
 <style>

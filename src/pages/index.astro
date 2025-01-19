@@ -9,25 +9,34 @@ import FaqSection from '../sections/FaqSection.astro';
 import CtaSection from '../sections/CtaSection.astro';
 import FooterSection from '../sections/FooterSection.astro';
 import data from "../data/homePage.json"
+import siteData from "../data/site.json"
 
 
 const {
+  metaTitle,
+  metaDescription,
   heroTitle,
   heroSubtitle,
+  ctaBtn,
   introSection,
   sectionCodeToConnection,
   howWeWorkSection,
   faqSection
 } = data.pageContent
+
+
 ---
 
-<Layout title="Westend Digital">
+<Layout
+  title={metaTitle}
+  description={metaDescription}
+>
   <Header>
     <div>
       <h1>{heroTitle}</h1>
       <span>{heroSubtitle}</span>
       <a href="/contact" class="btn btn-secondary">
-        Laten we kennis maken
+        {ctaBtn}
       </a>
     </div>
   </Header>
