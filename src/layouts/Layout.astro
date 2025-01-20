@@ -6,9 +6,11 @@ const {
  title,
  description,
  ogTitle,
+ ogSiteName,
  ogDescription,
  ogImageUrl,
  ogImageAlt,
+ ogUrl
 } = Astro.props;
 ---
 
@@ -33,7 +35,12 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
     <meta name="description" content={description}>
+    <meta property="og:site_name" content={ogSiteName} />
+    <meta property=“og:title” content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={ogUrl} />
     <meta property="og:image" content={ogImageUrl}>
+    <meta property="og:image:alt" content={ogImageAlt} />
 
 	</head>
 	<body>

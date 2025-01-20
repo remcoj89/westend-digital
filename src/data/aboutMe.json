@@ -1,7 +1,13 @@
 {
   "pageContent": {
-   "metaTitle": "Over ons | Westend Digital",
-    "metaDescription": "",
+    "metaTitle": "Van strategie naar succes: online groei met je website | Westend Digital",
+    "metaDescription": "Webdeveloper met oog voor strategie en resultaat. Niet alleen codes maar een website die aansluit bij jouw groeiambities én bij je klanten.",
+    "ogSiteName": "Westend Digital",
+    "ogImage": {
+      "ogImageUrl": "/assets/logos/WestendDigitalLogo.svg",
+      "ogImageAlt": "Logo van Westend Digital"
+    },
+    "ogUrl": "https://www.westend-digital.nl/projecten",
     "heroTitle": "Persoonlijk & doelgericht websites die werken",
     "heroSubtitle": "helder, praktisch en blijvend resultaat",
     "introSection": {

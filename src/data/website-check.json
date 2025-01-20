@@ -1,7 +1,13 @@
 {
   "pageContent": {
-    "metaTitle": "",
-    "metaDescription": "",
+    "metaTitle": "Verbeter je website nu met de gratis websitecheck | Westend Digital",
+    "metaDescription": "Is je website klaar voor groei? Ontdek het met de gratis website check. Concrete verbeterpunten en tips om direct meer uit je website te halen.",
+    "ogSiteName": "Westend Digital",
+    "ogImage": {
+      "ogImageUrl": "/assets/logos/WestendDigitalLogo.svg",
+      "ogImageAlt": "Logo van Westend Digital"
+    },
+    "ogUrl": "https://www.westend-digital.nl/gratis-website-check",
     "pageTitle": "Ontdek wat je website nu voor je doet én wat er beter kan",
     "introSection": {
         "title": "",

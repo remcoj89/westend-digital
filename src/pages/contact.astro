@@ -12,6 +12,8 @@ const { adress, legalPages } = siteData
 const {
   metaTitle,
   metaDescription,
+  ogImage,
+  ogUrl,
   heroTitle,
   heroSubtitle,
   formTitle,
@@ -21,10 +23,13 @@ const {
 ---
 
 <Layout
-  title={`${metaTitle}`}
-  description={`${metaDescription}`}
-  ogTitle={`${metaTitle}`}
-  ogDescription={`${metaDescription}`}
+  title={metaTitle}
+  description={metaDescription}
+  ogTitle={metaTitle}
+  ogDescription={metaDescription}
+  ogImageUrl={ogImage.ogImageUrl},
+  ogImageAlt={ogImage.ogImageAlt},
+  ogUrl={ogUrl}
   >
   <Header>
     <div>

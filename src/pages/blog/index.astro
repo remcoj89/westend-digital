@@ -4,20 +4,39 @@ import Header from "../../components/Header.astro";
 import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
 import fetchBlogArticles from "../../lib/fetchBlogArticles"
-
+import pageData from '../../data/blog.json'
+import Button from "../../components/Button.astro";
 const blogs = await fetchBlogArticles()
+
+const {
+  metaTitle,
+  metaDescription,
+  ogImage,
+  ogUrl,
+  heroTitle
+} = pageData.pageContent
 ---
 
-<Layout title="Blog | Westend Digital">
+<Layout
+  title={metaTitle}
+  description={metaDescription}
+  ogTitle={metaTitle}
+  ogDescription={metaDescription}
+  ogImageUrl={ogImage.ogImageUrl},
+  ogImageAlt={ogImage.ogImageAlt},
+  ogUrl={ogUrl}
+>
   <Header>
-    <h1>Blog</h1>
+    <div>
+      <h1>{heroTitle}</h1>
+    </div>
   </Header>
 
   <section class="fb-col-wrapper">
     <div class="blog-list">
       {
         blogs.map(blog => (
-          <a href={`/blog/${blog.node.slug}`} class="hidden">
+          <a href={`/blog/${blog.node.slug}`} class="hidden blog">
             <img
               src={blog.node.featuredImage.node.mediaItemUrl}
               width={500}
@@ -28,6 +47,7 @@ const blogs = await fetchBlogArticles()
                 <h2>{blog.node.title}</h2>
                 <div set:html={blog.node.featuredImage.node.description}></div>
               </div>
+              <Button >Lees meer</Button>
           </a>
         ) )
 
@@ -41,6 +61,18 @@ const blogs = await fetchBlogArticles()
 
 
 <style>
+
+  .blog {
+    display: grid;
+    justify-content: space-between;
+
+    button {
+      align-self: end;
+      margin-inline: var(--size-1);
+      margin-block-start: var(--size-1);
+      margin-block-end: var(--size-3);
+    }
+  }
 
   .blog-list {
     display: grid;

@@ -9,6 +9,10 @@ import AboutMeHelpYouGrowSection from "../sections/AboutMeHelpYouGrowSection.ast
 import data from "../data/aboutMe.json"
 
 const {
+  metaTitle,
+  metaDescription,
+  ogImage,
+  ogUrl,
   heroTitle,
   introSection,
   aboutCustomerSection,
@@ -18,7 +22,15 @@ const {
 
 ---
 
-<Layout title="Over ons | Westend Digital">
+<Layout
+  title={metaTitle}
+  description={metaDescription}
+  ogTitle={metaTitle}
+  ogDescription={metaDescription}
+  ogImageUrl={ogImage.ogImageUrl},
+  ogImageAlt={ogImage.ogImageAlt},
+  ogUrl={ogUrl}
+>
   <Header >
     <div>
       <h1>{heroTitle}</h1>

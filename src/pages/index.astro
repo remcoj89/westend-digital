@@ -8,13 +8,14 @@ import HowWeWorkSection from '../sections/HowWeWorkSection.astro';
 import FaqSection from '../sections/FaqSection.astro';
 import CtaSection from '../sections/CtaSection.astro';
 import FooterSection from '../sections/FooterSection.astro';
-import data from "../data/homePage.json"
-import siteData from "../data/site.json"
+import pageData from "../data/homePage.json"
 
 
 const {
   metaTitle,
   metaDescription,
+  ogImage,
+  ogUrl,
   heroTitle,
   heroSubtitle,
   ctaBtn,
@@ -22,7 +23,7 @@ const {
   sectionCodeToConnection,
   howWeWorkSection,
   faqSection
-} = data.pageContent
+} = pageData.pageContent
 
 
 ---
@@ -30,6 +31,11 @@ const {
 <Layout
   title={metaTitle}
   description={metaDescription}
+  ogTitle={metaTitle}
+  ogDescription={metaDescription}
+  ogImageUrl={ogImage.ogImageUrl},
+  ogImageAlt={ogImage.ogImageAlt},
+  ogUrl={ogUrl}
 >
   <Header>
     <div>

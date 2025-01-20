@@ -50,8 +50,8 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText
   <Header></Header>
 
   <section class="wrapper flex">
-
     <article class="blog-content">
+      <a href="/blog">Terug naar de blog pagina</a>
       <h1>{blogData.node.title}</h1>
       <div set:html={blogData.node.content}></div>
     </article>
@@ -69,7 +69,9 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText
 <style>
 
   .blog-content {
+
     h1 {
+      margin-top: var(--size-1);
       font-size: var(--fs-900);
     }
 
