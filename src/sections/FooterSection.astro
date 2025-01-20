@@ -3,9 +3,12 @@ import { Image } from "astro:assets";
 
 import data from "../data/site.json"
 
+const currentYear = new Date().getFullYear()
+
 const {
   pages,
   adress,
+  legalPages,
   footer
 } = data
 
@@ -55,6 +58,19 @@ const {
     </div>
   </div>
 
+  <div class="footer-bottom">
+    <div>&copy; <span>{currentYear}</span> - {footer.footerCopyRightsText}</div>
+    <div class="legal-pages">
+      {
+        legalPages.map((page) => {
+          return (
+            <a href={page.href}>{page.title}</a>)
+          })
+      }
+    </div>
+
+  </div>
+
 </footer>
 
 <style>
@@ -66,17 +82,17 @@ const {
     .logo-section {
       grid-column: 2 / -2;
       text-align: center;
-      p {
+
+p {
         margin-inline: auto;
       }
-
     }
 
     .links {
-      grid-column: 2 / -2;
-      display: flex;
-      justify-content: space-evenly;
       align-items: flex-start;
+      display: flex;
+      grid-column: 2 / -2;
+      justify-content: space-evenly;
       margin-top: var(--size-5);
 
       h4,
@@ -108,16 +124,30 @@ const {
       }
     }
 
+    .footer-bottom {
+      align-self: stretch;
+      border-top: solid 1px var(--clr-primary-100);
+      display: flex;
+      justify-content: space-evenly;
+      grid-column: 2 / -2;
+      margin-block-start: var(--size-4);
+      padding-block: var(--size-3);
+
+      .legal-pages {
+        display: flex;
+        gap: var(--size-1);
+      }
+    }
+
     @media( width >= 43.75em ) {
         .logo-section {
           grid-column: 2 / -2;
-
         }
 
         .links {
           grid-column: 2 / -2;
         }
-     }
+      }
     @media( width >= 62.5em ) {
         .logo-section {
           grid-column: 2 / 6;
@@ -127,7 +157,6 @@ const {
           align-self: center;
           grid-column: -2 / 6;
         }
-     }
-
+      }
   }
 </style>
