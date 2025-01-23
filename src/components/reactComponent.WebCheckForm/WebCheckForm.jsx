@@ -32,9 +32,9 @@ export default function WebCheckForm() {
     <form ref={formRef} onSubmit={submit} className={Styles.contactForm}>
       <input type="hidden" name="subject" value="Gratis Website Check Aanvraag" />
       <input type="hidden" name="message" value="Gratis Website Check" />
-       <div className="flex">
+
          <label htmlFor="name">
-           Voornaam
+          <p>Naam <span className={Styles.starRequired}>*</span></p>
            <input
              autoComplete="name"
              id="name"
@@ -45,62 +45,21 @@ export default function WebCheckForm() {
              required
            />
          </label>
-         <label htmlFor="lastName">
-           Achternaam
-           <input
-             autoComplete="lastName"
-             id="lastName"
-             name="lastName"
-             pattern="[A-Za-z ]+"
-             placeholder="Achternaam"
-             type="text"
-             required
-           />
-         </label>
-       </div>
-       <div className="flex">
-         <label htmlFor="company">
-           Bedrijf
-           <input
-             autoComplete="company"
-             id="company"
-             name="company"
-             pattern="[A-Za-z ]+"
-             placeholder="Bedrijf"
-             type="text"
-             required
-           />
-         </label>
-         <label htmlFor="phone">
-           Telefoon
-           <input
-             autoComplete="phone"
-             id="phone"
-             name="phone"
-             pattern="[0-9+-]"
-             title="Voer een geldig telefoonnummer in (bijv. 0101234567, 0612345678, +31101234567)."
-             placeholder="06-12345678"
-             type="phone"
-             required
-           />
-         </label>
-       </div>
-       <div className="flex">
          <label htmlFor="email">
-           Email
+          <p>Email <span className={Styles.starRequired}>*</span></p>
            <input
              autoComplete="email"
              id="email"
              name="email"
              pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}"
-             placeholder="voorbeeld@emaill.com"
+             placeholder="info@jouw-bedrijf.com"
              title="Vul een geldig email adres in"
              type="email"
              required
            />
          </label>
          <label htmlFor="domain">
-           Website
+          <p>Website <span className={Styles.starRequired}>*</span></p>
            <input
              autoComplete="domain"
              id="domain"
@@ -112,7 +71,7 @@ export default function WebCheckForm() {
              required
            />
          </label>
-       </div>
+
        <div className={Styles.btnWrapper}>
          <button type="submit" className={`${Styles.btn} ${Styles.btnSubmit}`}>Yes doe mij die gratis website check maar!</button>
          {

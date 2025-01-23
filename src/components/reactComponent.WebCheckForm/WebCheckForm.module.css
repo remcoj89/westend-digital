@@ -14,6 +14,10 @@
     flex-direction: column;
     width: 100%;
 
+    .starRequired {
+      color: var(--clr-alert-red-900);
+    }
+
     input,
     textarea {
       border: none;

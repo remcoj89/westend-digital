@@ -1,13 +1,21 @@
 
 .contactForm {
   display: grid;
-  gap: var(--size-1);
+  gap: var(--size-2);
 
-label {
+
+  label {
+    color: var(--clr-primary-900);
     display: flex;
+    gap: var(--size-1);
     flex-direction: column;
-    width: 100%;
+    margin-inline-start: auto;
+    width: 75%;
 
+    .starRequired {
+      color: var(--clr-alert-red-900);
+    }
+    
     input,
     textarea {
       border: none;
@@ -15,13 +23,13 @@ label {
 
       caret-color: var(--clr-secondary-900);
       padding-block: var(--size-1);
-      padding-inline: var(--size-1);
       font-size: var(--fs-500);
 
       &:focus {
         border-bottom: 2px solid var(--clr-primary-900);
         outline: none;
       }
+
     }
   }
 }

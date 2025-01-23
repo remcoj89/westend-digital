@@ -30,83 +30,52 @@ export default function Form({submitBtnText, legal, link}) {
 
   return (
     <form ref={formRef} onSubmit={submit} className={Styles.contactForm}>
-      <div className="flex">
-        <label htmlFor="name">
-          Naam
-          <input
-            autoComplete="name"
-            id="name"
-            name="name"
-            pattern="[A-Za-z ]+"
-            placeholder="Naam"
-            type="text"
-            required
-          />
-        </label>
-        <label htmlFor="lastName">
-          Achternaam
-          <input
-            autoComplete="lastName"
-            id="lastName"
-            name="lastName"
-            pattern="[A-Za-z ]+"
-            placeholder="Achternaam"
-            type="text"
-            required
-          />
-        </label>
-      </div>
+     <label htmlFor="name">
+      <p>Naam <span class={Styles.starRequired}>*</span></p>
 
-      <div className="flex">
-        <label htmlFor="subject">
-          Onderwerp
-          <input
-            autoComplete="subject"
-            id="subject"
-            name="subject"
-            pattern="[A-Za-z ]+"
-            placeholder="onderwerp"
-            type="text"
-            required
-          />
-        </label>
-      </div>
+       <input
+         autoComplete="name"
+         id="name"
+         name="name"
+         pattern="[A-Za-z ]+"
+         placeholder="Naam"
+         type="text"
+         required
+       />
+     </label>
+     <label htmlFor="subject">
+        <p>Onderwerp <span class={Styles.starRequired}>*</span></p>
+        <input
+          autoComplete="subject"
+          id="subject"
+          name="subject"
+          pattern="[A-Za-z ]+"
+          placeholder="onderwerp"
+          type="text"
+          required
+        />
+      </label>
 
-      <div className="flex">
-        <label htmlFor="email">
-          Email
-          <input
-            autoComplete="email"
-            id="email"
-            name="email"
-            pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}"
-            placeholder="voorbeeld@emaill.com"
-            title="Vul een geldig email adres in"
-            type="email"
-            required
-          />
-        </label>
-        <label htmlFor="phone">
-          Telefoon
-          <input
-            autoComplete="phone"
-            id="phone"
-            name="phone"
-            pattern="[0-9+-]"
-            placeholder="06-12345678"
-            type="tel"
-            required
-          />
-        </label>
-      </div>
-
+      <label htmlFor="email">
+        <p>Email <span className={Styles.starRequired}>*</span></p>
+        <input
+          autoComplete="email"
+          id="email"
+          name="email"
+          pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}"
+          placeholder="voorbeeld@emaill.com"
+          title="Vul een geldig email adres in"
+          type="email"
+          required
+        />
+      </label>
       <label htmlFor="message">
-        Message
+      <p>Bericht <span class={Styles.starRequired}>*</span></p>
         <textarea
           autoComplete="off"
           id="message"
           name="message"
-          placeholder="Wat je weten / vragen?"
+          placeholder="Waarmee kan ik je helpen?"
           required
         />
       </label>
