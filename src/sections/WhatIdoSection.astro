@@ -90,20 +90,34 @@ const {title, paragraph, projectsUrl} = whatIDo
     padding-block: var(--size-6);
 
     .why-me {
-      justify-content: space-between;
-      max-width: 70%;
+      justify-content: center;
+      flex-direction: column;
+      max-width: 100%;
       gap: var(--size-3);
 
       h2 {
-        max-width: 21ch;
+        max-width: 41ch;
       }
       .paragraph-wrapper {
-        max-width: 60%;
+        max-width: 100%;
         display: grid;
         gap: var(--size-4);
       }
     }
 
+    @media (width >= 936px) {
+      .why-me {
+        flex-direction: row;
+        max-width: 70%;
+
+        h2 {
+          max-width: 21ch;
+        }
+        .paragraph-wrapper {
+          max-width: 60%;
+        }
+      }
+    }
 
   }
 
