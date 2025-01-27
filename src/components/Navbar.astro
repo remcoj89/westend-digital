@@ -55,7 +55,7 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
 
   .nav-wrapper {
     background-color: var(--clr-primary-900);
-    color: var(--clr-body);
+    color: var(--clr-primary-100);
 
     input {
       display: none;
@@ -171,7 +171,7 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
         --_animationStartsAfter: 100vh;
         animation: stickyNav linear forwards;
         inset-inline: 0;
-        background-color: transparent;
+        /* background-color: transparent; */
         position: fixed;
         top: 0;
         z-index: 1000;
@@ -197,9 +197,6 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
   }
 
   @keyframes stickyNav {
-    0% {
-      background-color: transparent;
-    }
     100% {
       background-color: var(--clr-primary-900);
       box-shadow: 0 0 0.75rem hsl(224 76% 11% / 0.3);

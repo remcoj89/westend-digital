@@ -24,6 +24,7 @@ const {
   heroBackgroundImage,
   introSection,
   sectionCodeToConnection,
+  whatIDoSection,
   howWeWorkSection,
   faqSection
 } = pageData.pageContent
@@ -57,7 +58,11 @@ const {
     </div>
   </Header> -->
 	<main>
-    <WhatIdoSection />
+    <WhatIdoSection
+    services={whatIDoSection.services}
+    whatIDo={whatIDoSection.whatIDo}
+
+    />
     <IntroSection
       title={introSection.title}
       paragraph={introSection.paragraph}

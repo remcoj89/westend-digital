@@ -1,24 +1,7 @@
 ---
-import { DotIcon } from '../assets/icons.jsx'
 
-const services = [
-  "Strategie",
-  "Web Design",
-  "Web Development",
-  "Onderhoud"
-  ]
-
-
-const introSection = {
-  "title": "Digitale groei zonder gedoe",
-  "paragraph":  "Je weet dat er meer in zit. Meer leads, meer omzet, meer vrijheid. Maar je website? Die werkt niet zo hard als jij. Tijd om daar korte metten mee te maken. Ik ontwerp websites voor ondernemers met ambitie. Geen standaard templates of loze beloftes, maar websites met een duidelijk doel: online groei. Het resultaat: een website die werkt, zonder dat jij er omkijken naar hebt.",
-  "projectsUrl": {
-    "url": "/projecten",
-    "label": "Bekijk eerdere cases"
-  }
-}
-
-const { title, paragraph, projectsUrl} = introSection
+const { services, whatIDo} = Astro.props
+const {title, paragraph, projectsUrl} = whatIDo
 ---
 
 <section id="what-i-do-section">
