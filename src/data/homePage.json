@@ -9,15 +9,23 @@
     },
     "ogUrl": "https://www.westend-digital.nl",
     "heroTitle": "Winstgevende websites voor ondernemers met ambitie",
-    "heroSubtitle": "Je bent klaar voor de volgende stap: van ambitie naar groei. Je wilt een website die doet wat ‘ie moet doen: leads genereren en je bedrijf laten groeien. Geen onnodige toeters en bellen, alleen resultaten. Zo simpel is het.",
+    "heroSubtitle": ["Je bent klaar voor de volgende stap: van ambitie naar groei. Je wilt een website die doet wat ‘ie moet doen: leads genereren en je bedrijf laten groeien. Geen onnodige toeters en bellen,", "alleen resultaten. Zo simpel is het."],
     "ctaBtn": "Laten we kennis maken",
+    "heroImage": {
+      "imgUrl": "/images/website-review.webp",
+      "imgAlt": "Kennis making met de klant"
+    },
+    "heroBackgroundImage": {
+      "imgUrl": "/assets/logos/westend-digital-logo-transparant.svg",
+      "imgAlt": ""
+    },
     "introSection": {
       "title": "Digitale groei zonder gedoe",
       "paragraph": [
         "Je weet dat er meer in zit. Meer leads, meer omzet, meer vrijheid. Maar je website? Die werkt niet zo hard als jij. Tijd om daar korte metten mee te maken. Ik ontwerp websites voor ondernemers met ambitie. Geen standaard templates of loze beloftes, maar websites met een duidelijk doel: online groei. Het resultaat: een website die werkt, zonder dat jij er omkijken naar hebt."
       ],
-      "imageUrl": "/images/about-image.png",
-      "altText": ""
+      "imageUrl": "/images/website-review.webp",
+      "altText": "Kennis making met de klant"
     },
     "sectionCodeToConnection": {
       "title": "Van code naar connectie",
@@ -26,8 +34,8 @@
         "Ik geloof dat een website meer moet zijn dan alleen een digitaal visitekaartje. Het is je hardst werkende verkoper, 24/7 online. Daarom kijk ik verder dan alleen techniek - ik duik in je bedrijfsstrategie, je doelgroep en je groeikansen. Want alleen zo bouw je een website die niet alleen mooi is, maar ook resultaat oplevert.",
         "Jij bent het liefst bezig met je vak – als telg uit een ondernemersfamilie snap ik dat als geen ander. Daarom neem ik het complete digitale proces uit handen: van strategie en design tot ontwikkeling en onderhoud. Door mijn netwerk van specialisten kan ik waar nodig extra expertise inzetten, zonder dat jij daar omkijken naar hebt. Want zo werkt dat toch? Schouders eronder, elkaar versterken en zorgen dat het gewoon goed komt - geen losse eindjes, maar een doordachte aanpak die werkt voor jouw bedrijf."
       ],
-      "imageUrl": "/images/code-naar-connectie.webp",
-      "altText": ""
+      "imageUrl": "/images/website-review.webp",
+      "altText": "review van de website"
     },
     "howWeWorkSection": {
       "title": "Zo bouw ik aan jouw online succes",

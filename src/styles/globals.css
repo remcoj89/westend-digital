@@ -66,15 +66,15 @@
   --fw-bold: 900;
 
 
-  --clr-body: var(--clr-neutral-900);
+  --clr-body: var(--clr-primary-800);
   --clr-background: var(--clr-neurtal-100);
-  --clr-heading: var(var(--clr-primary-700));
+  --clr-heading: var(--clr-primary-900);
 
   --ff-header: "Josefin Sans", serif;
   --ff-base: "Quicksand", serif;
 
 
-  --size-1: 1.8rem;
+  --size-1: 1.6rem;
   --size-2: 2.4rem;
   --size-3: 3.2rem;
   --size-4: 4rem;
@@ -88,6 +88,7 @@
   @media (prefers-color-scheme: dark) {
       --clr-body: var(--clr-neutral-300);
       --clr-background: var(--clr-neurtal-800);
+      --clr-heading: var(var(--clr-primary-100));
     }
 }
 
@@ -123,6 +124,7 @@ h3,
 h4,
 h5,
 h6 {
+  color: var(--clr-heading);
   font-family: var(--ff-header);
   font-weight: var(--fw-bold);
   line-height: var(--lh-300);
@@ -237,6 +239,7 @@ section {
   border: none;
   border-radius: var(--border-radius-btn);
   cursor: pointer;
+  display: inline-block;
   padding-block: 1rem;
   height: fit-content;
   padding-inline: var(--size-3);
@@ -245,6 +248,21 @@ section {
   text-align: center;
   text-decoration: none;
   transition: background-color 0.5s ease-out;
+}
+
+.btn-hero {
+  background-color: var(--clr-alert-green-900);
+  border: solid 2px var(--clr-alert-green-900);
+  box-shadow: var(--box-shadow);
+  margin-block-start: var(--size-3);
+  color: var(--clr-primary-100);
+
+  &:hover,
+  &:active {
+    background-color: var(--clr-secondary-900);
+    color: var(--clr-primary-100);
+  }
+
 }
 
 .btn-primary {
@@ -313,6 +331,7 @@ section {
   padding: 0;
   width: fit-content;
 }
+
 
 
 .hidden {

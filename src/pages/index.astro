@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HomeHero from '../sections/HomeHero.astro';
 import Header from '../components/Header.astro';
 import IntroSection from '../sections/IntroSection.astro';
 import UspSection from '../sections/UspSection.astro';
@@ -19,6 +20,8 @@ const {
   heroTitle,
   heroSubtitle,
   ctaBtn,
+  heroImage,
+  heroBackgroundImage,
   introSection,
   sectionCodeToConnection,
   howWeWorkSection,
@@ -37,7 +40,14 @@ const {
   ogImageAlt={ogImage.ogImageAlt},
   ogUrl={ogUrl}
 >
-  <Header>
+  <HomeHero
+    title={heroTitle}
+    subTitle={heroSubtitle}
+    ctaBtn={ctaBtn}
+    image={heroImage}
+    backgroundImage={heroBackgroundImage}
+  />
+  <!-- <Header>
     <div>
       <h1>{heroTitle}</h1>
       <span>{heroSubtitle}</span>
@@ -45,7 +55,7 @@ const {
         {ctaBtn}
       </a>
     </div>
-  </Header>
+  </Header> -->
 	<main>
     <IntroSection
       title={introSection.title}
@@ -53,13 +63,13 @@ const {
       imageUrl={introSection.imageUrl}
       altText={introSection.altText}
     />
-    <IntroSection
+    <!-- <IntroSection
       title={sectionCodeToConnection.title}
       paragraph={sectionCodeToConnection.paragraph}
       imageUrl={sectionCodeToConnection.imageUrl}
       altText={sectionCodeToConnection.altText}
       flexDirection="flex-reverse"
-  />
+  /> -->
     <UspSection />
     <HowWeWorkSection
       title={howWeWorkSection.title}

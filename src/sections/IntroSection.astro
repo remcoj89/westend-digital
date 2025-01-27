@@ -33,6 +33,7 @@ const {
   .intro-section {
     gap: var(--size-2);
     height: fit-content;
+    align-items: center;
 
     .copy-wrapper {
       display: flex;
@@ -45,20 +46,15 @@ const {
       box-shadow: var(--box-shadow);
       border-radius: var(--border-radius-img);
       overflow: hidden;
-      height: auto;
+      height: 100%;
       width: 100%;
 
       img {
         object-fit: cover;
         object-position: center;
-        height: 100%;
+        height: auto;
         width: 100%;
       }
     }
   }
-
-
-
-
-
 </style>
