@@ -16,8 +16,9 @@
       "imgAlt": "Kennis making met de klant"
     },
     "heroBackgroundImage": {
-      "imgUrl": "/assets/logos/westend-digital-logo-transparant.svg",
+      "imgUrl": "/assets/logos/westend-digital-logo-icon.svg",
       "imgAlt": ""
+
     },
     "introSection": {
       "title": "Digitale groei zonder gedoe",
@@ -25,7 +26,8 @@
         "Je weet dat er meer in zit. Meer leads, meer omzet, meer vrijheid. Maar je website? Die werkt niet zo hard als jij. Tijd om daar korte metten mee te maken. Ik ontwerp websites voor ondernemers met ambitie. Geen standaard templates of loze beloftes, maar websites met een duidelijk doel: online groei. Het resultaat: een website die werkt, zonder dat jij er omkijken naar hebt."
       ],
       "imageUrl": "/images/website-review.webp",
-      "altText": "Kennis making met de klant"
+      "altText": "Kennis making met de klant",
+      "projectsUrl": "/projecten"
     },
     "sectionCodeToConnection": {
       "title": "Van code naar connectie",

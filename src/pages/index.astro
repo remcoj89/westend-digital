@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HomeHero from '../sections/HomeHero.astro';
-import Header from '../components/Header.astro';
+import WhatIdoSection from '../sections/WhatIdoSection.astro';
 import IntroSection from '../sections/IntroSection.astro';
 import UspSection from '../sections/UspSection.astro';
 import HowWeWorkSection from '../sections/HowWeWorkSection.astro';
@@ -57,6 +57,7 @@ const {
     </div>
   </Header> -->
 	<main>
+    <WhatIdoSection />
     <IntroSection
       title={introSection.title}
       paragraph={introSection.paragraph}

@@ -32,7 +32,7 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
     <div class="nav-list-wrapper">
       <ul role="list" class="nav-list">
         {pages.map((page) => {
-          const isSpecialPage = page.href === "/gratis-website-check";
+          const isSpecialPage = page.href === "/contact";
           const linkClasses = `nav-link ${isSpecialPage ? 'cta-btn' : ''}`;
            return (
            <li class={linkClasses}><a href={page.href}>{page.title}</a></li>
@@ -54,20 +54,8 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
 <style>
 
   .nav-wrapper {
-    --_animationDistance: 105vh;
-    --_animationStartsAfter: 100vh;
-    animation: stickyNav linear forwards;
-    background-color: transparent;
-    color: var(--clr-primary-900);
-    inset-inline: 0;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-
-    @supports (animation-timeline: view()) {
-      animation-range: var(--_animationStartsAfter) var(--_animationDistance);
-      animation-timeline: view();
-    }
+    background-color: var(--clr-primary-900);
+    color: var(--clr-body);
 
     input {
       display: none;
@@ -117,10 +105,12 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
           border: solid 2px var(--clr-secondary-900);
           border-radius: var(--border-radius-btn);
           padding-inline: var(--size-1);
+          color: var(--clr-secondary-100);
+          font-weight: var(--fw-semi-bold);
 
           &:hover {
             background-color: transparent;
-            color: var(--clr-secondary-100);
+            color: var(--clr-secondary-900);
             border-bottom: solid 2px var(--clr-secondary-900);
           }
         }
@@ -130,7 +120,7 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
         }
       }
 
-    @media (width >= 850px) {
+    @media (width >= 870px) {
       .nav-list-wrapper {
         display: block;
         grid-template-rows: unset;
@@ -175,6 +165,24 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
     }
   }
 
+  @media (width >= 870px) {
+    .nav-wrapper {
+        --_animationDistance: 105vh;
+        --_animationStartsAfter: 100vh;
+        animation: stickyNav linear forwards;
+        inset-inline: 0;
+        background-color: transparent;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+
+        @supports (animation-timeline: view()) {
+        animation-range: var(--_animationStartsAfter) var(--_animationDistance);
+        animation-timeline: view();
+        }
+      }
+  }
+
   .nav-wrapper:has(#menuButton:checked) {
     background-color: var(--clr-primary-900);
     box-shadow: 0 0 0.75rem hsl(224 76% 11% / 0.3);
@@ -189,6 +197,9 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
   }
 
   @keyframes stickyNav {
+    0% {
+      background-color: transparent;
+    }
     100% {
       background-color: var(--clr-primary-900);
       box-shadow: 0 0 0.75rem hsl(224 76% 11% / 0.3);

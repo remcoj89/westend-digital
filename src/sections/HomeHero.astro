@@ -18,11 +18,11 @@ const {
       <p>{subTitle[0]}</p>
       <p>{subTitle[1]}</p>
     </div>
-
     <a href="/contact" class="btn btn-hero" id="hero-btn">{ctaBtn}</a>
   </div>
   <div class="hero-image-wrapper">
-    <!-- <a href="/projecten" class="hero-image-button btn btn-white">Bekijk mijn laatste werk</a> -->
+    <Image src={backgroundImage.imgUrl}  alt={backgroundImage.imgAlt} width={1000} height={1000} class="background-image"/>
+    <a href="/" class="hero-image-button btn btn-white">Bekijk mijn laatste werk</a>
     <Image src={image.imgUrl}  alt={image.imgAlt} width={500} height={500} class="image" />
   </div>
 </header>
@@ -30,7 +30,7 @@ const {
 <style>
   header {
     display: flex;
-    padding-block: 24rem var(--size-10);
+    padding-block: var(--size-10);
     position: relative;
     justify-content: space-between;
     gap: var(--size-3);
@@ -38,9 +38,12 @@ const {
     .hero-copy {
       flex-grow: 1;
       width: 50%;
+      span {
+        font-size: var(--size-2);
+      };
 
       h1 {
-        margin-block: var(--size-1) ;
+        margin-block: var(--size-2) ;
       }
 
       div {
@@ -52,16 +55,52 @@ const {
     }
 
     .hero-image-wrapper {
-      width: 40%;
-      height: 100%;
-      flex-grow: 1;
-      img {
-        border-radius: var(--border-radius-img);
-        width: 100%;
+      display: none;
+    }
+
+    @media (width >= 43.75rem) {
+      .hero-image-wrapper {
+        --_img-margin: var(--size-3);
+        display: block;
+        flex-grow: 1;
+        width: 40%;
         height: 100%;
-        box-shadow: var(--box-shadow);
-        object-fit: cover;
+        position: relative;
+        z-index: 1;
+
+        .hero-image-button {
+          background-color: var(--clr-background);
+          align-content: center;
+          position: absolute;
+          right: var(--_img-margin);
+          z-index: 50;
+          height: calc(var(--_img-margin) * 2);
+          text-decoration: underline;
+        }
+
+        .image {
+          border-radius: var(--border-radius-img);
+          box-shadow: var(--box-shadow);
+          margin-block-start: var(--_img-margin);
+          height: 100%;
+        }
+
+        .background-image {
+          position: absolute;
+          overflow: visible;
+          object-fit: cover;
+          object-position: center;
+          height: 110%;
+          width: 100%;
+          z-index: -1;
+        }
       }
+    }
+  }
+
+  @media (width >= 870px) {
+    header {
+      padding-block: 24rem  var(--size-10);
     }
   }
 </style>
