@@ -11,7 +11,7 @@ const {
   <SectionTitle sectionTitle={title} />
   <div class="steps-grid">
     {
-      steps.map((step, i) => {
+      steps.map((step: { title: string; paragraph: string }, i: number) => {
         return (
         <div class="grid-item">
           <span class="grid-number">{ i +1}</span>
@@ -32,35 +32,29 @@ const {
     gap :var(--size-3);
 
     .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: var(--size-1);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      gap: var(--size-5);
+      text-align: center;
 
-    .grid-item {
-      display: flex;
-      gap: var(--size-1);
-
-      .grid-number {
-        color: var(--clr-secondary-900);
-        font-size: var(--fs-700);
-      }
-
+      .grid-item {
+        .grid-number {
+          color: var(--clr-secondary-900);
+          font-size: var(--fs-700);
+        }
         .grid-content {
           display: grid;
           gap: var(--size-1);
-
           .grid-title {
             color: var(--clr-primary-800);
             font-size: var(--fs-600);
           }
-
           .grid-text {
-            max-width: 80%;
+            max-width: 100%;
           }
         }
+      }
     }
-    }
-
   }
 
 </style>
