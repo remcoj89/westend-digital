@@ -15,8 +15,7 @@ const {
     <span>Van Visie naar resultaat</span>
     <h1>{title}</h1>
     <div>
-      <p>{subTitle[0]}</p>
-      <p>{subTitle[1]}</p>
+      <p>{subTitle}</p>
     </div>
     <a href="/contact" class="btn btn-hero" id="hero-btn">{ctaBtn}</a>
   </div>
@@ -30,11 +29,10 @@ const {
 <style>
   header {
     display: flex;
+    gap: var(--size-3);
+    justify-content: space-between;
     padding-block: var(--size-10);
     position: relative;
-    justify-content: space-between;
-    gap: var(--size-3);
-
     .hero-copy {
       flex-grow: 1;
       width: 50%;
@@ -64,9 +62,9 @@ const {
         --_img-margin: var(--size-3);
         display: block;
         flex-grow: 1;
-        width: 40%;
         height: 100%;
         position: relative;
+        width: 40%;
         z-index: 1;
 
         .hero-image-button {
@@ -82,16 +80,16 @@ const {
         .image {
           border-radius: var(--border-radius-img);
           box-shadow: var(--box-shadow);
-          margin-block-start: var(--_img-margin);
           height: 100%;
+          margin-block-start: var(--_img-margin);
         }
 
         .background-image {
-          position: absolute;
-          overflow: visible;
+          height: 110%;
           object-fit: cover;
           object-position: center;
-          height: 110%;
+          overflow: visible;
+          position: absolute;
           width: 100%;
           z-index: -1;
         }

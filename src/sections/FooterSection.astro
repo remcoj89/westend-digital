@@ -29,7 +29,7 @@ const {
   </div>
 
   <div class="links">
-    <!-- <div>
+    <div>
       <h4>Sitemap</h4>
       <ul role="list">
         { pages.map((page) => {
@@ -38,13 +38,13 @@ const {
           )
         })}
       </ul>
-    </div> -->
+    </div>
     <div>
       <h4>Contact</h4>
       <ul role="list" id="contact-list">
         <li>
-          <p>{adress.street}</p>
-          <p>{adress.adress}</p>
+          <p>Straat: {adress.street}</p>
+          <p>Adres: {adress.adress}</p>
         </li>
         <li>
           <p>Email: <a href={`mailto:${adress.email}`}>{adress.email}</a></p>
@@ -83,7 +83,7 @@ const {
       grid-column: 2 / -2;
       text-align: center;
 
-p {
+      p {
         margin-inline: auto;
       }
     }
@@ -91,8 +91,10 @@ p {
     .links {
       align-items: flex-start;
       display: flex;
+      flex-direction: column;
+      row-gap: var(--size-3);
       grid-column: 2 / -2;
-      justify-content: flex-end;
+      justify-content: space-between;
       margin-top: var(--size-5);
 
       h4,
@@ -103,6 +105,7 @@ p {
       h4 {
         font-size: var(--fs-500);
         margin-bottom: var(--size-2);
+        color: var(--clr-primary-100);
       }
 
       h5 {
@@ -128,24 +131,39 @@ p {
       align-self: stretch;
       border-top: solid 1px var(--clr-primary-100);
       display: flex;
-      justify-content: space-evenly;
+      flex-direction: column-reverse;
+      text-align: center;
       grid-column: 2 / -2;
+      row-gap: var(--size-2);
+      justify-content: space-evenly;
       margin-block-start: var(--size-4);
       padding-block: var(--size-3);
 
       .legal-pages {
         display: flex;
-        gap: var(--size-1);
+        gap: var(--size-2);
+        justify-content: center;
+      }
+    }
+
+    @media (width >= 649px) {
+      .logo-section {
+          grid-column: 2 / -2;
+        }
+
+      .links {
+        flex-direction: row;
+        grid-column: 2 / -2;
       }
     }
 
     @media( width >= 43.75em ) {
         .logo-section {
-          grid-column: 2 / -2;
+          grid-column: 3 / -3;
         }
 
         .links {
-          grid-column: 2 / -2;
+          grid-column: 3 / -3;
         }
       }
     @media( width >= 62.5em ) {
@@ -155,7 +173,11 @@ p {
 
         .links {
           align-self: center;
-          grid-column: -2 / 6;
+          grid-column: -7 / -2;
+        }
+
+        .footer-bottom {
+          flex-direction: row;
         }
       }
   }

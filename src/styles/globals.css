@@ -233,20 +233,20 @@ section {
 }
 
 .btn {
-  border: none;
   border-radius: var(--border-radius-btn);
+  border: none;
   cursor: pointer;
   display: block;
-  padding-block: 1rem;
-  height: fit-content;
-  width: fit-content;
-  padding-inline: var(--size-3);
   font-size: var(--fs-400);
   font-weight: var(--fw-semi-bold);
+  height: fit-content;
+  margin-inline: auto;
+  padding-block: 1rem;
+  padding-inline: var(--size-3);
   text-align: center;
   text-decoration: none;
   transition: background-color 0.5s ease-out;
-  margin-inline: auto;
+  width: fit-content;
 }
 
 @media (width >= 43.75em) {
@@ -256,12 +256,12 @@ section {
 }
 
 .btn-hero {
-  padding-block: var(--size-1);
   background-color: var(--clr-alert-green-900);
   border: solid 2px var(--clr-alert-green-900);
   box-shadow: var(--box-shadow);
-  margin-block-start: var(--size-3);
   color: var(--clr-primary-100);
+  margin-block-start: var(--size-3);
+  padding-block: var(--size-1);
 
   &:hover,
   &:active {
@@ -273,8 +273,8 @@ section {
 
 .btn-white {
   background-color: var(--clr-background);
-  box-shadow: var(--box-shadow);
   border: solid 2px var(--clr-background);
+  box-shadow: var(--box-shadow);
 
   &:hover {
     border: solid 2px var(--clr-primary-800);
@@ -351,10 +351,9 @@ section {
 
 
 .hidden {
-  opacity: 0;
   filter: blur(2px);
+  opacity: 0;
   transition: all 1s;
-
 }
 
 .show {
@@ -364,7 +363,7 @@ section {
 
 @media(prefers-reduced-motion) {
   .hidden {
-    transition: none;
     filter: blur(0);
+    transition: none;
   }
 }
