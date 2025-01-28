@@ -85,12 +85,6 @@
   --size-9: 8rem;
   --size-10: 8.8rem;
 
-
-  /* @media (prefers-color-scheme: dark) {
-      --clr-body: var(--clr-neutral-100);
-      --clr-background: var(--clr-neutral-800);
-      --clr-heading: var(--clr-primary-100);
-    } */
 }
 
 *,
@@ -175,6 +169,7 @@ img {
   display: flex;
   margin-inline: auto;
   width: calc((min(100% - 4rem, 112.4rem)));
+  text-align: center;
 }
 
 .grid {
@@ -208,6 +203,7 @@ img {
 
   .wrapper {
     width: calc((min(100% - 8rem, 112.4rem)));
+    text-align: left;
   }
 
 }
@@ -250,6 +246,13 @@ section {
   text-align: center;
   text-decoration: none;
   transition: background-color 0.5s ease-out;
+  margin-inline: auto;
+}
+
+@media (width >= 43.75em) {
+  .btn {
+    margin-inline: unset;
+  }
 }
 
 .btn-hero {

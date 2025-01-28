@@ -55,10 +55,12 @@ const usps = [
 <style>
   #usp-section {
     justify-content: space-between;
+    flex-direction: column;
+    gap: var(--size-5);
   }
 
   .why-us-wrapper {
-    max-width: 30%;
+    max-width: 100%;
 
     h2 {
       margin-bottom: var(--size-3);
@@ -67,8 +69,22 @@ const usps = [
 
   .usp-wrapper {
     display: grid;
-    max-width: 60%;
+    max-width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: var(--size-1);
   }
+
+  /* @media (width >= 62.5em) {
+    #usp-section {
+      flex-direction: row;
+      gap: var(--size-3);
+    }
+    .why-us-wrapper {
+      max-width: 40%;
+    }
+
+    .usp-wrapper {
+      max-width: 60%;
+    }
+  } */
 </style>

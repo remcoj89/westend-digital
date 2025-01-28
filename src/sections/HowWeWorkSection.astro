@@ -22,7 +22,7 @@ const iconColorActive = "var(--clr-primary-300)"
       <div class="steps-list-wrapper">
         <ul role="list" class="steps-list">
           {
-            steps.map((step, i) => {
+            steps.map((step: { listTitle: unknown; }, i: number) => {
               return  (
               <li class="step">0{i + 1} <span>{step.listTitle}</span> </li>
             )
@@ -36,14 +36,14 @@ const iconColorActive = "var(--clr-primary-300)"
       <div class="steps">
         <div class="steps-container">
           {
-            steps.map((step, i) => {
+            steps.map((step: { title: unknown; steps: any[]; }, i: any) => {
               return (
                   <div class="steps-wrapper">
                     <div class="steps-content">
-                      <h2>{step.title}</h2>
+                      <h3>{step.title}</h3>
                       <ul role="list">
                         {
-                          step.steps.map(s => {
+                          step.steps.map((s: unknown) => {
                             return <li class="list-item"><div class="steps-icon"><PlusIcon /></div><p>{s}</p></li>
                           })
                         }
@@ -57,7 +57,7 @@ const iconColorActive = "var(--clr-primary-300)"
       </div>
     </div>
     <div class="btn-wrapper">
-      <a href="/contact" class="btn btn-primary">
+      <a href="/contact" class="btn btn-secondary">
         Vrijblijvende afspraak
       </a>
 
@@ -177,9 +177,12 @@ const iconColorActive = "var(--clr-primary-300)"
     margin-block-end: var(--size-3);
   }
 
-  h2 {
+  h2,
+  h3 {
     color: var(--clr-primary-100);
+    text-align: center;
   }
+
   .how-we-work-wrapper {
     display: flex;
     flex-direction: column;
@@ -191,6 +194,7 @@ const iconColorActive = "var(--clr-primary-300)"
     display: grid;
     gap: var(--size-3);
     padding-inline-end: var(--size-3);
+    justify-content: center;
     width: 100%;
 
     .steps-list {
@@ -214,6 +218,7 @@ const iconColorActive = "var(--clr-primary-300)"
   }
 
   .steps {
+    text-align: center;
     width: 100%;
 
     .steps-container {
@@ -287,11 +292,17 @@ const iconColorActive = "var(--clr-primary-300)"
 
 
   @media (width >= 43.75em) {
+
+    h2,
+    h3 {
+      text-align: unset;
+    }
     .how-we-work-wrapper {
       flex-direction: row;
     }
     .steps-list-wrapper {
       border-right: solid 1px var(--clr-primary-300);
+      justify-content: unset;
       width: 40%;
 
       .steps-list {

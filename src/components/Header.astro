@@ -9,15 +9,14 @@
 <style>
 
   header {
-    /* background-image: url("/assets/images/Shared/hero-background-image.webp");
+    background-image: url("/assets/images/Shared/hero-background-image.webp");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
     color: var(--clr-primary-100);
     display: grid;
-    padding-block: 24rem var(--size-10);
+    padding-block: 12rem;
     place-items: center;
-
 
     div {
       align-content: center;
@@ -34,6 +33,7 @@
     }
 
     h1 {
+      color: var(--clr-primary-100);
        font-size: var(--fs-900);
        line-height: var(--lh-200);
      }
@@ -48,6 +48,11 @@
     span  {
       font-weight: var(--fw-regular);
     }
+  }
 
+  @media (width >= 870px) {
+    header {
+      padding-block: 24rem var(--size-10);
+    }
   }
 </style>
