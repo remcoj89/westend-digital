@@ -1,7 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
 
-const ctaImage = "/images/remco-bg-transparent.png"
+const ctaImage = "/images/kennis-making.webp";
 ---
 
 <section class="fb-col-wrapper" id="cta-section">
@@ -12,29 +12,36 @@ const ctaImage = "/images/remco-bg-transparent.png"
       <a href="mailto:info@westend-digital.nl" class="btn btn-secondary-open">Stuur een email</a>
     </div>
   </div>
-  <Image
+  <!-- <Image
     alt="Remco Jonk"
     class="cta-image"
     src={ctaImage}
     height={500}
     width={500}
-  />
+  /> -->
 </section>
 
 <style>
   #cta-section {
-    background-color: var(--clr-primary-700);
     color: var(--clr-primary-100);
     padding-block: var(--size-6);
+    background-color: hsl(224, 75%, 11%);
+    background:linear-gradient(315deg, hsl(224, 35%, 28%, 0.7), hsl(224, 75%, 11%, 0.8)), url("/images/kennismaking.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
+
 
   .cta-content {
     align-content: center;
     text-align: center;
     grid-column: 2 / -2;
+    padding-block: 5rem;
 
     .cta-title {
       font-size: var(--fs-700);
+      color: var(--clr-primary-100);
       margin-block-end: var(--size-3);
     }
 
@@ -60,27 +67,16 @@ const ctaImage = "/images/remco-bg-transparent.png"
 
     }
     .cta-content {
-      grid-column: 2 / 6;
-    }
-
-    .cta-image {
-      display: block;
-      grid-column: -2 / 6;
-      margin-block-start: auto;
-      margin-inline: auto;
+      padding-block: 7.5rem;
+      grid-column: 2 / -2;
     }
 
   }
   @media(width >= 62.5em) {
 
     .cta-content {
-      grid-column: 2 / 7;
-    }
-
-    .cta-image {
-      display: block;
-      grid-column: -2 / 7;
-      margin-inline: auto;
+      padding-block: 10rem;
+      grid-column: 2 / -2;
     }
 
   }

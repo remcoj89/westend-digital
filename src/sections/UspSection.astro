@@ -3,21 +3,22 @@ import Image from "astro/components/Image.astro";
 import Card from "../components/Card.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 const title = "Waarom kies je voor Westend Digital?";
+const paragraph = "Westend Digital is jouw partner voor digitale groei, die met een doordachte strategie en focus op meetbare resultaten een online platform bouwt dat met jouw ambities meegroeit. Zo wordt je website een krachtige groeimotor voor nu en in de toekomst."
 const usps = [
   {
-    iconUrl: "/images/digital-succes.webp",
+    iconUrl: "/assets/icons/icon-digital-grow.svg",
     altText: "",
-    title: "Jouw digitale succes als product",
+    title: "Digitaal succes als product",
     text: "Een effectieve website draait om drie pijlers: de juiste techniek, een doelgerichte strategie en meetbare resultaten. Ik werk ook met drie pijlers: een duidelijk plan, een concreet doel en een transparant proces. Zo zie je precies hoe we jouw digitale succes gaan realiseren."
   },
   {
-    iconUrl: "/images/meer-dan-een-website.webp",
+    iconUrl: "/assets/icons/icon-meer-dan-een-website.svg",
     altText: "",
     title: "Méér dan een website",
     text: "Ik bouw niet alleen je website - ik ben ook je sparringpartner voor je digitale groei. Door jouw bedrijf en doelgroep écht te begrijpen, creëer ik een online aanwezigheid die aansluit bij jouw doelen. We bouwen samen aan je groei: nu én in de toekomst. "
   },
   {
-    iconUrl: "/images/groei-motor.webp",
+    iconUrl: "/assets/icons/icon-website-als-groei-motor.svg",
     altText: "",
     title: "Je website als groeimotor",
     text: "Je wilt niet alleen een website die er professioneel uitziet, maar een platform dat meegroeit met je ambities. Ik bouw websites met het grotere plaatje in gedachten: een strategisch fundament dat je bedrijf versterkt. Geen holle woorden, wel meetbare resultaten."
@@ -26,17 +27,21 @@ const usps = [
 ---
 
 <section class="wrapper" id="usp-section">
-  <SectionTitle sectionTitle={title} />
+
+  <div class="why-us-wrapper">
+    <h2>{title}</h2>
+    <p>{paragraph}</p>
+  </div>
   <div class="usp-wrapper">
     {usps.map(usp => {
       return (
       <Card cardStyle="primary">
-        {/* <Image
+        <Image
           alt={usp.altText}
           height={250}
           src={usp.iconUrl}
           width={250}
-          /> */}
+          />
         <h3>{usp.title}</h3>
         <p>{usp.text}</p>
 
@@ -49,23 +54,21 @@ const usps = [
 
 <style>
   #usp-section {
-    flex-direction: column;
-    gap :var(--size-3);
+    justify-content: space-between;
+  }
+
+  .why-us-wrapper {
+    max-width: 30%;
+
+    h2 {
+      margin-bottom: var(--size-3);
+    }
   }
 
   .usp-wrapper {
     display: grid;
+    max-width: 60%;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: var(--size-1);
-
-    h3 {
-      font-size: var(--fs-600);
-    }
-
-    img {
-      height: 12rem;
-      margin-inline: auto;
-      width: 12rem;
-    }
   }
 </style>

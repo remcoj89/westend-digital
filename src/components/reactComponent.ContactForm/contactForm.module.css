@@ -15,11 +15,13 @@
     .starRequired {
       color: var(--clr-alert-red-900);
     }
-    
+
     input,
     textarea {
       border: none;
       border-bottom: 1px solid var(--clr-primary-800);
+      padding-inline-start: var(--size-1);
+      border-radius: var(--border-radius-btn);
 
       caret-color: var(--clr-secondary-900);
       padding-block: var(--size-1);

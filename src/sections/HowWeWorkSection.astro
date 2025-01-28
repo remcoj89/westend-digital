@@ -16,10 +16,10 @@ const iconColorActive = "var(--clr-primary-300)"
 
 
 <section class="fb-col-wrapper" id="how-we-work">
+  <h2 id="section-title">{title}</h2>
   <div class="how-we-work-wrapper">
 
       <div class="steps-list-wrapper">
-        <h2>{title}</h2>
         <ul role="list" class="steps-list">
           {
             steps.map((step, i) => {
@@ -171,10 +171,20 @@ const iconColorActive = "var(--clr-primary-300)"
     padding-block: var(--size-8);
   }
 
+  #section-title {
+    grid-column: 2 /-2;
+    text-align: center;
+    margin-block-end: var(--size-3);
+  }
+
+  h2 {
+    color: var(--clr-primary-100);
+  }
   .how-we-work-wrapper {
     display: flex;
     flex-direction: column;
     grid-column: 2 / -2;
+
   }
 
   .steps-list-wrapper {
