@@ -179,7 +179,7 @@ img {
 
 .flex {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
   gap: var(--size-2);
   justify-content: space-between;
@@ -188,7 +188,7 @@ img {
 
 .flex-reverse {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
   gap: var(--size-4);
 }

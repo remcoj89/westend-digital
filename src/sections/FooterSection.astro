@@ -43,8 +43,8 @@ const {
       <h4>Contact</h4>
       <ul role="list" id="contact-list">
         <li>
-          <p>Straat: {adress.street}</p>
-          <p>Adres: {adress.adress}</p>
+          <p>{adress.street}</p>
+          <p>{adress.adress}</p>
         </li>
         <li>
           <p>Email: <a href={`mailto:${adress.email}`}>{adress.email}</a></p>
@@ -146,7 +146,7 @@ const {
       }
     }
 
-    @media (width >= 649px) {
+    @media (width >= 407px) {
       .logo-section {
           grid-column: 2 / -2;
         }
