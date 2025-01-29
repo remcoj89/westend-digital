@@ -41,7 +41,7 @@
   --clr-neutral-500: hsl(0, 0%, 34%);
   --clr-neutral-700: hsl(230, 5%, 22%);
   --clr-neutral-800: hsl(224, 17%, 13%);
-  --clr-neutral-900: hsl(224, 100%, 4%);
+  --clr-neutral-900: hsl(225, 100%, 4%);
 
   --clr-alert-green-900: hsl(106, 91%, 25%);
   --clr-alert-yellow-900: hsl(46, 100%, 51%);
@@ -311,7 +311,7 @@ section {
   background-color: var(--clr-secondary-900);
   border: solid 2px var(--clr-secondary-900);
   box-shadow: var(--box-shadow);
-  color: var(--clr-primary-100);
+  color: var(--clr-primary-900);
   max-width: 65ch;
 
   &:hover,
