@@ -1,0 +1,44 @@
+---
+import { PlusIcon } from "../assets/icons"
+import WebCheckForm from '../components/reactComponent.WebCheckForm/WebCheckForm';
+const {
+  paragraph,
+  uspList,
+  ctaText
+} = Astro.props
+
+---
+
+
+<section class="wrapper flex-reverse">
+  <div>
+    <p>{paragraph}</p>
+    <ul role="list">
+      {uspList.map((item: unknown) => {
+        return (
+          <li><PlusIcon /> <span>{item}</span></li>
+        )
+      })}
+      </ul>
+      <p>{ctaText}</p>
+    </div>
+    <WebCheckForm  client:load/>
+</section>
+
+<style>
+  .form-wrapper {
+    width: 100%;
+  }
+  ul {
+    padding-block: var(--size-3);
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: var(--size-1);
+    padding-inline-start: var(--size-1);
+    line-height: var(--lh-400);
+
+}
+</style>

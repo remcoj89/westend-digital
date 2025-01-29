@@ -1,0 +1,70 @@
+---
+import SectionTitle from "../components/SectionTitle.astro"
+
+const { steps, btnText } = Astro.props
+---
+
+<section  class="fb-col-wrapper" id="steps">
+  <SectionTitle sectionTitle="Zo pak ik het aan" />
+  <div class="steps-wrapper">
+    <ul role="list" class="steps-list">
+      { steps.map((step, i) => {
+        return (
+        <li>
+          <div class="list-title">
+            <span>{i + 1}</span>
+            <h3>{step.title}</h3>
+          </div>
+          <p>{step.description}</p>
+        </li>
+        )
+
+      })}
+    </ul>
+    <div class="btn-wrapper">
+      <a href="#web-check-form-section" class="btn btn-secondary">{btnText}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  #steps {
+    color: white;
+    background-color: var(--clr-primary-700);
+    padding-block: var(--size-6);
+  }
+  .steps-wrapper {
+    grid-column: 2 / -2;
+    display: grid;
+    gap: var(--size-4);
+
+    .steps-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+      text-align: center;
+      gap: var(--size-1);
+
+      li {
+        height: 100%;
+        padding-inline: var(--size-1);
+
+        .list-title {
+          height: 15rem;
+          margin-block-end: var(--size-2);
+        }
+
+        span {
+          font-size: var(--fs-900);
+          color: var(--clr-secondary-900);
+          line-height: 2;
+        }
+
+      };
+
+    }
+    .btn-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+  }
+</style>
