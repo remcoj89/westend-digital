@@ -5,24 +5,39 @@ import Header from "../../components/Header.astro";
 import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
 
+export const prerender = true;
 export async function getStaticPaths() {
-  const blogs = await fetchBlogArticles()
+  try {
+    const blogs = await fetchBlogArticles();
+    // console.log("Fetched blogs:", blogs); // Inspecteer de data
 
-  return blogs.map((blog) => ({
-    params: {
-      slug: blog.node.slug
-    },
-    props: {
-      blogData: blog
+    if (!blogs || blogs.length === 0) {
+      // console.warn("No blogs found!");
+      return []; // Lege array als er geen blogs zijn
     }
-  }))
 
+    return blogs.map((blog) => {
+      // console.log("Processing blog:", blog); // Inspecteer individuele blog
+
+      return {
+        params: {
+          slug: blog.node.slug,
+        },
+        props: {
+          blogData: blog,
+        },
+      };
+    });
+  } catch (error) {
+    // console.error("Error in getStaticPaths:", error);
+    return []; // Lege array bij een error
+  }
 }
 
 const { slug } = Astro.params;
 
 const blogs = await fetchBlogArticles()
-const blogData = blogs.find(blog => blog.node.slug === slug)
+const blogData = blogs.find((blog: { node: { slug: any; }; }) => blog.node.slug === slug)
 
 if (!blogData) {
   throw new Error('Blog not found');
