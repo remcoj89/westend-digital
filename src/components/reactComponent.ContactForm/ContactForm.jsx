@@ -82,7 +82,7 @@ export default function Form({submitBtnText, legal, link}) {
 
 
       <div className={Styles.btnWrapper}>
-        <button type="submit" className={`${Styles.btn} ${Styles.btnSubmit}`}>{submitBtnText}</button>
+        <button type="submit" className={`${Styles.btn} ${Styles.btnSubmit}`} aria-label="verstuur formulier">{submitBtnText}</button>
         {
           responseMessage && <p>{responseMessage}</p> ||
           <p>{legal} <a href={link.href}>{link.title}</a></p>

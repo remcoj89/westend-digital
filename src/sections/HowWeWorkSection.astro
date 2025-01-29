@@ -57,16 +57,16 @@ const iconColorActive = "var(--clr-primary-300)"
       </div>
     </div>
     <div class="btn-wrapper">
-      <a href="/contact" class="btn btn-secondary">
+      <a href="/contact" class="btn btn-secondary" aria-label="klick voor een vrijblijvend afspraak">
         Vrijblijvende afspraak
       </a>
 
-      <div class="arrow-buttons">
-        <Button buttonStyle="arrow-btn" buttonId="btn-previous" >
+      <div class="arrow-buttons" >
+        <Button buttonStyle="arrow-btn" buttonId="btn-previous" ariaLabel="knop voor vorige in lijst" >
           <ArrowButtonLeft iconFill={iconColor} />
         </Button>
-        <Button buttonStyle="arrow-btn" buttonId="btn-next" >
-          <ArrowButtonRight iconFill={iconColorActive} />
+        <Button buttonStyle="arrow-btn" buttonId="btn-next" ariaLabel="knop voor volgende in lijst">
+          <ArrowButtonRight iconFill={iconColorActive}  />
         </Button>
       </div>
     </div>

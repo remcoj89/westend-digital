@@ -4,11 +4,12 @@ const {
   buttonStyle = "btn-primary",
   buttonType = "button",
   buttonId,
+  ariaLabel = "knop"
 } = Astro.props
 
 ---
 
-<button type={buttonType} class={`btn ${buttonStyle}`} id={buttonId}>
+<button type={buttonType} class={`btn ${buttonStyle}`} id={buttonId} aria-label={ariaLabel}>
   <slot />
 </button>
 

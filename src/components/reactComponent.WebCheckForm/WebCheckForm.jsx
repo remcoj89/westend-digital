@@ -73,7 +73,7 @@ export default function WebCheckForm() {
          </label>
 
        <div className={Styles.btnWrapper}>
-         <button type="submit" className={`${Styles.btn} ${Styles.btnSubmit}`}>Yes doe mij die gratis website check maar!</button>
+         <button type="submit" className={`${Styles.btn} ${Styles.btnSubmit}`} aria-label="verstuur formulier">Yes doe mij die gratis website check maar!</button>
          {
            responseMessage && <p>{responseMessage}</p> ||
            <p>Door op bovenstaande knop te klikken, geef je Westend Digital toesteming om jou te contacteren en   meld je je aan voor onze nieuwsbrief Je contact gegevens worden conform het <a href="/">privacybeleid</a> van Westend Digital verwerkt.</p>
