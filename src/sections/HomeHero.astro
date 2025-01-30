@@ -33,16 +33,16 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
     src={image.imgUrl}
     width={500}
     />
+    <!-- Background image -->
+    <Image
+      alt={backgroundImage.imgAlt}
+      class="background-image"
+      height={1000}
+      loading="eager"
+      src={backgroundImage.imgUrl}
+      width={1000}
+    />
   </div>
-  <!-- Background image -->
-  <Image
-    alt={backgroundImage.imgAlt}
-    class="background-image"
-    height={1000}
-    loading="eager"
-    src={backgroundImage.imgUrl}
-    width={1000}
-  />
 </header>
 
 <style>
@@ -51,13 +51,13 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
     flex-wrap: wrap;
     gap: var(--size-3);
     justify-content: space-between;
-    overflow-x: hidden;
     padding-block: var(--size-10);
     position: relative;
 
     .hero-copy {
       flex-grow: 1;
       width: 50%;
+
 
       span {
         font-size: var(--size-2);
@@ -74,8 +74,7 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
       }
     }
 
-    .hero-image-wrapper,
-    .background-image {
+    .hero-image-wrapper {
       display: none;
     }
 
@@ -106,16 +105,16 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
           margin-block-start: var(--_img-margin);
         }
 
-      }
-      .background-image {
-        display: block;
-        height: auto;
-        object-fit: cover;
-        object-position: right;
-        position: absolute;
-        right: -30%;
-        width: 80%;
-        z-index: -1;
+        .background-image {
+          height: 120%;
+          inset: -10%;
+          object-fit: cover;
+          object-position: 10%;
+          position: absolute;
+          width: 110%;
+          z-index: -1;
+
+        }
       }
     }
   }
