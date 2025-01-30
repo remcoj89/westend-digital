@@ -60,7 +60,7 @@ const {
 
   <div class="footer-bottom">
     <div>&copy; <span>{currentYear}</span> - {footer.footerCopyRightsText}</div>
-    <div class="legal-pages">
+    <div class="legal-pages-wrapper">
       {
         legalPages.map((page) => {
           return (
@@ -139,7 +139,7 @@ const {
       margin-block-start: var(--size-4);
       padding-block: var(--size-3);
 
-      .legal-pages {
+      .legal-pages-wrapper {
         display: flex;
         gap: var(--size-2);
         justify-content: center;

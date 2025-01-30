@@ -88,8 +88,6 @@ export default function Form({submitBtnText, legal, link}) {
           <p>{legal} <a href={link.href}>{link.title}</a></p>
         }
       </div>
-
-
     </form>
   );
 }

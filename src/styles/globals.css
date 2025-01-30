@@ -26,7 +26,7 @@
   --clr-primary-300: hsl(0, 0%, 90%);
   --clr-primary-500: hsl(224, 10%, 56%);
   --clr-primary-700: hsl(224, 21%, 38%);
-  --clr-primary-800: hsl(224, 35%, 28%);
+  --clr-primary-800: hsl(223, 35%, 28%);
   --clr-primary-900: hsl(224, 75%, 11%);
 
   --clr-secondary-100: hsl(0, 0%, 96%);
@@ -365,5 +365,19 @@ section {
   .hidden {
     filter: blur(0);
     transition: none;
+  }
+}
+
+.legal-pages {
+  flex-direction: column;
+  margin-block-start: 14rem;
+  gap: var(--size-5);
+
+  h1, h2, h3, h4, h5{
+    margin-block-end: var(--size-2);
+  }
+
+  ul {
+    padding-inline: var(--size-3);
   }
 }
