@@ -1,16 +1,15 @@
-
 .contactForm {
   display: grid;
   gap: var(--size-2);
 
-
   label {
     color: var(--clr-primary-900);
     display: flex;
-    gap: var(--size-1);
     flex-direction: column;
+    gap: var(--size-1);
     margin-inline-start: auto;
-    width: 75%;
+    text-align: left;
+    width: 100%;
 
     .starRequired {
       color: var(--clr-alert-red-900);
@@ -18,20 +17,18 @@
 
     input,
     textarea {
-      border: none;
       border-bottom: 1px solid var(--clr-primary-800);
-      padding-inline-start: var(--size-1);
       border-radius: var(--border-radius-btn);
-
+      border: none;
       caret-color: var(--clr-secondary-900);
-      padding-block: var(--size-1);
       font-size: var(--fs-500);
+      padding-block: var(--size-1);
+      padding-inline-start: var(--size-1);
 
       &:focus {
         border-bottom: 2px solid var(--clr-primary-900);
         outline: none;
       }
-
     }
   }
 }
@@ -42,21 +39,21 @@
   margin-block-start: var(--size-3);
   margin-inline-start: auto;
   text-wrap: pretty;
-  width: 50%;
+  width: 100%;
 }
 
 .btn {
-    border: none;
-    border-radius: var(--border-radius-btn);
-    cursor: pointer;
-    font-size: var(--fs-400);
-    font-weight: var(--fw-semi-bold);
-    padding-block: 1rem;
-    padding-inline: var(--size-3);
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-  }
+  border-radius: var(--border-radius-btn);
+  border: none;
+  cursor: pointer;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-semi-bold);
+  padding-block: var(--size-2);
+  padding-inline: var(--size-2);
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
 
 .btnSubmit {
   background-color: var(--clr-primary-900);

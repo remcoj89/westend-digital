@@ -1,51 +1,49 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import HomeHero from "../sections/HomeHero.astro";
-import WhatIdoSection from "../sections/WhatIdoSection.astro";
-import IntroSection from "../sections/IntroSection.astro";
-import UspSection from "../sections/UspSection.astro";
-import HowWeWorkSection from "../sections/HowWeWorkSection.astro";
-// import ReviewSection from '../sections/ReviewSection.astro';
-import FaqSection from "../sections/FaqSection.astro";
 import CtaSection from "../sections/CtaSection.astro";
+import FaqSection from "../sections/FaqSection.astro";
 import FooterSection from "../sections/FooterSection.astro";
+import HomeHero from "../sections/HomeHero.astro";
+import HowWeWorkSection from "../sections/HowWeWorkSection.astro";
+import IntroSection from "../sections/IntroSection.astro";
+import Layout from "../layouts/Layout.astro";
 import pageData from "../data/homePage.json";
+import UspSection from "../sections/UspSection.astro";
+import WhatIdoSection from "../sections/WhatIdoSection.astro";
 
 const {
-  metaTitle,
+  ctaBtn,
+  faqSection,
+  heroBackgroundImage,
+  heroImage,
+  heroSubtitle,
+  heroTitle,
+  howWeWorkSection,
   metaDescription,
+  metaTitle,
   ogImage,
   ogUrl,
-  topTitle,
-  heroTitle,
-  heroSubtitle,
-  ctaBtn,
-  heroImage,
-  heroBackgroundImage,
-  introSection,
   sectionCodeToConnection,
+  topTitle,
   whatIDoSection,
-  howWeWorkSection,
-  faqSection,
 } = pageData.pageContent;
 ---
 
 <Layout
-  title={metaTitle}
   description={metaDescription}
-  ogTitle={metaTitle}
   ogDescription={metaDescription}
-  ogImageUrl={ogImage.ogImageUrl}
   ogImageAlt={ogImage.ogImageAlt}
+  ogImageUrl={ogImage.ogImageUrl}
+  ogTitle={metaTitle}
   ogUrl={ogUrl}
+  title={metaTitle}
 >
   <HomeHero
-    topTitle={topTitle}
-    title={heroTitle}
-    subTitle={heroSubtitle}
+    backgroundImage={heroBackgroundImage}
     ctaBtn={ctaBtn}
     image={heroImage}
-    backgroundImage={heroBackgroundImage}
+    subTitle={heroSubtitle}
+    title={heroTitle}
+    topTitle={topTitle}
   />
   <main>
     <WhatIdoSection
@@ -54,14 +52,14 @@ const {
     />
     <UspSection />
     <HowWeWorkSection
-      title={howWeWorkSection.title}
       steps={howWeWorkSection.steps}
+      title={howWeWorkSection.title}
     />
     <IntroSection
-      title={sectionCodeToConnection.title}
-      paragraph={sectionCodeToConnection.paragraph}
-      imageUrl={sectionCodeToConnection.imageUrl}
       altText={sectionCodeToConnection.altText}
+      imageUrl={sectionCodeToConnection.imageUrl}
+      paragraph={sectionCodeToConnection.paragraph}
+      title={sectionCodeToConnection.title}
     />
     <!-- <ReviewSection /> -->
     <FaqSection title={faqSection.title} faqs={faqSection.faqs} />

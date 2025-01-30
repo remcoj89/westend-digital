@@ -1,10 +1,8 @@
 ---
 import Image from "astro/components/Image.astro";
 
-const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =
-  Astro.props;
+const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.props;
 
-console.log(topTitle);
 ---
 
 <header class="wrapper">
@@ -15,31 +13,33 @@ console.log(topTitle);
       <p>{subTitle}</p>
     </div>
     <a
-      href="/contact"
+      aria-label="neem vrijblijvend contact met mij op"
       class="btn btn-hero"
+      href="/contact"
       id="hero-btn"
-      aria-label="neem vrijblijvend contact met mij op">{ctaBtn}</a
     >
+      {ctaBtn}
+    </a>
   </div>
   <div class="hero-image-wrapper">
     <Image
-      src={backgroundImage.imgUrl}
       alt={backgroundImage.imgAlt}
-      width={1000}
-      height={1000}
       class="background-image"
+      height={1000}
       loading="eager"
+      src={backgroundImage.imgUrl}
+      width={1000}
     />
-    <a href="/" class="hero-image-button btn btn-white"
+    <a href="/projecten" class="hero-image-button btn btn-white"
       >Bekijk mijn laatste werk</a
     >
     <Image
-      src={image.imgUrl}
       alt={image.imgAlt}
-      width={500}
-      height={500}
       class="image"
+      height={500}
       loading="eager"
+      src={image.imgUrl}
+      width={500}
     />
   </div>
 </header>
@@ -54,6 +54,7 @@ console.log(topTitle);
     .hero-copy {
       flex-grow: 1;
       width: 50%;
+
       span {
         font-size: var(--size-2);
       }
@@ -84,13 +85,13 @@ console.log(topTitle);
         z-index: 1;
 
         .hero-image-button {
-          background-color: var(--clr-background);
           align-content: center;
+          background-color: var(--clr-background);
+          height: calc(var(--_img-margin) * 2);
           position: absolute;
           right: var(--_img-margin);
-          z-index: 50;
-          height: calc(var(--_img-margin) * 2);
           text-decoration: underline;
+          z-index: 50;
         }
 
         .image {
@@ -101,10 +102,10 @@ console.log(topTitle);
         }
 
         .background-image {
+          /* overflow: visible; */
           height: 110%;
           object-fit: cover;
           object-position: center;
-          overflow: visible;
           position: absolute;
           width: 100%;
           z-index: -1;
