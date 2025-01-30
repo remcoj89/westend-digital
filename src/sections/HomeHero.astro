@@ -1,28 +1,46 @@
 ---
-import Image from "astro/components/Image.astro"
+import Image from "astro/components/Image.astro";
 
-const {
-  title,
-  subTitle,
-  ctaBtn,
-  image,
-  backgroundImage
-} = Astro.props
+const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =
+  Astro.props;
+
+console.log(topTitle);
 ---
 
 <header class="wrapper">
   <div class="hero-copy">
-    <span>Van Visie naar resultaat</span>
+    <span>{topTitle}</span>
     <h1>{title}</h1>
     <div>
       <p>{subTitle}</p>
     </div>
-    <a href="/contact" class="btn btn-hero" id="hero-btn" aria-label="neem vrijblijvend contact met mij op">{ctaBtn}</a>
+    <a
+      href="/contact"
+      class="btn btn-hero"
+      id="hero-btn"
+      aria-label="neem vrijblijvend contact met mij op">{ctaBtn}</a
+    >
   </div>
   <div class="hero-image-wrapper">
-    <Image src={backgroundImage.imgUrl}  alt={backgroundImage.imgAlt} width={1000} height={1000} class="background-image" loading="eager"/>
-    <a href="/" class="hero-image-button btn btn-white">Bekijk mijn laatste werk</a>
-    <Image src={image.imgUrl}  alt={image.imgAlt} width={500} height={500} class="image" loading="eager"/>
+    <Image
+      src={backgroundImage.imgUrl}
+      alt={backgroundImage.imgAlt}
+      width={1000}
+      height={1000}
+      class="background-image"
+      loading="eager"
+    />
+    <a href="/" class="hero-image-button btn btn-white"
+      >Bekijk mijn laatste werk</a
+    >
+    <Image
+      src={image.imgUrl}
+      alt={image.imgAlt}
+      width={500}
+      height={500}
+      class="image"
+      loading="eager"
+    />
   </div>
 </header>
 
@@ -38,10 +56,10 @@ const {
       width: 50%;
       span {
         font-size: var(--size-2);
-      };
+      }
 
       h1 {
-        margin-block: var(--size-2) ;
+        margin-block: var(--size-2);
       }
 
       div {
@@ -49,7 +67,6 @@ const {
         gap: var(--size-1);
         width: 100%;
       }
-
     }
 
     .hero-image-wrapper {
@@ -57,7 +74,6 @@ const {
     }
 
     @media (width >= 43.75rem) {
-
       .hero-image-wrapper {
         --_img-margin: var(--size-3);
         display: block;
@@ -99,7 +115,7 @@ const {
 
   @media (width >= 870px) {
     header {
-      padding-block: 24rem  var(--size-10);
+      padding-block: 24rem var(--size-10);
     }
   }
 

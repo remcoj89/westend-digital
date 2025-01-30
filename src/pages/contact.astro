@@ -3,12 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import ContactForm from "../components/reactComponent.ContactForm/ContactForm";
 import FooterSection from "../sections/FooterSection.astro";
-import LetterSend from '../assets/letter_send.svg';
-import { PhoneIcon, EmailIcon, LocationIcon} from "../assets/icons"
-import siteData from '../data/site.json'
-import pageData from '../data/contact.json'
+import LetterSend from "../assets/letter_send.svg";
+import { PhoneIcon, EmailIcon, LocationIcon } from "../assets/icons";
+import siteData from "../data/site.json";
+import pageData from "../data/contact.json";
 
-const { adress, legalPages } = siteData
+const { adress, legalPages } = siteData;
 const {
   metaTitle,
   metaDescription,
@@ -18,8 +18,8 @@ const {
   heroSubtitle,
   formTitle,
   btnText,
-  legalText
-} = pageData.pageContent
+  legalText,
+} = pageData.pageContent;
 ---
 
 <Layout
@@ -27,10 +27,12 @@ const {
   description={metaDescription}
   ogTitle={metaTitle}
   ogDescription={metaDescription}
-  ogImageUrl={ogImage.ogImageUrl},
-  ogImageAlt={ogImage.ogImageAlt},
+  ogImageUrl={ogImage.ogImageUrl}
+  ,
+  ogImageAlt={ogImage.ogImageAlt}
+  ,
   ogUrl={ogUrl}
-  >
+>
   <Header>
     <div>
       <h1>{heroTitle}</h1>
@@ -43,24 +45,33 @@ const {
         <div class="adress-wrapper">
           <h3>{formTitle}</h3>
           <ul role="list">
-            <li><a href={`tel:${adress.phone.phoneHref}`}><PhoneIcon iconFill="var(--clr-primary-100)"/>{adress.phone.number}</a></li>
-            <li><a href={`mailto:${adress.email}?subject=Contact verzoek`}><EmailIcon iconFill="var(--clr-primary-100)"/> {adress.email}</a></li>
             <li>
-              <LocationIcon iconFill="var(--clr-primary-100)"/>
-              <span>{adress.street}, <br/>{adress.adress}</span>
+              <a href={`tel:${adress.phone.phoneHref}`}
+                ><PhoneIcon iconFill="var(--clr-primary-100)" />{
+                  adress.phone.number
+                }</a>
+            </li>
+            <li>
+              <a href={`mailto:${adress.email}?subject=Contact verzoek`}
+                ><EmailIcon iconFill="var(--clr-primary-100)" />
+                {adress.email}</a>
+            </li>
+            <li>
+              <LocationIcon iconFill="var(--clr-primary-100)" />
+              <span>{adress.street}, <br />{adress.adress}</span>
             </li>
           </ul>
 
-          <div class="circle circle-small" />
-          <div class="circle circle-big" />
+          <div class="circle circle-small"></div>
+          <div class="circle circle-big"></div>
         </div>
         <div id="contact-form">
           <ContactForm
             submitBtnText={btnText}
             legal={legalText}
             link={legalPages[0]}
-
-          client:load />
+            client:load
+          />
           <LetterSend />
         </div>
       </div>
@@ -70,7 +81,6 @@ const {
 </Layout>
 
 <style>
-
   .contact-wrapper {
     align-items: center;
     margin-block-end: var(--size-10);
@@ -92,7 +102,7 @@ const {
         font-size: var(--fs-600);
         font-weight: var(--fw-semi-bold);
         line-height: var(--lh-200);
-       }
+      }
       ul {
         display: grid;
         gap: var(--size-1);
@@ -100,34 +110,34 @@ const {
 
         li,
         a {
-            align-items: center;
-            display: flex;
-            gap: var(--size-1);
-            text-decoration: none;
-           }
+          align-items: center;
+          display: flex;
+          gap: var(--size-1);
+          text-decoration: none;
+        }
 
         a:hover {
           text-decoration: underline;
         }
-       }
+      }
 
-    .circle {
-      background-color: var(--clr-primary-100);
-      border-radius: 100%;
-      opacity: 10%;
-      position: absolute;
-     }
+      .circle {
+        background-color: var(--clr-primary-100);
+        border-radius: 100%;
+        opacity: 10%;
+        position: absolute;
+      }
 
-    .circle-small {
-      --_circle-height: 13.8rem;
-      --_circle-width: 13.8rem;
-      bottom: 7.5rem;
-      height: var(--_circle-height);
-      right: 7.5rem;
-      width: var(--_circle-width);
-      z-index: 10;
-     }
-    .circle-big {
+      .circle-small {
+        --_circle-height: 13.8rem;
+        --_circle-width: 13.8rem;
+        bottom: 7.5rem;
+        height: var(--_circle-height);
+        right: 7.5rem;
+        width: var(--_circle-width);
+        z-index: 10;
+      }
+      .circle-big {
         --_circle-height: 26.9rem;
         --_circle-width: 26.9rem;
         bottom: -10rem;
@@ -135,13 +145,13 @@ const {
         right: -10rem;
         width: var(--_circle-width);
       }
-     }
+    }
 
     #contact-form {
       width: 100%;
-     }
+    }
 
-     @media(width >= 67.5em) {
+    @media (width >= 67.5em) {
       .adress-wrapper {
         width: 40%;
       }
@@ -149,7 +159,6 @@ const {
       #contact-form {
         width: 60%;
       }
-     }
+    }
   }
-
 </style>

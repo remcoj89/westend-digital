@@ -8,28 +8,23 @@
       "ogImageAlt": "Logo van Westend Digital"
     },
     "ogUrl": "https://www.westend-digital.nl",
+    "topTitle": "Van visie naar resultaat",
     "heroTitle": "Winstgevende websites voor ondernemers met ambitie",
-    "heroSubtitle": ["Je bent klaar voor de volgende stap: van ambitie naar groei. Je wilt een website die doet wat ‘ie moet doen: leads genereren en je bedrijf laten groeien. Geen onnodige toeters en bellen,", "alleen resultaten. Zo simpel is het."],
+    "heroSubtitle": "Je bent klaar voor de volgende stap: van ambitie naar groei. Je wilt een website die doet wat ‘ie moet doen: leads genereren en je bedrijf laten groeien. Geen onnodige toeters en bellen, alleen resultaten. Zo simpel is het.",
     "ctaBtn": "Laten we kennis maken",
     "heroImage": {
-      "imgUrl": "/images/website-review.webp",
+      "imgUrl": "/images/kennismaking.webp",
       "imgAlt": "Kennis making met de klant"
     },
     "heroBackgroundImage": {
       "imgUrl": "/assets/logos/westend-digital-logo-icon.svg",
       "imgAlt": ""
-
     },
     "whatIDoSection": {
-      "services": [
-        "Strategie",
-        "Web Design",
-        "Web Development",
-        "Onderhoud"
-        ],
+      "services": ["Strategie", "Web Design", "Web Development", "Onderhoud"],
       "whatIDo": {
         "title": "Digitale groei zonder gedoe",
-        "paragraph":  "Je weet dat er meer in zit. Meer leads, meer omzet, meer vrijheid. Maar je website? Die werkt niet zo hard als jij. Tijd om daar korte metten mee te maken. Ik ontwerp websites voor ondernemers met ambitie. Geen standaard templates of loze beloftes, maar websites met een duidelijk doel: online groei. Het resultaat: een website die werkt, zonder dat jij er omkijken naar hebt.",
+        "paragraph": "Je weet dat er meer in zit. Meer leads, meer omzet, meer vrijheid. Maar je website? Die werkt niet zo hard als jij. Tijd om daar korte metten mee te maken. Ik ontwerp websites voor ondernemers met ambitie. Geen standaard templates of loze beloftes, maar websites met een duidelijk doel: online groei. Het resultaat: een website die werkt, zonder dat jij er omkijken naar hebt.",
         "projectsUrl": {
           "url": "/projecten",
           "label": "Bekijk eerdere cases"
@@ -59,7 +54,7 @@
       "title": "Zo bouw ik aan jouw online succes",
       "steps": [
         {
-         "listTitle": "Boek een gesprek",
+          "listTitle": "Boek een gesprek",
           "title": "Kennismakingsgesprek",
           "steps": [
             "Ik leer je graag kennen: wie ben je, wat zijn je uitdagingen en wat is je doel?",
@@ -67,7 +62,7 @@
           ]
         },
         {
-         "listTitle": "Strategie",
+          "listTitle": "Strategie",
           "title": "Strategie bepalen",
           "steps": [
             "We duiken in je doelgroep: wie zijn ze en wat zoeken ze online?",
@@ -76,7 +71,7 @@
           ]
         },
         {
-         "listTitle": "Ontwerp",
+          "listTitle": "Ontwerp",
           "title": "Ontwerp",
           "steps": [
             "Je krijgt een design dat niet alleen mooi is, maar dat vooral werkt voor je klanten",
@@ -85,7 +80,7 @@
           ]
         },
         {
-         "listTitle": "Ontwikkeling",
+          "listTitle": "Ontwikkeling",
           "title": "Website bouwen",
           "steps": [
             "Vervolgens bouw ik je website met oog voor techniek, snelheid en veiligheid",
@@ -94,7 +89,7 @@
           ]
         },
         {
-         "listTitle": "Lanceren",
+          "listTitle": "Lanceren",
           "title": "Live gaan",
           "steps": [
             "We testen alles grondig voor de lancering",
@@ -103,7 +98,7 @@
           ]
         },
         {
-         "listTitle": "Door ontwikkelen",
+          "listTitle": "Door ontwikkelen",
           "title": "Door ontwikkelen",
           "steps": [
             "Je website blijft up-to-date met regelmatige updates en verbeteringen",
