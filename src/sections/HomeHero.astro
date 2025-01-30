@@ -74,7 +74,8 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
       }
     }
 
-    .hero-image-wrapper {
+    .hero-image-wrapper,
+    .background-image {
       display: none;
     }
 
@@ -106,15 +107,16 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
         }
 
       }
-    }
-    .background-image {
-      height: auto;
-      object-fit: cover;
-      object-position: right;
-      position: absolute;
-      right: -30%;
-      width: 80%;
-      z-index: -1;
+      .background-image {
+        display: block;
+        height: auto;
+        object-fit: cover;
+        object-position: right;
+        position: absolute;
+        right: -30%;
+        width: 80%;
+        z-index: -1;
+      }
     }
   }
 
