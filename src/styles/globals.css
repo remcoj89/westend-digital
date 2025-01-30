@@ -3,20 +3,19 @@
   font-family: "Quicksand";
   font-style: normal;
   font-optical-sizing: auto;
-  src: url('/assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+  src: url("/assets/fonts/Quicksand-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
   font-display: swap;
   font-family: "Josefin Sans";
-  src: url('/assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+  src: url("/assets/fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
 }
-
 
 :root {
   interpolate-size: allow-keywords;
 
-  --box-shadow: 0px 2px 15px 0px rgba(7,18,49,0.4);
+  --box-shadow: 0px 2px 15px 0px rgba(7, 18, 49, 0.4);
 
   --border-radius-btn: 8px;
   --border-radius-card: 8px;
@@ -47,7 +46,6 @@
   --clr-alert-yellow-900: hsl(46, 100%, 51%);
   --clr-alert-red-900: hsl(0, 100%, 33%);
 
-
   --lh-200: 125%;
   --lh-300: 150%;
   --lh-400: 175%;
@@ -65,14 +63,12 @@
   --fw-semi-bold: 700;
   --fw-bold: 900;
 
-
   --clr-body: var(--clr-primary-800);
   --clr-background: var(--clr-primary-100);
   --clr-heading: var(--clr-primary-900);
 
   --ff-header: "Josefin Sans", serif;
   --ff-base: "Quicksand", serif;
-
 
   --size-1: 1.6rem;
   --size-2: 2.4rem;
@@ -84,12 +80,11 @@
   --size-8: 7.2rem;
   --size-9: 8rem;
   --size-10: 8.8rem;
-
 }
 
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -104,12 +99,13 @@ html {
 body {
   background-color: var(--clr-background);
   color: var(--clr-body);
+  font-family: var(--ff-base);
   font-size: var(--fs-500);
   line-height: var(--lh-100);
-  font-family: var(--ff-base);
+  overflow-x: hidden;
 }
 
-[role = "list"] {
+[role="list"] {
   list-style: none;
 }
 
@@ -140,7 +136,6 @@ a {
   color: inherit;
 }
 
-
 img {
   background-repeat: no-repeat;
   background-size: cover;
@@ -151,8 +146,6 @@ img {
   vertical-align: middle;
 }
 
-
-
 .fb-col-wrapper {
   --col-count: 2;
   --space-gap: 2px;
@@ -161,15 +154,23 @@ img {
   gap: 1rem;
   grid-template-columns:
     1fr
-    repeat(var(--col-count), calc((min(100% - var(--space-lr), 112.4rem) - (var(--col-count) - 1) * var(--space-gap)) / var(--col-count))) 1fr;
-
+    repeat(
+      var(--col-count),
+      calc(
+        (
+            min(100% - var(--space-lr), 112.4rem) - (var(--col-count) - 1) *
+              var(--space-gap)
+          ) /
+          var(--col-count)
+      )
+    ) 1fr;
 }
 
 .wrapper {
   display: flex;
   margin-inline: auto;
-  width: calc((min(100% - 4rem, 112.4rem)));
   text-align: center;
+  width: calc((min(100% - 4rem, 112.4rem)));
 }
 
 .grid {
@@ -180,19 +181,18 @@ img {
 .flex {
   display: flex;
   flex-direction: column-reverse;
-  justify-content: space-between;
   gap: var(--size-2);
-  justify-content: space-between;
   gap: var(--size-4);
+  justify-content: space-between;
+  justify-content: space-between;
 }
 
 .flex-reverse {
   display: flex;
   flex-direction: column-reverse;
-  justify-content: space-between;
   gap: var(--size-4);
+  justify-content: space-between;
 }
-
 
 @media (width >= 43.75em) {
   .fb-col-wrapper {
@@ -202,10 +202,9 @@ img {
   }
 
   .wrapper {
-    width: calc((min(100% - 8rem, 112.4rem)));
     text-align: left;
+    width: calc((min(100% - 8rem, 112.4rem)));
   }
-
 }
 
 @media (width >= 62.5em) {
@@ -224,9 +223,7 @@ img {
   .flex-reverse {
     flex-direction: row-reverse;
   }
-
 }
-
 
 section {
   margin-block-start: var(--size-10);
@@ -340,15 +337,13 @@ section {
   margin-inline-start: auto;
   padding: 0;
   width: fit-content;
- }
+}
 
 .arrow-btn {
   background-color: transparent;
   padding: 0;
   width: fit-content;
 }
-
-
 
 .hidden {
   filter: blur(2px);
@@ -361,7 +356,7 @@ section {
   opacity: 1;
 }
 
-@media(prefers-reduced-motion) {
+@media (prefers-reduced-motion) {
   .hidden {
     filter: blur(0);
     transition: none;
@@ -370,10 +365,14 @@ section {
 
 .legal-pages {
   flex-direction: column;
-  margin-block-start: 14rem;
   gap: var(--size-5);
+  margin-block-start: 14rem;
 
-  h1, h2, h3, h4, h5{
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     margin-block-end: var(--size-2);
   }
 

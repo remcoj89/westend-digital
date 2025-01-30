@@ -22,26 +22,26 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
     </a>
   </div>
   <div class="hero-image-wrapper">
-    <Image
-      alt={backgroundImage.imgAlt}
-      class="background-image"
-      height={1000}
-      loading="eager"
-      src={backgroundImage.imgUrl}
-      width={1000}
-    />
     <a href="/projecten" class="hero-image-button btn btn-white"
-      >Bekijk mijn laatste werk</a
+    >Bekijk mijn laatste werk</a
     >
     <Image
-      alt={image.imgAlt}
-      class="image"
-      height={500}
-      loading="eager"
-      src={image.imgUrl}
-      width={500}
+    alt={image.imgAlt}
+    class="image"
+    height={500}
+    loading="eager"
+    src={image.imgUrl}
+    width={500}
     />
   </div>
+  <Image
+    alt={backgroundImage.imgAlt}
+    class="background-image"
+    height={1000}
+    loading="eager"
+    src={backgroundImage.imgUrl}
+    width={1000}
+  />
 </header>
 
 <style>
@@ -51,6 +51,7 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
     justify-content: space-between;
     padding-block: var(--size-10);
     position: relative;
+
     .hero-copy {
       flex-grow: 1;
       width: 50%;
@@ -101,16 +102,16 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
           margin-block-start: var(--_img-margin);
         }
 
-        .background-image {
-          /* overflow: visible; */
-          height: 110%;
-          object-fit: cover;
-          object-position: center;
-          position: absolute;
-          width: 100%;
-          z-index: -1;
-        }
       }
+    }
+    .background-image {
+      object-fit: cover;
+      object-position: right;
+      position: absolute;
+      height: auto;
+      width: 80%;
+      right: -30%;
+      z-index: -1;
     }
   }
 
