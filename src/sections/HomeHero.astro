@@ -34,6 +34,7 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
     width={500}
     />
   </div>
+  <!-- Background image -->
   <Image
     alt={backgroundImage.imgAlt}
     class="background-image"
@@ -47,8 +48,10 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
 <style>
   header {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--size-3);
     justify-content: space-between;
+    overflow-x: hidden;
     padding-block: var(--size-10);
     position: relative;
 
@@ -105,12 +108,12 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
       }
     }
     .background-image {
+      height: auto;
       object-fit: cover;
       object-position: right;
       position: absolute;
-      height: auto;
-      width: 80%;
       right: -30%;
+      width: 80%;
       z-index: -1;
     }
   }
