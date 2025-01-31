@@ -45,7 +45,7 @@ const {
               />
               <div class="text-wrapper">
                 <h2>{blog.node.title}</h2>
-                <div set:html={blog.node.featuredImage.node.description}></div>
+                <div set:html={blog.node.excerpt}></div>
               </div>
               <Button >Lees meer</Button>
           </a>

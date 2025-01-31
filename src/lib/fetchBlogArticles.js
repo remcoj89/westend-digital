@@ -15,6 +15,7 @@ export default async function fetchBlogArticles() {
                 description(format: RENDERED)
               }
             }
+            excerpt
             seo {
               title
               metaDesc
