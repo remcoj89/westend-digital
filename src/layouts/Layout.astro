@@ -1,61 +1,75 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import '../styles/globals.css'
+import Navbar from "../components/Navbar.astro";
+import "../styles/globals.css";
 
 const {
- title,
- description,
- ogTitle,
- ogSiteName,
- ogDescription,
- ogImageUrl,
- ogImageAlt,
- ogUrl
+  title,
+  description,
+  ogTitle,
+  ogSiteName,
+  ogDescription,
+  ogImageUrl,
+  ogImageAlt,
+  ogUrl,
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
+  <head>
     <meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-    <meta name="description" content={description}>
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
     <meta property="og:site_name" content={ogSiteName} />
-    <meta property=“og:title” content={ogTitle} />
+    <meta property="“og:title”" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
     <meta property="og:url" content={ogUrl} />
-    <meta property="og:image" content={ogImageUrl}>
+    <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:alt" content={ogImageAlt} />
-	</head>
-	<body>
+  </head>
+  <body>
     <Navbar />
-		<slot />
-
-	</body>
-  </html>
+    <slot />
+    <!-- Calendly badge widget begin -->
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        Calendly.initBadgeWidget({
+          url: "https://calendly.com/remco-westend-digital/30min",
+          text: "Laten we kennismaken",
+          color: "#217a06",
+          textColor: "#f5f5f5",
+        });
+      };
+    </script>
+    <!-- Calendly badge widget end -->
+  </body>
+</html>
 
 <script>
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('show')
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
       }
-    })
-  })
+    });
+  });
 
-  const sections = document.querySelectorAll("section")
+  const sections = document.querySelectorAll("section");
   sections.forEach((section, i) => {
-    if(i !== 0 ) {
-      section.classList.add('hidden')
+    if (i !== 0) {
+      section.classList.add("hidden");
     }
-  })
+  });
 
-  const hiddenEllements = document.querySelectorAll(".hidden")
-  hiddenEllements.forEach((el) => observer.observe(el))
+  const hiddenEllements = document.querySelectorAll(".hidden");
+  hiddenEllements.forEach((el) => observer.observe(el));
 </script>
