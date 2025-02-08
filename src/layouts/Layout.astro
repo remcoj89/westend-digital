@@ -35,22 +35,6 @@ const {
   <body>
     <Navbar />
     <slot />
-    <!-- Calendly badge widget begin -->
-    <script
-      src="https://assets.calendly.com/assets/external/widget.js"
-      type="text/javascript"
-      async></script>
-    <script type="text/javascript">
-      window.onload = function () {
-        Calendly.initBadgeWidget({
-          url: "https://calendly.com/remco-westend-digital/30min",
-          text: "Laten we kennismaken",
-          color: "#217a06",
-          textColor: "#f5f5f5",
-        });
-      };
-    </script>
-    <!-- Calendly badge widget end -->
   </body>
 </html>
 

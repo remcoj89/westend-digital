@@ -2,43 +2,35 @@ import { useState, useRef } from "react";
 import Styles from "./contactForm.module.css";
 
 export default function Form({ submitBtnText, legal, link }) {
-  const [responseMessage, setResponseMessage] = useState("");
+  const [responseMessage, setReponseMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
   const formRef = useRef(null);
 
-  const submit = async (e) => {
+  async function submit(e) {
     e.preventDefault();
-    const formData = new FormData(formRef.current);
-    try {
-      const response = await fetch("/api/contactForm", {
-        method: "POST",
-        body: formData,
-      });
+    setIsLoading(true);
+    const formData = new FormData(e.target);
 
-      const data = await response.json();
-      setResponseMessage(data.message || "");
-      if (response.ok) {
-        formRef.current?.reset();
-      } else {
-        console.error("Server error:", response.status, data);
-        setResponseMessage(
-          "Er is een fout opgetreden bij het versturen van het formulier."
-        );
-      }
-    } catch (error) {
-      console.error("Fetch error:", error);
-      setResponseMessage(
-        "Er is een fout opgetreden bij het versturen van het formulier."
-      );
+    const response = await fetch("/api/contactform", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    if (data.message) {
+      setReponseMessage(data.message);
     }
-  };
+    if (response.status === 200) {
+      formRef.current.reset();
+    }
+    setIsLoading(false);
 
+  }
   return (
     <form ref={formRef} onSubmit={submit} className={Styles.contactForm}>
       <label htmlFor="name">
-        <p>
-          Naam <span class={Styles.starRequired}>*</span>
-        </p>
-
+        Naam
         <input
           autoComplete="name"
           id="name"
@@ -49,10 +41,9 @@ export default function Form({ submitBtnText, legal, link }) {
           required
         />
       </label>
+
       <label htmlFor="subject">
-        <p>
-          Onderwerp <span class={Styles.starRequired}>*</span>
-        </p>
+        Onderwerp
         <input
           autoComplete="subject"
           id="subject"
@@ -65,29 +56,25 @@ export default function Form({ submitBtnText, legal, link }) {
       </label>
 
       <label htmlFor="email">
-        <p>
-          Email <span className={Styles.starRequired}>*</span>
-        </p>
+        Email
         <input
           autoComplete="email"
           id="email"
           name="email"
-          pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}"
           placeholder="voorbeeld@emaill.com"
           title="Vul een geldig email adres in"
           type="email"
           required
         />
       </label>
+
       <label htmlFor="message">
-        <p>
-          Bericht <span class={Styles.starRequired}>*</span>
-        </p>
+        Message
         <textarea
           autoComplete="off"
           id="message"
           name="message"
-          placeholder="Waarmee kan ik je helpen?"
+          placeholder="Wat je weten / vragen?"
           required
         />
       </label>
@@ -98,11 +85,11 @@ export default function Form({ submitBtnText, legal, link }) {
           className={`${Styles.btn} ${Styles.btnSubmit}`}
           aria-label="verstuur formulier"
         >
-          {submitBtnText}
+          {isLoading ? "Versturen..." : submitBtnText}
         </button>
         {(responseMessage && <p>{responseMessage}</p>) || (
           <p>
-            {legal} <a href={link.href}>{link.title}</a>
+            {legal} <a href={link.href}>Algmene voorwaarden</a>
           </p>
         )}
       </div>

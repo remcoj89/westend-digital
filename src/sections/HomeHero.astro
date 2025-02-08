@@ -1,8 +1,8 @@
 ---
 import Image from "astro/components/Image.astro";
 
-const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.props;
-
+const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =
+  Astro.props;
 ---
 
 <header class="wrapper">
@@ -12,7 +12,7 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
     <div>
       <p>{subTitle}</p>
     </div>
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+   
     <a
       aria-label="neem vrijblijvend contact met mij op"
       class="btn btn-hero"
@@ -24,15 +24,15 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
   </div>
   <div class="hero-image-wrapper">
     <a href="/projecten" class="hero-image-button btn btn-white"
-    >Bekijk mijn laatste werk</a
+      >Bekijk mijn laatste werk</a
     >
     <Image
-    alt={image.imgAlt}
-    class="image"
-    height={500}
-    loading="eager"
-    src={image.imgUrl}
-    width={500}
+      alt={image.imgAlt}
+      class="image"
+      height={500}
+      loading="eager"
+      src={image.imgUrl}
+      width={500}
     />
     <!-- Background image -->
     <Image
@@ -58,7 +58,6 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
     .hero-copy {
       flex-grow: 1;
       width: 50%;
-
 
       span {
         font-size: var(--size-2);
@@ -114,7 +113,6 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =  Astro.pro
           position: absolute;
           width: 110%;
           z-index: -1;
-
         }
       }
     }
