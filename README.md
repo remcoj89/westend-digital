@@ -1,6 +1,6 @@
 # Westend Digital
 
-Dit is de portfolio website van Westend Digital
+Dit is de portfolio website van Westend Digital.
 
 
 ## Inhoudsopgave
