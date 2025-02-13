@@ -40,4 +40,3 @@ git clone [https://github.com/remcoj89/westend-digital.git](https://github.com/r
 cd [Naam van je project]
 npm install
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5cfeda82-3cd8-4962-83a5-9c58d79fe8de/deploy-status)](https://app.netlify.com/sites/westend-digital/deploys)
