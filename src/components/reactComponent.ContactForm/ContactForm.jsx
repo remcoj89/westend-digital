@@ -61,7 +61,7 @@ export default function Form({ submitBtnText, legal, link }) {
           autoComplete="email"
           id="email"
           name="email"
-          placeholder="voorbeeld@emaill.com"
+          placeholder="voorbeeld@email.com"
           title="Vul een geldig email adres in"
           type="email"
           required
