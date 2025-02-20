@@ -6,7 +6,7 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
 
   site: 'https://westend-digital.nl/',
-  output: 'static',
+  output: 'server',
   adapter:  netlify(),
   image: {
     domains: ['https://mediumturquoise-sparrow-543006.hostingersite.com/']
