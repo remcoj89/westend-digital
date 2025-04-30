@@ -16,6 +16,6 @@ export default defineConfig({
     sitemap(),
   ],
   experimental: {
-    svg: true,
+    // svg: true,
   },
 });
