@@ -1,0 +1,52 @@
+---
+import FunnelLayout from "../layouts/FunnelLayout.astro";
+import Header from "../components/Header.astro";
+import FooterSection from "../sections/FooterSection.astro";
+import FaqSection from "../sections/FaqSection.astro";
+---
+
+<FunnelLayout
+  description="Astro description"
+  ogDescription="Astro description"
+  ogImageAlt="Astro description"
+  ogImageUrl="Astro description"
+  ogTitle="Astro description"
+  ogUrl="Astro description"
+  title="Website | Westend Digital">
+
+  <Header >
+    <div>
+      <h1>Een sterke website die verkoopt, vertrouwen wekt 
+        en jouw bedrijf <span class="highlight-text">laat groeien.</span>
+      </h1>
+      <p>Binnen <span class="highlight-text">3 maanden</span> staat jouw website paraat: een professionele website die vertrouwen uitstraalt, meer klanten oplevert en jouw groei versnelt terwijl jij gefocust blijft op je missie.
+       </p>
+       <a href="#" class="btn btn-cta">Plan een gratis strategie gesprek</a>
+    </div>
+  </Header>
+
+  <main>
+    <section class="hidden flex">
+      <h2>Waarom een website?</h2>
+      <p>Een website is tegenwoordig onmisbaar voor elk bedrijf. Het is jouw online visitekaartje, waar klanten informatie kunnen vinden over jouw producten of diensten. Een goede website wekt vertrouwen en zorgt ervoor dat klanten eerder geneigd zijn om bij jou te kopen.</p>
+    </section>
+
+    <section class="hidden">
+      <h2>Onze aanpak</h2>
+      <p>Wij geloven in een persoonlijke aanpak. Samen met jou kijken we naar jouw wensen en doelen, zodat we een website kunnen creëren die perfect aansluit bij jouw bedrijf.</p>
+    </section>
+
+    <section class="hidden">
+      <h2>Onze diensten</h2>
+      <p>Wij bieden verschillende diensten aan, van het ontwerpen van een nieuwe website tot het optimaliseren van je bestaande site. Ook bieden we ondersteuning bij het onderhouden van je website.</p>
+    </section>
+
+    <section class="hidden">
+      <h2>Veelgestelde vragen</h2>
+      <!-- <FaqSection /> -->
+    </section>
+  </main>
+
+  <FooterSection />
+
+</FunnelLayout>
