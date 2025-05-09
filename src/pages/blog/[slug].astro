@@ -1,11 +1,15 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import createDOMPurify from 'dompurify';
+import { JSDOM } from 'jsdom';
 import fetchBlogArticles from "../../lib/fetchBlogArticles"
 import Header from "../../components/Header.astro";
 import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
 
-export const prerender = true;
+const window = new JSDOM('').window;
+const DOMPurify = createDOMPurify(window);
+
 export async function getStaticPaths() {
   try {
     const blogs = await fetchBlogArticles();
@@ -17,6 +21,11 @@ export async function getStaticPaths() {
     }
 
     return blogs.map((blog) => {
+     // Sanitize de HTML content (stel: blog.node.content bevat gevaarlijke HTML)
+      const rawHtml = blog.node.content || '';
+      const safeHtml = DOMPurify.sanitize(rawHtml);
+
+
       // console.log("Processing blog:", blog); // Inspecteer individuele blog
 
       return {
@@ -24,7 +33,13 @@ export async function getStaticPaths() {
           slug: blog.node.slug,
         },
         props: {
-          blogData: blog,
+          blogData: {
+            ...blog,
+            node: {
+              ...blog.node,
+              content: safeHtml, // vervang met veilige HTML
+            },
+          },
         },
       };
     });

@@ -2,7 +2,9 @@
 import FunnelLayout from "../layouts/FunnelLayout.astro";
 import Header from "../components/Header.astro";
 import FooterSection from "../sections/FooterSection.astro";
-import FaqSection from "../sections/FaqSection.astro";
+import IntroSection
+
+
 ---
 
 <FunnelLayout
@@ -26,14 +28,58 @@ import FaqSection from "../sections/FaqSection.astro";
   </Header>
 
   <main>
-    <section class="hidden flex">
-      <h2>Waarom een website?</h2>
-      <p>Een website is tegenwoordig onmisbaar voor elk bedrijf. Het is jouw online visitekaartje, waar klanten informatie kunnen vinden over jouw producten of diensten. Een goede website wekt vertrouwen en zorgt ervoor dat klanten eerder geneigd zijn om bij jou te kopen.</p>
-    </section>
 
-    <section class="hidden">
+    <IntroSection />
+
+          <h2>Herkenbaar?</h2>
+
+          <p>Als oud-militair weet je <strong>hoe cruciaal een soepele operatie is.</strong>  Eén zwakke schakel en het hele systeem hapert. Zo werkt het ook online: als je website niet meewerkt, verlies je terrein — zelfs als je bedrijf verder groeit.</p>
+          
+          <p><strong>Je aanpak is sterk, je klanten zijn tevreden, en je weet wat je te bieden hebt.</strong> Maar je website houdt je tegen. Trage laadtijden, een warrige structuur, geen duidelijke boodschap. Waardoor bezoekers afhaken voordat ze begrijpen wat je waard bent. En jij je gaat afvragen: ligt het aan mijn verhaal, of aan m’n website?</p>
+
+          <p><strong>Ondertussen verspil je tijd aan technische rompslomp</strong> die je energie kost — updates, foutjes, losse tools — <strong></strong> Iemand die meedenkt, doet wat nodig is, en jouw missie digitaal ondersteunt.</p>
+
+          <p><strong>Je wilt geen ruis. Je wilt een website die jouw slagkracht versterkt.</strong></p>
+
+          <a href="#" class="btn btn-secondary">Plan je missie briefing in</a>
+        </article>
+ 
+
+    <section class="hidden" id="website-how-we-work">
       <h2>Onze aanpak</h2>
       <p>Wij geloven in een persoonlijke aanpak. Samen met jou kijken we naar jouw wensen en doelen, zodat we een website kunnen creëren die perfect aansluit bij jouw bedrijf.</p>
+    </section>
+
+    <section class="hidden" id="website-testimonialsection-1">
+      <div class="wrapper flex-column-center dark-bg padding-block-4 padding-inline-2 border-radius-card">
+        <h2 class="text-center margin-bottom-3"><span class="highlight-text">Ervaringen</span> van onderners zoals jij</h2>
+        <div class="flex">
+
+          <div class="testemonial">
+            <p>"Dankzij de website van Westend Digital hebben we meer klanten kunnen aantrekken en onze omzet verhoogd."</p>
+            <div class="testemonial__writer">
+              <img src="/images/sampel-avatar.jpg" alt="Linda Munster" width="50" height="50" class="testimonial-image"/>
+              <div class="testimonial-text">
+                <h3>Linda Munster</h3>
+                <p>Schermer Eylandt</p>
+              </div>  
+            </div>
+          </div>
+
+          <div class="testemonial">
+            <p>"Dankzij de website van Westend Digital hebben we meer klanten kunnen aantrekken en onze omzet verhoogd."</p>
+            <div class="testemonial__writer">
+              <img src="/images/sampel-avatar.jpg" alt="Linda Munster" width="50" height="50" class="testimonial-image"/>
+              <div class="testimonial-text">
+                <h3>Linda Munster</h3>
+                <p>Schermer Eylandt</p>
+              </div>  
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
     </section>
 
     <section class="hidden">
@@ -50,3 +96,32 @@ import FaqSection from "../sections/FaqSection.astro";
   <FooterSection />
 
 </FunnelLayout>
+
+<style>
+  .testemonial {
+     color: var(--clr-primary-900);
+    background-color: var(--clr-primary-300);
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    margin: 1rem;
+    padding: 2rem;
+  }
+  .testemonial__writer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .testimonial-image {
+    border-radius: 100%;
+    width: 7.5rem;
+    height: 7.5rem;
+    object-fit: cover;
+    margin-right: 1rem;
+  }
+  .testimonial-text {
+    display: flex;
+    flex-direction: column;
+   
+  }
+
+</style>

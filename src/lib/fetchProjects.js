@@ -1,3 +1,9 @@
+import createDOMPurify from 'dompurify';
+import { JSDOM } from 'jsdom';
+
+const window = new JSDOM('').window;
+const DOMPurify = createDOMPurify(window);
+
 export default async function fetchProjects() {
   const query = `
     query getProjects {
@@ -33,5 +39,15 @@ export default async function fetchProjects() {
 
   const { data } = await res.json(); // Destructure the data from the response
 
-  return data.posts.edges; // Return the posts from the response
+
+  // Sanitize de content van elk project
+  const sanitizedProjects = data.posts.edges.map(edge => ({
+    ...edge,
+    node: {
+      ...edge.node,
+      content: DOMPurify.sanitize(edge.node.content || '')
+    }
+  }));
+
+  return sanitizedProjects;
 }
