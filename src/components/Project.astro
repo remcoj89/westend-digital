@@ -7,7 +7,7 @@ const { altText, mediaItemUrl } = await featuredImage.node
 
 ---
 
-<div class={`section project ${flexDirection}`}>
+<div class={`project ${flexDirection}`}>
   <div class="project-content">
     <h2>{title}</h2>
     <div set:html={content} class="rendered-content"/>
@@ -84,12 +84,21 @@ const { altText, mediaItemUrl } = await featuredImage.node
 </style>
 
 <script>
-  const projects = document.querySelectorAll(".project")
-
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  });
+  
+  const projects = document.querySelectorAll(".project");
   projects.forEach((project, i) => {
-    if(i !== 0) {
-      project.classList.add("hidden")
+    if (i !== 0) {
+      project.classList.add("hidden");
     }
-  })
-  console.log(projects)
+  });
+
+  const hiddenEllements = document.querySelectorAll(".hidden");
+  hiddenEllements.forEach((el) => observer.observe(el));
 </script>
