@@ -12,7 +12,11 @@ export default defineConfig({
   },
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      changefreq: 'weekly',
+      priority: 0.8,
+      lastmod: new Date('2025-05-13'),
+    }),
   ],
   experimental: {
     // svg: true,
