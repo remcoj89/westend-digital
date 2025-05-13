@@ -8,19 +8,13 @@ import FooterSection from "../../sections/FooterSection.astro";
 export async function getStaticPaths() {
   try {
     const blogs = await fetchBlogArticles();
-    // console.log("Fetched blogs:", blogs); // Inspecteer de data
 
     if (!blogs || blogs.length === 0) {
-      // console.warn("No blogs found!");
       return []; // Lege array als er geen blogs zijn
     }
 
     return blogs.map((blog) => {
    
-
-
-      // console.log("Processing blog:", blog); // Inspecteer individuele blog
-
       return {
         params: {
           slug: blog.node.slug,
@@ -31,7 +25,7 @@ export async function getStaticPaths() {
       };
     });
   } catch (error) {
-    // console.error("Error in getStaticPaths:", error);
+
     return []; // Lege array bij een error
   }
 }
