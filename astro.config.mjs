@@ -4,7 +4,6 @@ import react from '@astrojs/react';
 import netlify from '@astrojs/netlify';
 
 export default defineConfig({
-
   site: 'https://westend-digital.nl/',
   output: 'static',
   adapter:  netlify(),
