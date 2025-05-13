@@ -58,32 +58,72 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText
   ogImageAlt={`${opengraphImageAlt}`}
 
 >
-  <Header></Header>
-
-  <section class="wrapper flex">
-    <article class="blog-content">
+  <header  class="blog-header">
+    <div class="wrapper flex-column gap-1">
+      <img 
+      class="blog-hero-image"
+      src={blogData.node.featuredImage.node.mediaItemUrl}
+      width={1000}
+      height={100}
+      alt={blogData.node.featuredImage.node.altText}
+      />
       <a href="/blog">Terug naar de blog pagina</a>
-      <h1>{blogData.node.title}</h1>
-      <div set:html={blogData.node.content}></div>
-    </article>
-    <img
-    src={blogData.node.featuredImage.node.mediaItemUrl}
-    width={500}
-    height={500}
-    alt={blogData.node.featuredImage.node.altText}
-    />
-  </section>
-<CtaSection />
+    </div>
+  </header>
+
+  <main>
+    <section class="wrapper blog-wrapper">
+      <article class="blog-content">
+        
+        <h1>{blogData.node.title}</h1>
+        <div set:html={blogData.node.content}></div>
+      </article>
+    </section>
+    <CtaSection />
+  </main>
+
 <FooterSection />
 </Layout>
 
 <style>
+  .blog-header {
+    background-image: url("/assets/images/Shared/hero-background-image.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--clr-primary-100);
+    display: grid;
+    padding-block-end: 6rem;
+    padding-block-start: 6rem;
+    place-items: center;
+
+
+
+    .blog-hero-image {
+      border-radius: var(--radius-1);
+      height: 50vh;
+      margin-block-start: var(--size-10);
+      object-fit: cover;
+      width: 80%;
+    }
+
+  }
+
+
+  .blog-wrapper {
+    background-color: var(--color-light);
+    border-radius: var(--radius-1);
+    display: grid;
+    gap: var(--size-4);
+    margin-block: var(--size-4);
+    padding: var(--size-4);
+  }
 
   .blog-content {
 
     h1 {
-      margin-top: var(--size-1);
       font-size: var(--fs-900);
+      margin-top: var(--size-1);
     }
 
     div {
@@ -99,10 +139,6 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText
         margin-inline-start: var(--size-3);
       }
     }
-  }
-
-  img {
-    height: 50vh;
   }
 
 </style>
