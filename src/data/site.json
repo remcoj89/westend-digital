@@ -8,16 +8,16 @@
       "href": "/"
     },
     {
-      "title": "Projecten",
-      "href": "/projecten"
+      "title": "Werk",
+      "href": "/werk"
     },
     {
       "title": "Blog",
-      "href": "/blog"
+      "href": "/blog-artikelen"
     },
     {
       "title": "Over mij",
-      "href": "/over-mij"
+      "href": "/over-westend-digital"
     },
     {
       "title": "Contact",
@@ -30,8 +30,8 @@
       "href": "/algemene-voorwaarden"
     },
     {
-      "title": "Privacy beleid",
-      "href": "/privacy-beleid"
+      "title": "Privacybeleid",
+      "href": "/privacybeleid"
     }
   ],
   "adress": {
