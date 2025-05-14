@@ -1,8 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import pageData from "../data/privacyBeleid.json";
+
+const {
+  metaDescription,
+  metaTitle,
+  ogImage,
+  ogUrl,
+} = pageData.pageContent;
 ---
 
-<Layout>
+<Layout
+  description={metaDescription}
+  ogDescription={metaDescription}
+  ogImageAlt={ogImage.ogImageAlt}
+  ogImageUrl={ogImage.ogImageUrl}
+  ogTitle={metaTitle}
+  ogUrl={ogUrl}
+  title={metaTitle}
+  >
   <section class="wrapper legal-pages">
     <div>
       <h1>Privacybeleid</h1>
