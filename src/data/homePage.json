@@ -26,7 +26,7 @@
         "title": "Digitale groei zonder gedoe",
         "paragraph": "Je weet dat er meer in zit. Meer leads, meer omzet, meer vrijheid. Maar je website? Die werkt niet zo hard als jij. Tijd om daar korte metten mee te maken. Ik ontwerp websites voor ondernemers met ambitie. Geen standaard templates of loze beloftes, maar websites met een duidelijk doel: online groei. Het resultaat: een website die werkt, zonder dat jij er omkijken naar hebt.",
         "projectsUrl": {
-          "url": "/projecten",
+          "url": "/werk",
           "label": "Bekijk eerdere cases"
         }
       }
@@ -38,7 +38,7 @@
       ],
       "imageUrl": "/images/google-analytics.jpg",
       "altText": "Kennis making met de klant",
-      "projectsUrl": "/projecten"
+      "projectsUrl": "/werk"
     },
     "sectionCodeToConnection": {
       "title": "Van code naar connectie",
