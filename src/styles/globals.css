@@ -273,6 +273,10 @@ a {
 .margin-bottom-3 {
   margin-block-end: var(--size-3);
 }
+
+.margin-inline-auto {
+  margin-inline: auto;
+}
 /* End margins */
 
 /* Wrappers */
@@ -302,6 +306,14 @@ a {
   text-align: center;
   width: calc((min(100% - 4rem, 112.4rem)));
 }
+
+.paragraphs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2);
+  justify-content: space-between;
+  margin-block: var(--size-2);
+  }
 
 .grid {
   display: grid;

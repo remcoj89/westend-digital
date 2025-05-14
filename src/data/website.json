@@ -1,0 +1,29 @@
+{
+    "pageContent": {
+        "metaTitle": "Website Laten Maken | Westend Digital",
+        "metaDescription": "Website Laten Maken die Converteert | Westend Digita",
+        "ogSiteName": "Westend Digital",
+        "ogImage": {
+            "ogImageUrl": "/assets/logos/WestendDigitalLogo.svg",
+            "ogImageAlt": "Logo van Westend Digital"
+        },
+        "ogUrl": "https://www.westend-digital.nl/website",	
+        "heroSection": {
+            "title": "Een <span class='highlight-text'>sterke website</span> die verkoopt, vertrouwen wekt en jouw bedrijf <span class='highlight-text'>laat groeien.</span>",
+            "subtitle": "Binnen <span class='highlight-text'>3 maanden</span> staat jouw website paraat: een <span class='highlight-text'>professionele</span> website die vertrouwen uitstraalt, meer klanten oplevert en jouw groei versnelt terwijl jij gefocust blijft op je missie.",
+            "ctaBtn": "Plan een gratis strategie gesprek",
+            "ctaBtnUrl": "/contact",  
+            "imageUrl": "/images/website-laten-maken.webp",
+            "altText": "Ondernemer in legergroen shirt met een laptop in zijn handen, die een website review geeft aan een klant"
+        },
+        "herkenbaarSection": {
+            "title": "Herkenbaar?",
+           "paragraph": ["Binnen <span class='highlight-text'>3 maanden</span> staat jouw website paraat: een professionele website die vertrouwen uitstraalt, meer klanten oplevert en jouw groei versnelt terwijl jij gefocust blijft op je missie."]
+            ,
+            "ctaBtn": "Laten we kennis maken",
+            "ctaBtnUrl": "/contact",  
+            "imageUrl": "/images/herkenbaar.webp",
+            "altText": "Ondernemer in legergroen shirt met een laptop in zijn handen, die een website review geeft aan een klant"
+        }
+    }
+}

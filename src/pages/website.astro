@@ -1,52 +1,56 @@
 ---
 import FunnelLayout from "../layouts/FunnelLayout.astro";
 import Header from "../components/Header.astro";
+import IntroSection from "../sections/IntroSection.astro";
 import FooterSection from "../sections/FooterSection.astro";
+import PageData from "../data/website.json";
+
+const {
+  herkenbaarSection,
+  heroSection,
+  metaDescription,
+  metaTitle,
+  ogImage,
+  ogUrl,
+} = PageData.pageContent;
 
 ---
 
 <FunnelLayout
-  description="Website Laten Maken die Converteert | Westend Digital"
-  ogDescription="Website Laten Maken die Converteert | Westend Digital"
-  ogImageAlt="Astro description"
-  ogImageUrl="Astro description"
-  ogTitle="Astro description"
-  ogUrl="Astro description"
-  title="Website Laten Maken | Westend Digital">
+  description={metaDescription}
+  ogDescription={metaDescription}
+  ogImageAlt={ogImage.ogImageAlt}
+  ogImageUrl={ogImage.ogImageUrl}
+  ogTitle={metaTitle}
+  ogUrl={ogUrl}
+  title={metaTitle}
+  >
 
   <Header >
     <div>
-      <h1>Een sterke website die verkoopt, vertrouwen wekt 
-        en jouw bedrijf <span class="highlight-text">laat groeien.</span>
-      </h1>
-      <p>Binnen <span class="highlight-text">3 maanden</span> staat jouw website paraat: een professionele website die vertrouwen uitstraalt, meer klanten oplevert en jouw groei versnelt terwijl jij gefocust blijft op je missie.
-       </p>
-       <a href="/contact" class="btn btn-cta">Plan een gratis strategie gesprek</a>
+      <h1 set:html={heroSection.title}></h1>
+      <p set:html={heroSection.subtitle}></p>
+      <a href={heroSection.ctaBtnUrl} class="btn btn-cta">{heroSection.ctaBtn}</a>
     </div>
   </Header>
 
   <main>
 
-    <section>
-      <h2>Herkenbaar?</h2>
+    <IntroSection 
+      altText={herkenbaarSection.altText}
+      imageUrl={herkenbaarSection.imageUrl}
+      paragraph={herkenbaarSection.paragraph}
+      title={herkenbaarSection.title}
+    />
 
-      <p>Als oud-militair weet je <strong>hoe cruciaal een soepele operatie is.</strong>  Eén zwakke schakel en het hele systeem hapert. Zo werkt het ook online: als je website niet meewerkt, verlies je terrein — zelfs als je bedrijf verder groeit.</p>
-      
-      <p><strong>Je aanpak is sterk, je klanten zijn tevreden, en je weet wat je te bieden hebt.</strong> Maar je website houdt je tegen. Trage laadtijden, een warrige structuur, geen duidelijke boodschap. Waardoor bezoekers afhaken voordat ze begrijpen wat je waard bent. En jij je gaat afvragen: ligt het aan mijn verhaal, of aan m’n website?</p>
+    <section class="wrapper hidden" id="website-how-we-work">
 
-      <p><strong>Ondertussen verspil je tijd aan technische rompslomp</strong> die je energie kost — updates, foutjes, losse tools — <strong></strong> Iemand die meedenkt, doet wat nodig is, en jouw missie digitaal ondersteunt.</p>
-
-      <p><strong>Je wilt geen ruis. Je wilt een website die jouw slagkracht versterkt.</strong></p>
-
-      <a href="/contact" class="btn btn-secondary">Plan je missie briefing in</a>
-
-    </section>
-
- 
-
-    <section class="hidden" id="website-how-we-work">
-      <h2>Onze aanpak</h2>
-      <p>Wij geloven in een persoonlijke aanpak. Samen met jou kijken we naar jouw wensen en doelen, zodat we een website kunnen creëren die perfect aansluit bij jouw bedrijf.</p>
+      <div class="text-center margin-inline-auto">
+        <h2>Onze aanpak</h2>
+  
+        <p>Wij geloven in een persoonlijke aanpak. Samen met jou kijken we naar jouw wensen en doelen, zodat we een website kunnen creëren die perfect aansluit bij jouw bedrijf.</p>
+  
+      </div>
     </section>
 
     <section class="hidden" id="website-testimonialsection-1">
@@ -81,12 +85,14 @@ import FooterSection from "../sections/FooterSection.astro";
 
     </section>
 
-    <section class="hidden">
-      <h2>Onze diensten</h2>
-      <p>Wij bieden verschillende diensten aan, van het ontwerpen van een nieuwe website tot het optimaliseren van je bestaande site. Ook bieden we ondersteuning bij het onderhouden van je website.</p>
+    <section class="wrapper hidden">
+      <div class="text-center margin-inline-auto">
+        <h2>Onze diensten</h2>
+        <p>Wij bieden verschillende diensten aan, van het ontwerpen van een nieuwe website tot het optimaliseren van je bestaande site. Ook bieden we ondersteuning bij het onderhouden van je website.</p>
+      </div>
     </section>
 
-    <section class="hidden">
+    <section class="wrapper hidden">
       <h2>Veelgestelde vragen</h2>
       <!-- <FaqSection /> -->
     </section>
