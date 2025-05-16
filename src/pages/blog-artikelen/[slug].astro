@@ -1,19 +1,18 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import fetchBlogArticles from "../../lib/fetchBlogArticles"
-import Header from "../../components/Header.astro";
 import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
+import Button from "../../components/Button.astro";
 
 export async function getStaticPaths() {
+  const allBlogs = await fetchBlogArticles();
+
   try {
-    const blogs = await fetchBlogArticles();
-
-    if (!blogs || blogs.length === 0) {
-      return []; // Lege array als er geen blogs zijn
+    if (!allBlogs || allBlogs.length === 0) {
+      return []; // Lege array als er geen allBlogs zijn
     }
-
-    return blogs.map((blog) => {
+    return allBlogs.map((blog) => {
    
       return {
         params: {
@@ -32,12 +31,35 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-const blogs = await fetchBlogArticles()
-const blogData = blogs.find((blog: { node: { slug: any; }; }) => blog.node.slug === slug)
+const allBlogs = await fetchBlogArticles()
+const blogData = allBlogs.find((blog: { node: { slug: any; }; }) => blog.node.slug === slug)
+
+
 
 if (!blogData) {
   throw new Error('Blog not found');
 }
+
+// --- Code om andere blogs te selecteren ---
+// Filter de huidige blog uit de lijst van alle blogs
+const otherBlogs = allBlogs.filter(blog => blog.node.slug !== slug);
+
+// Schud de overgebleven blogs willekeurig (optioneel, voor variatie)
+// Een simpele shuffle implementatie (Fisher-Yates Shuffle):
+function shuffleArray(array: any[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+    return array;
+}
+
+const shuffledBlogs = shuffleArray([...otherBlogs]); // Maak een kopie voordat je shufflet
+
+// Selecteer de eerste 3 blogs uit de geschudde lijst
+const selectedOtherBlogs = shuffledBlogs.slice(0, 3);
+
+// --- Einde code om andere blogs te selecteren ---
 
 const metaTitle = blogData.node.seo.title
 const metaDescription = blogData.node.seo.metaDesc
@@ -74,11 +96,40 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText
   <main>
     <section class="wrapper blog-wrapper">
       <article class="blog-content">
-        
         <h1>{blogData.node.title}</h1>
-        <div set:html={blogData.node.content}></div>
+        <div class="blog-content__wrapper" set:html={blogData.node.content}></div>
       </article>
     </section>
+
+    <section class="wrapper blog-wrapper">
+      <div>
+        <h2>Lees ook:</h2>
+        <p>Hieronder vind je een selectie van andere blogs die je misschien ook interessant vindt.</p>
+      </div>
+    {selectedOtherBlogs.length > 0 ? (
+      <ul role="list" class="blog-list">
+        {selectedOtherBlogs.map(otherBlog => (
+          <li class="card">
+           <a href={`/blog-artikelen/${otherBlog.node.slug}`} class="hidden blog">
+            <img
+              src={otherBlog.node.featuredImage.node.mediaItemUrl}
+              width={500}
+              height={500}
+              alt={otherBlog.node.featuredImage.node.altText}
+              />
+              <div class="text-wrapper">
+                <h2>{otherBlog.node.title}</h2>
+                <div set:html={otherBlog.node.excerpt}></div>
+              </div>
+              <Button >Lees meer</Button>
+          </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>Geen andere blogs gevonden.</p>
+    )}
+  </section>
     <CtaSection />
   </main>
 
@@ -126,19 +177,212 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText
       margin-top: var(--size-1);
     }
 
-    div {
-      display: grid;
-      gap: var(--size-2);
+    .blog-content__wrapper {
       margin-block-start: var(--size-4) ;
 
-      .wp-blog-block-heading {
+      .wp-block-heading {
+        margin-block-start: var(--size-2) ;
+        padding-block-end: var(--size-1) ;
         font-size: var(--fs-700);
       }
 
       .wp-block-list {
         margin-inline-start: var(--size-3);
       }
+
+      /* Block Details */
+
+    .wp-block-details {
+      background-color: var(--clr-neutral-100);
+      border-radius: var(--border-radius-card);
+      box-shadow: var(--box-shadow);
+      color: var(--clr-primary-900);
+      cursor: pointer;
+      font-size: var(--fs-500);
+      padding: var(--size-2) var(--size-4);
+      margin-bottom: var(--size-2);
+      
+      summary {
+        font-weight: var(--fw-bold);
+      }
+      
+      p {
+        padding-block-start: var(--size-2);
+      }
+    }
+
+         /* Block: roi-calculator */
+    .roi-calculator {
+        background-color: var(--clr-neutral-100); /* Witte achtergrond */
+        border-radius: var(--border-radius-card); /* Afgeronde hoeken */
+        box-shadow: var(--box-shadow); /* Schaduw */
+        color: var(--clr-primary-900); /* Standaard tekstkleur */
+        margin: var(--size-8) auto; /* Centreer de container */
+        max-width: 800px; /* Maximale breedte */
+        padding: var(--size-2); /* Padding rondom de inhoud */
+    }
+
+    /* Element: roi-calculator__header */
+    .roi-calculator__header {
+        color: var(--clr-primary-900); /* Donkere tekstkleur */
+        font-size: var(--fs-700); /* Grootte */
+        font-weight: var(--fw-bold); /* Vetgedrukt */
+        margin-bottom: var(--size-2); /* Marge onder de titel */
+        text-align: center; /* Gecentreerde tekst */
+    }
+
+    /* Element: roi-calculator__description */
+    .roi-calculator__description {
+        color: var(--clr-primary-800); /* Grijze tekstkleur */
+        margin-bottom: var(--size-2); /* Marge onder de paragraaf */
+        text-align: center; /* Gecentreerde tekst */
+    }
+
+    /* Element: roi-calculator__input-section */
+    .roi-calculator__input-section {
+        margin-bottom: var(--size-2); /* Marge onder de sectie */
+    }
+
+    /* Modifier: roi-calculator__input-section--grid */
+    .roi-calculator__input-section--grid {
+        display: grid;
+        gap: var(--size-2); /* Ruimte tussen de kolommen/rijen */
+        grid-template-columns: 1fr; /* Standaard 1 kolom op kleine schermen */
+    }
+
+    /* Media query voor grotere schermen (vanaf 768px) */
+    @media (min-width: 768px) {
+        .roi-calculator__input-section--grid {
+            grid-template-columns: 1fr 1fr; /* 2 kolommen op grotere schermen */
+        }
+    }
+
+    /* Element: roi-calculator__section-title */
+    .roi-calculator__section-title {
+        color: var(--clr-primary-900); /* Donkergrijze tekstkleur */
+        font-size: var(--fs-400); /* Grootte */
+        font-weight: var(--fw-semi-bold); /* Semi-vetgedrukt */
+        margin-bottom: var(--size-1); /* Marge onder de subtitel */
+    }
+
+    /* Element: roi-calculator__form-group */
+    .roi-calculator__form-group {
+        margin-bottom: var(--size-1); /* Marge onder elke formuliergroep */
+    }
+
+    /* Element: roi-calculator__label */
+    .roi-calculator__label {
+        color: var(--clr-primary-900); /* Donkergrijze tekstkleur */
+        display: block; /* Zorg dat het label op een nieuwe regel begint */
+        font-size: 0.875rem; /* Kleinere lettergrootte */
+        font-weight: var(--fw-bold); /* Vetgedrukt */
+        margin-bottom: calc(var(--size-1) / 2); /* Marge onder het label */
+    }
+
+    /* Element: roi-calculator__input */
+    .roi-calculator__input {
+        appearance: none; /* Reset standaard browser styling */
+        border-radius: 4px; /* Afgeronde hoeken */
+        border: 1px solid #d1d5db; /* Rand */
+        box-shadow: var(--box-shadow); /* Schaduw */
+        box-sizing: border-box; /* Zorg dat padding en border binnen de breedte vallen */
+        color: var(--clr-primary-900); /* Tekstkleur */
+        line-height: 1.5; /* Lijnhoogte */
+        outline: none; /* Verwijder de standaard outline bij focus */
+        padding: 8px 12px; /* Padding binnen het veld */
+        width: 100%; /* Volledige breedte */
+    }
+
+    /* Styling voor inputvelden bij focus */
+    .roi-calculator__input:focus {
+        border-color: #6366f1; /* Focus randkleur */
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5); /* Focus schaduw */
+    }
+
+     /* Verberg standaard nummer input pijltjes */
+    .roi-calculator__input[type="number"]::-webkit-outer-spin-button,
+    .roi-calculator__input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    .roi-calculator__input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    /* Element: roi-calculator__button-container */
+    .roi-calculator__button-container {
+        margin-bottom: var(--size-2); /* Marge onder de knop */
+        text-align: center; /* Centreer de knop */
+    }
+
+    /* Element: roi-calculator__button */
+    .roi-calculator__button {
+        background-color: #2563eb; /* Blauwe kleur */
+        border-radius: calc(var(--size-1) / 2); /* Afgeronde hoeken */
+        border: none; /* Geen rand */
+        box-shadow: var(--box-shadow); /* Schaduw */
+        color: var(--clr-neutral-100); /* Witte tekst */
+        cursor: pointer; /* Verander cursor bij hover */
+        font-weight: var(--fw-bold); /* Vetgedrukt */
+        outline: none; /* Verwijder outline bij focus */
+        padding: 12px var(--size-2); /* Padding */
+        transition: background-color 0.3s ease-in-out; /* Smooth overgang bij hover */
+    }
+
+    /* Styling voor de bereken-knop bij hover */
+    .roi-calculator__button:hover {
+        background-color: #1d4ed8; /* Donkerdere blauw bij hover */
+    }
+
+    /* Styling voor de bereken-knop bij focus */
+    .roi-calculator__button:focus {
+         box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5); /* Focus schaduw */
+    }
+
+    /* Element: roi-calculator__results */
+    .roi-calculator__results {
+        background-color: #d1fae5; /* Groene achtergrond */
+        border-radius: 4px; /* Afgeronde hoeken */
+        border: 1px solid #34d399; /* Groene rand */
+        color: #065f46; /* Groene tekst */
+        margin-bottom: var(--size-2); /* Marge onder de box */
+        padding: 12px var(--size-1); /* Padding */
+    }
+
+    /* Element: roi-calculator__error */
+     .roi-calculator__error {
+        background-color: #fee2e2; /* Rode achtergrond */
+        border-radius: 4px; /* Afgeronde hoeken */
+        border: 1px solid #f87171; /* Rode rand */
+        color: #991b1b; /* Rode tekst */
+        margin-bottom: var(--size-2); /* Marge onder de box */
+        padding: 12px var(--size-1); /* Padding */
+    }
+
+
+    /* Modifier: --hidden */
+    .roi-calculator__results--hidden,
+    .roi-calculator__error--hidden {
+        display: none;
+    }
+
+    /* Element: roi-calculator__results-title, roi-calculator__error-title */
+    .roi-calculator__results-title,
+    .roi-calculator__error-title {
+        display: block; /* Zorg dat de titel op een nieuwe regel staat op kleine schermen */
+        font-weight: var(--fw-bold); /* Vetgedrukt */
+        margin-bottom: 4px; /* Kleine marge onder de titel */
+    }
+
+    /* Element: roi-calculator__disclaimer */
+    .roi-calculator__disclaimer {
+        color: inherit; /* Neem kleur over van parent (.roi-calculator__results) */
+        display: block; /* Zorg dat het op een nieuwe regel staat */
+        font-size: 0.875rem; /* Kleinere tekst */
+        font-style: italic; /* Cursief */
+        margin-top: calc(var(--size-1) / 2); /* Marge boven de tekst */
+        text-align: left; /* Zorg dat de disclaimer links uitgelijnd is in de box */
+    }
     }
   }
-
 </style>

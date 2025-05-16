@@ -12,6 +12,8 @@
   src: url("/assets/fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
 }
 
+
+
 :root {
   interpolate-size: allow-keywords;
 
@@ -35,7 +37,7 @@
   --clr-secondary-800: hsl(36, 56%, 74%);
   --clr-secondary-900: hsl(36, 59%, 58%);
 
-  --clr-neutral-100: hsl(0, 0%, 96%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-300: hsl(0, 0%, 53%);
   --clr-neutral-500: hsl(0, 0%, 34%);
   --clr-neutral-700: hsl(230, 5%, 22%);
@@ -602,6 +604,63 @@ a {
  }
 
  /* End Buttons */
+
+
+ /* Blog cards */
+ 
+  .blog {
+    display: grid;
+    justify-content: space-between;
+  
+
+    button {
+      align-self: end;
+      margin-inline: var(--size-1);
+      margin-block-start: var(--size-1);
+      margin-block-end: var(--size-3);
+    }
+  }
+
+  .blog-list {
+    display: grid;
+    gap: 1rem;
+    grid-column: 2 / -2;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+
+    a {
+      background-color: hsl(from var(--clr-primary-900) H S L / 20%);
+      border-radius: var(--border-radius-card);
+      height: 74rem;
+      overflow: hidden;
+      text-decoration: none;
+
+      img {
+        height: 25rem;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+      }
+
+      .text-wrapper {
+        padding-inline: var(--size-1);
+        padding-block: var(--size-2);
+
+        h2 {
+          margin-block-end: var(--size-2);
+        }
+
+        div {
+          p {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+        };
+      }
+    }
+  }
+ /* End blog cards */
 
  /* Section animation */
 

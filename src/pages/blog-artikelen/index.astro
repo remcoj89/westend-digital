@@ -62,56 +62,7 @@ const {
 
 <style>
 
-  .blog {
-    display: grid;
-    justify-content: space-between;
 
-    button {
-      align-self: end;
-      margin-inline: var(--size-1);
-      margin-block-start: var(--size-1);
-      margin-block-end: var(--size-3);
-    }
-  }
-
-  .blog-list {
-    display: grid;
-    gap: 1rem;
-    grid-column: 2 / -2;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-
-    a {
-      background-color: hsl(from var(--clr-primary-900) H S L / 20%);
-      border-radius: var(--border-radius-card);
-      max-height: 75rem;
-      overflow: hidden;
-      text-decoration: none;
-
-      img {
-        height: 25rem;
-        object-fit: cover;
-        object-position: center;
-        width: 100%;
-      }
-
-      .text-wrapper {
-        padding-inline: var(--size-1);
-        padding-block: var(--size-2);
-
-        h2 {
-          margin-block-end: var(--size-2);
-        }
-
-        div {
-          p {
-            display: -webkit-box;
-            -webkit-line-clamp: 6;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-          }
-        };
-      }
-    }
-  }
+ 
 
 </style>
