@@ -4,6 +4,8 @@ import fetchBlogArticles from "../../lib/fetchBlogArticles"
 import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
 import Button from "../../components/Button.astro";
+import SmallCtaSection from "../../sections/SmallCtaSection.astro";
+
 
 export async function getStaticPaths() {
   const allBlogs = await fetchBlogArticles();
@@ -101,6 +103,8 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText
       </article>
     </section>
 
+
+    <SmallCtaSection />
     <section class="wrapper blog-wrapper">
       <div>
         <h2>Lees ook:</h2>
