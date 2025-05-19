@@ -166,8 +166,7 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText
     border-radius: var(--radius-1);
     display: grid;
     gap: var(--size-4);
-    margin-block: var(--size-4);
-    padding: var(--size-4);
+    margin-block-start: var(--size-4);
   }
 
   .blog-content {
@@ -176,19 +175,57 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText
       font-size: var(--fs-900);
       margin-top: var(--size-1);
     }
+    
 
     .blog-content__wrapper {
       margin-block-start: var(--size-4) ;
-
+      
       .wp-block-heading {
         margin-block-start: var(--size-2) ;
         padding-block-end: var(--size-1) ;
+      }
+
+      .wp-block-heading.h2 {
         font-size: var(--fs-700);
+      }
+
+      .wp-block-heading.h3 {
+        font-size: var(--fs-500);
       }
 
       .wp-block-list {
         margin-inline-start: var(--size-3);
       }
+
+      .next-article-wrapper {
+        align-items: center;
+        background-color: var(--clr-primary-900);
+        border-radius: var(--border-radius-card);
+        color: var(--clr-primary-100);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-block: var(--size-4);
+        padding-block: var(--size-4);
+        padding-inline: var(--size-2);
+        text-align: center;
+
+        h2 {
+          color: inherit;
+          margin-block-end: var(--size-2);
+      }
+
+      /* Button styling */
+
+      .btn {
+        margin-block-start: var(--size-4);
+
+        a {
+          text-decoration: none;
+        }
+      }
+
+    }
 
       /* Block Details */
 
@@ -359,7 +396,6 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText
         padding: 12px var(--size-1); /* Padding */
     }
 
-
     /* Modifier: --hidden */
     .roi-calculator__results--hidden,
     .roi-calculator__error--hidden {
@@ -385,4 +421,5 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText
     }
     }
   }
+
 </style>

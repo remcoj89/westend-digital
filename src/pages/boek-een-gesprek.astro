@@ -1,0 +1,114 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import FooterSection from "../sections/FooterSection.astro";
+
+
+const title="Plan jouw strategiegesprek"
+const paragraphs = [
+    "Sta je op het punt om je bedrijf naar een hoger niveau te tillen, maar voel je dat je website je daarin afremt? Tijdens dit vrijblijvende strategiegesprek kijken we samen naar waar je nu staat, waar je naartoe wilt — en wat er nodig is om daar te komen.",
+    "We zoomen in op wat werkt, wat je tegenhoudt en waar kansen blijven liggen. Je krijgt helder inzicht in hoe je jouw verhaal, website en systemen slim inzet om klanten aan te trekken die écht bij je passen.",
+    "Aan het eind van het gesprek weet je exact wat de volgende stap is richting een winstgevende website die voor je werkt in plaats van tegen. En natuurlijk: of wij de juiste partner zijn om je daar bij te helpen.",
+    "Het gesprek is 100% vrijblijvend — jij zit nergens aan vast. Wel is het waardevol, concreet en direct toepasbaar."
+]
+
+ const metaTitle="Boek een vrijblijven strategie gesprek"
+ const metaDescription="Boek een vrijblijvend strategie gesprek met  Westen Digital"
+ const ogTitle="Boek een vrijblijvend strategie gesprek"
+ const ogDescription="Boek een vrijblijvend strategie gesprek met Westen Digital"
+ const ogImageUrl="/images/og-image.png"
+ const ogImageAlt="Boek een gesprek"
+ const ogUrl="/boek-een-gesprek/"
+---
+
+<Layout
+  title={metaTitle}
+  description={metaDescription}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  ogImageUrl={ogImageUrl}
+  ogImageAlt={ogImageAlt}
+  ogUrl={ogUrl}
+>
+
+    <main>
+        <section class="wrapper">
+          <div class="content-wrapper">
+             <h1>{title}</h1>
+             {paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+             ))}
+          </div>
+         
+            <!-- Calendly inline widget begin -->
+            <div class="calendar calendly-inline-widget" data-url="https://calendly.com/remco-westend-digital/30min?hide_gdpr_banner=1"  />
+            <script is:inline type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async />
+         
+        </section>
+    </main>
+    <FooterSection />
+
+</Layout>
+
+<style>
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-2);
+        gap: var(--size-4);
+        justify-content: center;
+        margin-block-end: var(--size-10);
+        margin-block-start: var(--size-10);
+    
+       .content-wrapper {
+           text-align: center;
+           width: 100%;
+
+           h1 {
+                margin-block-end: var(--size-4);
+           }
+
+           p {
+             margin-block-end: var(--size-1);
+           }
+           
+        };
+        
+        .calendar {               
+            border-radius: var( --border-radius-card);
+            box-shadow: var(--box-shadow);
+            height: 55vh;
+            overflow: hidden;
+            width: 60vw;
+         }
+    }
+
+      @media (min-width: 900px) {
+        .wrapper {
+            flex-direction: row;
+            margin-block-start: calc(var(--size-10) * 2);
+
+            .content-wrapper {
+
+                 width: 50%;
+
+            h1 {
+                margin-block-end: var(--size-4);
+            }
+
+            p {
+             margin-block-end: var(--size-1);
+            }
+        };
+
+        .calendar {               
+            border-radius: var( --border-radius-card);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            width: 50%;
+         }
+        }
+    }
+
+</style>
