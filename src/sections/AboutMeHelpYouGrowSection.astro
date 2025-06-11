@@ -1,10 +1,7 @@
 ---
-import SectionTitle from "../components/SectionTitle.astro"
+import SectionTitle from "../components/SectionTitle.astro";
 
-const {
-  title,
-  steps
-} = Astro.props
+const { title, steps } = Astro.props;
 ---
 
 <section class="wrapper" id="grow-section">
@@ -13,14 +10,14 @@ const {
     {
       steps.map((step: { title: string; paragraph: string }, i: number) => {
         return (
-        <div class="grid-item">
-          <span class="grid-number">{ i +1}</span>
-          <div class="grid-content">
-            <h3 class="grid-title">{step.title}</h3>
-            <p class="grid-text">{step.paragraph}</p>
+          <div class="grid-item">
+            <span class="grid-number">{i + 1}</span>
+            <div class="grid-content">
+              <h3 class="grid-title">{step.title}</h3>
+              <p class="grid-text">{step.paragraph}</p>
+            </div>
           </div>
-        </div>
-        )
+        );
       })
     }
   </div>
@@ -29,7 +26,7 @@ const {
 <style>
   #grow-section {
     flex-direction: column;
-    gap :var(--size-3);
+    gap: var(--size-3);
 
     .steps-grid {
       display: grid;
@@ -56,5 +53,4 @@ const {
       }
     }
   }
-
 </style>

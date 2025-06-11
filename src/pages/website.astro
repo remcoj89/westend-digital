@@ -13,7 +13,6 @@ const {
   ogImage,
   ogUrl,
 } = PageData.pageContent;
-
 ---
 
 <FunnelLayout
@@ -24,19 +23,19 @@ const {
   ogTitle={metaTitle}
   ogUrl={ogUrl}
   title={metaTitle}
-  >
-
-  <Header >
+>
+  <Header>
     <div>
-      <h1 set:html={heroSection.title}></h1>
-      <p set:html={heroSection.subtitle}></p>
-      <a href={heroSection.ctaBtnUrl} class="btn btn-cta">{heroSection.ctaBtn}</a>
+      <h1 set:html={heroSection.title} />
+      <p set:html={heroSection.subtitle} />
+      <a href={heroSection.ctaBtnUrl} class="btn btn-cta"
+        >{heroSection.ctaBtn}</a
+      >
     </div>
   </Header>
 
   <main>
-
-    <IntroSection 
+    <IntroSection
       altText={herkenbaarSection.altText}
       imageUrl={herkenbaarSection.imageUrl}
       paragraph={herkenbaarSection.paragraph}
@@ -44,51 +43,76 @@ const {
     />
 
     <section class="wrapper hidden" id="website-how-we-work">
-
       <div class="text-center margin-inline-auto">
         <h2>Onze aanpak</h2>
-  
-        <p>Wij geloven in een persoonlijke aanpak. Samen met jou kijken we naar jouw wensen en doelen, zodat we een website kunnen creëren die perfect aansluit bij jouw bedrijf.</p>
-  
+
+        <p>
+          Wij geloven in een persoonlijke aanpak. Samen met jou kijken we naar
+          jouw wensen en doelen, zodat we een website kunnen creëren die perfect
+          aansluit bij jouw bedrijf.
+        </p>
       </div>
     </section>
 
     <section class="hidden" id="website-testimonialsection-1">
-      <div class="wrapper flex-column-center dark-bg padding-block-4 padding-inline-2 border-radius-card">
-        <h2 class="text-center margin-bottom-3"><span class="highlight-text">Ervaringen</span> van onderners zoals jij</h2>
+      <div
+        class="wrapper flex-column-center dark-bg padding-block-4 padding-inline-2 border-radius-card"
+      >
+        <h2 class="text-center margin-bottom-3">
+          <span class="highlight-text">Ervaringen</span> van onderners zoals jij
+        </h2>
         <div class="flex">
-
           <div class="testemonial">
-            <p>"Dankzij de website van Westend Digital hebben we meer klanten kunnen aantrekken en onze omzet verhoogd."</p>
+            <p>
+              "Dankzij de website van Westend Digital hebben we meer klanten
+              kunnen aantrekken en onze omzet verhoogd."
+            </p>
             <div class="testemonial__writer">
-              <img src="/images/sampel-avatar.jpg" alt="Linda Munster" width="50" height="50" class="testimonial-image"/>
+              <img
+                src="/images/sampel-avatar.jpg"
+                alt="Linda Munster"
+                width="50"
+                height="50"
+                class="testimonial-image"
+              />
               <div class="testimonial-text">
                 <h3>Linda Munster</h3>
                 <p>Schermer Eylandt</p>
-              </div>  
+              </div>
             </div>
           </div>
 
           <div class="testemonial">
-            <p>"Dankzij de website van Westend Digital hebben we meer klanten kunnen aantrekken en onze omzet verhoogd."</p>
+            <p>
+              "Dankzij de website van Westend Digital hebben we meer klanten
+              kunnen aantrekken en onze omzet verhoogd."
+            </p>
             <div class="testemonial__writer">
-              <img src="/images/sampel-avatar.jpg" alt="Linda Munster" width="50" height="50" class="testimonial-image"/>
+              <img
+                src="/images/sampel-avatar.jpg"
+                alt="Linda Munster"
+                width="50"
+                height="50"
+                class="testimonial-image"
+              />
               <div class="testimonial-text">
                 <h3>Linda Munster</h3>
                 <p>Schermer Eylandt</p>
-              </div>  
+              </div>
             </div>
           </div>
-          
         </div>
       </div>
-
     </section>
 
     <section class="wrapper hidden">
       <div class="text-center margin-inline-auto">
         <h2>Onze diensten</h2>
-        <p>Wij bieden verschillende diensten aan, van het ontwerpen van een nieuwe website tot het optimaliseren van je bestaande site. Ook bieden we ondersteuning bij het onderhouden van je website.</p>
+        <p>
+          Wij bieden verschillende diensten aan, van het ontwerpen van een
+          nieuwe website tot het optimaliseren van je bestaande site. Ook bieden
+          we ondersteuning bij het onderhouden van je website.
+        </p>
       </div>
     </section>
 
@@ -99,12 +123,11 @@ const {
   </main>
 
   <FooterSection />
-
 </FunnelLayout>
 
 <style>
   .testemonial {
-     color: var(--clr-primary-900);
+    color: var(--clr-primary-900);
     background-color: var(--clr-primary-300);
     border-radius: 1rem;
     box-shadow: var(--box-shadow);
@@ -126,7 +149,5 @@ const {
   .testimonial-text {
     display: flex;
     flex-direction: column;
-   
   }
-
 </style>

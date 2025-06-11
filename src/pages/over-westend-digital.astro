@@ -6,7 +6,7 @@ import FooterSection from "../sections/FooterSection.astro";
 import IntroSection from "../sections/IntroSection.astro";
 import AboutMeHelpYouGrowSection from "../sections/AboutMeHelpYouGrowSection.astro";
 
-import data from "../data/aboutMe.json"
+import data from "../data/aboutMe.json";
 
 const {
   metaTitle,
@@ -16,10 +16,8 @@ const {
   heroTitle,
   introSection,
   aboutCustomerSection,
-  growSteps
-} = data.pageContent
-
-
+  growSteps,
+} = data.pageContent;
 ---
 
 <Layout
@@ -27,11 +25,13 @@ const {
   description={metaDescription}
   ogTitle={metaTitle}
   ogDescription={metaDescription}
-  ogImageUrl={ogImage.ogImageUrl},
-  ogImageAlt={ogImage.ogImageAlt},
+  ogImageUrl={ogImage.ogImageUrl}
+  ,
+  ogImageAlt={ogImage.ogImageAlt}
+  ,
   ogUrl={ogUrl}
 >
-  <Header >
+  <Header>
     <div>
       <h1>{heroTitle}</h1>
     </div>
@@ -52,8 +52,8 @@ const {
       title={aboutCustomerSection.title}
     />
     <AboutMeHelpYouGrowSection
-      steps = {growSteps.steps}
-      title = {growSteps.title}
+      steps={growSteps.steps}
+      title={growSteps.title}
     />
     <CtaSection />
   </main>

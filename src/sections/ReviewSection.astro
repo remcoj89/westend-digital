@@ -1,66 +1,67 @@
 ---
-import SectionTitle from "../components/SectionTitle.astro"
-import Card from '../components/Card.astro'
-import Image from "astro/components/Image.astro"
+import SectionTitle from "../components/SectionTitle.astro";
+import Card from "../components/Card.astro";
+import Image from "astro/components/Image.astro";
 
-const title = "Wat klanten over mij zeggen"
+const title = "Wat klanten over mij zeggen";
 
 const reviews = [
   {
     name: "Lisa Jansen",
     functionTitle: "Marketingmanageer",
-    review:[
+    review: [
       "Remco heeft voor ons een prachtige, op maat gemaakte website ontwikkeld. Niet alleen ziet de site er professioneel uit, maar hij levert ook meer leads dan ooit tevoren. Alles werd afgestemd op onze wensen en strategie.",
       "Remco heeft voor ons een prachtige, op maat gemaakte website ontwikkeld. Niet alleen ziet de site er professioneel uit, maar hij levert ook meer leads dan ooit tevoren. Alles werd afgestemd op onze wensen en strategie.",
       "Remco heeft voor ons een prachtige, op maat gemaakte website ontwikkeld. Niet alleen ziet de site er professioneel uit, maar hij levert ook meer leads dan ooit tevoren. Alles werd afgestemd op onze wensen en strategie.",
     ],
     quote: "Meer leads én een professionele uitstraling – echt topwerk!",
     avatarUrl: "/",
-    rating: 5
+    rating: 5,
   },
   {
     name: "Mark de Vries",
     functionTitle: "Eigenaar, IT Solutions",
-    review:[
+    review: [
       "Onze nieuwe website sluit perfect aan bij onze bedrijfsdoelen. De snelheid, het design en de functionaliteit zijn indrukwekkend. Ook na oplevering staat Remco altijd klaar voor ondersteuning.",
       "Onze nieuwe website sluit perfect aan bij onze bedrijfsdoelen. De snelheid, het design en de functionaliteit zijn indrukwekkend. Ook na oplevering staat Remco altijd klaar voor ondersteuning.",
     ],
     quote: "Een website die precies doet wat wij nodig hebben.",
     avatarUrl: "/",
-    rating: 4.7
+    rating: 4.7,
   },
   {
     name: "Sophie van Dijk",
     functionTitle: "HR-consultant",
     review: [
-      "Het resultaat overtrof onze verwachtingen. De website is niet alleen gebruiksvriendelijk, maar straalt ook perfect onze waarden uit. Het proces was transparant en prettig."
+      "Het resultaat overtrof onze verwachtingen. De website is niet alleen gebruiksvriendelijk, maar straalt ook perfect onze waarden uit. Het proces was transparant en prettig.",
     ],
     quote: "Een website die onze waarden perfect weerspiegelt!",
     avatarUrl: "/",
-    rating: 4.8
+    rating: 4.8,
   },
   {
     name: "Tom Bakker",
     functionTitle: "Operationeel manager",
-    review :[
+    review: [
       "We zochten een maatwerkoplossing, en dat is precies wat we hebben gekregen. De website heeft onze bedrijfsprocessen vereenvoudigd en zorgt voor betere interactie met klanten.",
       "De website heeft onze bedrijfsprocessen vereenvoudigd en zorgt voor betere interactie met klanten.",
     ],
     quote: "Onze bedrijfsprocessen zijn merkbaar verbeterd dankzij de website.",
     avatarUrl: "/",
-    rating: 5
+    rating: 5,
   },
   {
     name: "Emma Verhoeven",
     functionTitle: "Productmanager",
     review: [
-      "Dankzij jullie expertise hebben we nu een moderne, converterende website die onze doelgroep direct aanspreekt. Het resultaat is verbluffend en volledig afgestemd op onze behoeften."
+      "Dankzij jullie expertise hebben we nu een moderne, converterende website die onze doelgroep direct aanspreekt. Het resultaat is verbluffend en volledig afgestemd op onze behoeften.",
     ],
-    quote: "Een moderne website die echt converteert – meer kunnen we niet wensen!",
+    quote:
+      "Een moderne website die echt converteert – meer kunnen we niet wensen!",
     avatarUrl: "/",
-    rating: 5
+    rating: 5,
   },
-]
+];
 ---
 
 <section class="fb-col-wrapper">
@@ -85,23 +86,17 @@ const reviews = [
               <div>
                 <h3>{review.name}</h3>
                 <span>{review.functionTitle}</span>
-                {
-                  review.review.map((paragraph) => {
-                    return  <p>{paragraph}</p>
-                  })
-                }
-
+                {review.review.map((paragraph) => {
+                  return <p>{paragraph}</p>;
+                })}
               </div>
             </Card>
           </div>
-        )
+        );
       })
     }
-
   </div>
-
 </section>
-
 
 <style>
   .reviews-wrapper {
@@ -131,5 +126,5 @@ const reviews = [
     break-inside: avoid;
     margin-bottom: 1rem;
     padding: 1rem;
-}
+  }
 </style>

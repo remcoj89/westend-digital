@@ -1,40 +1,37 @@
 ---
-import SectionTitle from "../components/SectionTitle.astro"
-import FaqAccordion from "../components/FaqAccordion.astro"
-import Image from "astro/components/Image.astro"
+import SectionTitle from "../components/SectionTitle.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import Image from "astro/components/Image.astro";
 
-const {
-  title,
-  faqs
-} = Astro.props
+const { title, faqs } = Astro.props;
 
-const {
-  sectionId
-} = Astro.props
+const { sectionId } = Astro.props;
 ---
 
 <section class="fb-col-wrapper" id={sectionId}>
-
   <SectionTitle sectionTitle={title} />
-  <span class="section-subtitle">Niet het antwoord dat je zoekt? Je kunt ook
+  <span class="section-subtitle"
+    >Niet het antwoord dat je zoekt? Je kunt ook
     <a href="mailto:info@westend-digital.nl">mailen.</a>
   </span>
 
-
   <ul class="faq-wrapper" role="list">
-    {faqs.map((faq, i) => {
-      return (
-        <FaqAccordion
-          question={faq.question}
-          answer={faq.answer}
-          link={faq.internalLink}
-          index={i}
-        />
-      )
-    })}
+    {
+      faqs.map((faq, i) => {
+        return (
+          <FaqAccordion
+            question={faq.question}
+            answer={faq.answer}
+            link={faq.internalLink}
+            index={i}
+          />
+        );
+      })
+    }
   </ul>
   <Image
-    alt="",
+    alt=""
+    ,
     class="faq-image"
     src="/images/questions-marks.webp"
     height="500"
@@ -72,12 +69,12 @@ const {
     width: 100%;
   }
 
-  @media(width >= 43.75em ) {
+  @media (width >= 43.75em) {
     .faq-wrapper {
       grid-column: 2 / -2;
     }
   }
-  @media(width >= 62.5em ) {
+  @media (width >= 62.5em) {
     .faq-wrapper {
       grid-column: 2 / 9;
     }
@@ -88,8 +85,6 @@ const {
       width: fit-content;
     }
   }
-
-
 </style>
 
 <script is:inline>
@@ -97,17 +92,16 @@ const {
   const accordions = document.querySelectorAll(".accordion");
 
   faqWrapper.addEventListener("click", (e) => {
-    const accordionHeader = e.target.closest("li")
-    const accordion = e.target.closest(".accordion")
+    const accordionHeader = e.target.closest("li");
+    const accordion = e.target.closest(".accordion");
     const isOpen = accordion.classList.contains("is__open");
 
-    accordions.forEach(a => {
-        a.classList.remove("is__open")
-    })
+    accordions.forEach((a) => {
+      a.classList.remove("is__open");
+    });
 
     if (!isOpen) {
-        accordion.classList.add("is__open");
-      }
-  })
-
-  </script>
+      accordion.classList.add("is__open");
+    }
+  });
+</script>

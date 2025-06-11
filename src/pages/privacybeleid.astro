@@ -2,12 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import pageData from "../data/privacyBeleid.json";
 
-const {
-  metaDescription,
-  metaTitle,
-  ogImage,
-  ogUrl,
-} = pageData.pageContent;
+const { metaDescription, metaTitle, ogImage, ogUrl } = pageData.pageContent;
 ---
 
 <Layout
@@ -18,7 +13,7 @@ const {
   ogTitle={metaTitle}
   ogUrl={ogUrl}
   title={metaTitle}
-  >
+>
   <section class="wrapper legal-pages">
     <div>
       <h1>Privacybeleid</h1>
@@ -278,8 +273,8 @@ const {
       <p>Website: www.westend-digital.nl</p>
       <p>Telefoonnummer: 072-2029324</p>
       <p>
-        Voor vragen of problemen in verband met de verwerking van uw gegevens kunt
-        u contact met onze Privacy-functionaris opnemen via Remco Jonk,
+        Voor vragen of problemen in verband met de verwerking van uw gegevens
+        kunt u contact met onze Privacy-functionaris opnemen via Remco Jonk,
         remco@westend-digital.nl, 072-2029324.
       </p>
     </div>

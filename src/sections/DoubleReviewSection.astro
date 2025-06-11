@@ -1,0 +1,69 @@
+---
+import Card from "../components/Card.astro";
+---
+
+<section class="wrapper flex-column hidden" id="double-review-section">
+  <div class="reviews-wrapper">
+    <Card cardStyle="review">
+      <p>
+        "Sinds de nieuwe website begrijpen mensen meteen wat we doen. Dat
+        scheelt me zoveel uitleg."
+      </p>
+
+      <div class="avatar-details">
+        <picture class="review-avatar">
+          <img src="/images/sampel-avatar.jpg" alt="Review 1" />
+        </picture>
+        <div>
+          <h3>Linda Munster</h3>
+          <span>Schermer Eylandt</span>
+        </div>
+      </div>
+    </Card>
+    <Card cardStyle="review">
+      <p>
+        "Sinds de nieuwe website begrijpen mensen meteen wat we doen. Dat
+        scheelt me zoveel uitleg."
+      </p>
+
+      <div class="avatar-details">
+        <picture class="review-avatar">
+          <img src="/images/sampel-avatar.jpg" alt="Review 1" />
+        </picture>
+
+        <div>
+          <h3>Linda Munster</h3>
+          <span>Schermer Eylandt</span>
+        </div>
+      </div>
+    </Card>
+  </div>
+
+  <style>
+    .reviews-wrapper {
+      display: flex;
+      gap: var(--size-2);
+      justify-content: center;
+
+      .avatar-details {
+        align-items: center;
+        display: flex;
+        gap: var(--size-2);
+
+        .review-avatar {
+          border-radius: 100vw;
+          box-shadow: var(--box-shadow);
+          height: var(--size-10);
+          overflow: hidden;
+          width: var(--size-10);
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  </style>
+</section>

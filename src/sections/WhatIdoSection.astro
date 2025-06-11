@@ -1,88 +1,82 @@
 ---
-
-const { services, whatIDo} = Astro.props
-const {title, paragraph, projectsUrl} = whatIDo
+const { services, whatIDo } = Astro.props;
+const { title, paragraph, projectsUrl } = whatIDo;
 ---
 
 <section id="what-i-do-section">
   <div class="services-bar">
     <div class="wrapper services-wrapper">
-      {
-        services.map((service, i) => (<span>{service}</span>))
-      }
+      {services.map((service, i) => <span>{service}</span>)}
     </div>
   </div>
 
   <div class="why-me-wrapper">
     <div class="wrapper why-me">
-        <h2>{title}</h2>
-        <div class="paragraph-wrapper">
-          <p>{paragraph}</p>
-          <a href={projectsUrl.url} class="btn btn-primary-open">{projectsUrl.label}</a>
-        </div>
+      <h2>{title}</h2>
+      <div class="paragraph-wrapper">
+        <p>{paragraph}</p>
+        <a href={projectsUrl.url} class="btn btn-primary-open"
+          >{projectsUrl.label}</a
+        >
       </div>
-
     </div>
   </div>
 </section>
 
-
-
 <style>
-
   #what-i-do-section {
     margin: unset;
   }
-    .services-bar {
-      background-color: var(--clr-primary-900);
-      padding-block: var(--size-1);
-      overflow: hidden;
+  .services-bar {
+    background-color: var(--clr-primary-900);
+    padding-block: var(--size-1);
+    overflow: hidden;
 
+    .services-wrapper {
+      --_service-gap: var(--size-2);
+
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      justify-content: space-between;
+      row-gap: var(--size-1);
+      margin-inline: auto;
+
+      color: var(--clr-primary-100);
+      font-size: var(--fs-600);
+      font-weight: var(--fw-semi-bold);
+
+      span {
+        text-align: center;
+      }
+    }
+
+    @media (width >= 500px) {
       .services-wrapper {
-        --_service-gap: var(--size-2);
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+    @media (width >= 936px) {
+      .services-wrapper {
+        grid-template-columns: repeat(4, 1fr);
         justify-content: space-between;
-        row-gap: var(--size-1);
-        margin-inline: auto;
 
-        color: var(--clr-primary-100);
-        font-size: var(--fs-600);
-        font-weight: var(--fw-semi-bold);
+        span:not(:first-child) {
+          position: relative;
 
-        span {
-          text-align: center;
-        }
-      }
-
-      @media (width >= 500px) {
-        .services-wrapper {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (width >= 936px) {
-        .services-wrapper {
-          grid-template-columns: repeat(4, 1fr);
-          justify-content: space-between;
-
-          span:not(:first-child) {
-            position: relative;
-
-            &::after {
-              position: absolute;
-              content: "";
-              left: 0;
-              top: calc(50% - 0.5rem);
-              width: 1rem;
-              height: 1rem;
-              background-color: var(--clr-neutral-300);
-              border-radius: 50%;
-            }
+          &::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: calc(50% - 0.5rem);
+            width: 1rem;
+            height: 1rem;
+            background-color: var(--clr-neutral-300);
+            border-radius: 50%;
           }
         }
       }
+    }
   }
 
   .why-me-wrapper {
@@ -118,7 +112,5 @@ const {title, paragraph, projectsUrl} = whatIDo
         }
       }
     }
-
   }
-
 </style>

@@ -8,15 +8,25 @@ const ctaImage = "/images/kennis-making.webp";
   <div class="cta-content">
     <h2 class="cta-title">Klaar om jouw online succes te versnellen?</h2>
     <div class="btn-wrapper">
-      <a href="tel:+31722029324" class="btn btn-secondary" aria-label="klick om te bellen">Bel me</a>
-      <a href="mailto:info@westend-digital.nl" class="btn btn-secondary-open" aria-label="klick om een mail te sturen">Stuur een email</a>
+      <a
+        href="tel:+31722029324"
+        class="btn btn-secondary"
+        aria-label="klick om te bellen">Bel me</a
+      >
+      <a
+        href="mailto:info@westend-digital.nl"
+        class="btn btn-secondary-open"
+        aria-label="klick om een mail te sturen">Stuur een email</a
+      >
     </div>
   </div>
 </section>
 
 <style>
   #cta-section {
-    background:linear-gradient(315deg, hsl(224, 35%, 28%, 0.7), hsl(224, 75%, 11%, 0.8)), url("/images/remco-programming.webp");
+    background:
+      linear-gradient(315deg, hsl(224, 35%, 28%, 0.7), hsl(224, 75%, 11%, 0.8)),
+      url("/images/remco-programming.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,12 +34,10 @@ const ctaImage = "/images/kennis-making.webp";
     height: 50vh;
   }
 
-
   .cta-content {
     align-content: center;
     grid-column: 2 / -2;
     text-align: center;
-
 
     .cta-title {
       color: var(--clr-primary-100);
@@ -53,21 +61,17 @@ const ctaImage = "/images/kennis-making.webp";
     object-fit: contain;
   }
 
-  @media(width >= 43.75em) {
+  @media (width >= 43.75em) {
     #cta-section {
       padding: unset;
-
     }
     .cta-content {
       grid-column: 2 / -2;
     }
-
   }
-  @media(width >= 62.5em) {
-
+  @media (width >= 62.5em) {
     .cta-content {
       grid-column: 2 / -2;
     }
-
   }
 </style>

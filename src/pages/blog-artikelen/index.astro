@@ -3,18 +3,13 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
-import fetchBlogArticles from "../../lib/fetchBlogArticles"
-import pageData from '../../data/blog.json'
+import fetchBlogArticles from "../../lib/fetchBlogArticles";
+import pageData from "../../data/blog.json";
 import Button from "../../components/Button.astro";
-const blogs = await fetchBlogArticles()
+const blogs = await fetchBlogArticles();
 
-const {
-  metaTitle,
-  metaDescription,
-  ogImage,
-  ogUrl,
-  heroTitle
-} = pageData.pageContent
+const { metaTitle, metaDescription, ogImage, ogUrl, heroTitle } =
+  pageData.pageContent;
 ---
 
 <Layout
@@ -22,8 +17,10 @@ const {
   description={metaDescription}
   ogTitle={metaTitle}
   ogDescription={metaDescription}
-  ogImageUrl={ogImage.ogImageUrl},
-  ogImageAlt={ogImage.ogImageAlt},
+  ogImageUrl={ogImage.ogImageUrl}
+  ,
+  ogImageAlt={ogImage.ogImageAlt}
+  ,
   ogUrl={ogUrl}
 >
   <Header>
@@ -35,34 +32,26 @@ const {
   <section class="fb-col-wrapper">
     <div class="blog-list">
       {
-        blogs.map(blog => (
+        blogs.map((blog) => (
           <a href={`/blog-artikelen/${blog.node.slug}`} class="hidden blog">
             <img
               src={blog.node.featuredImage.node.mediaItemUrl}
               width={500}
               height={500}
               alt={blog.node.featuredImage.node.altText}
-              />
-              <div class="text-wrapper">
-                <h2>{blog.node.title}</h2>
-                <div set:html={blog.node.excerpt}></div>
-              </div>
-              <Button >Lees meer</Button>
+            />
+            <div class="text-wrapper">
+              <h2>{blog.node.title}</h2>
+              <div set:html={blog.node.excerpt} />
+            </div>
+            <Button>Lees meer</Button>
           </a>
-        ) )
-
+        ))
       }
-
     </div>
   </section>
   <CtaSection />
   <FooterSection />
 </Layout>
 
-
-<style>
-
-
- 
-
-</style>
+<style></style>

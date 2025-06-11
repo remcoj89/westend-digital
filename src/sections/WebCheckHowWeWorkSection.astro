@@ -1,25 +1,26 @@
 ---
-import SectionTitle from "../components/SectionTitle.astro"
+import SectionTitle from "../components/SectionTitle.astro";
 
-const { steps, btnText } = Astro.props
+const { steps, btnText } = Astro.props;
 ---
 
-<section  class="fb-col-wrapper" id="steps">
+<section class="fb-col-wrapper" id="steps">
   <SectionTitle sectionTitle="Zo pak ik het aan" />
   <div class="steps-wrapper">
     <ul role="list" class="steps-list">
-      { steps.map((step, i) => {
-        return (
-        <li>
-          <div class="list-title">
-            <span>{i + 1}</span>
-            <h3>{step.title}</h3>
-          </div>
-          <p>{step.description}</p>
-        </li>
-        )
-
-      })}
+      {
+        steps.map((step, i) => {
+          return (
+            <li>
+              <div class="list-title">
+                <span>{i + 1}</span>
+                <h3>{step.title}</h3>
+              </div>
+              <p>{step.description}</p>
+            </li>
+          );
+        })
+      }
     </ul>
     <div class="btn-wrapper">
       <a href="#web-check-form-section" class="btn btn-secondary">{btnText}</a>
@@ -58,9 +59,7 @@ const { steps, btnText } = Astro.props
           color: var(--clr-secondary-900);
           line-height: 2;
         }
-
-      };
-
+      }
     }
     .btn-wrapper {
       display: flex;

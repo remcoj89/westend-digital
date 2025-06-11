@@ -4,19 +4,13 @@ import Header from "../../components/Header.astro";
 import Project from "../../components/Project.astro";
 import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
-import pageData from '../../data/projects.json'
+import pageData from "../../data/projects.json";
 import fetchProjects from "../../lib/fetchProjects";
 
-const projects = await fetchProjects()
+const projects = await fetchProjects();
 
-const {
-  metaTitle,
-  metaDescription,
-  ogImage,
-  ogUrl,
-  heroTitle,
-  heroSubtitle,
-} = pageData.pageContent
+const { metaTitle, metaDescription, ogImage, ogUrl, heroTitle, heroSubtitle } =
+  pageData.pageContent;
 ---
 
 <Layout
@@ -24,8 +18,10 @@ const {
   description={metaDescription}
   ogTitle={metaTitle}
   ogDescription={metaDescription}
-  ogImageUrl={ogImage.ogImageUrl},
-  ogImageAlt={ogImage.ogImageAlt},
+  ogImageUrl={ogImage.ogImageUrl}
+  ,
+  ogImageAlt={ogImage.ogImageAlt}
+  ,
   ogUrl={ogUrl}
 >
   <Header>
@@ -39,10 +35,12 @@ const {
     <div class="grid">
       {
         projects.map((project, i) => {
-          if(i % 2) {
-            return  <Project flexDirection="flex" projectContent={project}/>
+          if (i % 2) {
+            return <Project flexDirection="flex" projectContent={project} />;
           } else {
-            return   <Project flexDirection="flex-reverse" projectContent={project}/>
+            return (
+              <Project flexDirection="flex-reverse" projectContent={project} />
+            );
           }
         })
       }
