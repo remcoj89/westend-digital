@@ -1,0 +1,22 @@
+---
+import { BookOpen } from "../assets/icons";
+
+const {
+  AriaLabel,
+  CtaBtn,
+  CtaBtnUrl,
+  CtaBtnTitle,
+  DownloadFileName,
+  IconColor,
+} = Astro.props;
+---
+
+<a
+  aria-label={AriaLabel}
+  class="btn btn-secondary"
+  download={DownloadFileName}
+  href={CtaBtnUrl}
+  rel="noopener noreferrer"
+  target="_blank"
+  title={CtaBtnTitle}><BookOpen iconFill={IconColor} /> {CtaBtn}</a
+>

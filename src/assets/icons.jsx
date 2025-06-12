@@ -123,7 +123,7 @@ export function BookOpen({iconFill}) {
     >
       <path
         fill="none"
-        stroke={color}
+        stroke="currentColor"
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="1.5"

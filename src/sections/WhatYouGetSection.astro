@@ -1,0 +1,64 @@
+---
+const { title, items } = Astro.props;
+---
+
+<section class="wrapper flex-column hidden" id="what-you-get-section">
+  <div class="text-center margin-inline-auto">
+    <h2 set:html={title} />
+  </div>
+  <div class="grid what-you-get-grid gap-2">
+    {
+      items.map((item) => (
+        <div class="what-you-get-grid__card">
+          <picture class="icon">
+            <img src={item.icon} alt={item.iconAlt} />
+          </picture>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .what-you-get-grid {
+    align-items: stretch;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    margin-block-start: var(--size-5);
+    width: 100%;
+
+    .what-you-get-grid__card {
+      background-color: var(--clr-white);
+      border-radius: 0.5rem;
+      border: 1px solid var(--clr-primary-300);
+      box-shadow: var(--box-shadow);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: var(--size-1);
+      transition: transform 0.3s ease;
+
+      .icon {
+        margin-block-end: var(--size-2);
+      }
+
+      .icon > img {
+        height: var(--size-8);
+        width: var(--size-6);
+      }
+    }
+
+    .what-you-get-grid__card:hover {
+      transform: translateY(-5px);
+    }
+    .what-you-get-grid__card h3 {
+      margin-bottom: 0.8rem;
+      min-height: calc(2 * var(--fs-700));
+    }
+    .what-you-get-grid__card p {
+      color: var(--clr-primary-700);
+    }
+  }
+</style>

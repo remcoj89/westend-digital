@@ -1,0 +1,103 @@
+---
+import { SendIcon } from "../assets/icons";
+
+const { title, ariaLabel, ctaBtn, formNotification } = Astro.props;
+
+const iconColor = "var(--clr-primary-900)";
+---
+
+<section
+  class="flex-column hidden dark-bg padding-block-8"
+  id="download-section"
+>
+  <div class="text-center margin-inline-auto">
+    <h2 set:html={title} />
+    <div class="wrapper">
+      <div class="form-wrapper">
+        <form action="" class="form">
+          <div class="form__field">
+            <label for="name">Naam</label>
+            <input
+              id="name"
+              name="name"
+              placeholder="Naam"
+              required
+              type="text"
+            />
+          </div>
+          <div class="form__field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              placeholder="voorbeeld@email.com"
+              required
+              type="email"
+            />
+          </div>
+          <button class="btn btn-cta" aria-label={ariaLabel} type="submit">
+            <SendIcon iconFill={iconColor} />{ctaBtn}</button
+          >
+        </form>
+        <div class="spacer"></div>
+        <span class="form__notifiction" set:html={formNotification} />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .form-wrapper {
+    background-color: var(--clr-primary-100);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    color: var(--clr-primary-900);
+    margin-block-start: var(--size-5);
+    padding: var(--size-3);
+    width: 100%;
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-3);
+      margin-block-end: var(--size-3);
+
+      .form__field {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-1);
+
+        label {
+          font-weight: 600;
+        }
+
+        input {
+          border-radius: 0.25rem;
+          border: 2px solid var(--clr-primary-300);
+          border-radius: var(--border-radius-input-field);
+          caret-color: var(--clr-primary-900);
+          padding: var(--size-1);
+          width: 100%;
+        }
+
+        input:focus {
+          border-color: var(--clr-primary-700);
+          outline: none;
+        }
+      }
+    }
+
+    .spacer {
+      background-color: var(--clr-primary-900);
+      height: 1px;
+      margin-block-end: var(--size-1);
+      width: 100%;
+    }
+
+    .form__notifiction {
+      color: var(--clr-primary-700);
+      font-size: var(--fs-300);
+    }
+  }
+</style>

@@ -1,10 +1,16 @@
 ---
+// Sections
 import FunnelLayout from "../layouts/FunnelLayout.astro";
 import Header from "../components/Header.astro";
 import IntroSection from "../sections/IntroSection.astro";
 import DoubleReviewSection from "../sections/DoubleReviewSection.astro";
-import { BookOpen, SendIcon } from "../assets/icons";
+import WhatYouGetSection from "../sections/WhatYouGetSection.astro";
+import DownloadFormSection from "../sections/DownloadFormSection.astro";
 
+// Components
+import CtaDownloadButton from "../components/CtaDownloadButton.astro";
+
+// Data
 import PageData from "../data/brochure.json";
 
 const {
@@ -34,16 +40,16 @@ const iconColor = "var(--clr-primary-900)";
     <div>
       <h1 set:html={heroSection.title} />
       <p set:html={heroSection.subtitle} />
-      <a
-        aria-label="Download de gratis brochure"
-        class="btn btn-cta"
-        download={heroSection.downloadFileName}
-        href={heroSection.ctaBtnUrl}
-        rel="noopener noreferrer"
-        target="_blank"
-        title={heroSection.ctaBtnTitle}
-        ><BookOpen iconFill={iconColor} /> {heroSection.ctaBtn}</a
-      >
+
+      <!-- CTA Download Button -->
+      <CtaDownloadButton
+        AriaLabel={heroSection.ctaBtn}
+        CtaBtn={heroSection.ctaBtn}
+        DownloadFileName={heroSection.downloadFileName}
+        IconColor={iconColor}
+        Title={heroSection.ctaBtnTitle}
+        Url={heroSection.ctaBtnUrl}
+      />
     </div>
   </Header>
 
@@ -55,173 +61,40 @@ const iconColor = "var(--clr-primary-900)";
       title={herkenbaarSection.title}
     />
 
-    <section class="wrapper flex-column hidden" id="what-you-get-section">
-      <div class="text-center margin-inline-auto">
-        <h2 set:html={watJeKrijgtSection.title} />
-      </div>
-      <div class="grid what-you-get-grid gap-2">
-        {
-          watJeKrijgtSection.items.map((item) => (
-            <div class="what-you-get-grid__card">
-              <picture class="icon">
-                <img src={item.icon} alt={item.iconAlt} />
-              </picture>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          ))
-        }
-      </div>
-    </section>
+    <WhatYouGetSection
+      title={watJeKrijgtSection.title}
+      items={watJeKrijgtSection.items}
+      watJeKrijgtSection={watJeKrijgtSection}
+    />
+
+    <DownloadFormSection
+      title={downloadSection.title}
+      ariaLabel={downloadSection.ariaLabel}
+      ctaBtn={downloadSection.ctaBtn}
+      formNotification={downloadSection.formNotification}
+    />
+
+    <DoubleReviewSection />
+
     <section
-      class="flex-column hidden dark-bg padding-block-8"
-      id="download-section"
+      class="wrapper hidden"
+      id="brochure-closing-cta-section"
     >
-      <div class="text-center margin-inline-auto">
-        <h2 set:html={downloadSection.title} />
-        <div class="wrapper">
-          <div class="form-wrapper">
-            <form action="" class="form">
-              <div class="form__field">
-                <label for="name">Naam</label>
-                <input
-                  id="name"
-                  name="name"
-                  placeholder="Naam"
-                  required
-                  type="text"
-                />
-              </div>
-              <div class="form__field">
-                <label for="email">Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  placeholder="voorbeeld@email.com"
-                  required
-                  type="email"
-                />
-              </div>
-              <button
-                class="btn btn-cta"
-                aria-label={downloadSection.ariaLabel}
-                type="submit"
-              >
-                <SendIcon iconFill={iconColor} />{
-                  downloadSection.ctaBtn
-                }</button
-              >
-            </form>
-            <div class="spacer"></div>
-            <span
-              class="form__notifiction"
-              set:html={downloadSection.formNotification}
-            />
-          </div>
-        </div>
+      <div class="flex flex-column-center text-center gap-2">
+        <h2>Twijfel je of je website beter kan?</h2>
+        <p>
+          Dan is deze brochure je eerste stap naar duidelijkheid en resultaat.
+        </p>
+
+        <CtaDownloadButton
+          AriaLabel={heroSection.ctaBtn}
+          CtaBtn={heroSection.ctaBtn}
+          DownloadFileName={heroSection.downloadFileName}
+          IconColor={iconColor}
+          Title={heroSection.ctaBtnTitle}
+          Url={heroSection.ctaBtnUrl}
+        />
       </div>
     </section>
-
-
-    <DoubleReviewSection    />
-
-
-    <section></section>
   </main>
 </FunnelLayout>
-
-<style>
-  .what-you-get-grid {
-    align-items: stretch;
-    grid-auto-rows: 1fr;
-    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-    margin-block-start: var(--size-5);
-    width: 100%;
-
-    .what-you-get-grid__card {
-      background-color: var(--clr-white);
-      border-radius: 0.5rem;
-      border: 1px solid var(--clr-primary-300);
-      box-shadow: var(--box-shadow);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      padding: var(--size-1);
-      transition: transform 0.3s ease;
-
-      .icon {
-        margin-block-end: var(--size-2);
-      }
-
-      .icon > img {
-        height: var(--size-8);
-        width: var(--size-6);
-      }
-    }
-
-    .what-you-get-grid__card:hover {
-      transform: translateY(-5px);
-    }
-    .what-you-get-grid__card h3 {
-      margin-bottom: 0.8rem;
-      min-height: calc(2 * var(--fs-700));
-    }
-    .what-you-get-grid__card p {
-      color: var(--clr-primary-700);
-    }
-  }
-
-  .form-wrapper {
-    background-color: var(--clr-primary-100);
-    border-radius: 0.5rem;
-    box-shadow: var(--box-shadow);
-    color: var(--clr-primary-900);
-    margin-block-start: var(--size-5);
-    padding: var(--size-3);
-    width: 100%;
-
-    .form {
-      display: flex;
-      flex-direction: column;
-      gap: var(--size-3);
-      margin-block-end: var(--size-3);
-
-      .form__field {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        gap: var(--size-1);
-
-        label {
-          font-weight: 600;
-        }
-
-        input {
-          border-radius: 0.25rem;
-          border: 2px solid var(--clr-primary-300);
-          border-radius: var(--border-radius-input-field);
-          caret-color: var(--clr-primary-900);
-          padding: var(--size-1);
-          width: 100%;
-        }
-
-        input:focus {
-          border-color: var(--clr-primary-700);
-          outline: none;
-        }
-      }
-    }
-
-    .spacer {
-      background-color: var(--clr-primary-900);
-      height: 1px;
-      margin-block-end: var(--size-1);
-      width: 100%;
-    }
-
-    .form__notifiction {
-      color: var(--clr-primary-700);
-      font-size: var(--fs-300);
-    }
-  }
-</style>
