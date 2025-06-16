@@ -9,7 +9,7 @@
     },
     "ogUrl": "https://www.westend-digital.nl/website",
     "heroSection": {
-      "title": "Je <span class='highlight-text'>website</span> levert niks op</span>",
+      "title": "Je <span class='highlight-text'>website</span> werkt niet? <br/> Tijd om dat recht te zetten.",
       "subtitle": "<span class='highlight-text'>Je bent goed in je werk.</span> Je klanten zijn tevreden. Maar je website? Die blijft achter. Geen aanvragen, geen groei — alleen frustratie.",
       "ctaBtn": "Download de gratis brochure",
       "ctaBtnTitle": "Download de gratis brochure",
@@ -20,9 +20,9 @@
       "altText": "Ondernemer in legergroen shirt met een laptop in zijn handen, die een website review geeft aan een klant"
     },
     "herkenbaarSection": {
-      "title": "Misschien herken je dit?",
+      "title": "Herken je dit?",
       "paragraph": [
-        "Je bedrijf loopt goed, maar je website werkt je tegen. Trage laadtijden, geen duidelijke boodschap, alles moet handmatig… Het kost je energie, tijd én klanten.",
+        "Je website is traag, vaag of verouderd. Alles moet handmatig. Je verhaal komt niet goed over. En ondertussen lopen klanten weg naar concurrenten met een strakkere online basis.",
         "Daarom hebben we een brochure gemaakt voor ondernemers zoals jij. Geen glad verkooppraatje, maar een praktische gids die laat zien hoe je een website bouwt die wél werkt — zonder stress, zonder digitale rompslomp."
       ],
       "ctaBtn": "Laten we kennis maken",
@@ -37,25 +37,25 @@
           "icon": "/assets/icons/icon-check-circle-one.svg",
           "iconAlt": "",
           "title": "Drie fouten waardoor je website je groei afremt",
-          "description": "Ontdek welke cruciale elementen je mist en hoe je deze kunt verbeteren. Geen technische jargon, maar praktische tips die direct toepasbaar zijn."
+          "description": "En hoe je deze slim oplost — zonder technische poespas of dure tools."
         },
         {
           "icon": "/assets/icons/icon-trending-up.svg",
           "iconAlt": "",
           "title": " De aanpak die wel werkt, stap voor stap",
-          "description": "Een professioneel ontwerp dat jouw bedrijf en diensten perfect weergeeft. Geen standaard templates, maar maatwerk."
+          "description": "Van strategie en design tot ontwikkeling en optimalisatie."
         },
         {
           "icon": "/assets/icons/icon-users.svg",
           "iconAlt": "",
           "title": "Echte voorbeelden van ondernemers zoals jij",
-          "description": "Leer van succesvolle transformaties van andere ondernemers. Zie hoe zij hun website hebben verbeterd en welke resultaten ze hebben behaald."
+          "description": "Zie hoe anderen hun site hebben omgebouwd tot een conversiemachine."
         },
         {
           "icon": "/assets/icons/icon-target.svg",
           "iconAlt": "",
           "title": " Hoe je jouw verhaal vertaalt naar klanten die 'ja' zeggen",
-          "description": "Van bezoeker naar betalende klant, met een verhaal dat raakt, overtuigt en richting geeft. Ontdek hoe je jouw unieke aanpak vertaalt naar een online boodschap die werkt en klanten aantrekt."
+          "description": "Zet jouw aanpak om in een krachtige online boodschap die klanten aantrekt."
         }
       ]
     },
@@ -65,6 +65,14 @@
       "ctaBtnUrl": "/assets/download-files/van-frustratie-naar-resultaat-in-4-stappen.pdf",
       "ariaLabel": "Stuur mij de gratis brochure",
       "formNotification": "🔒 Geen spam. Alleen praktische inzichten waar je iets aan hebt."
-    }
+    },
+    "brochureClosingCtaSection": {
+      "title": "Twijfel je of je website beter kan?",
+      "subtitle": "Dan is deze brochure je eerste stap naar duidelijkheid, rust en groei.",
+      "ctaBtn": " Download gratis en ontdek wat er beter kan",
+      "ctaBtnUrl": "/assets/download-files/van-frustratie-naar-resultaat-in-4-stappen.pdf",
+      "ariaLabel": "Download de gratis brochure",
+      "disclaimer": " Gratis download • Geen verplichtingen • Direct beschikbaar"
+    }	
   }
 }

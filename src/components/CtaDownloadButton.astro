@@ -4,9 +4,8 @@ import { BookOpen } from "../assets/icons";
 const {
   AriaLabel,
   CtaBtn,
-  CtaBtnUrl,
+  Url,
   CtaBtnTitle,
-  DownloadFileName,
   IconColor,
 } = Astro.props;
 ---
@@ -14,9 +13,12 @@ const {
 <a
   aria-label={AriaLabel}
   class="btn btn-secondary"
-  download={DownloadFileName}
-  href={CtaBtnUrl}
+  download
+  href={Url}
   rel="noopener noreferrer"
   target="_blank"
-  title={CtaBtnTitle}><BookOpen iconFill={IconColor} /> {CtaBtn}</a
+  title={CtaBtnTitle}
+  >
+  <BookOpen iconFill={IconColor} /> {CtaBtn}
+  </a
 >

@@ -1,0 +1,74 @@
+---
+// Components
+import CtaDownloadButton from "../components/CtaDownloadButton.astro";
+
+const { 
+  ariaLabel,
+  ctaBtn,
+  downloadFileName,
+  ctaBtnTitle,
+  ctaBtnUrl,
+  disclaimer,
+  title,
+  subtitle,
+
+} = Astro.props;
+
+const iconColor = "var(--clr-primary-900)";
+---
+
+<section class="hidden" id="brochure-closing-cta-section">
+  <div>
+    <h2>{title}</h2>
+    <p>{subtitle}</p>
+
+    <CtaDownloadButton
+      AriaLabel={ariaLabel}
+      CtaBtn={ctaBtn}
+      DownloadFileName={downloadFileName}
+      IconColor={iconColor}
+      Title={ctaBtnTitle}
+      Url={ctaBtnUrl}
+    />
+
+    <span>{disclaimer}</span>
+  </div>
+</section>
+
+<style>
+  #brochure-closing-cta-section {
+    display: grid;
+    place-items: center;
+    margin-block-end: var(--size-10);
+
+    div {
+      align-content: center;
+      display: grid;
+      gap: var(--size-3);
+      justify-content: center;
+      max-width: 85ch;
+      text-align: center;
+
+      h1 {
+        color: var(--clr-primary-100);
+        font-size: var(--fs-900);
+        line-height: var(--lh-200);
+      }
+
+      p {
+        margin-inline: auto;
+      }
+
+      button,
+      a {
+        margin-inline: auto;
+      }
+
+      span {
+        color: var(--clr-primary-900);
+        font-size: var(--fs-300);
+        font-weight: 500;
+      }
+    }
+  }
+</style>
