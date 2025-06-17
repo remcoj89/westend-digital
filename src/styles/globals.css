@@ -64,6 +64,8 @@
   --fw-regular: 400;
   --fw-semi-bold: 700;
   --fw-bold: 900;
+  --fw-italic: italic;
+  --fw-italic-semi-bold: 700 italic;
 
   --clr-body: var(--clr-primary-800);
   --clr-background: var(--clr-primary-100);
@@ -319,8 +321,39 @@ a {
 .wrapper {
   display: flex;
   margin-inline: auto;
-  text-align: center;
   width: calc((min(100% - 4rem, 112.4rem)));
+}
+
+.wrapper.flex-section {
+  align-items: stretch;
+  gap: var(--size-4);
+
+  .text-wrapper,
+  .image-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch; 
+    width: 50%;
+  }
+
+  .text-wrapper {
+    gap: var(--size-2);
+    margin-inline: auto;
+    max-width: 65ch;
+  
+  }
+  
+  .image-wrapper {
+      border-radius: var(--border-radius-img);
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+     
+    }
 }
 
 .paragraphs-wrapper {

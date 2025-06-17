@@ -1,12 +1,12 @@
 ---
 // Sections
+import BrochureClosingCtaSection from "../sections/BrochureClosingCtaSection.astro";
+import DoubleReviewSection from "../sections/DoubleReviewSection.astro";
+import DownloadFormSection from "../sections/DownloadFormSection.astro";
+import IntroSection from "../sections/IntroSection.astro";
 import FunnelLayout from "../layouts/FunnelLayout.astro";
 import Header from "../components/Header.astro";
-import IntroSection from "../sections/IntroSection.astro";
-import DoubleReviewSection from "../sections/DoubleReviewSection.astro";
 import WhatYouGetSection from "../sections/WhatYouGetSection.astro";
-import DownloadFormSection from "../sections/DownloadFormSection.astro";
-import BrochureClosingCtaSection from "../sections/BrochureClosingCtaSection.astro";
 
 // Components
 import CtaDownloadButton from "../components/CtaDownloadButton.astro";
@@ -15,15 +15,17 @@ import CtaDownloadButton from "../components/CtaDownloadButton.astro";
 import PageData from "../data/brochure.json";
 
 const {
-  heroSection,
-  herkenbaarSection,
-  watJeKrijgtSection,
-  downloadSection,
+  aboutUsSection,
   brochureClosingCtaSection,
+  downloadSection,
+  herkenbaarSection,
+  heroSection,
   metaDescription,
   metaTitle,
   ogImage,
   ogUrl,
+  watAlsSection,
+  watJeKrijgtSection,
 } = PageData.pageContent;
 
 const iconColor = "var(--clr-primary-900)";
@@ -55,38 +57,103 @@ const iconColor = "var(--clr-primary-900)";
   </Header>
 
   <main>
-    <IntroSection
-      altText={herkenbaarSection.altText}
-      imageUrl={herkenbaarSection.imageUrl}
-      paragraph={herkenbaarSection.paragraph}
-      title={herkenbaarSection.title}
-    />
+    <!-- Herkenbaar Section -->
+    <section id="herkenbaar-section">
+      <div class="wrapper flex-section">
+        <div class="text-wrapper">
+          <h2>{herkenbaarSection.title}</h2>
+          <p set:html={herkenbaarSection.paragraph} />
+        </div>
+        <div class="image-wrapper">
+          <img
+            src={herkenbaarSection.imageUrl}
+            alt={herkenbaarSection.altText}
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
 
+    <!-- What if Section -->
+    <section id="wat-als-section">
+      <div class="wrapper flex-section flex-reverse">
+        <div class="text-wrapper">
+          <h2>{watAlsSection.title}</h2>
+          <p>{watAlsSection.listTitle}</p>
+          <ul role="list">
+            {
+              watAlsSection.listItems.map((item) => (
+                <li>
+                  <span class="icon">✅</span>
+                  <span>{item}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p>{watAlsSection.listFooter}</p>
+          <!-- CTA Download Button -->
+          <CtaDownloadButton
+            AriaLabel={watAlsSection.ctaBtn}
+            CtaBtn={watAlsSection.ctaBtn}
+            Title={watAlsSection.ctaBtn}
+            Url={watAlsSection.ctaBtnUrl}
+          />
+        </div>
+
+        <div class="image-wrapper">
+          <img
+            src={watAlsSection.imageUrl}
+            alt={watAlsSection.altText}
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- What you get section -->
     <WhatYouGetSection
-      title={watJeKrijgtSection.title}
       items={watJeKrijgtSection.items}
+      title={watJeKrijgtSection.title}
       watJeKrijgtSection={watJeKrijgtSection}
     />
 
-    <DownloadFormSection
-      title={downloadSection.title}
-      ariaLabel={downloadSection.ariaLabel}
-      ctaBtn={downloadSection.ctaBtn}
-      formNotification={downloadSection.formNotification}
-    />
-
+    <!-- Review Section -->
     <DoubleReviewSection />
+    <!-- Cta Sectoin -->
+
+    <!-- About me section -->
+    <IntroSection
+      altText={aboutUsSection.altText}
+      imageUrl={aboutUsSection.imageUrl}
+      paragraph={aboutUsSection.paragraph}
+      title={aboutUsSection.title}
+    />
+    <!-- Who is this for section -->
+
+    <!-- Why us section -->
 
     <!-- Closing Call to Action Section -->
     <BrochureClosingCtaSection
-      title={brochureClosingCtaSection.title},
-      subtitle={brochureClosingCtaSection.subtitle},
       ariaLabel={brochureClosingCtaSection.ariaLabel}
       ctaBtn={brochureClosingCtaSection.ctaBtn}
       ctaBtnUrl={brochureClosingCtaSection.ctaBtnUrl}
       disclaimer={brochureClosingCtaSection.disclaimer}
+      subtitle={brochureClosingCtaSection.subtitle}
+      title={brochureClosingCtaSection.title}
     />
 
+    <!-- Review Section -->
+    <DoubleReviewSection />
+
+
+    <!-- Download section -->
+    <DownloadFormSection
+      ariaLabel={downloadSection.ariaLabel}
+      ctaBtn={downloadSection.ctaBtn}
+      formNotification={downloadSection.formNotification}
+      paragraph={downloadSection.paragraph}
+      title={downloadSection.title}
+    />
   </main>
 </FunnelLayout>
 

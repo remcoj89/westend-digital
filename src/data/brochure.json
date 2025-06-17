@@ -11,10 +11,10 @@
     "heroSection": {
       "title": "Je <span class='highlight-text'>website</span> werkt niet? <br/> Tijd om dat recht te zetten.",
       "subtitle": "<span class='highlight-text'>Je bent goed in je werk.</span> Je klanten zijn tevreden. Maar je website? Die blijft achter. Geen aanvragen, geen groei — alleen frustratie.",
-      "ctaBtn": "Download de gratis brochure",
-      "ctaBtnTitle": "Download de gratis brochure",
-      "ctaBtnUrl": "/assets/download-files/van-frustratie-naar-resultaat-in-4-stappen.pdf",
-      "ariaLabel": "Download de gratis brochure",
+      "ctaBtn": "Download de brochure",
+      "ctaBtnTitle": "Download de brochure",
+      "ctaBtnUrl": "#download-section",
+      "ariaLabel": "Download de brochure",
       "downloadFileName": "van-frustratie-naar-resultaat-in-4-stappen.pdf",
       "imageUrl": "/images/website-laten-maken.webp",
       "altText": "Ondernemer in legergroen shirt met een laptop in zijn handen, die een website review geeft aan een klant"
@@ -25,9 +25,21 @@
         "Je website is traag, vaag of verouderd. Alles moet handmatig. Je verhaal komt niet goed over. En ondertussen lopen klanten weg naar concurrenten met een strakkere online basis.",
         "Daarom hebben we een brochure gemaakt voor ondernemers zoals jij. Geen glad verkooppraatje, maar een praktische gids die laat zien hoe je een website bouwt die wél werkt — zonder stress, zonder digitale rompslomp."
       ],
-      "ctaBtn": "Laten we kennis maken",
-      "ctaBtnUrl": "/contact",
       "imageUrl": "/images/herkenbaar.webp",
+      "altText": "Ondernemer in legergroen shirt met een laptop in zijn handen, die een website review geeft aan een klant"
+    },
+    "watAlsSection": {
+      "title": "Wat als je website wel zou werken?",
+      "listTitle":"Stel je voor dat je website...",
+      "listItems": [
+        "automatisch leads binnenhaalt,",
+        "je processen stroomlijnt,",
+        "en je verhaal overtuigend overbrengt — zelfs als jij even offline bent"
+      ],
+      "listFooter": "Dat kan. En het begint met deze brochure.",
+      "ctaBtn": "Download de brochure",
+      "ctaBtnUrl": "#",
+      "imageUrl": "/images/werkende-website.webp",
       "altText": "Ondernemer in legergroen shirt met een laptop in zijn handen, die een website review geeft aan een klant"
     },
     "watJeKrijgtSection": {
@@ -59,10 +71,25 @@
         }
       ]
     },
+    "aboutUsSection": {
+      "title": "Over Westend Digital",
+      "paragraph": [
+        "Je bent klaar om op te schalen, maar je website houdt je tegen. Zonde, want je bedrijf is goed in beweging. Dat moet je online ook voelen.",
+        "Precies daarom doen wij wat we doen: we bouwen digitale systemen die niet vertragen, maar versnellen. Websites die meebewegen met jouw groei, in plaats van erachteraan te hobbelen.",
+        "We werken het liefst met ondernemers die weten waar ze naartoe willen. Doeners met visie, die hun vak verstaan en geen tijd (meer) hebben voor digitaal gedoe. Je hoeft geen technische kennis te hebben, als je maar wilt bouwen. Samen.",
+        "Ons fundament ligt bij Defensie. Daar leerden we wat telt als het erop aankomt: voorbereiding, heldere communicatie en operationele slagkracht.",
+        "Die aanpak nemen we mee in elk project, want een goede website is geen toeval, maar het resultaat van strategie, teamwork en oog voor detail.",
+        "We werken met een team van ervaren specialisten: strategen, copywriters, ontwerpers en developers. Geen ruis, geen losse eindjes, iedereen weet wat werkt en waarom.",
+        "Wat begon als een soloproject met een laptop vanuit Azië is nu uitgegroeid tot een hecht team van developers, designers, copywriters en strategen. Elk met z’n eigen expertise, maar met één gezamenlijk doel: een website die werkt."
+      ],
+      "imageUrl": "/images/remco-jonk.webp",
+      "altText": "Foto van Remco Jonk, de oprichter van Westend Digital, met een laptop in zijn handen en een glimlach op zijn gezicht"
+    },
     "downloadSection": {
-      "title": "Download direct – gratis en zonder gedoe",
+      "title": "Klaar voor een website die wel klanten aantrekt?",
+      "paragraph": "Download de gratis brochure en ontdek hoe je jouw digitale basis ombouwt tot een systeem dat je bedrijf versterkt — elke dag weer.",
       "ctaBtn": "Stuur mij de gratis brochure",
-      "ctaBtnUrl": "/assets/download-files/van-frustratie-naar-resultaat-in-4-stappen.pdf",
+      "ctaBtnUrl": "#download-section",
       "ariaLabel": "Stuur mij de gratis brochure",
       "formNotification": "🔒 Geen spam. Alleen praktische inzichten waar je iets aan hebt."
     },
@@ -70,7 +97,7 @@
       "title": "Twijfel je of je website beter kan?",
       "subtitle": "Dan is deze brochure je eerste stap naar duidelijkheid, rust en groei.",
       "ctaBtn": " Download gratis en ontdek wat er beter kan",
-      "ctaBtnUrl": "/assets/download-files/van-frustratie-naar-resultaat-in-4-stappen.pdf",
+      "ctaBtnUrl": "#download-section",
       "ariaLabel": "Download de gratis brochure",
       "disclaimer": " Gratis download • Geen verplichtingen • Direct beschikbaar"
     }	

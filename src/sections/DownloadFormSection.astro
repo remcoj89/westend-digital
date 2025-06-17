@@ -1,7 +1,7 @@
 ---
 import { SendIcon } from "../assets/icons";
 
-const { title, ariaLabel, ctaBtn, formNotification } = Astro.props;
+const { title, ariaLabel, ctaBtn, formNotification, paragraph } = Astro.props;
 
 const iconColor = "var(--clr-primary-900)";
 ---
@@ -11,12 +11,18 @@ const iconColor = "var(--clr-primary-900)";
   id="download-section"
 >
   <div class="text-center margin-inline-auto">
-    <h2 set:html={title} />
+   
+    <div class="titel-wrapper">
+      <h2 set:html={title} />
+      <span set:html={paragraph} />
+    </div>
+  
+
     <div class="wrapper">
       <div class="form-wrapper">
         <form action="" class="form">
           <div class="form__field">
-            <label for="name">Naam</label>
+            <label for="name">Naam *</label>
             <input
               id="name"
               name="name"
@@ -26,7 +32,17 @@ const iconColor = "var(--clr-primary-900)";
             />
           </div>
           <div class="form__field">
-            <label for="email">Email</label>
+            <label for="phone">Telefoon *</label>
+            <input
+              id="phone"
+              name="phone"
+              placeholder="+31 6 12345678"
+              required
+              type="tel"
+            />
+          </div>
+          <div class="form__field">
+            <label for="email">Email *</label>
             <input
               id="email"
               name="email"
@@ -47,6 +63,15 @@ const iconColor = "var(--clr-primary-900)";
 </section>
 
 <style>
+  .titel-wrapper {
+    margin-inline: auto;
+    max-width: 65ch;
+
+    h2 {
+      margin-block-end: var(--size-2);
+    }
+  }
+
   .form-wrapper {
     background-color: var(--clr-primary-100);
     border-radius: 0.5rem;
