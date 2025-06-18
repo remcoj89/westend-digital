@@ -84,6 +84,7 @@
   --size-8: 7.2rem;
   --size-9: 8rem;
   --size-10: 8.8rem;
+  --size-15: 15rem;
 }
 
 *,
@@ -123,7 +124,7 @@ img {
 }
 
 section {
-  margin-block-start: var(--size-10);
+  margin-block: var(--size-15);
 }
 
 /* Screen reader */

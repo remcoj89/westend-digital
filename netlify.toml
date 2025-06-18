@@ -4,6 +4,25 @@
   functions = "netlify/functions"
   publish = "dist"
 
+  # Redirect regels
+[[redirects]]
+  from = "/blog"
+  to = "/blog-artikelen"
+  status = 301
+  force = true # Zorgt ervoor dat de redirect altijd gebeurt, zelfs als /blog toevallig een bestaande pagina zou zijn
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog-artikelen/:splat"
+  status = 301
+  force = true # Zorgt ervoor dat de redirect altijd gebeurt voor alle subpaden
+
+[[redirects]]
+  from = "/over-mij"
+  to = "/over-westend-digital"
+  status = 301
+  force = true # Zorgt ervoor dat de redirect naar de nieuwe over-mij pagina gaat
+
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
   #[[redirects]]
@@ -21,3 +40,4 @@
   ## more info on configuring this file: https://ntl.fyi/file-based-build-config
 [images]
   remote_images = ['https://mediumturquoise-sparrow-543006.hostingersite.com/*']
+

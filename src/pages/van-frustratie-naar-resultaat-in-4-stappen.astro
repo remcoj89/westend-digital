@@ -10,6 +10,7 @@ import WhatYouGetSection from "../sections/WhatYouGetSection.astro";
 
 // Components
 import CtaDownloadButton from "../components/CtaDownloadButton.astro";
+import SectionTitle from "../components/SectionTitle.astro";
 
 // Data
 import PageData from "../data/brochure.json";
@@ -63,6 +64,13 @@ const iconColor = "var(--clr-primary-900)";
         <div class="text-wrapper">
           <h2>{herkenbaarSection.title}</h2>
           <p set:html={herkenbaarSection.paragraph} />
+          <!-- CTA Download Button -->
+          <CtaDownloadButton
+            AriaLabel={watAlsSection.ctaBtn}
+            CtaBtn={watAlsSection.ctaBtn}
+            Title={watAlsSection.ctaBtn}
+            Url={watAlsSection.ctaBtnUrl}
+          />
         </div>
         <div class="image-wrapper">
           <img
@@ -129,8 +137,16 @@ const iconColor = "var(--clr-primary-900)";
       title={aboutUsSection.title}
     />
     <!-- Who is this for section -->
+    <section id="who-is-this-for" class="wrapper hidden">
+      <SectionTitle sectionTitle="Voor wie is dit wel (en niet)?" />
+      <div class="flex">
+        <div></div>
+        <div></div>
+      </div>
+    </section>
 
     <!-- Why us section -->
+    <section id="why-us"></section>
 
     <!-- Closing Call to Action Section -->
     <BrochureClosingCtaSection
@@ -144,7 +160,6 @@ const iconColor = "var(--clr-primary-900)";
 
     <!-- Review Section -->
     <DoubleReviewSection />
-
 
     <!-- Download section -->
     <DownloadFormSection

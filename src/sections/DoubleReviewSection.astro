@@ -2,53 +2,62 @@
 import Card from "../components/Card.astro";
 ---
 
-<section
-  class="flex-column dark-bg padding-block-8 hidden"
-  id="double-review-section"
->
-  <div class="wrapper">
-    <div class="reviews-wrapper">
-      <Card cardStyle="review">
-        <p>
-          "Sinds de nieuwe website begrijpen mensen meteen wat we doen. Dat
-          scheelt me zoveel uitleg."
-        </p>
+<section class="flex-column hidden" id="double-review-section">
+  <div class="dark-bg" id="double-review-wrapper">
+    <div class="wrapper">
+      <div class="reviews-wrapper">
+        <Card cardStyle="review">
+          <p>
+            "Sinds de nieuwe website begrijpen mensen meteen wat we doen. Dat
+            scheelt me zoveel uitleg."
+          </p>
 
-        <div class="avatar-details">
-          <picture class="review-avatar">
-            <img src="/images/sampel-avatar.jpg" alt="Review 1" />
-          </picture>
-          <div>
-            <h3>Linda Munster</h3>
-            <span>Schermer Eylandt</span>
+          <div class="avatar-details">
+            <picture class="review-avatar">
+              <img src="/images/sampel-avatar.jpg" alt="Review 1" />
+            </picture>
+            <div>
+              <h3>Linda Munster</h3>
+              <span>Schermer Eylandt</span>
+            </div>
           </div>
-        </div>
-      </Card>
-      <Card cardStyle="review">
-        <p>
-          "Sinds de nieuwe website begrijpen mensen meteen wat we doen. Dat
-          scheelt me zoveel uitleg."
-        </p>
+        </Card>
+        <Card cardStyle="review">
+          <p>
+            "Sinds de nieuwe website begrijpen mensen meteen wat we doen. Dat
+            scheelt me zoveel uitleg."
+          </p>
 
-        <div class="avatar-details">
-          <picture class="review-avatar">
-            <img src="/images/sampel-avatar.jpg" alt="Review 1" />
-          </picture>
+          <div class="avatar-details">
+            <picture class="review-avatar">
+              <img src="/images/sampel-avatar.jpg" alt="Review 1" />
+            </picture>
 
-          <div>
-            <h3>Linda Munster</h3>
-            <span>Schermer Eylandt</span>
+            <div>
+              <h3>Linda Munster</h3>
+              <span>Schermer Eylandt</span>
+            </div>
           </div>
-        </div>
-      </Card>
+        </Card>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
+  #double-review-wrapper {
+    clip-path: polygon(0 0, 100% 5rem, 100% 100%, 0% calc(100% - 5rem));
+    padding-block: 12rem;
+  }
+
   .reviews-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--size-2);
     justify-content: center;
+
+    .review:nth-child(2) {
+      margin-top: 5rem;
+    }
   }
 </style>
