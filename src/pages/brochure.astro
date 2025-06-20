@@ -27,6 +27,7 @@ const {
   ogUrl,
   watAlsSection,
   watJeKrijgtSection,
+  voorWieSection,
 } = PageData.pageContent;
 
 const iconColor = "var(--clr-primary-900)";
@@ -138,38 +139,68 @@ const iconColor = "var(--clr-primary-900)";
     />
     <!-- Who is this for section -->
     <section id="who-is-this-for" class="wrapper hidden">
-      <SectionTitle sectionTitle="Voor wie is dit wel (en niet)?" />
-      <div class="flex">
-        <div></div>
-        <div></div>
+      <div class="wrapper flex-column gap-4">
+        <div class="section-header text-center">
+          <SectionTitle sectionTitle={voorWieSection.title} />
+          <p set:html={voorWieSection.intro} />
+        </div>
+        <div class="flex">
+          <div class="who-is-this-for-column">
+            <h3 set:html={voorWieSection.competition.title} />
+
+            <ul role="list">
+              {
+                voorWieSection.competition.list.map((listItem) => (
+                  <li class="list-item">
+                    <span class="icon">❌</span>
+                    <span class="text">{listItem}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div class="who-is-this-for-column">
+            <h3 set:html={voorWieSection.westendDigital.title} />
+            <ul role="list">
+              {
+                voorWieSection.westendDigital.list.map((listItem) => (
+                  <li class="list-item">
+                    <span class="icon">✅</span>
+                    <span class="text">{listItem}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
-
-    <!-- Why us section -->
-    <section id="why-us"></section>
-
-    <!-- Closing Call to Action Section -->
-    <BrochureClosingCtaSection
-      ariaLabel={brochureClosingCtaSection.ariaLabel}
-      ctaBtn={brochureClosingCtaSection.ctaBtn}
-      ctaBtnUrl={brochureClosingCtaSection.ctaBtnUrl}
-      disclaimer={brochureClosingCtaSection.disclaimer}
-      subtitle={brochureClosingCtaSection.subtitle}
-      title={brochureClosingCtaSection.title}
-    />
-
-    <!-- Review Section -->
-    <DoubleReviewSection />
-
-    <!-- Download section -->
-    <DownloadFormSection
-      ariaLabel={downloadSection.ariaLabel}
-      ctaBtn={downloadSection.ctaBtn}
-      formNotification={downloadSection.formNotification}
-      paragraph={downloadSection.paragraph}
-      title={downloadSection.title}
-    />
   </main>
+
+  <!-- Why us section -->
+  <section id="why-us"></section>
+
+  <!-- Closing Call to Action Section -->
+  <BrochureClosingCtaSection
+    ariaLabel={brochureClosingCtaSection.ariaLabel}
+    ctaBtn={brochureClosingCtaSection.ctaBtn}
+    ctaBtnUrl={brochureClosingCtaSection.ctaBtnUrl}
+    disclaimer={brochureClosingCtaSection.disclaimer}
+    subtitle={brochureClosingCtaSection.subtitle}
+    title={brochureClosingCtaSection.title}
+  />
+
+  <!-- Review Section -->
+  <DoubleReviewSection />
+
+  <!-- Download section -->
+  <DownloadFormSection
+    ariaLabel={downloadSection.ariaLabel}
+    ctaBtn={downloadSection.ctaBtn}
+    formNotification={downloadSection.formNotification}
+    paragraph={downloadSection.paragraph}
+    title={downloadSection.title}
+  />
 </FunnelLayout>
 
 <style>
@@ -205,6 +236,30 @@ const iconColor = "var(--clr-primary-900)";
         color: var(--clr-primary-900);
         font-size: var(--fs-300);
         font-weight: 500;
+      }
+    }
+  }
+
+  .who-is-this-for-column {
+    width: 50%;
+
+    h3 {
+      font-size: var(--fs-600);
+      height: calc(var(--fs-700) * 2);
+      margin-block-end: var(--size-2);
+    }
+
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+
+      .icon {
+        flex-shrink: 0;
+        width: var(--size-4);
+      }
+
+      .text {
+        display: inline-block;
       }
     }
   }

@@ -85,6 +85,35 @@
       "imageUrl": "/images/remco-jonk.webp",
       "altText": "Foto van Remco Jonk, de oprichter van Westend Digital, met een laptop in zijn handen en een glimlach op zijn gezicht"
     },
+    "voorWieSection": {
+      "title": "Het verschil: een doorsnee webbouwer vs. onze aanpak",
+      "intro": "Veel webbouwers maken een website. Wij bouwen een digitale basis die werkt als een extra teamlid. Geen mooie plaatjes zonder plan, maar een systeem dat vertrouwen opwekt, leads binnenhaalt en meegroeit met jouw bedrijf — juist als je uit de militaire wereld komt en nú serieus wilt opschalen.",
+      "competition": {
+        "title": "De gemiddelde webbouwer",
+        "list": [
+          "Levert een mooie website, maar zonder strategie",
+          "Werkt met standaard templates en invuloefeningen",
+          "Laat de inhoud aan jou over",
+          "Focust vooral op design, niet op conversie of techniek",
+          "Laat je na oplevering los",
+          "Mist militaire precisie en structuur",
+          "Geen duidelijk pad van bezoeker naar klant"
+        ]
+      },
+      "westendDigital": {
+        "title": "Onze aanpak:<br> Gebouwd op structuur en resultaat",
+        "list": [
+          "We bouwen een digitaal systeem dat jouw groei ondersteunt — van structuur tot automatisering",
+          "Je krijgt een op maat gemaakte website, afgestemd op jouw missie, doelgroep en doelen",
+          "Onze copywriters schrijven krachtige teksten die jouw verhaal helder overbrengen én klanten aanspreken",
+          "Wij combineren design met techniek, snelheid, SEO en resultaat — alles moet kloppen én werken",
+          "Je krijgt begeleiding, support en (optioneel) onderhoud — zodat jij niet met technische ruis blijft zitten",
+          "Wij werken vanuit een achtergrond bij Defensie — wat je terugziet in de voorbereiding, communicatie en uitvoering",
+          "Jij houdt de regie: één aanspreekpunt, duidelijke planning en een site die voelt als een extra teamlid",
+          "We bouwen een converterende flow: jouw website begeleidt bezoekers richting aanvraag of samenwerking"
+        ]
+      }
+    },
     "downloadSection": {
       "title": "Klaar voor een website die wel klanten aantrekt?",
       "paragraph": "Download de gratis brochure en ontdek hoe je jouw digitale basis ombouwt tot een systeem dat je bedrijf versterkt — elke dag weer.",
@@ -100,6 +129,6 @@
       "ctaBtnUrl": "#download-section",
       "ariaLabel": "Download de gratis brochure",
       "disclaimer": " Gratis download • Geen verplichtingen • Direct beschikbaar"
-    }	
+    }
   }
 }

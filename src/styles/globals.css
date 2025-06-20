@@ -125,6 +125,16 @@ img {
 
 section {
   margin-block: var(--size-15);
+
+  .section-header {
+    text-align: center;
+
+    p,
+    span {
+      margin-inline: auto;
+      max-width: 100%;
+    }
+  }
 }
 
 /* Screen reader */
@@ -144,6 +154,12 @@ section {
 }
 .gap-2 {
   gap: var(--size-2);
+}
+.gap-3 {
+  gap: var(--size-3);
+}
+.gap-4 {
+  gap: var(--size-4);
 }
 /* End Gap */
 
@@ -333,7 +349,7 @@ a {
   .image-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: stretch; 
+    justify-content: stretch;
     width: 50%;
   }
 
@@ -341,9 +357,9 @@ a {
     gap: var(--size-2);
     margin-inline: auto;
     max-width: 65ch;
-  
+
   }
-  
+
   .image-wrapper {
       border-radius: var(--border-radius-img);
       overflow: hidden;
@@ -353,7 +369,7 @@ a {
         object-fit: cover;
         object-position: center;
       }
-     
+
     }
 }
 
@@ -374,9 +390,7 @@ a {
 .flex {
   display: flex;
   flex-direction: column-reverse;
-  gap: var(--size-2);
   gap: var(--size-4);
-  justify-content: space-between;
   justify-content: space-between;
 }
 
