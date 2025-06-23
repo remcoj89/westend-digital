@@ -22,6 +22,7 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =
       {ctaBtn}
     </a>
   </div>
+
   <div class="hero-image-wrapper">
     <a href="/werk" class="hero-image-button btn btn-white"
       >Bekijk mijn laatste werk</a
@@ -29,6 +30,7 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =
     <Image
       alt={image.imgAlt}
       class="image"
+      client:visible
       height={500}
       loading="eager"
       src={image.imgUrl}
@@ -38,6 +40,7 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =
     <Image
       alt={backgroundImage.imgAlt}
       class="background-image"
+      client:visible
       height={1000}
       loading="eager"
       src={backgroundImage.imgUrl}
