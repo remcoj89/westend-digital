@@ -25,6 +25,7 @@
     "typescript": "^5.7.2"
   },
   "devDependencies": {
+    "@unocss/astro": "^66.2.3",
     "prettier-plugin-astro": "^0.14.1"
   }
 }
