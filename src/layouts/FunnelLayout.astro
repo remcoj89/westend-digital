@@ -1,6 +1,6 @@
 ---
 // import FunnelNavbar from "../components/FunnelNavbar.astro";
-// import ScrollAnimationObserver from "../components/reactComponent.ScrollAnimationObserver/ScrollAnimationObserver.jsx";
+import ScrollAnimationObserver from "../components/reactComponent.ScrollAnimationObserver/ScrollAnimationObserver.jsx";
 
 import "../styles/globals.css";
 
@@ -71,6 +71,6 @@ const {
     <!-- End Google Tag Manager (noscript) -->
     <!-- <FunnelNavbar /> -->
     <slot />
-    <!-- <ScrollAnimationObserver client:idle/> -->
+    <ScrollAnimationObserver client:idle/>
   </body>
 </html>
