@@ -1,7 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import "../styles/globals.css";
-import ScrollAnimationObserver from "../components/reactComponent.ScrollAnimationObserver/ScrollAnimationObserver.jsx";
+// import ScrollAnimationObserver from "../components/reactComponent.ScrollAnimationObserver/ScrollAnimationObserver.jsx";
 
 const {
   title,
@@ -68,6 +68,6 @@ const {
     <!-- End Google Tag Manager (noscript) -->
     <Navbar />
     <slot />
-    <ScrollAnimationObserver client:idle />
+    <!-- <ScrollAnimationObserver client:idle /> -->
   </body>
 </html>
