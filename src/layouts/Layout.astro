@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import "../styles/globals.css";
+import ScrollAnimationObserver from "../components/reactComponent.ScrollAnimationObserver/ScrollAnimationObserver.jsx";
 
 const {
   title,
@@ -54,7 +55,6 @@ const {
       })(window, document, "script", "dataLayer", "GTM-WS28BMHR");
     </script>
     <!-- End Google Tag Manager -->
-
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -68,25 +68,6 @@ const {
     <!-- End Google Tag Manager (noscript) -->
     <Navbar />
     <slot />
+    <ScrollAnimationObserver client:idle />
   </body>
 </html>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  });
-
-  const sections = document.querySelectorAll("section");
-  sections.forEach((section, i) => {
-    if (i !== 0) {
-      section.classList.add("hidden");
-    }
-  });
-
-  const hiddenEllements = document.querySelectorAll(".hidden");
-  hiddenEllements.forEach((el) => observer.observe(el));
-</script>

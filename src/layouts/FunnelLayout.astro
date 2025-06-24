@@ -1,5 +1,7 @@
 ---
 import FunnelNavbar from "../components/FunnelNavbar.astro";
+import ScrollAnimationObserver from "../components/reactComponent.ScrollAnimationObserver/ScrollAnimationObserver.jsx";
+
 import "../styles/globals.css";
 
 const {
@@ -32,20 +34,33 @@ const {
     <meta property="og:image:alt" content={ogImageAlt} />
 
     <!-- Cookie script -->
-    <script is:inline type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/f68218e1a3c4332aa5e197d305c8a473.js"></script>
+    <script
+      is:inline
+      type="text/javascript"
+      charset="UTF-8"
+      src="//cdn.cookie-script.com/s/f68218e1a3c4332aa5e197d305c8a473.js"
+    ></script>
     <!-- End Cookie script -->
-     
+
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s) as HTMLScriptElement,dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;if (f.parentNode) { f.parentNode.insertBefore(j,f); }
-      })(window,document,'script','dataLayer','GTM-WS28BMHR');
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s) as HTMLScriptElement,
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        if (f.parentNode) {
+          f.parentNode.insertBefore(j, f);
+        }
+      })(window, document, "script", "dataLayer", "GTM-WS28BMHR");
     </script>
     <!-- End Google Tag Manager -->
   </head>
   <body>
-        <!-- Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-WS28BMHR"
@@ -56,25 +71,6 @@ const {
     <!-- End Google Tag Manager (noscript) -->
     <!-- <FunnelNavbar /> -->
     <slot />
+    <ScrollAnimationObserver client:idle/>
   </body>
 </html>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  });
-
-  const sections = document.querySelectorAll("section");
-  sections.forEach((section, i) => {
-    if (i !== 0) {
-      section.classList.add("hidden");
-    }
-  });
-
-  const hiddenEllements = document.querySelectorAll(".hidden");
-  hiddenEllements.forEach((el) => observer.observe(el));
-</script>
