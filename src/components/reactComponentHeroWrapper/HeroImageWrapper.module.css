@@ -1,0 +1,44 @@
+/* src/components/HeroImageWrapper.css */
+
+.heroImageWrapper {
+    display: none;
+  }
+  
+  @media (width >= 43.75rem) {
+    .heroImageWrapper {
+      --_img-margin: var(--size-3);
+      display: block;
+      flex-grow: 1;
+      height: 100%;
+      position: relative;
+      width: 40%;
+      z-index: 1;
+    }
+  
+    .heroImageButton {
+      align-content: center;
+      background-color: var(--clr-background);
+      height: calc(var(--_img-margin) * 2);
+      position: absolute;
+      right: var(--_img-margin);
+      text-decoration: underline;
+      z-index: 50;
+    }
+  
+    .heroImageWrapper .image { /* Specifieker maken om eventuele conflicten te voorkomen */
+      border-radius: var(--border-radius-img);
+      box-shadow: var(--box-shadow);
+      height: 100%;
+      margin-block-start: var(--_img-margin);
+    }
+  
+    .heroImageWrapper .backgroundImage { /* Specifieker maken om eventuele conflicten te voorkomen */
+      height: 120%;
+      inset: -10%;
+      object-fit: cover;
+      object-position: 10%;
+      position: absolute;
+      width: 110%;
+      z-index: -1;
+    }
+  }

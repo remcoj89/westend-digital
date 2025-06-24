@@ -1,7 +1,7 @@
 ---
-import Image from "astro/components/Image.astro";
+import HeroImageWrapper from "../components/reactComponentHeroWrapper/HeroImageWrapper.jsx";
 
-const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =
+const { title, topTitle, subTitle, ctaBtn, heroImage, backgroundImage } =
   Astro.props;
 ---
 
@@ -23,30 +23,11 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =
     </a>
   </div>
 
-  <div class="hero-image-wrapper">
-    <a href="/werk" class="hero-image-button btn btn-white"
-      >Bekijk mijn laatste werk</a
-    >
-    <Image
-      alt={image.imgAlt}
-      class="image"
-      client:visible
-      height={500}
-      loading="eager"
-      src={image.imgUrl}
-      width={500}
-    />
-    <!-- Background image -->
-    <Image
-      alt={backgroundImage.imgAlt}
-      class="background-image"
-      client:visible
-      height={1000}
-      loading="eager"
-      src={backgroundImage.imgUrl}
-      width={1000}
-    />
-  </div>
+  <HeroImageWrapper
+    heroImage={heroImage}
+    backgroundImage={backgroundImage}
+    client:visible
+  />
 </header>
 
 <style>
@@ -77,48 +58,6 @@ const { title, topTitle, subTitle, ctaBtn, image, backgroundImage } =
       }
     }
 
-    .hero-image-wrapper {
-      display: none;
-    }
-
-    @media (width >= 43.75rem) {
-      .hero-image-wrapper {
-        --_img-margin: var(--size-3);
-        display: block;
-        flex-grow: 1;
-        height: 100%;
-        position: relative;
-        width: 40%;
-        z-index: 1;
-
-        .hero-image-button {
-          align-content: center;
-          background-color: var(--clr-background);
-          height: calc(var(--_img-margin) * 2);
-          position: absolute;
-          right: var(--_img-margin);
-          text-decoration: underline;
-          z-index: 50;
-        }
-
-        .image {
-          border-radius: var(--border-radius-img);
-          box-shadow: var(--box-shadow);
-          height: 100%;
-          margin-block-start: var(--_img-margin);
-        }
-
-        .background-image {
-          height: 120%;
-          inset: -10%;
-          object-fit: cover;
-          object-position: 10%;
-          position: absolute;
-          width: 110%;
-          z-index: -1;
-        }
-      }
-    }
   }
 
   @media (width >= 870px) {

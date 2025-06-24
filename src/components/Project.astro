@@ -1,5 +1,5 @@
 ---
-import Image from "astro/components/Image.astro"
+import { Image } from "astro:assets"
 
 const { flexDirection, projectContent } = Astro.props
 const { title, content, featuredImage } = await projectContent.node

@@ -2,8 +2,6 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import netlify from '@astrojs/netlify';
-import UnoCSS from "@unocss/astro";
-
 
 export default defineConfig({
   site: 'https://westend-digital.nl/',
@@ -18,8 +16,7 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.8,
       lastmod: new Date(),
-    }),
-    UnoCSS(),
+    })
   ],
   experimental: {
     // svg: true,
