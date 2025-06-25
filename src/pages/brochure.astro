@@ -11,6 +11,7 @@ import WhatYouGetSection from "../sections/WhatYouGetSection.astro";
 // Components
 import CtaDownloadButton from "../components/CtaDownloadButton.astro";
 import SectionTitle from "../components/SectionTitle.astro";
+import BannerCta from "../components/reactComponent.BannerCta/BannerCta.jsx";
 
 // Astro api's
 import Image from "astro/components/Image.astro";
@@ -33,8 +34,6 @@ const {
   watJeKrijgtSection,
   voorWieSection,
 } = PageData.pageContent;
-
-const iconColor = "var(--clr-primary-900)";
 ---
 
 <FunnelLayout
@@ -62,7 +61,7 @@ const iconColor = "var(--clr-primary-900)";
     </div>
   </Header>
 
-  <main>
+  <main id="brochure-page">
     <!-- Herkenbaar Section -->
     <section id="herkenbaar-section">
       <div class="wrapper flex-section">
@@ -131,7 +130,7 @@ const iconColor = "var(--clr-primary-900)";
     />
 
     <!-- Review Section -->
-    <DoubleReviewSection />
+    <DoubleReviewSection sectionId="review-section" />
     <!-- Cta Sectoin -->
 
     <!-- About me section -->
@@ -140,6 +139,7 @@ const iconColor = "var(--clr-primary-900)";
       imageUrl={aboutUsSection.imageUrl}
       paragraph={aboutUsSection.paragraph}
       title={aboutUsSection.title}
+      sectionId="about-us-section"
     />
     <!-- Who is this for section -->
     <section id="who-is-this-for" class="wrapper hidden">
@@ -215,11 +215,11 @@ const iconColor = "var(--clr-primary-900)";
             </div>
             <picture class="why-us-image">
               <Image
-              alt={waaromKiezenSection.image.altText}
-              height={500}
-              loading="lazy"
-              src={waaromKiezenSection.image.imageUrl}
-              width={500}
+                alt={waaromKiezenSection.image.altText}
+                height={500}
+                loading="lazy"
+                src={waaromKiezenSection.image.imageUrl}
+                width={500}
               />
             </picture>
           </div>
@@ -238,10 +238,16 @@ const iconColor = "var(--clr-primary-900)";
       paragraph={downloadSection.paragraph}
       title={downloadSection.title}
     />
+    <!-- Banner Cta -->
+    <BannerCta client:load />
   </main>
 </FunnelLayout>
 
 <style>
+  #brochure-page {
+    position: relative;
+  }
+
   #brochure-closing-cta-section {
     display: grid;
     place-items: center;
@@ -303,7 +309,6 @@ const iconColor = "var(--clr-primary-900)";
   }
 
   #why-us {
-
     .why-us-column {
       width: 50%;
 

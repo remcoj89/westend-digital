@@ -7,10 +7,11 @@ const {
   imageUrl,
   altText,
   flexDirection = "flex",
+  sectionId = "",
 } = Astro.props;
 ---
 
-<section class=`intro-section wrapper ${flexDirection}`>
+<section class=`intro-section wrapper ${flexDirection}` id={sectionId}>
   <article class="copy-wrapper">
     <h2>{title}</h2>
     {

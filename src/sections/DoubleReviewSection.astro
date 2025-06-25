@@ -1,8 +1,9 @@
 ---
 import Card from "../components/Card.astro";
+const {sectionId = ""} = Astro.props;
 ---
 
-<section class="flex-column hidden" id="double-review-section">
+<section class="flex-column hidden" id={sectionId}>
   <div class="dark-bg" id="double-review-wrapper">
     <div class="wrapper">
       <div class="reviews-wrapper">
