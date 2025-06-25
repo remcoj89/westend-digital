@@ -125,6 +125,7 @@ img {
 
 section {
   margin-block: var(--size-15);
+  /* margin-block-end: var(--size-15); */
 
   .section-header {
     text-align: center;

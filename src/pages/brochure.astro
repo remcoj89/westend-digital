@@ -12,6 +12,9 @@ import WhatYouGetSection from "../sections/WhatYouGetSection.astro";
 import CtaDownloadButton from "../components/CtaDownloadButton.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 
+// Astro api's
+import Image from "astro/components/Image.astro";
+
 // Data
 import PageData from "../data/brochure.json";
 
@@ -21,6 +24,7 @@ const {
   downloadSection,
   herkenbaarSection,
   heroSection,
+  waaromKiezenSection,
   metaDescription,
   metaTitle,
   ogImage,
@@ -111,9 +115,9 @@ const iconColor = "var(--clr-primary-900)";
 
         <div class="image-wrapper">
           <img
-            src={watAlsSection.imageUrl}
             alt={watAlsSection.altText}
             loading="lazy"
+            src={watAlsSection.imageUrl}
           />
         </div>
       </div>
@@ -175,32 +179,66 @@ const iconColor = "var(--clr-primary-900)";
         </div>
       </div>
     </section>
+
+    <!-- Closing Call to Action Section -->
+    <BrochureClosingCtaSection
+      ariaLabel={brochureClosingCtaSection.ariaLabel}
+      ctaBtn={brochureClosingCtaSection.ctaBtn}
+      ctaBtnUrl={brochureClosingCtaSection.ctaBtnUrl}
+      disclaimer={brochureClosingCtaSection.disclaimer}
+      subtitle={brochureClosingCtaSection.subtitle}
+      title={brochureClosingCtaSection.title}
+    />
+
+    <!-- Why us section -->
+    <section id="why-us">
+      <div class="wrapper flex-column gap-4">
+        <div class="section-header text-center">
+          <SectionTitle sectionTitle={waaromKiezenSection.title} />
+          <p set:html={waaromKiezenSection.intro} />
+        </div>
+        <div class="flex align-center justify-between">
+          <div class="flex">
+            <div class="why-us-column">
+              <h3 set:html={waaromKiezenSection.benefits.title} />
+
+              <ul role="list">
+                {
+                  waaromKiezenSection.benefits.list.map((listItem) => (
+                    <li class="list-item">
+                      <span class="icon">✅</span>
+                      <span class="text">{listItem}</span>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            <picture class="why-us-image">
+              <Image
+              alt={waaromKiezenSection.image.altText}
+              height={500}
+              loading="lazy"
+              src={waaromKiezenSection.image.imageUrl}
+              width={500}
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Review Section -->
+    <!-- <DoubleReviewSection /> -->
+
+    <!-- Download section -->
+    <DownloadFormSection
+      ariaLabel={downloadSection.ariaLabel}
+      ctaBtn={downloadSection.ctaBtn}
+      formNotification={downloadSection.formNotification}
+      paragraph={downloadSection.paragraph}
+      title={downloadSection.title}
+    />
   </main>
-
-  <!-- Why us section -->
-  <section id="why-us"></section>
-
-  <!-- Closing Call to Action Section -->
-  <BrochureClosingCtaSection
-    ariaLabel={brochureClosingCtaSection.ariaLabel}
-    ctaBtn={brochureClosingCtaSection.ctaBtn}
-    ctaBtnUrl={brochureClosingCtaSection.ctaBtnUrl}
-    disclaimer={brochureClosingCtaSection.disclaimer}
-    subtitle={brochureClosingCtaSection.subtitle}
-    title={brochureClosingCtaSection.title}
-  />
-
-  <!-- Review Section -->
-  <DoubleReviewSection />
-
-  <!-- Download section -->
-  <DownloadFormSection
-    ariaLabel={downloadSection.ariaLabel}
-    ctaBtn={downloadSection.ctaBtn}
-    formNotification={downloadSection.formNotification}
-    paragraph={downloadSection.paragraph}
-    title={downloadSection.title}
-  />
 </FunnelLayout>
 
 <style>
@@ -250,8 +288,8 @@ const iconColor = "var(--clr-primary-900)";
     }
 
     .list-item {
-      display: flex;
       align-items: flex-start;
+      display: flex;
 
       .icon {
         flex-shrink: 0;
@@ -260,6 +298,46 @@ const iconColor = "var(--clr-primary-900)";
 
       .text {
         display: inline-block;
+      }
+    }
+  }
+
+  #why-us {
+
+    .why-us-column {
+      width: 50%;
+
+      h3 {
+        font-size: var(--fs-600);
+        height: calc(var(--fs-700) * 2);
+        margin-block-end: var(--size-2);
+      }
+
+      .list-item {
+        align-items: flex-start;
+        display: flex;
+
+        .icon {
+          flex-shrink: 0;
+          width: var(--size-4);
+        }
+
+        .text {
+          display: inline-block;
+        }
+      }
+    }
+
+    .why-us-image {
+      width: 50%;
+      border-radius: var(--border-radius-card);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
   }

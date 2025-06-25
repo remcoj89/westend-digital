@@ -38,7 +38,7 @@
       ],
       "listFooter": "Dat kan. En het begint met deze brochure.",
       "ctaBtn": "Download de brochure",
-      "ctaBtnUrl": "#",
+      "ctaBtnUrl": "#download-section",
       "imageUrl": "/images/werkende-website.webp",
       "altText": "Ondernemer in legergroen shirt met een laptop in zijn handen, die een website review geeft aan een klant"
     },
@@ -122,12 +122,30 @@
       "ariaLabel": "Stuur mij de gratis brochure",
       "formNotification": "🔒 Geen spam. Alleen praktische inzichten waar je iets aan hebt."
     },
+    "waaromKiezenSection": {
+      "title": "Wat we doen, en wat jij daaraan hebt",
+      "intro": "Bij Westend Digital geloven we in een persoonlijke aanpak en maatwerk. Geen standaard oplossingen, maar een strategie die past bij jouw unieke situatie.",
+      "benefits": {
+        "title": "De voordelen van onze aanpak",
+        "list": [
+          "Je werkt samen met specialisten: wij regelen het ontwerp, de tekst én de bouw",
+          "Onze aanpak combineert techniek, strategie en communicatie",
+          "Jij krijgt één aanspreekpunt, een helder stappenplan en een website die klopt",
+          "Geen vage plannen, maar duidelijke keuzes — afgestemd op jouw bedrijf"
+        ]
+      },
+      "closingText": "<strong>Kortom:</strong> wij bouwen geen digitale etalages, maar een operationele basis waarop jij kunt doorgroeien.",
+      "image": {
+        "imageUrl": "/images/waarom-ons-kiezen.webp",
+        "altText": "Een team van specialisten werkt samen aan een website, met laptops en notities verspreid over een tafel"
+      }
+    },
     "brochureClosingCtaSection": {
-      "title": "Twijfel je of je website beter kan?",
-      "subtitle": "Dan is deze brochure je eerste stap naar duidelijkheid, rust en groei.",
-      "ctaBtn": " Download gratis en ontdek wat er beter kan",
+      "title": "Klaar om door te pakken?",
+      "subtitle": "Download de gratis brochure en ontdek hoe wij jou helpen van frustratie naar focus — met een website die doet wat ’ie moet doen.",
+      "ctaBtn": " Download en ontdek wat er beter kan",
       "ctaBtnUrl": "#download-section",
-      "ariaLabel": "Download de gratis brochure",
+      "ariaLabel": "Download de brochure",
       "disclaimer": " Gratis download • Geen verplichtingen • Direct beschikbaar"
     }
   }

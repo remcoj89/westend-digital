@@ -19,7 +19,7 @@ const iconColor = "var(--clr-primary-900)";
 
 <section class="hidden" id="brochure-closing-cta-section">
   <div>
-    <h2>{title}</h2>
+    <h2 class="cta-title">{title}</h2>
     <p>{subtitle}</p>
 
     <CtaDownloadButton
@@ -40,16 +40,21 @@ const iconColor = "var(--clr-primary-900)";
     display: grid;
     place-items: center;
     margin-block-end: var(--size-10);
-
+  
     div {
+      background-color: var(--clr-primary-900);
       align-content: center;
       display: grid;
       gap: var(--size-3);
       justify-content: center;
       max-width: 85ch;
       text-align: center;
-
-      h1 {
+      color: var(--clr-primary-100);
+      padding: var(--size-3) var(--size-5);
+      border-radius: var(--border-radius-card);
+      box-shadow: var(--box-shadow);
+      
+      .cta-title {
         color: var(--clr-primary-100);
         font-size: var(--fs-900);
         line-height: var(--lh-200);
