@@ -1,0 +1,70 @@
+---
+import ListItemWithIcon from "../components/ListItemWithIcon.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import Image from "astro/components/Image.astro";
+
+const { altText, benefits, imageUrl, intro, sectionId, title } = Astro.props;
+---
+
+<section id={sectionId}>
+  <div class="wrapper flex-column gap-4">
+    <div class="section-header text-center">
+      <SectionTitle sectionTitle={title} />
+      <p set:html={intro} />
+    </div>
+    <div class="flex align-center justify-between">
+      <div class="flex">
+        <div class="why-us-column">
+          <h3 set:html={benefits.title} />
+
+          <ul role="list">
+            {
+              benefits.list.map((listItem) => (
+                <ListItemWithIcon
+                  icon="✅"
+                  listItem={listItem}
+                />
+              ))
+            }
+          </ul>
+        </div>
+        <picture class="why-us-image">
+          <Image
+            alt={altText}
+            height={500}
+            loading="lazy"
+            src={imageUrl}
+            width={500}
+          />
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #why-us {
+    .why-us-column {
+      width: 50%;
+
+      h3 {
+        font-size: var(--fs-600);
+        height: calc(var(--fs-700) * 2);
+        margin-block-end: var(--size-2);
+      }
+    }
+
+    .why-us-image {
+      border-radius: var(--border-radius-card);
+      box-shadow: var(--box-shadow);
+      overflow: hidden;
+      width: 50%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+</style>

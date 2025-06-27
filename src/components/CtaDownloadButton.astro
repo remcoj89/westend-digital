@@ -7,12 +7,13 @@ const {
   Url,
   CtaBtnTitle,
   IconColor,
+  ButtonClass = "btn btn-secondary",
 } = Astro.props;
 ---
 
 <a
   aria-label={AriaLabel}
-  class="btn btn-secondary"
+  class={ButtonClass}
   href={Url}
   rel="noopener noreferrer"
   title={CtaBtnTitle}

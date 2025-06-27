@@ -1,0 +1,38 @@
+---
+import CtaDownloadButton from "../components/CtaDownloadButton.astro"
+import Image from "astro/components/Image.astro";
+
+const {
+  title,
+  paragraph,
+  ctaBtn,
+  ctaBtnUrl,
+  imageUrl,
+  altText,
+} = Astro.props;
+---
+
+<section id="herkenbaar-section">
+  <div class="wrapper flex-section">
+    <div class="text-wrapper">
+      <h2>{title}</h2>
+      <p set:html={paragraph} />
+      <!-- CTA Download Button -->
+      <CtaDownloadButton
+        AriaLabel={ctaBtn}
+        CtaBtn={ctaBtn}
+        Title={ctaBtn}
+        Url={ctaBtnUrl}
+      />
+    </div>
+    <div class="image-wrapper">
+      <Image
+        src={imageUrl}
+        alt={altText}
+        loading="lazy"
+        width={600}
+        height={400}
+      />
+    </div>
+  </div>
+</section>

@@ -218,6 +218,13 @@ a {
   text-align: right;
 }
 
+.text-red {
+  color: var(--clr-alert-red-900);
+}
+
+.text-green {
+  color: var(--clr-alert-green-900);
+}
 /* End text styling */
 
 /* Border-radius */

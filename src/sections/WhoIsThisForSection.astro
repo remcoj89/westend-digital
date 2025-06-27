@@ -1,0 +1,44 @@
+---
+import ComparisonElement from "../components/ComparisonElement.astro";
+import CtaDownloadButton from "../components/CtaDownloadButton.astro";
+
+const {
+  ariaLabel,
+  competition,
+  ctaBtn,
+  ctaBtnTitle,
+  ctaBtnUrl,
+  sectionId,
+  westendDigital,
+} = Astro.props;
+
+const iconColor = "var(--clr-primary-900)";
+---
+
+<section id={sectionId} class="wrapper hidden">
+  <div class="wrapper flex-column gap-4">
+    <!-- Comparison list -->
+    <ComparisonElement
+      competition={competition}
+      westendDigital={westendDigital}
+    />
+    <div class="btn-wrapper">
+      <CtaDownloadButton
+        AriaLabel={ariaLabel}
+        CtaBtn={ctaBtn}
+        IconColor={iconColor}
+        Title={ctaBtnTitle}
+        Url={ctaBtnUrl}
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-inline: auto;
+  }
+</style>

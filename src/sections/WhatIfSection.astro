@@ -1,0 +1,56 @@
+---
+// Components
+import CtaDownloadButton from "../components/CtaDownloadButton.astro";
+import ListItemWithIcon from "../components/ListItemWithIcon.astro";
+
+// Astro helpers
+import Image from "astro/components/Image.astro";
+
+const {
+  altText,
+  ctaBtn,
+  ctaBtnUrl,
+  imageUrl,
+  listFooter,
+  listItems,
+  listTitle,
+  title,
+} = Astro.props;
+---
+
+<section id="wat-als-section">
+  <div class="wrapper flex-section flex-reverse">
+    <div class="text-wrapper">
+      <h2>{title}</h2>
+      <p>{listTitle}</p>
+      <ul role="list">
+        {
+          listItems.map((item) => (
+            <ListItemWithIcon
+              icon="✅"
+              listItem={item}
+            />
+          ))
+        }
+      </ul>
+      <p>{listFooter}</p>
+      <!-- CTA Download Button -->
+      <CtaDownloadButton
+        AriaLabel={ctaBtn}
+        CtaBtn={ctaBtn}
+        Title={ctaBtn}
+        Url={ctaBtnUrl}
+      />
+    </div>
+
+    <div class="image-wrapper">
+      <Image
+        alt={altText}
+        height={400}
+        loading="lazy"
+        src={imageUrl}
+        width={600}
+      />
+    </div>
+  </div>
+</section>

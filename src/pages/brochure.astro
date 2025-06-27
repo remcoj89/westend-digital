@@ -1,23 +1,24 @@
 ---
 // Sections
+import BannerCta from "../components/reactComponent.BannerCta/BannerCta.jsx";
 import BrochureClosingCtaSection from "../sections/BrochureClosingCtaSection.astro";
 import DoubleReviewSection from "../sections/DoubleReviewSection.astro";
 import DownloadFormSection from "../sections/DownloadFormSection.astro";
-import IntroSection from "../sections/IntroSection.astro";
 import FunnelLayout from "../layouts/FunnelLayout.astro";
 import Header from "../components/Header.astro";
+import HerkenbaarSection from "../sections/HerkenbaarSection.astro";
+import IntroSection from "../sections/IntroSection.astro";
+import OthersVsUsSection from "../sections/OthersVsUsSection.astro";
+import WhatIfSection from "../sections/WhatIfSection.astro";
 import WhatYouGetSection from "../sections/WhatYouGetSection.astro";
+import WhyUsSection from "../sections/WhyUsSection.astro";
 
 // Components
 import CtaDownloadButton from "../components/CtaDownloadButton.astro";
-import SectionTitle from "../components/SectionTitle.astro";
-import BannerCta from "../components/reactComponent.BannerCta/BannerCta.jsx";
-
-// Astro api's
-import Image from "astro/components/Image.astro";
 
 // Data
 import PageData from "../data/brochure.json";
+import WhoIsThisForSection from "../sections/WhoIsThisForSection.astro";
 
 const {
   aboutUsSection,
@@ -25,14 +26,15 @@ const {
   downloadSection,
   herkenbaarSection,
   heroSection,
-  waaromKiezenSection,
   metaDescription,
   metaTitle,
   ogImage,
   ogUrl,
+  othersVsUsSection,
+  waaromKiezenSection,
   watAlsSection,
   watJeKrijgtSection,
-  voorWieSection,
+  whoIsThisForSection,
 } = PageData.pageContent;
 ---
 
@@ -44,7 +46,7 @@ const {
   ogTitle={metaTitle}
   ogUrl={ogUrl}
   title={metaTitle}
->
+  >,
   <Header>
     <div>
       <h1 set:html={heroSection.title} />
@@ -63,64 +65,26 @@ const {
 
   <main id="brochure-page">
     <!-- Herkenbaar Section -->
-    <section id="herkenbaar-section">
-      <div class="wrapper flex-section">
-        <div class="text-wrapper">
-          <h2>{herkenbaarSection.title}</h2>
-          <p set:html={herkenbaarSection.paragraph} />
-          <!-- CTA Download Button -->
-          <CtaDownloadButton
-            AriaLabel={watAlsSection.ctaBtn}
-            CtaBtn={watAlsSection.ctaBtn}
-            Title={watAlsSection.ctaBtn}
-            Url={watAlsSection.ctaBtnUrl}
-          />
-        </div>
-        <div class="image-wrapper">
-          <img
-            src={herkenbaarSection.imageUrl}
-            alt={herkenbaarSection.altText}
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </section>
+    <HerkenbaarSection
+      altText={herkenbaarSection.altText}
+      ctaBtn={watAlsSection.ctaBtn}
+      ctaBtnUrl={watAlsSection.ctaBtnUrl}
+      imageUrl={herkenbaarSection.imageUrl}
+      paragraph={herkenbaarSection.paragraph}
+      title={herkenbaarSection.title}
+    />
 
     <!-- What if Section -->
-    <section id="wat-als-section">
-      <div class="wrapper flex-section flex-reverse">
-        <div class="text-wrapper">
-          <h2>{watAlsSection.title}</h2>
-          <p>{watAlsSection.listTitle}</p>
-          <ul role="list">
-            {
-              watAlsSection.listItems.map((item) => (
-                <li>
-                  <span class="icon">✅</span>
-                  <span>{item}</span>
-                </li>
-              ))
-            }
-          </ul>
-          <p>{watAlsSection.listFooter}</p>
-          <!-- CTA Download Button -->
-          <CtaDownloadButton
-            AriaLabel={watAlsSection.ctaBtn}
-            CtaBtn={watAlsSection.ctaBtn}
-            Title={watAlsSection.ctaBtn}
-            Url={watAlsSection.ctaBtnUrl}
-          />
-        </div>
-
-        <div class="image-wrapper">
-          <img
-            alt={watAlsSection.altText}
-            loading="lazy"
-            src={watAlsSection.imageUrl}
-          />
-        </div>
-      </div>
-    </section>
+    <WhatIfSection
+      altText={watAlsSection.altText}
+      ctaBtn={watAlsSection.ctaBtn}
+      ctaBtnUrl={watAlsSection.ctaBtnUrl}
+      imageUrl={watAlsSection.imageUrl}
+      listFooter={watAlsSection.listFooter}
+      listItems={watAlsSection.listItems}
+      listTitle={watAlsSection.listTitle}
+      title={watAlsSection.title}
+    />
 
     <!-- What you get section -->
     <WhatYouGetSection
@@ -138,48 +102,17 @@ const {
       altText={aboutUsSection.altText}
       imageUrl={aboutUsSection.imageUrl}
       paragraph={aboutUsSection.paragraph}
-      title={aboutUsSection.title}
       sectionId="about-us-section"
+      title={aboutUsSection.title}
     />
-    <!-- Who is this for section -->
-    <section id="who-is-this-for" class="wrapper hidden">
-      <div class="wrapper flex-column gap-4">
-        <div class="section-header text-center">
-          <SectionTitle sectionTitle={voorWieSection.title} />
-          <p set:html={voorWieSection.intro} />
-        </div>
-        <div class="flex">
-          <div class="who-is-this-for-column">
-            <h3 set:html={voorWieSection.competition.title} />
-
-            <ul role="list">
-              {
-                voorWieSection.competition.list.map((listItem) => (
-                  <li class="list-item">
-                    <span class="icon">❌</span>
-                    <span class="text">{listItem}</span>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-          <div class="who-is-this-for-column">
-            <h3 set:html={voorWieSection.westendDigital.title} />
-            <ul role="list">
-              {
-                voorWieSection.westendDigital.list.map((listItem) => (
-                  <li class="list-item">
-                    <span class="icon">✅</span>
-                    <span class="text">{listItem}</span>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- Others vs Us Section -->
+    <OthersVsUsSection
+      title={othersVsUsSection.title}
+      intro={othersVsUsSection.intro}
+      competition={othersVsUsSection.competition}
+      westendDigital={othersVsUsSection.westendDigital}
+      sectionId="others-vs-us-section"
+    />
     <!-- Closing Call to Action Section -->
     <BrochureClosingCtaSection
       ariaLabel={brochureClosingCtaSection.ariaLabel}
@@ -191,44 +124,26 @@ const {
     />
 
     <!-- Why us section -->
-    <section id="why-us">
-      <div class="wrapper flex-column gap-4">
-        <div class="section-header text-center">
-          <SectionTitle sectionTitle={waaromKiezenSection.title} />
-          <p set:html={waaromKiezenSection.intro} />
-        </div>
-        <div class="flex align-center justify-between">
-          <div class="flex">
-            <div class="why-us-column">
-              <h3 set:html={waaromKiezenSection.benefits.title} />
-
-              <ul role="list">
-                {
-                  waaromKiezenSection.benefits.list.map((listItem) => (
-                    <li class="list-item">
-                      <span class="icon">✅</span>
-                      <span class="text">{listItem}</span>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-            <picture class="why-us-image">
-              <Image
-                alt={waaromKiezenSection.image.altText}
-                height={500}
-                loading="lazy"
-                src={waaromKiezenSection.image.imageUrl}
-                width={500}
-              />
-            </picture>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <WhyUsSection
+      altText={waaromKiezenSection.image.altText}
+      benefits={waaromKiezenSection.benefits}
+      imageUrl={waaromKiezenSection.image.imageUrl}
+      intro={waaromKiezenSection.intro}
+      sectionId="why-us-"
+      title={waaromKiezenSection.title}
+    />
     <!-- Review Section -->
     <!-- <DoubleReviewSection /> -->
+
+    <!-- Who is this for Section -->
+    <WhoIsThisForSection
+      ariaLabel={whoIsThisForSection.ariaLabel}
+      competition={whoIsThisForSection.competition}
+      ctaBtn={whoIsThisForSection.ctaBtn}
+      ctaBtnUrl={whoIsThisForSection.ctaBtnUrl}
+      sectionId="who-is-this-for-section"
+      westendDigital={whoIsThisForSection.westendDigital}
+    />
 
     <!-- Download section -->
     <DownloadFormSection
@@ -246,104 +161,5 @@ const {
 <style>
   #brochure-page {
     position: relative;
-  }
-
-  #brochure-closing-cta-section {
-    display: grid;
-    place-items: center;
-    margin-block-end: var(--size-10);
-
-    div {
-      align-content: center;
-      display: grid;
-      gap: var(--size-3);
-      justify-content: center;
-      max-width: 85ch;
-      text-align: center;
-
-      h1 {
-        color: var(--clr-primary-100);
-        font-size: var(--fs-900);
-        line-height: var(--lh-200);
-      }
-
-      p {
-        margin-inline: auto;
-      }
-
-      button,
-      a {
-        margin-inline: auto;
-      }
-
-      span {
-        color: var(--clr-primary-900);
-        font-size: var(--fs-300);
-        font-weight: 500;
-      }
-    }
-  }
-
-  .who-is-this-for-column {
-    width: 50%;
-
-    h3 {
-      font-size: var(--fs-600);
-      height: calc(var(--fs-700) * 2);
-      margin-block-end: var(--size-2);
-    }
-
-    .list-item {
-      align-items: flex-start;
-      display: flex;
-
-      .icon {
-        flex-shrink: 0;
-        width: var(--size-4);
-      }
-
-      .text {
-        display: inline-block;
-      }
-    }
-  }
-
-  #why-us {
-    .why-us-column {
-      width: 50%;
-
-      h3 {
-        font-size: var(--fs-600);
-        height: calc(var(--fs-700) * 2);
-        margin-block-end: var(--size-2);
-      }
-
-      .list-item {
-        align-items: flex-start;
-        display: flex;
-
-        .icon {
-          flex-shrink: 0;
-          width: var(--size-4);
-        }
-
-        .text {
-          display: inline-block;
-        }
-      }
-    }
-
-    .why-us-image {
-      width: 50%;
-      border-radius: var(--border-radius-card);
-      overflow: hidden;
-      box-shadow: var(--box-shadow);
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
   }
 </style>

@@ -1,0 +1,25 @@
+---
+import ComparisonElement from "../components/ComparisonElement.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+
+const {
+  competition,
+  intro,
+  sectionId,
+  title,
+  westendDigital,
+} = Astro.props;
+---
+
+<section id={sectionId} class="wrapper hidden">
+  <div class="wrapper flex-column gap-4">
+    <!-- Section header -->
+    <SectionHeader title={title} intro={intro} />
+
+    <!-- Comparison list -->
+    <ComparisonElement
+      competition={competition}
+      westendDigital={westendDigital}
+    />
+  </div>
+</section>

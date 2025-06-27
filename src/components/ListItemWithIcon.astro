@@ -1,0 +1,25 @@
+---
+const { icon, listItem } = Astro.props;
+---
+
+<li class="list-item">
+  <span class="icon">{icon}</span>
+  <span class="text">{listItem}</span>
+</li>
+
+<style>
+  .list-item {
+    align-items: flex-start;
+    display: flex;
+    margin-block-end: 1rem;
+
+    .icon {
+      flex-shrink: 0;
+      width: var(--size-4);
+    }
+
+    .text {
+      display: inline-block;
+    }
+  }
+</style>

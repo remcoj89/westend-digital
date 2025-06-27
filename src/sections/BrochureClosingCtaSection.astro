@@ -2,16 +2,15 @@
 // Components
 import CtaDownloadButton from "../components/CtaDownloadButton.astro";
 
-const { 
+const {
   ariaLabel,
   ctaBtn,
-  downloadFileName,
   ctaBtnTitle,
   ctaBtnUrl,
   disclaimer,
-  title,
+  downloadFileName,
   subtitle,
-
+  title,
 } = Astro.props;
 
 const iconColor = "var(--clr-primary-900)";
@@ -22,40 +21,43 @@ const iconColor = "var(--clr-primary-900)";
     <h2 class="cta-title">{title}</h2>
     <p>{subtitle}</p>
 
-    <CtaDownloadButton
-      AriaLabel={ariaLabel}
-      CtaBtn={ctaBtn}
-      DownloadFileName={downloadFileName}
-      IconColor={iconColor}
-      Title={ctaBtnTitle}
-      Url={ctaBtnUrl}
-    />
+    <div class="btn-wrapper">
+      <CtaDownloadButton
+        AriaLabel={ariaLabel}
+        CtaBtn={ctaBtn}
+        DownloadFileName={downloadFileName}
+        IconColor={iconColor}
+        Title={ctaBtnTitle}
+        Url={ctaBtnUrl}
+      />
 
-    <span>{disclaimer}</span>
+      <span>{disclaimer}</span>
+    </div>
+
   </div>
 </section>
 
 <style>
   #brochure-closing-cta-section {
     display: grid;
-    place-items: center;
     margin-block-end: var(--size-10);
-  
+    place-items: center;
+
     div {
-      background-color: var(--clr-primary-900);
       align-content: center;
+      background-color: var(--clr-primary-900);
+      border-radius: var(--border-radius-card);
+      box-shadow: var(--box-shadow);
+      color: var(--clr-primary-100);
       display: grid;
       gap: var(--size-3);
       justify-content: center;
       max-width: 85ch;
+      padding: var(--size-4) var(--size-3);
       text-align: center;
-      color: var(--clr-primary-100);
-      padding: var(--size-3) var(--size-5);
-      border-radius: var(--border-radius-card);
-      box-shadow: var(--box-shadow);
-      
+
       .cta-title {
-        color: var(--clr-primary-100);
+        color: inherit;
         font-size: var(--fs-900);
         line-height: var(--lh-200);
       }
@@ -64,16 +66,21 @@ const iconColor = "var(--clr-primary-900)";
         margin-inline: auto;
       }
 
-      button,
-      a {
-        margin-inline: auto;
+      .btn-wrapper {
+        display: grid;
+        gap: var(--size-1);
+
+        button,
+        a {
+          margin-inline: auto;
+        }
+
+        span {
+          font-size: var(--fs-300);
+          font-weight: 500;
+        }
       }
 
-      span {
-        color: var(--clr-primary-900);
-        font-size: var(--fs-300);
-        font-weight: 500;
-      }
     }
   }
 </style>

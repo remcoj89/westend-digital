@@ -1,0 +1,10 @@
+---
+import SectionTitle from "../components/SectionTitle.astro";
+
+const { title, intro } = Astro.props;
+---
+
+<div class="section-header text-center">
+  <SectionTitle sectionTitle={title} />
+  <p set:html={intro} />
+</div>
