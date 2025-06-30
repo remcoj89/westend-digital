@@ -46,7 +46,7 @@ const {
   ogTitle={metaTitle}
   ogUrl={ogUrl}
   title={metaTitle}
-  >,
+  >
   <Header>
     <div>
       <h1 set:html={heroSection.title} />
@@ -56,8 +56,7 @@ const {
       <CtaDownloadButton
         AriaLabel={heroSection.ariaLabel}
         CtaBtn={heroSection.ctaBtn}
-        DownloadFileName={heroSection.downloadFileName}
-        Title={heroSection.ctaBtnTitle}
+        Title={heroSection.ctaBtn}
         Url={heroSection.ctaBtnUrl}
       />
     </div>
@@ -67,8 +66,8 @@ const {
     <!-- Herkenbaar Section -->
     <HerkenbaarSection
       altText={herkenbaarSection.altText}
-      ctaBtn={watAlsSection.ctaBtn}
-      ctaBtnUrl={watAlsSection.ctaBtnUrl}
+      ctaBtn={herkenbaarSection.ctaBtn}
+      ctaBtnUrl={herkenbaarSection.ctaBtnUrl}
       imageUrl={herkenbaarSection.imageUrl}
       paragraph={herkenbaarSection.paragraph}
       title={herkenbaarSection.title}

@@ -9,13 +9,11 @@
     },
     "ogUrl": "https://www.westend-digital.nl/website",
     "heroSection": {
-      "title": "Je <span class='highlight-text'>website</span> werkt niet? <br/> Tijd om dat recht te zetten.",
-      "subtitle": "<span class='highlight-text'>Je bent goed in je werk.</span> Je klanten zijn tevreden. Maar je website? Die blijft achter. Geen aanvragen, geen groei — alleen frustratie.",
-      "ctaBtn": "Download de brochure",
-      "ctaBtnTitle": "Download de brochure",
+      "title": "Je website is jouw  <span class='highlight-text'>operationele basis</span> – die moet staan als een huis.",
+      "subtitle": "Wij zorgen voor een professionele online aanwezigheid die werkt als een geoliede eenheid: betrouwbaar, doelgericht en klaar om jouw missie te ondersteunen.",
+      "ctaBtn": "De elementen van een goede website",
       "ctaBtnUrl": "#download-section",
-      "ariaLabel": "Download de brochure",
-      "downloadFileName": "van-frustratie-naar-resultaat-in-4-stappen.pdf",
+      "ariaLabel": "Bekijk de elementen van een goede website",
       "imageUrl": "/images/website-laten-maken.webp",
       "altText": "Ondernemer in legergroen shirt met een laptop in zijn handen, die een website review geeft aan een klant"
     },
@@ -25,6 +23,8 @@
         "Je website is traag, vaag of verouderd. Alles moet handmatig. Je verhaal komt niet goed over. En ondertussen lopen klanten weg naar concurrenten met een strakkere online basis. ",
         "Daarom hebben we een brochure gemaakt voor ondernemers zoals jij. Geen glad verkooppraatje, maar een praktische gids die laat zien hoe je een website bouwt die wél werkt — zonder stress, zonder digitale rompslomp."
       ],
+      "ctaBtn": "Downoad de basis van een goede website",
+      "ctaBtnUrl": "#download-section",
       "imageUrl": "/images/herkenbaar.webp",
       "altText": "Ondernemer in legergroen shirt met een laptop in zijn handen, die een website review geeft aan een klant"
     },
@@ -37,7 +37,7 @@
         "en je verhaal overtuigend overbrengt — zelfs als jij even offline bent"
       ],
       "listFooter": "Dat kan. En het begint met deze brochure.",
-      "ctaBtn": "Download de brochure",
+      "ctaBtn": "Leer hoe jij je site werkend krijgt. ",
       "ctaBtnUrl": "#download-section",
       "imageUrl": "/images/werkende-website.webp",
       "altText": "Ondernemer in legergroen shirt met een laptop in zijn handen, die een website review geeft aan een klant"

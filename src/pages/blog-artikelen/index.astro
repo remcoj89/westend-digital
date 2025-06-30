@@ -6,6 +6,7 @@ import FooterSection from "../../sections/FooterSection.astro";
 import fetchBlogArticles from "../../lib/fetchBlogArticles";
 import pageData from "../../data/blog.json";
 import Button from "../../components/Button.astro";
+
 const blogs = await fetchBlogArticles();
 
 const { metaTitle, metaDescription, ogImage, ogUrl, heroTitle } =
@@ -18,9 +19,7 @@ const { metaTitle, metaDescription, ogImage, ogUrl, heroTitle } =
   ogTitle={metaTitle}
   ogDescription={metaDescription}
   ogImageUrl={ogImage.ogImageUrl}
-  ,
   ogImageAlt={ogImage.ogImageAlt}
-  ,
   ogUrl={ogUrl}
 >
   <Header>
@@ -54,4 +53,3 @@ const { metaTitle, metaDescription, ogImage, ogUrl, heroTitle } =
   <FooterSection />
 </Layout>
 
-<style></style>

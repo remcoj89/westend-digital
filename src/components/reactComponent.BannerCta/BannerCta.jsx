@@ -58,9 +58,13 @@ const BannerCta = () => {
       {visible && (
         <div className={`${Style.bannerCta} wrapper`}>
           <div className="flex">
-            <h2 className={Style.bannerTitle}>
-              Ben jij klaar om je website naar een hoger niveau te tillen?
-            </h2>
+            <div className={Style.bannerTitle}>
+              <h2>Ben jij klaar een professionele website?</h2>
+              <p>
+                Een website die vertrouwen uitstraalt, meer klanten oplevert en
+                jouw groei versnelt?
+              </p>
+            </div>
             <div className={Style.bannerButtonWrapper}>
               <p>Download dan nu de gratis brochure</p>
               <button className="btn btn-primary" onClick={handleClick}>
