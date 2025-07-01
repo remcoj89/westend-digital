@@ -10,7 +10,7 @@
     "ogUrl": "https://www.westend-digital.nl/website",
     "heroSection": {
       "title": "Je website is jouw  <span class='highlight-text'>operationele basis</span> – die moet staan als een huis.",
-      "subtitle": "Wij zorgen voor een professionele online aanwezigheid die werkt als een geoliede eenheid: betrouwbaar, doelgericht en klaar om jouw missie te ondersteunen.",
+      "subtitle": "Ontdek waar volgens ons een goede website aan moet voldoen, en hoe jij dat ook voor elkaar krijgt. Zodat je digitale basis niet achterloopt, <br>maar meebouwt aan je groei.",
       "ctaBtn": "De elementen van een goede website",
       "ctaBtnUrl": "#download-section",
       "ariaLabel": "Bekijk de elementen van een goede website",
@@ -34,9 +34,9 @@
       "listItems": [
         "automatisch leads binnenhaalt,",
         "je processen stroomlijnt,",
-        "en je verhaal overtuigend overbrengt — zelfs als jij even offline bent"
+        "Je verhaal overtuigend overbrengt, zelfs als jij even offline bent"
       ],
-      "listFooter": "Dat kan. En het begint met deze brochure.",
+      "listFooter": "Dat kan, en het begint met deze brochure.",
       "ctaBtn": "Leer hoe jij je site werkend krijgt. ",
       "ctaBtnUrl": "#download-section",
       "imageUrl": "/images/werkende-website.webp",
