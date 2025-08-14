@@ -15,113 +15,107 @@ import converterScriptUrl from "../../lib/webp-converter.js?url";
 
     <!-- Controls -->
     <div class="controls">
-      <div class="flex-row-space-between">
-        <!-- Dropzone & alerts -->
-        <div>
-          <div
-            class="converter-dropzone border-radius-card"
-            id="dropzone"
-            aria-label="Bestanden uploaden per drag & drop of knop"
-          >
-            <div class="text-center">
-              <strong>Sleep PNG/JPG bestanden hierheen</strong><br />
-              <span class="muted">of</span>
-            </div>
+      <!-- Dropzone & alerts -->
+      <div>
+        <div
+          class="converter-dropzone"
+          id="dropzone"
+          aria-label="Bestanden uploaden per drag & drop of knop"
+        >
+          <p class="converter-title">Sleep PNG/JPG bestanden hierheen</p>
+          <span class="muted">of</span>
 
-            <div class="input-group">
-              <label class="btn btn-primary-open" for="fileInput"
-                >Bestanden kiezen</label
-              >
-              <input
-                id="fileInput"
-                type="file"
-                multiple
-                accept="image/png, image/jpeg"
-              />
-              <button class="btn btn-white" id="clearBtn" type="button"
-                >Lijst leegmaken</button
-              >
-            </div>
+          <div class="converter-input-group">
+            <label class="btn btn-primary" for="fileInput"
+              >Bestanden kiezen</label
+            >
+            <input
+              id="fileInput"
+              type="file"
+              multiple
+              accept="image/png, image/jpeg"
+            />
+            <button class="btn btn-white" id="clearBtn" type="button"
+              >Lijst leegmaken</button
+            >
           </div>
-
-          <div id="alerts" class="converter-alerts" aria-live="polite"></div>
         </div>
 
-        <!-- Quality + Resize -->
-        <div class="grid">
-          <div class="converter-panel border-radius-card margin-bottom-1">
-            <div class="flex-row-space-between">
-              <label for="quality"
-                ><strong>Kwaliteit</strong>
-                <span class="muted">(WebP, 0.10–1.00)</span></label
-              >
-              <output id="qualityOut">0.80</output>
-            </div>
-            <input
-              id="quality"
-              type="range"
-              min="0.1"
-              max="1"
-              step="0.01"
-              value="0.8"
-              style="width:100%; margin-top:.8rem;"
-            />
-            <small class="muted"
-              >Tip: 0.7–0.85 is vaak een mooie balans tussen kwaliteit en
-              bestandsgrootte.</small
-            >
+        <div id="alerts" class="converter-alerts" aria-live="polite"></div>
+      </div>
+
+      <!-- Quality + Resize -->
+      <div class="quality-resize-controls">
+        <div class="converter-panel">
+          <div class="quality-controls">
+            <label for="quality">
+              <strong>Kwaliteit</strong>
+              <span class="muted">(WebP, 0.10–1.00)</span>
+            </label>
+            <output id="qualityOut">0.80</output>
+          </div>
+          <input
+            id="quality"
+            type="range"
+            min="0.1"
+            max="1"
+            step="0.01"
+            value="0.8"
+            style="width:100%; margin-top:.8rem;"
+          />
+          <small class="muted">
+            Tip: 0.7–0.85 is vaak een mooie balans tussen kwaliteit en
+            bestandsgrootte.
+          </small>
+        </div>
+
+        <div class="converter-panel">
+          <strong>Resizing (optioneel)</strong>
+          <div class="resize-inputs">
+            <label class="muted">
+              Breedte (px)
+              <input
+                id="resizeW"
+                type="number"
+                min="1"
+                placeholder="auto"
+                class="converter-input"
+              />
+            </label>
+
+            <label class="muted">
+              Hoogte (px)
+              <input
+                id="resizeH"
+                type="number"
+                min="1"
+                placeholder="auto"
+                class="converter-input"
+              />
+            </label>
           </div>
 
-          <div class="converter-panel border-radius-card">
-            <strong>Resizing (optioneel)</strong>
-            <div
-              class="grid"
-              style="gap:.8rem; margin-top:.6rem; grid-template-columns: 1fr 1fr;"
-            >
-              <label class="muted"
-                >Breedte (px)
-                <input
-                  id="resizeW"
-                  type="number"
-                  min="1"
-                  placeholder="auto"
-                  class="converter-input"
-                />
-              </label>
-              <label class="muted"
-                >Hoogte (px)
-                <input
-                  id="resizeH"
-                  type="number"
-                  min="1"
-                  placeholder="auto"
-                  class="converter-input"
-                />
-              </label>
-            </div>
-            <div class="flex-row-start gap-2" style="margin-top:.6rem;">
-              <label class="muted"
-                ><input id="keepAR" type="checkbox" checked /> Aspect ratio behouden</label
-              >
-              <label class="muted"
-                ><input id="onlyDownscale" type="checkbox" checked /> Alleen verkleinen</label
-              >
-            </div>
-            <small class="muted"
-              >Laat één van beide leeg voor automatische berekening bij behouden
-              aspect ratio.</small
+          <!-- Class toevoegen -->
+          <div class="aspect-ratio-controls">
+            <label class="muted">
+              <input id="keepAR" type="checkbox" checked />
+              Aspect ratio behouden
+            </label>
+            <label class="muted"
+              ><input id="onlyDownscale" type="checkbox" checked /> Alleen verkleinen</label
             >
           </div>
+          <small class="muted">
+            Laat één van beide leeg voor automatische berekening bij behouden
+            aspect ratio.
+          </small>
         </div>
       </div>
     </div>
 
     <!-- Actions + summary -->
-    <div class="converter-panel border-radius-card">
-      <div
-        class="flex-row-space-between"
-        style="align-items:center; gap: var(--size-2); flex-wrap: wrap; margin-bottom: .6rem;"
-      >
+    <div class="converter-panel">
+      <div class="flex-row-space-between">
         <div class="flex flex-row-start gap-2 flex-wrap">
           <button class="btn btn-primary" id="downloadZipBtn" type="button"
             >Converteren & ZIP downloaden</button
@@ -153,124 +147,177 @@ import converterScriptUrl from "../../lib/webp-converter.js?url";
 <style>
   .webp-converter {
     .muted {
-      color: var(--clr-primary-500);
+      color: var(--clr-primary-700);
+    }
+
+    .converter-title {
+      font-size: var(--fs-600);
+      font-weight: 600;
     }
 
     .converter-panel {
       background: hsl(from var(--clr-primary-900) H S L / 6%);
-      border: 1px solid var(--clr-primary-300);
+      border-radius: var(--border-radius-card);
+      display: grid;
+      gap: var(--size-1);
       padding: var(--size-2);
     }
 
-    .converter-dropzone {
-      position: relative;
-      background: hsl(from var(--clr-primary-900) H S L / 6%);
-      border: 2px dashed var(--clr-primary-500);
-      padding: var(--size-3);
-      text-align: center;
-      transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease;
-
-      &.dragover {
-        border-color: var(--clr-secondary-900);
-        background: hsl(from var(--clr-secondary-900) H S L / 10%);
-      }
-
-      input[type="file"] {
-        display: none;
-      }
-    }
-
-    .converter-input {
-      width: 100%;
-      padding: 0.6rem 0.8rem;
-      background: var(--clr-background);
-      border: 1px solid var(--clr-primary-300);
-      border-radius: var(--border-radius-input-field);
-      color: var(--clr-body);
-    }
-
-    .converter-grid {
+    .controls {
       display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: var(--size-2);
-      grid-template-columns: 1fr;
 
-      @media (width >= 40em) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      @media (width >= 62.5em) {
-        grid-template-columns: repeat(3, 1fr);
+      .converter-dropzone {
+        background: hsl(from var(--clr-primary-900) H S L / 6%);
+        border-radius: var(--border-radius-card);
+        border: 2px dashed var(--clr-primary-500);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        padding: var(--size-3);
+        position: relative;
+        text-align: center;
+        transition:
+          background-color 0.2s ease,
+          border-color 0.2s ease;
+
+        .converter-input-group {
+          display: flex;
+          gap: var(--size-1);
+        }
+
+        &.dragover {
+          background: hsl(from var(--clr-secondary-900) H S L / 10%);
+          border-color: var(--clr-secondary-900);
+        }
+
+        input[type="file"] {
+          display: none;
+        }
       }
     }
 
-    .converter-card {
+    .quality-resize-controls {
       display: grid;
-      grid-template-rows: auto 1fr auto;
-      gap: 0.6rem;
-      background: var(--clr-background);
-      border: 1px solid var(--clr-primary-300);
-      border-radius: var(--border-radius-card);
-      padding: var(--size-1);
+      gap: var(--size-1);
 
-      .converter-thumb {
-        aspect-ratio: 4 / 3;
-        background: hsl(from var(--clr-primary-900) H S L / 8%);
+      .resize-inputs {
+        display: flex;
+        gap: var(--size-1);
+
+        label {
+          display: grid;
+          gap: 1rem;
+          width: 50%;
+
+          input {
+            caret-color: var(--clr-primary-900);
+            padding: 1rem 0.5rem;
+          }
+        }
+      }
+
+      .aspect-ratio-controls {
+        display: flex;
+        gap: var(--size-1);
+
+        label {
+          width: 50%;
+        }
+      }
+
+      .converter-input {
+        background: var(--clr-background);
+        border-radius: var(--border-radius-input-field);
         border: 1px solid var(--clr-primary-300);
-        border-radius: var(--border-radius-img);
+        color: var(--clr-body);
+        padding: 0.6rem 0.8rem;
+        width: 100%;
+      }
+
+      .converter-grid {
         display: grid;
-        place-items: center;
-        overflow: hidden;
+        gap: var(--size-2);
+        grid-template-columns: 1fr;
 
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
+        @media (width >= 40em) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @media (width >= 62.5em) {
+          grid-template-columns: repeat(3, 1fr);
         }
       }
 
-      .converter-meta {
-        font-size: var(--fs-300);
-      }
-
-      .converter-tags {
-        display: flex;
-        justify-content: space-between;
+      .converter-card {
+        background: var(--clr-background);
+        border-radius: var(--border-radius-card);
+        border: 1px solid var(--clr-primary-300);
+        display: grid;
         gap: 0.6rem;
+        grid-template-rows: auto 1fr auto;
+        padding: var(--size-1);
 
-        .converter-tag {
-          font-size: var(--fs-200);
-          color: var(--clr-primary-500);
-          background: hsl(from var(--clr-primary-900) H S L / 10%);
-          padding: 0.3rem 0.6rem;
-          border-radius: 999px;
+        .converter-thumb {
+          aspect-ratio: 4 / 3;
+          background: hsl(from var(--clr-primary-900) H S L / 8%);
+          border-radius: var(--border-radius-img);
           border: 1px solid var(--clr-primary-300);
-        }
-      }
+          display: grid;
+          overflow: hidden;
+          place-items: center;
 
-      .converter-card-actions {
-        display: flex;
-        gap: 0.6rem;
-        justify-content: space-between;
+          img {
+            height: 100%;
+            object-fit: contain;
+            width: 100%;
+          }
+        }
+
+        .converter-meta {
+          font-size: var(--fs-300);
+        }
+
+        .converter-tags {
+          display: flex;
+          gap: 0.6rem;
+          justify-content: space-between;
+
+          .converter-tag {
+            background: hsl(from var(--clr-primary-900) H S L / 10%);
+            border-radius: 999px;
+            border: 1px solid var(--clr-primary-300);
+            color: var(--clr-primary-500);
+            font-size: var(--fs-200);
+            padding: 0.3rem 0.6rem;
+          }
+        }
+
+        .converter-card-actions {
+          display: flex;
+          gap: 0.6rem;
+          justify-content: space-between;
+        }
       }
     }
 
     .converter-progress {
-      height: 10px;
       background: hsl(from var(--clr-primary-900) H S L / 10%);
-      border: 1px solid var(--clr-primary-300);
       border-radius: 999px;
+      border: 1px solid var(--clr-primary-300);
+      height: 10px;
       overflow: hidden;
 
-      > div {
-        height: 100%;
-        width: 0%;
+      div {
         background: linear-gradient(
           90deg,
           var(--clr-secondary-900),
           var(--clr-primary-900)
         );
+        height: 100%;
         transition: width 0.15s ease-out;
+        width: 0%;
       }
     }
 
@@ -280,15 +327,15 @@ import converterScriptUrl from "../../lib/webp-converter.js?url";
       margin-top: 0.8rem;
 
       .converter-alert {
-        border-left: 4px solid var(--clr-alert-yellow-900);
         background: hsl(from var(--clr-alert-yellow-900) H S L / 14%);
+        border-left: 4px solid var(--clr-alert-yellow-900);
+        border-radius: var(--border-radius-card);
         color: var(--clr-primary-900);
         padding: 0.8rem 1rem;
-        border-radius: var(--border-radius-card);
 
         &.error {
-          border-left-color: var(--clr-alert-red-900);
           background: hsl(from var(--clr-alert-red-900) H S L / 14%);
+          border-left-color: var(--clr-alert-red-900);
           color: var(--clr-alert-red-900);
         }
       }

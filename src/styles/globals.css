@@ -102,6 +102,11 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   scroll-behavior: smooth;
+
+  ::selection {
+  color: var(--clr-primary-100);
+  background: var(--clr-primary-900);
+}
 }
 
 body {
@@ -205,6 +210,14 @@ p {
 
 a {
   color: inherit;
+}
+
+input[type=checkbox],
+input[type=radio]:checked,
+input[type=range] {
+  accent-color: var(--clr-primary-900);
+  height: 1.6rem;
+  width: 1.6rem;
 }
 
 .highlight-text {
@@ -725,6 +738,7 @@ a {
         p {
           display: -webkit-box;
           -webkit-line-clamp: 4;
+          line-clamp: 4;
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
