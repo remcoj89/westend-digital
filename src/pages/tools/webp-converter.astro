@@ -1,0 +1,297 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import converterScriptUrl from "../../lib/webp-converter.js?url";
+---
+
+<Layout>
+  <section class="webp-converter wrapper grid">
+    <header class="text-left">
+      <h1 class="margin-bottom-1">PNG/JPG → WebP Converter</h1>
+      <p class="margin-bottom-2">
+        Sleep je afbeeldingen, kies kwaliteit en (optioneel) afmetingen. Bekijk
+        previews en download alles als ZIP.
+      </p>
+    </header>
+
+    <!-- Controls -->
+    <div class="controls">
+      <div class="flex-row-space-between">
+        <!-- Dropzone & alerts -->
+        <div>
+          <div
+            class="converter-dropzone border-radius-card"
+            id="dropzone"
+            aria-label="Bestanden uploaden per drag & drop of knop"
+          >
+            <div class="text-center">
+              <strong>Sleep PNG/JPG bestanden hierheen</strong><br />
+              <span class="muted">of</span>
+            </div>
+
+            <div class="input-group">
+              <label class="btn btn-primary-open" for="fileInput"
+                >Bestanden kiezen</label
+              >
+              <input
+                id="fileInput"
+                type="file"
+                multiple
+                accept="image/png, image/jpeg"
+              />
+              <button class="btn btn-white" id="clearBtn" type="button"
+                >Lijst leegmaken</button
+              >
+            </div>
+          </div>
+
+          <div id="alerts" class="converter-alerts" aria-live="polite"></div>
+        </div>
+
+        <!-- Quality + Resize -->
+        <div class="grid">
+          <div class="converter-panel border-radius-card margin-bottom-1">
+            <div class="flex-row-space-between">
+              <label for="quality"
+                ><strong>Kwaliteit</strong>
+                <span class="muted">(WebP, 0.10–1.00)</span></label
+              >
+              <output id="qualityOut">0.80</output>
+            </div>
+            <input
+              id="quality"
+              type="range"
+              min="0.1"
+              max="1"
+              step="0.01"
+              value="0.8"
+              style="width:100%; margin-top:.8rem;"
+            />
+            <small class="muted"
+              >Tip: 0.7–0.85 is vaak een mooie balans tussen kwaliteit en
+              bestandsgrootte.</small
+            >
+          </div>
+
+          <div class="converter-panel border-radius-card">
+            <strong>Resizing (optioneel)</strong>
+            <div
+              class="grid"
+              style="gap:.8rem; margin-top:.6rem; grid-template-columns: 1fr 1fr;"
+            >
+              <label class="muted"
+                >Breedte (px)
+                <input
+                  id="resizeW"
+                  type="number"
+                  min="1"
+                  placeholder="auto"
+                  class="converter-input"
+                />
+              </label>
+              <label class="muted"
+                >Hoogte (px)
+                <input
+                  id="resizeH"
+                  type="number"
+                  min="1"
+                  placeholder="auto"
+                  class="converter-input"
+                />
+              </label>
+            </div>
+            <div class="flex-row-start gap-2" style="margin-top:.6rem;">
+              <label class="muted"
+                ><input id="keepAR" type="checkbox" checked /> Aspect ratio behouden</label
+              >
+              <label class="muted"
+                ><input id="onlyDownscale" type="checkbox" checked /> Alleen verkleinen</label
+              >
+            </div>
+            <small class="muted"
+              >Laat één van beide leeg voor automatische berekening bij behouden
+              aspect ratio.</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions + summary -->
+    <div class="converter-panel border-radius-card">
+      <div
+        class="flex-row-space-between"
+        style="align-items:center; gap: var(--size-2); flex-wrap: wrap; margin-bottom: .6rem;"
+      >
+        <div class="flex flex-row-start gap-2 flex-wrap">
+          <button class="btn btn-primary" id="downloadZipBtn" type="button"
+            >Converteren & ZIP downloaden</button
+          >
+          <button
+            class="btn btn-primary-open"
+            id="convertPreviewBtn"
+            type="button"
+            title="Voorvertoning vernieuwen">Preview vernieuwen</button
+          >
+        </div>
+        <small id="summary" class="muted"
+          >Nog geen bestanden geselecteerd.</small
+        >
+      </div>
+
+      <div class="converter-progress" aria-hidden="true">
+        <div id="bar"></div>
+      </div>
+
+      <div id="preview" class="converter-grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- Laad de app-logica als module -->
+  <script type="module" src={converterScriptUrl}></script>
+</Layout>
+
+<style>
+  .webp-converter {
+    .muted {
+      color: var(--clr-primary-500);
+    }
+
+    .converter-panel {
+      background: hsl(from var(--clr-primary-900) H S L / 6%);
+      border: 1px solid var(--clr-primary-300);
+      padding: var(--size-2);
+    }
+
+    .converter-dropzone {
+      position: relative;
+      background: hsl(from var(--clr-primary-900) H S L / 6%);
+      border: 2px dashed var(--clr-primary-500);
+      padding: var(--size-3);
+      text-align: center;
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+
+      &.dragover {
+        border-color: var(--clr-secondary-900);
+        background: hsl(from var(--clr-secondary-900) H S L / 10%);
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+    }
+
+    .converter-input {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      background: var(--clr-background);
+      border: 1px solid var(--clr-primary-300);
+      border-radius: var(--border-radius-input-field);
+      color: var(--clr-body);
+    }
+
+    .converter-grid {
+      display: grid;
+      gap: var(--size-2);
+      grid-template-columns: 1fr;
+
+      @media (width >= 40em) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (width >= 62.5em) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .converter-card {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 0.6rem;
+      background: var(--clr-background);
+      border: 1px solid var(--clr-primary-300);
+      border-radius: var(--border-radius-card);
+      padding: var(--size-1);
+
+      .converter-thumb {
+        aspect-ratio: 4 / 3;
+        background: hsl(from var(--clr-primary-900) H S L / 8%);
+        border: 1px solid var(--clr-primary-300);
+        border-radius: var(--border-radius-img);
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .converter-meta {
+        font-size: var(--fs-300);
+      }
+
+      .converter-tags {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.6rem;
+
+        .converter-tag {
+          font-size: var(--fs-200);
+          color: var(--clr-primary-500);
+          background: hsl(from var(--clr-primary-900) H S L / 10%);
+          padding: 0.3rem 0.6rem;
+          border-radius: 999px;
+          border: 1px solid var(--clr-primary-300);
+        }
+      }
+
+      .converter-card-actions {
+        display: flex;
+        gap: 0.6rem;
+        justify-content: space-between;
+      }
+    }
+
+    .converter-progress {
+      height: 10px;
+      background: hsl(from var(--clr-primary-900) H S L / 10%);
+      border: 1px solid var(--clr-primary-300);
+      border-radius: 999px;
+      overflow: hidden;
+
+      > div {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(
+          90deg,
+          var(--clr-secondary-900),
+          var(--clr-primary-900)
+        );
+        transition: width 0.15s ease-out;
+      }
+    }
+
+    .converter-alerts {
+      display: grid;
+      gap: 0.6rem;
+      margin-top: 0.8rem;
+
+      .converter-alert {
+        border-left: 4px solid var(--clr-alert-yellow-900);
+        background: hsl(from var(--clr-alert-yellow-900) H S L / 14%);
+        color: var(--clr-primary-900);
+        padding: 0.8rem 1rem;
+        border-radius: var(--border-radius-card);
+
+        &.error {
+          border-left-color: var(--clr-alert-red-900);
+          background: hsl(from var(--clr-alert-red-900) H S L / 14%);
+          color: var(--clr-alert-red-900);
+        }
+      }
+    }
+  }
+</style>
