@@ -1,0 +1,110 @@
+{
+  "pageContent": {
+    "metaTitle": "Gratis JPG/PNG naar WebP Converter – Versnel je Website | Westend Digital",
+    "metaDescription": "Zet JPG en PNG eenvoudig om naar WebP voor snellere laadtijden, betere SEO en hogere conversies. Gratis converter met kwaliteit- en resize-opties.",
+    "ogSiteName": "Westend Digital",
+    "ogImage": {
+      "ogImageUrl": "/assets/logos/WestendDigitalLogo.svg",
+      "ogImageAlt": "Logo van Westend Digital"
+    },
+    "ogUrl": "https://www.westend-digital.nl/tools/webp-converter",
+    "heroTitle": "Gratis WebP Converter, zet PNG/JPG om naar WebP voor een Snellere Website",
+    "heroSubtitle": "Sleep je afbeeldingen, kies kwaliteit en (optioneel) afmetingen. Bekijk previews en download alles als ZIP.",
+    "heroImage": {
+      "imageUrl": "/images/web-converter-image.webp",
+      "altText": "Illustratie van een JPG naar WebP converter: bestanden worden omgezet voor snellere laadtijden en betere beeldkwaliteit."
+    },
+    "howItWorksSection": {
+      "title": "Hoe werkt de WebP Converter?",
+      "subTitle": "Korte, praktische uitleg in stappen:",
+      "steps": [
+        {
+          "title": "Upload één of meerdere JPG- of PNG-bestanden."
+        },
+        {
+          "title": "Stel de gewenste kwaliteit in <br> (0 – 1, standaard 0.8).",
+          "description": "Hoe hoger de kwaliteit, hoe scherper de foto, maar ook hoe groter het bestand."
+        },
+        {
+          "title": "Pas indien nodig de afmetingen aan <br> (bijv. 800×600px).",
+          "description": "Dit zorgt voor kleinere bestanden en snellere laadtijden."
+        },
+        {
+          "title": "Klik op <strong>Converteren & Zip downloaden.</strong>"
+        }
+      ],
+      "lastStepDescription": "Je ontvangt een <strong>ZIP-bestand</strong> met alle geconverteerde WebP-afbeeldingen."
+    },
+    "optimalImageSizesSection": {
+      "title": "Wat zijn de optimale afbeeldingsformaten voor je website?",
+      "description": "Gebruik de juiste afmetingen voor je afbeeldingen om laadtijden te verbeteren en gebruikerservaring te optimaliseren. Hier zijn enkele richtlijnen:",
+      "imageSizes": [
+        "<strong>Hero-afbeeldingen en banners:</strong> gebruik formaten van 1200 – 1600px breed. Zorg dat ze niet zwaarder zijn dan ± 200KB, zodat de eerste indruk van je website snel geladen wordt.",
+        "<strong>Contentafbeeldingen in blogs en pagina’s:</strong> richt je op 800 – 1200px breed en houd bestanden rond de 100KB. Zo blijven je pagina’s soepel en aantrekkelijk, ook als er meerdere foto’s op staan.",
+        "<strong>Icons en kleine visuals:</strong> meestal is 100 – 400px breed voldoende. Deze bestanden horen vaak lichter dan 50KB te zijn."
+      ],
+    "optimalImageSizesTable": {
+        "headers": [
+          "Type afbeelding",
+          "Desktop afmetingen (W x H)",
+          "Mobiele afmetingen (W x H)",
+          "Aanbevolen aspect-ratio"
+        ],
+        "rows": [
+          {
+            "type": "Achtergrondfoto",
+            "desktop": "2560 x 1400 pixels",
+            "mobile": "360 x 640 pixels",
+            "aspect_ratio": "16:9"
+          },
+          {
+            "type": "Hero-afbeelding",
+            "desktop": "1280 x 720 pixels",
+            "mobile": "360 x 200 pixels",
+            "aspect_ratio": "16:9"
+          },
+          {
+            "type": "Website banner",
+            "desktop": "1200 x 400 pixels",
+            "mobile": "360 x 120 pixels",
+            "aspect_ratio": "3:1"
+          },
+          {
+            "type": "Blog-afbeelding",
+            "desktop": "1200 x 800 pixels",
+            "mobile": "360 x 240 pixels",
+            "aspect_ratio": "3:2"
+          },
+          {
+            "type": "Logo (rechthoek)",
+            "desktop": "400 x 100 pixels",
+            "mobile": "160 x 40 pixels",
+            "aspect_ratio": "4:1"
+          },
+          {
+            "type": "Logo (vierkant)",
+            "desktop": "100 x 100 pixels",
+            "mobile": "60 x 60 pixels",
+            "aspect_ratio": "1:1"
+          },
+          {
+            "type": "Favicon",
+            "desktop": "16 x 16 pixels",
+            "mobile": "16 x 16 pixels",
+            "aspect_ratio": "1:1"
+          },
+          {
+            "type": "Lightbox-afbeeldingen (volledig scherm)",
+            "desktop": "1920 x 1080 pixels",
+            "mobile": "360 x 640 pixels",
+            "aspect_ratio": "16:9"
+          }
+        ]
+      },
+      "lastDescription": [
+        "Door je afbeeldingen slim te verkleinen en te comprimeren, verbeter je niet alleen de snelheid maar ook de gebruikservaring van je bezoekers.",
+        "ℹ️ Meer praktische tips lees je in ons artikel over <a href='/blog-artikelen/website-optimalisatie/' target='_blank'> website optimalisatie.</a>"
+      ]
+    }
+  }
+}
