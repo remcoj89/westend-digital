@@ -129,7 +129,6 @@ const {
   <!-- Cta Section -->
   <section class="wrapper cta-section">
     <div class="cta-wrapper">
-
       <div class="cta-content">
         <h2>Ontdek wat we voor jouw website kunnen doen</h2>
         <p>
@@ -140,7 +139,8 @@ const {
           zodat jij je kunt focussen op het laten groeien van je bedrijf.
         </p>
       </div>
-      <a class="btn btn-secondary" href="#">Plan mijn gratis strategiegesprek</a>
+      <a class="btn btn-secondary" href="#">Plan mijn gratis strategiegesprek</a
+      >
     </div>
   </section>
 
@@ -182,7 +182,169 @@ const {
   <!-- Other tools section -->
   <Footer />
 
-  <!-- Json Structured data marukup -->
+  <!-- How to Schema markup -->
+  <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "WebP Converter gebruiken",
+      "inLanguage": "nl-NL",
+      "description": "Snel PNG/JPG omzetten naar WebP met kwaliteit en optionele resize.",
+      "totalTime": "PT1M",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "EUR",
+        "value": "0"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Upload",
+          "text": "Upload één of meerdere JPG- of PNG-bestanden."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Kwaliteit instellen",
+          "text": "Kies de gewenste kwaliteit (0–1; standaard 0,8)."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Optioneel: afmetingen",
+          "text": "Pas breedte/hoogte aan. Aspect ratio behouden indien gewenst."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Converteren & downloaden",
+          "text": "Klik op ‘Converteren & ZIP downloaden’ en ontvang alle WebP-bestanden in één ZIP."
+        }
+      ]
+    }
+  </script>
+
+  <!-- Converter tool Schema markup -->
+  <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Gratis WebP Converter",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "ImageConverter",
+      "operatingSystem": "Web",
+      "inLanguage": "nl-NL",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "url": "https://www.westend-digital.nl/tools/webp-converter/",
+      "featureList": [
+        "PNG/JPG naar WebP",
+        "Batch-conversie",
+        "Kwaliteit instellen (0.10–1.00)",
+        "Optionele resize",
+        "ZIP-download",
+        "Preview"
+      ]
+    }
+  </script>
+
+  <!-- CTA Shema markup -->
+  <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Gratis strategiegesprek",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Westend Digital"
+      },
+      "areaServed": "NL",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "potentialAction": {
+        "@type": "ScheduleAction",
+        "target": "https://calendly.com/remco-westend-digital/30min"
+      }
+    }
+  </script>
+  <!-- FAQ Schema marukup -->
+  <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "nl-NL",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hoe werkt de WebP Converter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upload één of meerdere JPG- of PNG-bestanden, kies een kwaliteit (standaard 0,80), pas indien gewenst de afmetingen aan en klik op ‘Converteren & ZIP downloaden’. Je krijgt daarna alle geconverteerde bestanden in één ZIP-bestand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welke bestanden kan ik omzetten naar WebP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Je kunt zowel JPG- als PNG-afbeeldingen uploaden en omzetten naar het WebP-formaat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welke kwaliteitsinstelling raden jullie aan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Een waarde tussen 0,70 en 0,85 is meestal de beste balans tussen beeldkwaliteit en bestandsgrootte. De standaardinstelling is 0,80."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan ik meerdere afbeeldingen tegelijk converteren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Je kunt meerdere afbeeldingen in één keer uploaden en vervolgens in één ZIP-bestand downloaden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan ik de afmetingen (breedte/hoogte) aanpassen tijdens het converteren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Je kunt breedte en/of hoogte in pixels opgeven. Je kunt de aspect ratio behouden en ervoor kiezen om alleen te verkleinen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat gebeurt er als ik maar één afmeting invul?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Als de optie om de aspect ratio te behouden is ingeschakeld, wordt de andere afmeting automatisch berekend."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Krijg ik een voorbeeld te zien voordat ik download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, je ziet een preview van het geconverteerde resultaat voordat je het ZIP-bestand downloadt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Werkt de converter ook op mobiel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, de converter werkt in moderne browsers op zowel desktop als mobiel."
+          }
+        }
+      ]
+    }
+  </script>
 </Layout>
 
 <style>
@@ -275,10 +437,7 @@ const {
 
   .cta-wrapper {
     align-items: center;
-    background: radial-gradient(
-      hsl(224, 35%, 28%, 1),
-      hsl(224, 75%, 11%, 1)
-      );
+    background: radial-gradient(hsl(224, 35%, 28%, 1), hsl(224, 75%, 11%, 1));
     color: var(--clr-primary-100);
     display: flex;
     padding: var(--size-4) var(--size-5);
