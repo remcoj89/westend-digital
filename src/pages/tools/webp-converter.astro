@@ -76,7 +76,11 @@ const {
           schaalbaar blijft voor de groei van je bedrijf.
         </p>
       </div>
-      <a class="btn btn-secondary" href="#">Plan een gratis strategiegesprek</a>
+      <a
+        class="btn btn-secondary"
+        href="https://calendly.com/remco-westend-digital/30min"
+        >Plan een gratis strategiegesprek</a
+      >
     </div>
   </section>
 
@@ -139,7 +143,10 @@ const {
           zodat jij je kunt focussen op het laten groeien van je bedrijf.
         </p>
       </div>
-      <a class="btn btn-secondary" href="#">Plan mijn gratis strategiegesprek</a
+      <a
+        class="btn btn-secondary"
+        href="https://calendly.com/remco-westend-digital/30min"
+        >Plan mijn gratis strategiegesprek</a
       >
     </div>
   </section>
@@ -182,44 +189,6 @@ const {
   <!-- Other tools section -->
   <Footer />
 
-  <!-- How to Schema markup -->
-  <script is:inline type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "WebP Converter gebruiken",
-      "inLanguage": "nl-NL",
-      "description": "Snel PNG/JPG omzetten naar WebP met kwaliteit en optionele resize.",
-      "totalTime": "PT1M",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "EUR",
-        "value": "0"
-      },
-      "step": [
-        {
-          "@type": "HowToStep",
-          "name": "Upload",
-          "text": "Upload één of meerdere JPG- of PNG-bestanden."
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Kwaliteit instellen",
-          "text": "Kies de gewenste kwaliteit (0–1; standaard 0,8)."
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Optioneel: afmetingen",
-          "text": "Pas breedte/hoogte aan. Aspect ratio behouden indien gewenst."
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Converteren & downloaden",
-          "text": "Klik op ‘Converteren & ZIP downloaden’ en ontvang alle WebP-bestanden in één ZIP."
-        }
-      ]
-    }
-  </script>
 
   <!-- Converter tool Schema markup -->
   <script is:inline type="application/ld+json">
@@ -254,10 +223,18 @@ const {
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "image": "./../assets/logos/westend-digital-logo.svg",
       "serviceType": "Gratis strategiegesprek",
       "provider": {
         "@type": "ProfessionalService",
-        "name": "Westend Digital"
+        "name": "Westend Digital",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Oosteinde 10",
+          "addressLocality": "Schermerhorn",
+          "postalCode": "1636XV",
+          "addressCountry": "NL"
+        }
       },
       "areaServed": "NL",
       "offers": {
@@ -268,7 +245,8 @@ const {
       "potentialAction": {
         "@type": "ScheduleAction",
         "target": "https://calendly.com/remco-westend-digital/30min"
-      }
+      },
+      "telephone": "+3172-2029324"
     }
   </script>
   <!-- FAQ Schema marukup -->
@@ -280,26 +258,34 @@ const {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Hoe werkt de WebP Converter?",
+          "name": "Wat is WebP?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Upload één of meerdere JPG- of PNG-bestanden, kies een kwaliteit (standaard 0,80), pas indien gewenst de afmetingen aan en klik op ‘Converteren & ZIP downloaden’. Je krijgt daarna alle geconverteerde bestanden in één ZIP-bestand."
+            "text": "WebP is een modern afbeeldingsformaat ontwikkeld door Google. Het combineert de voordelen van JPG (kleine bestanden) en PNG (transparantie) en levert kleinere bestanden op zonder zichtbaar kwaliteitsverlies."
           }
         },
         {
           "@type": "Question",
-          "name": "Welke bestanden kan ik omzetten naar WebP?",
+          "name": "Werkt WebP in alle browsers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Je kunt zowel JPG- als PNG-afbeeldingen uploaden en omzetten naar het WebP-formaat."
+            "text": "Ja, vrijwel alle moderne browsers (Chrome, Firefox, Edge en Safari) ondersteunen WebP. Voor zeer oude browsers kun je een fallback instellen."
           }
         },
         {
           "@type": "Question",
-          "name": "Welke kwaliteitsinstelling raden jullie aan?",
+          "name": "Hoeveel kleiner wordt mijn bestand?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Een waarde tussen 0,70 en 0,85 is meestal de beste balans tussen beeldkwaliteit en bestandsgrootte. De standaardinstelling is 0,80."
+            "text": "Gemiddeld zijn WebP-bestanden 25–35% kleiner dan dezelfde afbeelding in JPG of PNG, met vergelijkbare visuele kwaliteit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Verlies ik kwaliteit bij het omzetten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dat hangt af van de kwaliteitsinstelling. De standaardwaarde 0,8 biedt een goede balans: scherpe weergave en een flink kleinere bestandsgrootte."
           }
         },
         {
@@ -307,39 +293,39 @@ const {
           "name": "Kan ik meerdere afbeeldingen tegelijk converteren?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja. Je kunt meerdere afbeeldingen in één keer uploaden en vervolgens in één ZIP-bestand downloaden."
+            "text": "Ja. Je kunt meerdere JPG- of PNG-afbeeldingen samen uploaden en in één ZIP-bestand downloaden na conversie."
           }
         },
         {
           "@type": "Question",
-          "name": "Kan ik de afmetingen (breedte/hoogte) aanpassen tijdens het converteren?",
+          "name": "Hoe kan ik de geconverteerde WebP-afbeeldingen gebruiken?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja. Je kunt breedte en/of hoogte in pixels opgeven. Je kunt de aspect ratio behouden en ervoor kiezen om alleen te verkleinen."
+            "text": "Je kunt de WebP-bestanden direct uploaden in de meeste CMS’en (zoals WordPress). Controleer of je thema/plugins WebP ondersteunen of gebruik een fallback voor oudere browsers."
           }
         },
         {
           "@type": "Question",
-          "name": "Wat gebeurt er als ik maar één afmeting invul?",
+          "name": "Is er een limiet aan het aantal afbeeldingen dat ik kan converteren?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Als de optie om de aspect ratio te behouden is ingeschakeld, wordt de andere afmeting automatisch berekend."
+            "text": "Er is geen harde limiet, maar voor de beste prestaties wordt aangeraden om batches van circa 10 afbeeldingen te gebruiken."
           }
         },
         {
           "@type": "Question",
-          "name": "Krijg ik een voorbeeld te zien voordat ik download?",
+          "name": "Helpt WebP mijn SEO?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja, je ziet een preview van het geconverteerde resultaat voordat je het ZIP-bestand downloadt."
+            "text": "Ja. Kleinere bestanden versnellen je site, verbeteren de gebruikservaring en kunnen positief bijdragen aan je rankings."
           }
         },
         {
           "@type": "Question",
-          "name": "Werkt de converter ook op mobiel?",
+          "name": "Kan ik WebP gebruiken in WordPress, Webflow of andere CMS’en?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja, de converter werkt in moderne browsers op zowel desktop als mobiel."
+            "text": "Ja, de meeste moderne CMS’en ondersteunen WebP. Voor oudere setups zijn er plugins en fallbacks beschikbaar."
           }
         }
       ]
