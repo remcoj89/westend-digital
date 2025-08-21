@@ -28,14 +28,14 @@
   --clr-primary-300: hsl(0, 0%, 90%);
   --clr-primary-500: hsl(224, 10%, 56%);
   --clr-primary-700: hsl(224, 21%, 38%);
-  --clr-primary-800: hsl(223, 35%, 28%);
+  --clr-primary-800: hsl(222, 35%, 28%);
   --clr-primary-900: hsl(224, 75%, 11%);
 
   --clr-secondary-100: hsl(0, 0%, 96%);
   --clr-secondary-300: hsl(34, 88%, 97%);
   --clr-secondary-500: hsl(36, 57%, 85%);
   --clr-secondary-700: hsl(36, 69%, 84%);
-  --clr-secondary-800: hsl(36, 56%, 74%);
+  --clr-secondary-800: #e2c498;
   --clr-secondary-900: hsl(36, 59%, 58%);
 
   --clr-neutral-100: hsl(0, 0%, 100%);

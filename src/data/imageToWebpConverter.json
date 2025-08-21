@@ -105,6 +105,58 @@
         "Door je afbeeldingen slim te verkleinen en te comprimeren, verbeter je niet alleen de snelheid maar ook de gebruikservaring van je bezoekers.",
         "ℹ️ Meer praktische tips lees je in ons artikel over <a href='/blog-artikelen/website-optimalisatie/' target='_blank'> website optimalisatie.</a>"
       ]
+    },
+    "faqSection": {
+      "title": "Veelgestelde vragen (FAQ)",
+      "faqs": [
+        {
+          "question": "Wat is WebP?",
+          "answer": "WebP is een modern afbeeldingsformaat ontwikkeld door Google. Het combineert de voordelen van JPG (kleine bestanden) en PNG (transparantie) in één formaat. Het grootste voordeel is dat je afbeeldingen aanzienlijk kleiner worden, zonder dat je bezoekers kwaliteitsverlies zien. Dat betekent dat jouw website sneller laadt en prettiger werkt, wat direct bijdraagt aan een betere online ervaring."
+        },
+        {
+          "question": "Werkt WebP in alle browsers?",
+          "answer": "Ja, bijna alle moderne browsers – zoals Chrome, Firefox, Edge en Safari – ondersteunen WebP standaard. Alleen heel oude browsers (die nog maar door een klein percentage gebruikers worden gebruikt) kunnen het niet aan. Voor die gevallen kun je een fallback instellen, zodat jouw website altijd goed zichtbaar blijft."
+        },
+        {
+          "question": "Hoeveel kleiner wordt mijn bestand?",
+          "answer": "Gemiddeld zijn WebP-bestanden 25–35% kleiner dan dezelfde afbeelding in JPG of PNG. Stel dat je een foto van 500KB hebt, dan kan die met WebP teruggebracht worden naar zo’n 325KB, terwijl de kwaliteit voor het oog vrijwel gelijk blijft. Zeker bij meerdere afbeeldingen op een pagina scheelt dat enorm in laadtijd."
+        },
+        {
+          "question": "Verlies ik kwaliteit bij het omzetten?",
+          "answer": "Dat hangt af van de instellingen die je kiest. Met de standaardwaarde van 0.8 blijft je afbeelding scherp en levendig, terwijl het bestand flink verkleind wordt. Kies je voor een lagere waarde (bijvoorbeeld 0.5), dan wordt de afbeelding nog lichter, maar kan er wat detail verloren gaan. Voor de meeste websites is 0.8 een perfecte balans tussen kwaliteit en snelheid."
+        },
+        {
+          "question": "Kan ik meerdere afbeeldingen tegelijk converteren?",
+          "answer": "Ja, je kunt eenvoudig meerdere JPG- en of PNG-afbeeldingen tegelijk uploaden en converteren naar WebP. Na het uploaden kun je de kwaliteit en afmetingen instellen voor elke afbeelding. Zodra je klaar bent, klik je op 'Converteren & Zip downloaden' om alle geconverteerde afbeeldingen in één ZIP-bestand te ontvangen."
+        },
+        {
+          "question": "Hoe kan ik de geconverteerde WebP-afbeeldingen gebruiken?",
+          "answer": "Na het downloaden van het ZIP-bestand kun je de WebP-afbeeldingen eenvoudig toevoegen aan je website of blog. De meeste content management systemen (zoals WordPress) ondersteunen WebP, maar controleer altijd of jouw thema of plugins dit ook doen. Als je problemen ondervindt, kun je overwegen om een plugin te gebruiken die WebP ondersteunt of een fallback in te stellen voor oudere browsers."
+        },
+        {
+          "question": "Is er een limiet aan het aantal afbeeldingen dat ik kan converteren?",
+          "answer": "Er is geen harde limiet aan het aantal afbeeldingen dat je kunt converteren, maar we raden aan om niet meer dan 10 afbeeldingen per keer te uploaden voor de beste prestaties. Als je meer afbeeldingen hebt, kun je ze in batches van 10 uploaden."
+        },{
+          "question": "Helpt WebP mijn SEO?",
+          "answer": "Absoluut. Google houdt van snelle websites. Een kortere laadtijd betekent dat bezoekers langer op je site blijven, minder snel afhaken en dat zoekmachines je pagina hoger waarderen. Door over te stappen op WebP verbeter je dus niet alleen de snelheid, maar ook je kansen op een betere ranking in de zoekresultaten. Lees meer in ons artikel over <a href='/blog-artikelen/website-optimalisatie/' target='_blacnk'>website optimalisatie.</a>"
+        },{
+            "question": "Kan ik WebP gebruiken in WordPres, Webflow of andere CMS’en?",
+            "answer": "Ja, de meeste moderne CMS’en ondersteunen WebP zonder problemen. Je kunt je WebP-afbeeldingen direct uploaden en gebruiken zoals je gewend bent met JPG of PNG. Gebruik je een oudere versie van WordPress of een specifiek thema/plugin? Dan zijn er vaak gratis plugins beschikbaar die de ondersteuning uitbreiden, zodat je toch profiteert van snellere laadtijden."
+        }
+      ]
+    },
+    "callToActionSection": {
+      "title": "Klaar voor een snellere website?",
+      "description": "Met deze gratis tool zet je je afbeeldingen direct om naar WebP. Wil je méér snelheid en resultaat uit je website halen? Bekijk dan onze pagina <a href='/website'>website </a> laten maken en ontdek hoe we jouw bedrijf online laten groeien.",
+      "contactBtn": {
+        "buttonText": "Plan een vrijblijvend gesprek",
+        "buttonLink": "/contact"
+      },
+      "serviceBtn": {
+        "buttonText": "Bekijk onze website diensten",
+        "buttonLink": "/website"
+      }
+   
     }
   }
 }
