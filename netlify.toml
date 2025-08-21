@@ -41,3 +41,26 @@
 [images]
   remote_images = ['https://mediumturquoise-sparrow-543006.hostingersite.com/*']
 
+# HTML van de toolpagina: altijd vers
+# 1) Standaard voor alle HTML-routes → altijd vers ophalen
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Robots-Tag = "all"   # optioneel; zorg iig dat er nergens 'noindex' staat
+
+# 2) Overrides voor statische assets → lang cachen
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
