@@ -28,6 +28,18 @@ const {
   ogImageAlt={ogImage.ogImageAlt}
   ogUrl={ogUrl}
 >
+<Fragment slot="head">
+  <script type="application/ld+json">{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.westend-digital.nl/" },
+      { "@type": "ListItem", position: 2, name: "Tools", item: "https://www.westend-digital.nl/tools/" },
+      { "@type": "ListItem", position: 3, name: "WebP Converter", item: "https://www.westend-digital.nl/tools/webp-converter/" }
+    ]
+  })}</script>
+</Fragment>
+
   <header class="wrapper">
     <div class="hero-copy">
       <h1 class="margin-bottom-1">
