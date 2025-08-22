@@ -1,0 +1,76 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import FaqSection from "../../sections/FaqSection.astro";
+import CtaSection from "../../sections/CtaSection.astro";
+import FooterSection from "../../sections/FooterSection.astro";
+import pageData from "../../data/toolsPage.json";
+
+const { metaTitle, metaDescription, ogImage, ogUrl, heroTitle, faqSection } =
+  pageData.pageContent;
+---
+
+<Layout
+  title={metaTitle}
+  description={metaDescription}
+  ogTitle={metaTitle}
+  ogDescription={metaDescription}
+  ogImageUrl={ogImage.ogImageUrl}
+  ogImageAlt={ogImage.ogImageAlt}
+  ogUrl={ogUrl}
+>
+  <Fragment slot="header">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wat zijn gratis website optimalisatie tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dit zijn online hulpmiddelen die je website sneller, gebruiksvriendelijker en beter vindbaar maken. Denk aan tools voor laadsnelheid, afbeeldingen comprimeren of SEO-checks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hoe helpen deze tools mijn website te verbeteren?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Met de juiste tools ontdek je waar je website traag of onduidelijk is. Je krijgt praktische verbeterpunten die je direct kunt toepassen, zodat je site beter scoort en meer leads oplevert."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Zijn gratis website optimalisatie tools betrouwbaar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, veel gratis tools zijn veilig en effectief. Ze geven een goede eerste indruk van verbeterpunten. Voor diepere analyses of complexe problemen kan professionele begeleiding handig zijn."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welke website verbeteren tools zijn het belangrijkst?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Begin met tools voor snelheid (zoals een WebP converter), SEO-analyse en gebruiksvriendelijkheid. Die hebben direct impact op je vindbaarheid én op hoe bezoekers jouw site ervaren."
+            }
+          }
+        ]
+      }
+    </script>
+  </Fragment>
+
+  <Header>
+    <div>
+      <h1>{heroTitle}</h1>
+    </div>
+  </Header>
+
+  <section class="fb-col-wrapper"></section>
+
+  <FaqSection title={faqSection.title} faqs={faqSection.faqs} />
+  <CtaSection />
+  <FooterSection />
+</Layout>

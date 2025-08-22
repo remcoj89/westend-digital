@@ -11,7 +11,7 @@ const { sectionId } = Astro.props;
 <section class="fb-col-wrapper" id={sectionId}>
   <SectionTitle sectionTitle={title} />
   <span class="section-subtitle"
-    >Niet het antwoord dat je zoekt? Je kunt ook
+    >Niet het antwoord dat je zoekt? Je kunt ons ook altijd even
     <a href="mailto:info@westend-digital.nl">mailen.</a>
   </span>
 
@@ -30,8 +30,7 @@ const { sectionId } = Astro.props;
     }
   </ul>
   <Image
-    alt=""
-    ,
+    alt="Vraagtekens om de FAQ sectie te symboliseren"
     class="faq-image"
     src="/images/questions-marks.webp"
     height="500"
@@ -87,21 +86,56 @@ const { sectionId } = Astro.props;
   }
 </style>
 
+
 <script is:inline>
   const faqWrapper = document.querySelector(".faq-wrapper");
   const accordions = document.querySelectorAll(".accordion");
 
+  // Functie om alle accordions te sluiten en ARIA-attributen te resetten
+  const closeAllAccordions = () => {
+    accordions.forEach((accordion) => {
+      const trigger = accordion.querySelector(".accordion-trigger");
+      const content = accordion.querySelector(".accordion-content");
+
+      accordion.classList.remove("is__open");
+      if (trigger) trigger.setAttribute("aria-expanded", "false");
+      if (content) content.setAttribute("aria-hidden", "true");
+    });
+  };
+
   faqWrapper.addEventListener("click", (e) => {
-    const accordionHeader = e.target.closest("li");
-    const accordion = e.target.closest(".accordion");
+    const trigger = e.target.closest(".accordion-trigger");
+
+    // Stop als er niet op een trigger (knop) is geklikt
+    if (!trigger) return;
+
+    const accordion = trigger.closest(".accordion");
+    const content = accordion.querySelector(".accordion-content");
     const isOpen = accordion.classList.contains("is__open");
 
-    accordions.forEach((a) => {
-      a.classList.remove("is__open");
-    });
-
-    if (!isOpen) {
+    // Als de geklikte accordion al open was, sluit alles en stop.
+    // Anders, sluit eerst alles en open daarna de juiste.
+    if (isOpen) {
+      closeAllAccordions();
+    } else {
+      closeAllAccordions();
       accordion.classList.add("is__open");
+      trigger.setAttribute("aria-expanded", "true");
+      if (content) content.setAttribute("aria-hidden", "false");
+    }
+  });
+
+  // Event listener voor klikken buiten de FAQ-wrapper
+  document.addEventListener("click", (e) => {
+    if (!faqWrapper.contains(e.target)) {
+      closeAllAccordions();
+    }
+  });
+
+  // Event listener voor de Escape-toets
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeAllAccordions();
     }
   });
 </script>

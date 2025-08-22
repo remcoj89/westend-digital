@@ -1,27 +1,32 @@
 ---
-import { AccordionIcon } from "../assets/icons"
+import { AccordionIcon } from "../assets/icons";
 
-const {
-  question,
-  answer,
-  link
-} = Astro.props
+const { question, answer, link, index } = Astro.props;
 
-const color = "var(--clr-primary-300)"
+const color = "var(--clr-primary-300)";
 ---
+
 <li class="accordion">
-  <div class="accordion-header">
-    <h3 >{question} <AccordionIcon iconFill={color}/></h3>
-  </div>
-  <div class="accordion-content">
+  <h3 class="accordion-header">
+    <button
+      class="accordion-trigger"
+      aria-expanded="false"
+      aria-controls=`answer-${index}`
+      >{question} <AccordionIcon iconFill={color} /></button
+    >
+  </h3>
+  <div id=`answer-${index}` class="accordion-content">
     <div>
-      <p>{answer}</p>
+      <p set:html={answer} />
       {
-      link && <a href={`${link}`} target="_blank">Of klik hier voor meer informatie</a>
+        link && (
+          <a href={`${link}`} target="_blank">
+            Of klik hier voor meer informatie
+          </a>
+        )
       }
     </div>
   </div>
-
 </li>
 
 <style>
@@ -34,13 +39,16 @@ const color = "var(--clr-primary-300)"
 
     .accordion-header {
       font-size: var(--fs-500);
-      padding-block: var(--size-1);
 
-     h3 {
+      button {
+        background-color: transparent;
+        border: none;
         color: var(--clr-primary-100);
-        font-size: var(--fs-500);
+        cursor: pointer;
         display: flex;
+        font-size: var(--fs-500);
         justify-content: space-between;
+        padding-block: var(--size-1);
         width: 100%;
       }
 

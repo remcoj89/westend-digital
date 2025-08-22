@@ -2,6 +2,8 @@
 import Navbar from "../components/Navbar.astro";
 import "../styles/globals.css";
 import ScrollAnimationObserver from "../components/reactComponent.ScrollAnimationObserver/ScrollAnimationObserver.jsx";
+import SchemaHead from "../components/SchemaHead.astro";
+import { commonSchemas } from "../schemas/common";
 
 const {
   title,
@@ -35,6 +37,9 @@ const {
     />
     <meta property="og:image:alt" content={ogImageAlt} />
     <slot name="head" />
+    <Fragment slot="head">
+      <SchemaHead items={commonSchemas} />
+    </Fragment>
 
     <!-- Cookie script -->
     <script

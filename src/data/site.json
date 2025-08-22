@@ -12,8 +12,18 @@
       "href": "/werk"
     },
     {
-      "title": "Blog",
-      "href": "/blog-artikelen"
+      "title": "Resources",
+      "href": [
+        {
+          "title": "Blog",
+          "href": "/blog-artikelen"
+        },
+        {
+          "title": "Gratis Tools",
+          "href": "/tools"
+        }
+
+      ]
     },
     {
       "title": "Over mij",

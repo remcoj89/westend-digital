@@ -1,24 +1,18 @@
 ---
-import {Image} from "astro:assets";
-import {
- BurgerMenu,
- CloseIcon
-} from "../assets/icons.jsx";
+import { Image } from "astro:assets";
+import { BurgerMenu, CloseIcon } from "../assets/icons.jsx";
 
-import data from "../data/site.json"
+import data from "../data/site.json";
 
-const {
-  pages
-} = data
+const { pages } = data;
 
-const logo = '/assets/logos/WestendDigitalLogo.svg'
-
+const logo = "/assets/logos/WestendDigitalLogo.svg";
 ---
 
 <nav class="nav-wrapper">
   <div class="wrapper nav-bar">
     <input type="radio" name="nav-radio" class="nav-button" id="cancelButton" />
-    <input type="radio" name="nav-radio" class="nav-button" id="menuButton"  />
+    <input type="radio" name="nav-radio" class="nav-button" id="menuButton" />
     <a href="/">
       <Image
         alt="logo Westend-digital"
@@ -31,28 +25,62 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
 
     <div class="nav-list-wrapper">
       <ul role="list" class="nav-list">
-        {pages.map((page) => {
-          const isSpecialPage = page.href === "/contact";
-          const linkClasses = `nav-link ${isSpecialPage ? 'cta-btn' : ''}`;
-           return (
-           <li class={linkClasses}><a href={page.href}>{page.title}</a></li>
-          )
-        })}
+        <li class="nav-link"><a href="/">Home</a></li>
+        <li class="nav-link"><a href="/werk">Werk</a></li>
+        <li class="dropdown">
+          <button class="dropbtn">Resources</button>
+          <ul role="list" class="dropdown-content" id="myDropdown">
+            <li class="nav-link"><a href="/blog-artikelen">Blog</a></li>
+            <li class="nav-link"><a href="/tools">Tools</a></li>
+          </ul>
+        </li>
+        <li class="nav-link"><a href="/over-westend-digital">Over mij</a></li>
+        <li class="nav-link cta-btn"><a href="/contact">Contact</a></li>
       </ul>
     </div>
     <label for="cancelButton" class="cancelButton">
-      <CloseIcon iconFill="var(--clr-primary-100"/>
+      <CloseIcon iconFill="var(--clr-primary-100" />
     </label>
     <label for="menuButton" class="burgerMenu">
-      <BurgerMenu iconFill="var(--clr-primary-100"/>
+      <BurgerMenu iconFill="var(--clr-primary-100" />
     </label>
-
   </div>
-
 </nav>
 
-<style>
+<script>
+  const dropdown = document.querySelector(".dropdown");
+  if (dropdown) {
+    const dropbtn = dropdown.querySelector(".dropbtn");
+    const dropdownContent = dropdown.querySelector(".dropdown-content");
 
+    // Open/close
+    if (dropbtn) {
+      dropbtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // voorkom dat document-click ‘m meteen sluit
+        if (dropdownContent) {
+          dropdownContent.classList.toggle("show");
+        }
+      });
+    }
+
+    // Klik BUITEN de dropdown => sluiten
+    document.addEventListener("click", (e) => {
+      if (!dropdown.contains(e.target as Node)) {
+        if (dropdownContent) {
+          dropdownContent.classList.remove("show");
+        }
+      }
+    });
+
+    // Klik ESCAPE => sluiten
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && dropdownContent)
+        dropdownContent.classList.remove("show");
+    });
+  }
+</script>
+
+<style>
   .nav-wrapper {
     background-color: var(--clr-primary-900);
     color: var(--clr-primary-100);
@@ -68,11 +96,12 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
       height: 100%;
       justify-content: space-between;
       position: relative;
+
       z-index: 999;
 
-      .logo{
-        height:var(--size-10);
-        object-fit:contain;
+      .logo {
+        height: var(--size-10);
+        object-fit: contain;
       }
 
       .nav-list-wrapper {
@@ -86,12 +115,16 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
         width: 100%;
 
         .nav-list {
-          overflow: hidden;
+          /* overflow: hidden; */
         }
 
-        .nav-link {
+        .nav-link,
+        .dropbtn {
+          color: inherit;
           cursor: pointer;
           line-height: 250%;
+          text-decoration: none;
+          font-size: var(--fs-500);
           transition: all 0.5s ease-out;
 
           &:hover,
@@ -99,6 +132,55 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
             color: var(--clr-secondary-900);
             border-bottom: solid 2px;
           }
+        }
+
+        /* Dropdown Button */
+        .dropbtn {
+          background-color: transparent;
+          border: none;
+          font-weight: var(--fw-regular);
+          margin: 0;
+          padding: 0;
+        }
+
+        /* The container <li> - needed to position the dropdown content */
+        .dropdown {
+          position: relative;
+          display: inline-block;
+
+          /* Dropdown Content (Hidden by Default) */
+          .dropdown-content {
+            background-color: var(--clr-primary-100);
+            box-shadow: var(--box-shadow);
+            display: none;
+            min-width: 16rem;
+            position: absolute;
+            z-index: 9999;
+
+            .nav-link a {
+              padding: var(--size-1) var(--size-2);
+              color: var(--clr-primary-900);
+              text-decoration: none;
+              display: block;
+              /* Change color of dropdown links on hover */
+              &:hover,
+              &:active {
+                background-color: var(--clr-secondary-900);
+                border-bottom: none;
+              }
+            }
+          }
+
+          /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+          .show {
+            display: block;
+          }
+        }
+
+        .dropdown:has(.dropdown-content.show) .dropbtn,
+        .dropdown:has(.dropdown-content.show) .dropbtn:hover,
+        .dropdown:has(.dropdown-content.show) .dropbtn:active {
+          border-bottom: 0; /* evt. !important als nodig */
         }
 
         .cta-btn {
@@ -121,25 +203,24 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
         }
       }
 
-    @media (width >= 870px) {
-      .nav-list-wrapper {
-        display: block;
-        grid-template-rows: unset;
-        inset-block-start: unset;
-        position: static;
+      @media (width >= 870px) {
+        .nav-list-wrapper {
+          display: block;
+          grid-template-rows: unset;
+          inset-block-start: unset;
+          position: static;
 
-        .nav-list {
-          display: flex;
-          gap: var(--size-1);
-          justify-content: flex-end;
+          .nav-list {
+            display: flex;
+            gap: var(--size-1);
+            justify-content: flex-end;
+          }
+        }
+
+        .burgerMenu {
+          display: none;
         }
       }
-
-    .burgerMenu {
-        display: none;
-
-      }
-    }
 
       .cancelButton {
         display: none;
@@ -169,20 +250,20 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
 
   @media (width >= 870px) {
     .nav-wrapper {
-        --_animationDistance: 105vh;
-        --_animationStartsAfter: 100vh;
-        animation: stickyNav linear forwards;
-        inset-inline: 0;
-        /* background-color: transparent; */
-        position: fixed;
-        top: 0;
-        z-index: 1000;
+      --_animationDistance: 105vh;
+      --_animationStartsAfter: 100vh;
+      animation: stickyNav linear forwards;
+      inset-inline: 0;
+      /* background-color: transparent; */
+      position: fixed;
+      top: 0;
+      z-index: 1000;
 
-        @supports (animation-timeline: view()) {
+      @supports (animation-timeline: view()) {
         animation-range: var(--_animationStartsAfter) var(--_animationDistance);
         animation-timeline: view();
-        }
       }
+    }
   }
 
   .nav-wrapper:has(#menuButton:checked) {
@@ -205,5 +286,4 @@ const logo = '/assets/logos/WestendDigitalLogo.svg'
       color: var(--clr-primary-100);
     }
   }
-
 </style>
