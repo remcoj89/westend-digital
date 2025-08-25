@@ -8,6 +8,13 @@
       "ogImageAlt": "Logo van Westend Digital"
     },
     "ogUrl": "https://www.westend-digital.nl/tools/webp-converter",
+    "converterCardTitle": "Afbeeldingen Optimaliseren naar WebP",
+    "converterCardDescription": "Maak je site sneller door JPG/PNG om te zetten naar lichte WebP-bestanden",
+    "converterCardImage": {
+      "cardImageUrl": "/images/web-converter-image.webp",
+      "cardImageAlt": "jpg en png naar webp converter tool"
+    },
+    "converterCardPageLink": "/tools/webp-converter",
     "heroTitle": "Gratis WebP Converter, zet PNG/JPG om naar WebP voor een Snellere Website",
     "heroSubtitle": "Sleep je afbeeldingen, kies kwaliteit en (optioneel) afmetingen. Bekijk previews en download alles als ZIP.",
     "heroImage": {

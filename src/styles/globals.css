@@ -14,7 +14,7 @@
 
 :root {
   interpolate-size: allow-keywords;
-  
+
   --article-width: 65ch;
 
   --box-shadow: 0px 2px 15px 0px rgba(7, 18, 49, 0.4);
@@ -104,9 +104,9 @@ html {
   scroll-behavior: smooth;
 
   ::selection {
-  color: var(--clr-primary-100);
-  background: var(--clr-primary-900);
-}
+    color: var(--clr-primary-100);
+    background: var(--clr-primary-900);
+  }
 }
 
 body {
@@ -149,13 +149,13 @@ section {
 
 /* Screen reader */
 .sr-only {
-  position:absolute;
-  left:-10000px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
-  }
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 /* End screen reader */
 
 /* Gap */
@@ -212,9 +212,9 @@ a {
   color: inherit;
 }
 
-input[type=checkbox],
-input[type=radio]:checked,
-input[type=range] {
+input[type="checkbox"],
+input[type="radio"]:checked,
+input[type="range"] {
   accent-color: var(--clr-primary-900);
   height: 1.6rem;
   width: 1.6rem;
@@ -382,20 +382,18 @@ input[type=range] {
     gap: var(--size-2);
     margin-inline: auto;
     max-width: 65ch;
-
   }
 
   .image-wrapper {
-      border-radius: var(--border-radius-img);
-      overflow: hidden;
+    border-radius: var(--border-radius-img);
+    overflow: hidden;
 
-      img {
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
-
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
+  }
 }
 
 .paragraphs-wrapper {
@@ -409,7 +407,6 @@ input[type=range] {
 .grid {
   display: grid;
   row-gap: var(--size-5);
-
 }
 
 .flex {
@@ -692,61 +689,6 @@ input[type=range] {
 
 /* End Buttons */
 
-/* Blog cards */
-
-.blog {
-  display: grid;
-  justify-content: space-between;
-
-  button {
-    align-self: end;
-    margin-inline: var(--size-1);
-    margin-block-start: var(--size-1);
-    margin-block-end: var(--size-3);
-  }
-}
-
-.blog-list {
-  display: grid;
-  gap: 1rem;
-  grid-column: 2 / -2;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-
-  a {
-    background-color: hsl(from var(--clr-primary-900) H S L / 20%);
-    border-radius: var(--border-radius-card);
-    height: 74rem;
-    overflow: hidden;
-    text-decoration: none;
-
-    img {
-      height: 25rem;
-      object-fit: cover;
-      object-position: center;
-      width: 100%;
-    }
-
-    .text-wrapper {
-      padding-inline: var(--size-1);
-      padding-block: var(--size-2);
-
-      h2 {
-        margin-block-end: var(--size-2);
-      }
-
-      div {
-        p {
-          display: -webkit-box;
-          -webkit-line-clamp: 4;
-          line-clamp: 4;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      }
-    }
-  }
-}
-/* End blog cards */
 
 /* Section animation */
 

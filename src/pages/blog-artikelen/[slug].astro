@@ -5,6 +5,8 @@ import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
 import Button from "../../components/Button.astro";
 import SmallCtaSection from "../../sections/SmallCtaSection.astro";
+import Card from "../../components/Card.astro";
+import CardGrid from "../../components/CardGrid.astro";
 
 export async function getStaticPaths() {
   const allBlogs = await fetchBlogArticles();
@@ -108,28 +110,25 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText;
       </div>
       {
         selectedOtherBlogs.length > 0 ? (
-          <ul role="list" class="blog-list">
+          <CardGrid cardStyle="list-card">
             {selectedOtherBlogs.map((otherBlog) => (
-              <li class="card">
-                <a
-                  href={`/blog-artikelen/${otherBlog.node.slug}`}
-                  class="hidden blog"
-                >
+              <a href={`/blog-artikelen/${otherBlog.node.slug}`} class="hidden">
+                <Card cardStyle="list-card">
                   <img
+                    alt={otherBlog.node.featuredImage.node.altText}
+                    height={500}
                     src={otherBlog.node.featuredImage.node.mediaItemUrl}
                     width={500}
-                    height={500}
-                    alt={otherBlog.node.featuredImage.node.altText}
                   />
-                  <div class="text-wrapper">
-                    <h2>{otherBlog.node.title}</h2>
+                  <div class="card-info">
+                    <h3 class="card-title">{otherBlog.node.title}</h3>
                     <div set:html={otherBlog.node.excerpt} />
+                    <Button>Lees meer</Button>
                   </div>
-                  <Button>Lees meer</Button>
-                </a>
-              </li>
+                </Card>
+              </a>
             ))}
-          </ul>
+          </CardGrid>
         ) : (
           <p>Geen andere blogs gevonden.</p>
         )

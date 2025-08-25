@@ -9,9 +9,20 @@ const { cardStyle = "primary" } = Astro.props;
 <style>
   .card {
     border-radius: var(--border-radius-card);
-    padding: 2.4rem 1.6rem;
+
+    
+    .card-info {
+      display: grid;
+      gap: var(--size-1);
+      padding: var(--size-2) var(--size-1);
+
+      .card-title {
+        font-size: var(--fs-700);
+      }
+    }
   }
 
+  
   .primary {
     color: var(--clr-primary-900);
 
@@ -22,15 +33,31 @@ const { cardStyle = "primary" } = Astro.props;
       margin-block-end: var(--size-2);
     }
 
-    h3 {
-      font-size: var(--fs-600);
-      margin-block-end: var(--size-1);
+  }
+
+  .list-card {
+    background-color: var(--clr-primary-100);
+    box-shadow: 2px 5px 9px hsl(from var(--clr-primary-700) H S L / 0.5);
+    color: var(--clr-primary-900);
+    display: grid;;
+    gap: var(--size-2);
+    height: fit-content;
+    width: 100%;
+
+
+    img {
+      border-radius: var(--border-radius-card);
+      height: 30rem;
+      object-fit: cover;
+      width: 100%;
     }
+
   }
 
   .card.review {
     box-shadow: 2px 5px 9px hsl(from var(--clr-secondary-700) H S L / 0.5);
     color: var(--clr-primary-900);
+
     background-color: var(--clr-primary-300);
     display: flex;
     flex-direction: column;

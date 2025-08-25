@@ -1,13 +1,29 @@
 ---
+// Sections
 import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/Header.astro";
 import FaqSection from "../../sections/FaqSection.astro";
 import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
+
+// Components
+import CardGrid from "../../components/CardGrid.astro";
+import Card from "../../components/Card.astro";
+import Header from "../../components/Header.astro";
+import Button from "../../components/Button.astro";
+
+// Page data
 import pageData from "../../data/toolsPage.json";
+import webpConverterData from "../../data/imageToWebpConverter.json";
 
 const { metaTitle, metaDescription, ogImage, ogUrl, heroTitle, faqSection } =
   pageData.pageContent;
+
+const {
+  converterCardTitle,
+  converterCardDescription,
+  converterCardImage,
+  converterCardPageLink,
+} = webpConverterData.pageContent;
 ---
 
 <Layout
@@ -68,7 +84,26 @@ const { metaTitle, metaDescription, ogImage, ogUrl, heroTitle, faqSection } =
     </div>
   </Header>
 
-  <section class="fb-col-wrapper"></section>
+  <section class="wrapper">
+    <CardGrid>
+      <a href={converterCardPageLink} class="hidden blog">
+        <Card cardStyle="list-card">
+          <img
+            alt={converterCardImage.cardImageAlt}
+            height={500}
+            src={converterCardImage.cardImageUrl}
+            width={500}
+          />
+
+          <div class="card-info">
+            <h2 class="card-title">{converterCardTitle}</h2>
+            <p>{converterCardDescription}</p>
+            <Button buttonStyle="btn-primary-open">Lees meer</Button>
+          </div>
+        </Card>
+      </a>
+    </CardGrid>
+  </section>
 
   <FaqSection title={faqSection.title} faqs={faqSection.faqs} />
   <CtaSection />
