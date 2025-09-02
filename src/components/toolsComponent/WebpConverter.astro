@@ -1,143 +1,141 @@
 ---
-import converterScriptUrl from "../lib/webp-converter.js?url";
+import converterScriptUrl from "../../lib/webp-converter.js?url";
 ---
 
+<!-- Nurture: na download of gebruik → non‑intrusive slide‑in: “Wil je een gratis
+performance‑quickscan?” -->
+<section class="webp-converter wrapper grid" id="webp-converter">
+  <!-- Controls -->
+  <div class="controls">
+    <!-- Dropzone & alerts -->
+    <div>
+      <div
+        class="converter-dropzone"
+        id="dropzone"
+        aria-label="Bestanden uploaden per drag & drop of knop"
+      >
+        <p class="converter-title">Sleep PNG/JPG bestanden hierheen</p>
+        <span class="muted">of</span>
 
-  <section class="webp-converter wrapper grid">
-
-    <!-- Controls -->
-    <div class="controls">
-      <!-- Dropzone & alerts -->
-      <div>
-        <div
-          class="converter-dropzone"
-          id="dropzone"
-          aria-label="Bestanden uploaden per drag & drop of knop"
-        >
-          <p class="converter-title">Sleep PNG/JPG bestanden hierheen</p>
-          <span class="muted">of</span>
-
-          <div class="converter-input-group">
-            <label class="btn btn-primary converter-btn" for="fileInput"
-              >Bestanden kiezen</label
-            >
-            <input
-              id="fileInput"
-              type="file"
-              multiple
-              accept="image/png, image/jpeg"
-            />
-            <button
-              class="btn btn-white converter-btn"
-              id="clearBtn"
-              type="button">Lijst leegmaken</button
-            >
-          </div>
-        </div>
-
-        <div id="alerts" class="converter-alerts" aria-live="polite"></div>
-      </div>
-
-      <!-- Quality + Resize -->
-      <div class="quality-resize-controls">
-        <div class="converter-panel">
-          <div class="quality-controls">
-            <label for="quality">
-              <strong>Kwaliteit</strong>
-              <span class="muted">(WebP, 0.10–1.00)</span>
-            </label>
-            <output id="qualityOut">0.80</output>
-          </div>
+        <div class="converter-input-group">
+          <label class="btn btn-primary converter-btn" for="fileInput"
+            >Bestanden kiezen</label
+          >
           <input
-            id="quality"
-            type="range"
-            min="0.1"
-            max="1"
-            step="0.01"
-            value="0.8"
-            style="width:100%; margin-top:.8rem;"
+            id="fileInput"
+            type="file"
+            multiple
+            accept="image/png, image/jpeg"
           />
-          <small class="muted">
-            Tip: 0.7–0.85 is vaak een mooie balans tussen kwaliteit en
-            bestandsgrootte.
-          </small>
-        </div>
-
-        <div class="converter-panel">
-          <strong>Resizing (optioneel)</strong>
-          <div class="resize-inputs">
-            <label class="muted">
-              Breedte (px)
-              <input
-                id="resizeW"
-                type="number"
-                min="1"
-                placeholder="auto"
-                class="converter-input"
-              />
-            </label>
-
-            <label class="muted">
-              Hoogte (px)
-              <input
-                id="resizeH"
-                type="number"
-                min="1"
-                placeholder="auto"
-                class="converter-input"
-              />
-            </label>
-          </div>
-
-          <!-- Class toevoegen -->
-          <div class="aspect-ratio-controls">
-            <label class="muted">
-              <input id="keepAR" type="checkbox" checked />
-              Aspect ratio behouden
-            </label>
-            <label class="muted"
-              ><input id="onlyDownscale" type="checkbox" checked /> Alleen verkleinen</label
-            >
-          </div>
-          <small class="muted">
-            Laat één van beide leeg voor automatische berekening bij behouden
-            aspect ratio.
-          </small>
+          <button
+            class="btn btn-white converter-btn"
+            id="clearBtn"
+            type="button">Lijst leegmaken</button
+          >
         </div>
       </div>
+
+      <div id="alerts" class="converter-alerts" aria-live="polite"></div>
     </div>
 
-    <!-- Actions + summary -->
-    <div class="converter-panel">
-      <div class="flex-row-space-between gap-2">
-        <div class="flex flex-row-start gap-2 flex-wrap margin-bottom-1">
-          <button class="btn btn-primary" id="downloadZipBtn" type="button"
-            >Converteren & ZIP downloaden</button
-          >
-          <button
-            class="btn btn-primary-open"
-            id="convertPreviewBtn"
-            type="button"
-            title="Voorvertoning vernieuwen">Preview vernieuwen</button
+    <!-- Quality + Resize -->
+    <div class="quality-resize-controls">
+      <div class="converter-panel">
+        <div class="quality-controls">
+          <label for="quality">
+            <strong>Kwaliteit</strong>
+            <span class="muted">(WebP, 0.10–1.00)</span>
+          </label>
+          <output id="qualityOut">0.80</output>
+        </div>
+        <input
+          id="quality"
+          type="range"
+          min="0.1"
+          max="1"
+          step="0.01"
+          value="0.8"
+          style="width:100%; margin-top:.8rem;"
+        />
+        <small class="muted">
+          Tip: 0.7–0.85 is vaak een mooie balans tussen kwaliteit en
+          bestandsgrootte.
+        </small>
+      </div>
+
+      <div class="converter-panel">
+        <strong>Resizing (optioneel)</strong>
+        <div class="resize-inputs">
+          <label class="muted">
+            Breedte (px)
+            <input
+              id="resizeW"
+              type="number"
+              min="1"
+              placeholder="auto"
+              class="converter-input"
+            />
+          </label>
+
+          <label class="muted">
+            Hoogte (px)
+            <input
+              id="resizeH"
+              type="number"
+              min="1"
+              placeholder="auto"
+              class="converter-input"
+            />
+          </label>
+        </div>
+
+        <!-- Class toevoegen -->
+        <div class="aspect-ratio-controls">
+          <label class="muted">
+            <input id="keepAR" type="checkbox" checked />
+            Aspect ratio behouden
+          </label>
+          <label class="muted"
+            ><input id="onlyDownscale" type="checkbox" checked /> Alleen verkleinen</label
           >
         </div>
-        <small id="summary" class="muted"
-          >Nog geen bestanden geselecteerd.</small
+        <small class="muted">
+          Laat één van beide leeg voor automatische berekening bij behouden
+          aspect ratio.
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actions + summary -->
+  <div class="converter-panel">
+    <div class="flex-row-space-between gap-2">
+      <div class="flex flex-row-start gap-2 flex-wrap margin-bottom-1">
+        <button class="btn btn-primary" id="downloadZipBtn" type="button"
+          >Converteren & ZIP downloaden</button
+        >
+        <button
+          class="btn btn-primary-open"
+          id="convertPreviewBtn"
+          type="button"
+          title="Voorvertoning vernieuwen">Preview vernieuwen</button
         >
       </div>
-
-      <div class="converter-progress" aria-hidden="true">
-        <div id="bar"></div>
-      </div>
-      <div id="preview" class="converter-grid" aria-live="polite"></div>
+      <small id="summary" class="muted">Nog geen bestanden geselecteerd.</small>
     </div>
-  </section>
 
-  <!-- Laad de app-logica als module -->
-  <script type="module" src={converterScriptUrl}></script>
+    <div class="converter-progress" aria-hidden="true">
+      <div id="bar"></div>
+    </div>
+    <div id="preview" class="converter-grid" aria-live="polite"></div>
+  </div>
+</section>
 
-  <style>
-      .webp-converter {
+<!-- Laad de app-logica als module -->
+<script is:inline type="module" src={converterScriptUrl}></script>
+
+<style>
+  .webp-converter {
     .muted {
       color: var(--clr-primary-700);
     }
@@ -337,4 +335,4 @@ import converterScriptUrl from "../lib/webp-converter.js?url";
       }
     }
   }
-  </style>
+</style>

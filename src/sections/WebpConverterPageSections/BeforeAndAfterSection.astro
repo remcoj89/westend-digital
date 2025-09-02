@@ -1,0 +1,101 @@
+---
+// Astro assets
+import { Image } from "astro:assets";
+
+// Images
+import vulkaanPNG from "../../assets/images/webp-converter-page/vulkaan-in-png.png";
+import vulkaanWebP from "../../assets/images/webp-converter-page/vulkaan-in-webp.webp";
+import grafiekImages from "../../assets/images/webp-converter-page/grafiek-laadsnelheid-images.webp";
+
+// Data passed as props
+const { title, description, beforeImage, afterImage, compareImage } =
+  Astro.props;
+---
+
+<section
+  class="wrapper before-and-after-section hidden"
+  id="before-after-section"
+>
+  <div class="section-title">
+    <h2>{title}</h2>
+    <p>{description}</p>
+  </div>
+  <div class="image-wrapper">
+    <Image
+      alt={beforeImage.altText}
+      height={500}
+      src={vulkaanPNG}
+      width={500}
+    />
+    <Image
+      alt={afterImage.altText}
+      height={500}
+      src={vulkaanWebP}
+      width={500}
+    />
+  </div>
+  <div class="compare-image-wrapper">
+    <Image
+      alt={compareImage.altText}
+      class="compare-image"
+      height={500}
+      src={grafiekImages}
+      width={500}
+    />
+    <span>{compareImage.spanText}</span>
+  </div>
+</section>
+
+<style>
+  .before-and-after-section {
+    display: grid;
+    gap: var(--size-3);
+    margin-block: var(--size-5);
+    padding: var(--size-5) 0;
+
+    .section-title {
+      display: grid;
+      justify-content: center;
+      margin-bottom: var(--size-3);
+      text-align: center;
+
+      h2 {
+        margin-bottom: var(--size-3);
+      }
+    }
+
+    .image-wrapper {
+      display: grid;
+      gap: var(--size-2);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      justify-items: center;
+      width: 100%;
+
+      img {
+        border-radius: var(--border-radius-img);
+        box-shadow: var(--box-shadow);
+        max-width: 100%;
+      }
+    }
+
+    .compare-image-wrapper {
+      display: grid;
+      gap: var(--size-1);
+      justify-items: center;
+      margin-block-start: var(--size-5);
+      text-align: center;
+
+      .compare-image {
+        border-radius: var(--border-radius-img);
+        box-shadow: var(--box-shadow);
+        margin-inline: auto;
+        max-width: 100%;
+      }
+
+      span {
+        color: var(--color-text-secondary);
+        font-size: var(--size-0);
+      }
+    }
+  }
+</style>

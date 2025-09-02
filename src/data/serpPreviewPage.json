@@ -1,0 +1,188 @@
+{
+  "pageContent": {
+    "metaTitle": "Google Snippet Preview – Test je Meta Titel & Beschrijving",
+    "metaDescription": "Zie direct hoe je pagina eruitziet in Google. Test en optimaliseer je meta titel & beschrijving met deze snippet preview tool voor betere SEO.",
+    "ogSiteName": "Westend Digital",
+    "ogImage": {
+      "ogImageUrl": "/assets/logos/WestendDigitalLogo.svg",
+      "ogImageAlt": "Logo van Westend Digital"
+    },
+    "ogUrl": "https://www.westend-digital.nl/tools/google-serp-preview-tool",
+    "serpToolCardTitle": "Optimaliseer je SEO test je Meta Titels & Beschrijving",
+    "serpToolCardDescription": "Test hoe jouw pagina eruitziet in Google. Pas titel & metabeschrijving aan met de SERP preview tool en verbeter je SEO-resultaten.",
+    "serpToolCardImage": {
+      "cardImageUrl": "/images/serp-preview-tool/meta-title-destcription-preview.webp",
+      "cardImageAlt": "meta title en description tool voorbeeld"
+    },
+    "serpToolCardPageLink": "/tools/google-serp-preview-tool",
+    "heroTitle": "Optimaliseer je SEO test je Meta Titel & Beschrijving",
+    "heroSubtitle": "Test direct hoe jouw pagina eruitziet in Google. Pas titel & metabeschrijving aan met onze SERP preview tool en verbeter je SEO-resultaten.",
+    "heroImage": {
+      "imageUrl": "/images/web-converter-image.webp",
+      "altText": "Illustratie van een JPG naar WebP converter: bestanden worden omgezet voor snellere laadtijden en betere beeldkwaliteit."
+    },
+    "howItWorksSection": {
+      "title": "Hoe werkt het?",
+      "subTitle": "Korte, praktische uitleg in stappen:",
+      "steps": [
+        {
+          "title": "Voer je domeinnaam, meta titel & beschrijving in."
+        },
+        {
+          "title": "Vul de zoekwoorden waarop je gevonden wilt worden in bij de vetgedrukte trefwoorden."
+        },
+        {
+          "title": "Bekijk direct hoe dit in Google verschijnt."
+        },
+        {
+          "title": "Pas je titel en beschrijving aan totdat je tevreden bent."
+        }
+      ]
+    },
+    "whyMetasImportant": {
+      "title": "Waarom zijn meta’s belangrijk?",
+      "body": "Meta titels en beschrijvingen zijn het visitekaartje van je website in Google. Ze bepalen of iemand wél of niet op jouw link klikt. Een scherpe titel en duidelijke beschrijving zorgen voor meer zichtbaarheid, meer kliks en betere relevantie.",
+      "benefits": [
+        "Hogere zichtbaarheid in zoekresultaten",
+        "Meer kliks (CTR) doordat je direct opvalt",
+        "Betere relevantie voor je doelgroep en zoekwoorden"
+      ],
+      "note": "Zie het als je eerste indruk: met de juiste meta trek je de juiste bezoekers aan, nog vóórdat ze je site zien.",
+      "image": {
+        "imageUrl": "/images/serp-preview-tool/metas-effectiviteit-staaf-diagram.webp",
+        "altText": "Illustratieve grafiek die het verschil in klicks tussen een goede en slechte meta weergeeft"
+      },
+      "ctaText": "Wil je weten of jouw meta titels en beschrijvingen beter kunnen? We kijken graag met je mee en laat je zien hoe je meer kliks uit Google haalt.",
+      "ctaButton": {
+        "buttonText": "Plan een gratis check",
+        "buttonLink": "https://calendly.com/remco-westend-digital/30min"
+      }
+    },
+    "commonMistakes": {
+      "title": "Veelgemaakte fouten bij meta titels en beschrijvingen",
+      "body": "Veel ondernemers laten hier kansen liggen. Vermijd deze valkuilen en vergroot je klikratio.",
+      "mistakes": [
+        {
+          "title": "<span class='mm-ico' aria-hidden='true'> ✂️ </span> Titels te lang",
+          "text": "Google kapt ze af, waardoor de boodschap verloren gaat."
+        },
+        {
+          "title": "<span class='mm-ico' aria-hidden='true'> 🧩 </span> Onduidelijk aanbod",
+          "text": "Bezoekers snappen niet wat je precies doet of wat ze op je website kunnen vinden."
+        },
+        {
+          "title": "<span class='mm-ico' aria-hidden='true'> 🎯 </span> Te algemeen",
+          "text": "Geen focus of relevantie voor je doelgroep."
+        },
+        {
+          "title": "<span class='mm-ico' aria-hidden='true'> 🏅 </span> Geen USP",
+          "text": "Je onderscheidend vermogen ontbreekt in titel of beschrijving."
+        },
+        {
+          "title": "<span class='mm-ico' aria-hidden='true'> 📉 </span> Keyword stuffing",
+          "text": "Geforceerd proppen oogt onprofessioneel en vermindert CTR."
+        },
+        {
+          "title": "<span class='mm-ico' aria-hidden='true'> 🕳️ </span> Geen description",
+          "text": "Je laat de kans liggen om je verhaal zelf te sturen."
+        },
+        {
+          "title": "<span class='mm-ico' aria-hidden='true'> 🔁 </span> Dubbele meta’s",
+          "text": "Meerdere pagina’s met dezelfde titel/description verlagen vindbaarheid."
+        },
+        {
+          "title": "<span class='mm-ico' aria-hidden='true'> 🧠 </span> Te veel vakjargon",
+          "text": "Mensen haken af omdat het niet meteen duidelijk is."
+        },
+        {
+          "title": "<span class='mm-ico' aria-hidden='true'> ➡️ </span> Geen call-to-action",
+          "text": "Vertel niet alleen wat, maar ook waarom iemand moet klikken."
+        }
+      ],
+      "quote": "“Slechte meta’s zijn als een onduidelijk uithangbord. Je wordt wel gezien, maar niemand stapt binnen.”",
+      "ctaToTool": {
+        "title": "Twijfel je? Test je titel & description direct in de SERP preview.",
+        "linkText": "Check je meta’s",
+        "linkUrl": "#serp-tool"
+      },
+      "linkToArticle": {
+        "title": "Wil je meer lezen over hoe je een goede meta's schrijft?",
+        "linkText": "Lees dan dit artikel",
+        "linkUrl": "/blog-artikelen/hoe-schrijf-je-goede-metas"
+      }
+    },
+    "ctaSection": {
+      "title": "Heb je hulp nodig bij het sneller maken van je website?",
+      "description": "Een snelle website is niet alleen prettig voor je bezoekers, maar ook cruciaal voor je zichtbaarheid in Google. Met de juiste optimalisaties zorg je ervoor dat je site soepel draait, beter converteert en schaalbaar blijft voor de groei van je bedrijf.",
+      "contactBtn": {
+        "buttonText": "Plan een gratis strategiegesprek",
+        "buttonLink": "https://calendly.com/remco-westend-digital/30min"
+      },
+      "serviceBtn": {
+        "buttonText": "Bekijk onze website diensten",
+        "buttonLink": "/website"
+      }
+    },
+    "secondCtaSection": {
+      "title": "Ontdek wat we voor jouw website kunnen doen",
+      "description": "Een website die langzaam laadt of niet goed is ingericht, kost je bezoekers en dus klanten. Met de juiste aanpak haal je méér resultaat uit dezelfde online basis. Wij kijken samen met jou hoe je website sneller, gebruiksvriendelijker en effectiever kan worden ingericht, zodat jij je kunt focussen op het laten groeien van je bedrijf.",
+      "contactBtn": {
+        "buttonText": "Plan mijn gratis strategiegesprek",
+        "buttonLink": "https://calendly.com/remco-westend-digital/30min"
+      }
+    },
+    "faqSection": {
+      "title": "Veelgestelde vragen (FAQ)",
+      "faqs": [
+        {
+          "question": "Wat is WebP?",
+          "answer": "WebP is een modern afbeeldingsformaat ontwikkeld door Google. Het combineert de voordelen van JPG (kleine bestanden) en PNG (transparantie) in één formaat. Het grootste voordeel is dat je afbeeldingen aanzienlijk kleiner worden, zonder dat je bezoekers kwaliteitsverlies zien. Dat betekent dat jouw website sneller laadt en prettiger werkt, wat direct bijdraagt aan een betere online ervaring."
+        },
+        {
+          "question": "Werkt WebP in alle browsers?",
+          "answer": "Ja, bijna alle moderne browsers – zoals Chrome, Firefox, Edge en Safari – ondersteunen WebP standaard. Alleen heel oude browsers (die nog maar door een klein percentage gebruikers worden gebruikt) kunnen het niet aan. Voor die gevallen kun je een fallback instellen, zodat jouw website altijd goed zichtbaar blijft."
+        },
+        {
+          "question": "Hoeveel kleiner wordt mijn bestand?",
+          "answer": "Gemiddeld zijn WebP-bestanden 25–35% kleiner dan dezelfde afbeelding in JPG of PNG. Stel dat je een foto van 500KB hebt, dan kan die met WebP teruggebracht worden naar zo’n 325KB, terwijl de kwaliteit voor het oog vrijwel gelijk blijft. Zeker bij meerdere afbeeldingen op een pagina scheelt dat enorm in laadtijd."
+        },
+        {
+          "question": "Verlies ik kwaliteit bij het omzetten?",
+          "answer": "Dat hangt af van de instellingen die je kiest. Met de standaardwaarde van 0.8 blijft je afbeelding scherp en levendig, terwijl het bestand flink verkleind wordt. Kies je voor een lagere waarde (bijvoorbeeld 0.5), dan wordt de afbeelding nog lichter, maar kan er wat detail verloren gaan. Voor de meeste websites is 0.8 een perfecte balans tussen kwaliteit en snelheid."
+        },
+        {
+          "question": "Kan ik meerdere afbeeldingen tegelijk converteren?",
+          "answer": "Ja, je kunt eenvoudig meerdere JPG- en of PNG-afbeeldingen tegelijk uploaden en converteren naar WebP. Na het uploaden kun je de kwaliteit en afmetingen instellen voor elke afbeelding. Zodra je klaar bent, klik je op 'Converteren & Zip downloaden' om alle geconverteerde afbeeldingen in één ZIP-bestand te ontvangen."
+        },
+        {
+          "question": "Hoe kan ik de geconverteerde WebP-afbeeldingen gebruiken?",
+          "answer": "Na het downloaden van het ZIP-bestand kun je de WebP-afbeeldingen eenvoudig toevoegen aan je website of blog. De meeste content management systemen (zoals WordPress) ondersteunen WebP, maar controleer altijd of jouw thema of plugins dit ook doen. Als je problemen ondervindt, kun je overwegen om een plugin te gebruiken die WebP ondersteunt of een fallback in te stellen voor oudere browsers."
+        },
+        {
+          "question": "Is er een limiet aan het aantal afbeeldingen dat ik kan converteren?",
+          "answer": "Er is geen harde limiet aan het aantal afbeeldingen dat je kunt converteren, maar we raden aan om niet meer dan 10 afbeeldingen per keer te uploaden voor de beste prestaties. Als je meer afbeeldingen hebt, kun je ze in batches van 10 uploaden."
+        },
+        {
+          "question": "Helpt WebP mijn SEO?",
+          "answer": "Absoluut. Google houdt van snelle websites. Een kortere laadtijd betekent dat bezoekers langer op je site blijven, minder snel afhaken en dat zoekmachines je pagina hoger waarderen. Door over te stappen op WebP verbeter je dus niet alleen de snelheid, maar ook je kansen op een betere ranking in de zoekresultaten. Lees meer in ons artikel over <a href='/blog-artikelen/website-optimalisatie/' target='_blacnk'>website optimalisatie.</a>"
+        },
+        {
+          "question": "Kan ik WebP gebruiken in WordPress, Webflow of andere CMS’en?",
+          "answer": "Ja, de meeste moderne CMS’en ondersteunen WebP zonder problemen. Je kunt je WebP-afbeeldingen direct uploaden en gebruiken zoals je gewend bent met JPG of PNG. Gebruik je een oudere versie van WordPress of een specifiek thema/plugin? Dan zijn er vaak gratis plugins beschikbaar die de ondersteuning uitbreiden, zodat je toch profiteert van snellere laadtijden."
+        }
+      ]
+    },
+    "callToActionSection": {
+      "title": "Klaar voor een snellere website?",
+      "description": "Met deze gratis tool zet je je afbeeldingen direct om naar WebP. Wil je méér snelheid en resultaat uit je website halen? Bekijk dan onze pagina <a href='/website'>website </a> laten maken en ontdek hoe we jouw bedrijf online laten groeien.",
+      "contactBtn": {
+        "buttonText": "Plan een vrijblijvend gesprek",
+        "buttonLink": "/contact"
+      },
+      "serviceBtn": {
+        "buttonText": "Bekijk onze website diensten",
+        "buttonLink": "/website"
+      }
+    }
+  }
+}

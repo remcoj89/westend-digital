@@ -4,6 +4,7 @@
 
 <style>
   .card-grid {
+    align-items: stretch;
     display: grid;
     gap: var(--size-4);
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -12,12 +13,14 @@
 
     a {
       text-decoration: none;
+      height: 100%;
+
     }
     p {
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      line-clamp: 4;
       -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      display: -webkit-box;
+      line-clamp: 4;
       overflow: hidden;
     }
   }

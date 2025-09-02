@@ -555,11 +555,10 @@ input[type="range"] {
 /* Buttons */
 
 .btn {
-  align-items: center;
+  /* align-items: center; */
   border-radius: var(--border-radius-btn);
   border: none;
   cursor: pointer;
-  display: flex;
   font-size: var(--fs-400);
   font-weight: var(--fw-semi-bold);
   gap: var(--size-1);
@@ -584,6 +583,7 @@ input[type="range"] {
   border: solid 2px var(--clr-alert-green-900);
   box-shadow: var(--box-shadow);
   color: var(--clr-primary-100);
+  display: flex;
   margin-block-start: var(--size-3);
   padding-block: var(--size-1);
 

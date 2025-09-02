@@ -1,0 +1,37 @@
+---
+// Data passed as props
+const { title, description, contactBtn } = Astro.props;
+---
+
+<section class="wrapper cta-section hidden">
+  <div class="cta-wrapper">
+    <div class="cta-content">
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </div>
+    <a class="btn btn-secondary" href={contactBtn.buttonLink} target="_blank"
+      >{contactBtn.buttonText}</a
+    >
+  </div>
+</section>
+
+<style>
+  .cta-wrapper {
+    align-items: center;
+    background: radial-gradient(hsl(224, 35%, 28%, 1), hsl(224, 75%, 11%, 1));
+    color: var(--clr-primary-100);
+    display: flex;
+    padding: var(--size-4) var(--size-5);
+    border-radius: var(--border-radius-card);
+    gap: var(--size-4);
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    h2 {
+      color: var(--clr-primary-100);
+      margin-block-end: var(--size-2);
+    }
+  }
+</style>

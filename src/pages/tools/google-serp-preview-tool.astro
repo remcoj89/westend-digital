@@ -1,0 +1,228 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+// Sections
+import CommonMistakesSection from "../../sections/SerpPreviewPageSections/CommonMistakesSection.astro";
+import Footer from "../../sections/FooterSection.astro";
+import HowItWorksSection from "../../sections/SharedSections/HowItWorksSection.astro";
+import WhyMetasImportantSection from "../../sections/SerpPreviewPageSections/WhyMetasImportantSection.astro";
+
+// Components
+import GoogleSerpPreviewToolComponent from "../../components/toolsComponent/GoogleSerpPreviewTool.astro";
+import Header from "../../components/Header.astro";
+
+// Data & Schemas
+import pageData from "../../data/serpPreviewPage.json";
+// import SchemaHead from "../../components/SchemaHead.astro";
+// import { serpResultSchemas } from "../../schemas/tools/serp-results.js";
+const {
+  commonMistakes,
+  howItWorksSection,
+  metaDescription,
+  metaTitle,
+  ogImage,
+  ogSiteName,
+  ogUrl,
+  whyMetasImportant,
+} = pageData.pageContent;
+---
+
+<Layout
+  description={metaDescription}
+  ogDescription={metaDescription}
+  ogImageAlt={ogImage.ogImageAlt}
+  ogImageUrl={ogImage.ogImageUrl}
+  ogSiteName={ogSiteName}
+  ogTitle={metaTitle}
+  ogUrl={ogUrl}
+  title={metaTitle}
+>
+  <Fragment slot="head">
+    <!-- <SchemaHead items={webpSchemas} /> -->
+  </Fragment>
+  <!-- 1. Header -->
+  <Header>
+    <div class="hero-copy">
+      <h1 class="margin-bottom-1">
+        {pageData.pageContent.heroTitle}
+      </h1>
+      <p class="margin-bottom-2">
+        {pageData.pageContent.heroSubtitle}
+      </p>
+    </div>
+  </Header>
+
+  <!-- 2. SERP Preview component -->
+  <!-- 
+      - Voeg microcopy toe (bijv. “Geen data opgeslagen, volledig veilig”).
+      - Kleine trustbadge (gratis, geen e-mail verplicht).
+     -->
+  <GoogleSerpPreviewToolComponent />
+
+  <!-- 3. How it works section -->
+  <!-- 
+      - Kort in 3–4 stappen, met icoontjes of visuals.
+      - Optioneel: mini-video of GIF van de tool in gebruik.
+     -->
+  <HowItWorksSection
+    title={howItWorksSection.title}
+    steps={howItWorksSection.steps}
+  />
+
+  <!-- 4.  Waarom is dit belangrijk(Educatief blok) -->
+  <!-- 
+      - Uitleg waarom meta titels & descriptions cruciaal zijn voor SEO en CTR.
+      - Gebruik een infographic of datavisualisatie (bv. verschil CTR met goede vs. slechte snippet).
+      - Geeft autoriteit en SEO-content.
+      -->
+  <WhyMetasImportantSection whyMetasImportant={whyMetasImportant} />
+  <!-- 5. Veelgemaakte fouten (autoriteit tonen) -->
+  <!-- 
+      - Lijstje met 4–5 fouten die ondernemers vaak maken met meta’s (te lang, keyword stuffing, geen USP, etc.).
+      - Sluit af met “Met deze tool voorkom je dat”.
+     -->
+  <CommonMistakesSection commonMistakes={commonMistakes} />
+
+  <!-- 6. SEO tips & best practices (Expertise) -->
+  <!-- 
+      - Korte checklist (max. 5–7 bullets).
+      - Link naar gerelateerd blogartikel (“Zo schrijf je een converterende meta titel”).
+    -->
+
+  <section class="wrapper" id="seo-tips">
+    <h2>SEO Tips & Best Practices</h2>
+    <p>Korte checklist in bullets, link naar blog.</p>
+  </section>
+  <!-- 7. Case / voorbeeld snippet -->
+  <!-- 
+      - Voorbeeld van een echte klant of fictief voorbeeld (“Voor vs. Na optimalisatie”).
+      - Visueel: screenshot van een verbeterde snippet.
+     -->
+  <section class="wrapper" id="case-example">
+    <h2>Voorbeeld snippet</h2>
+    <div style="border:1px solid #ccc; padding:20px;">
+      [ Voorbeeld snippet VOOR / NA ]
+    </div>
+  </section>
+
+  <!-- 8. Lead capture blok (CTA Section) -->
+  <!-- 
+    - Gratis download: “SEO Quick Guide” of “Checklist: perfecte meta titel” in ruil voor e-mail.
+    - Positioneer dit als aanvulling op de tool.
+    - CTA: Download gratis SEO-checklist.
+   -->
+  <section class="wrapper cta" id="lead-capture">
+    <h2>Download gratis SEO Quick Guide</h2>
+    <p>Ontvang een checklist voor perfecte meta titels & descriptions.</p>
+    <button>Download gratis</button>
+  </section>
+
+  <!-- 9. Reviews -->
+  <section>
+    <h2>Wat zeggen anderen?</h2>
+    <blockquote>"Dankzij Westend Digital steeg onze CTR met 35%!"</blockquote>
+    <blockquote>"Helder en praktisch, ideaal om snel te testen."</blockquote>
+  </section>
+
+  <!-- 10. Gerelateerde tools / resources -->
+  <!-- 
+    - Links naar andere gratis tools (WebP Converter, Page Speed Tips, enz.).
+    - Geeft extra waarde en houdt bezoeker langer vast.
+   -->
+  <section class="wrapper" id="related-tools">
+    <h2>Andere gratis tools</h2>
+    <ul>
+      <li><a href="/tools/webp-converter">WebP Converter</a></li>
+      <li><a href="#">Page Speed Tool</a></li>
+    </ul>
+  </section>
+
+  <!-- 11.  FAQ (SEO & leads) -->
+  <!-- 
+    - 3–4 vragen:
+      - “Hoe lang mag een meta titel zijn?”
+      - “Wat gebeurt er als je meta description leeg is?”
+      - “Is de tool 100% gratis?”
+    - Eindig met CTA: Plan vrijblijvend adviesgesprek.
+  -->
+  <section class="wrapper faq" id="faq">
+    <h2>Veelgestelde vragen</h2>
+    <details>
+      <summary>Hoe lang mag een meta titel zijn?</summary>
+      <p>Maximaal ±60 karakters, anders wordt deze afgebroken.</p>
+    </details>
+    <details>
+      <summary>Is de tool gratis?</summary>
+      <p>Ja, volledig gratis en zonder inlog.</p>
+    </details>
+  </section>
+
+  <!-- 12. Footer CTA (sterk herhalen) -->
+  <!-- 
+    - Korte pitch: “Wil je meer dan alleen snippets optimaliseren? Ontdek hoe wij jouw hele website winstgevend   maken.”
+    - Knop: Vraag gratis adviesgesprek aan.
+   -->
+  <section class="wrapper cta" id="footer-cta">
+    <h2>Meer uit je website halen?</h2>
+    <p>Ontdek hoe wij jouw site winstgevend maken.</p>
+    <button>Vraag gratis adviesgesprek aan</button>
+  </section>
+  <Footer />
+</Layout>
+
+<!-- 
+Visual suggesties per sectie
+
+  - Hero: abstracte background (past bij je brand), laptop/zoekresultaat-illustratie.
+  - Tool: minimalistisch formulierdesign met Google-stijl snippet preview.
+  - How it works: iconen of mini-illustraties voor elke stap.
+  - Waarom belangrijk: infographic / grafiek CTR verschil.
+  - Veelgemaakte fouten: icoonlijst (rode kruisjes vs. groene vinkjes).
+  - Case voorbeeld: side-by-side snippet screenshots.
+  - Lead capture: e-book cover mockup (“SEO Quick Guide”).
+  - Reviews: klantfoto + sterretjes of korte quote.
+  - FAQ: accordeon interactie.
+  - Toegankelijkheid & performance:
+  - Alt-teksten voor alle visuals.
+  - Lazy-loading op afbeeldingen.
+  - E-book als geoptimaliseerde PDF (onder 1MB).
+-->
+
+<style>
+  section {
+    padding: 60px 20px;
+    margin: 0 auto;
+    max-width: 1000px;
+    border-bottom: 1px solid #ddd;
+    display: grid;
+  }
+  section:nth-child(even) {
+    background: #fff;
+  }
+  h2 {
+    margin-bottom: 20px;
+    color: #dbb171;
+  }
+  .cta {
+    background: #071333;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .cta button {
+    background: #dbb171;
+    color: #071333;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .faq details {
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    background: #fafafa;
+  }
+</style>

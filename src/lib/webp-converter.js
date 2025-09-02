@@ -41,42 +41,26 @@ let filesState = []; // [{id, file, webpBlob, webpSize, urlThumb}]
 let nextId = 1;
 
 // ===== DOM refs =====
-let fileInput,
-  dropzone,
-  clearBtn,
-  qualityRange,
-  qualityOut,
-  previewGrid,
-  downloadZipBtn,
-  convertPreviewBtn,
-  summary,
-  bar;
-let resizeW, resizeH, keepAR, onlyDownscale, alerts;
+// Selecteer alle elementen direct, zodat ze overal in het script beschikbaar zijn.
+const fileInput = $("#fileInput");
+const dropzone = $("#dropzone");
+const clearBtn = $("#clearBtn");
+const qualityRange = $("#quality");
+const qualityOut = $("#qualityOut");
+const previewGrid = $("#preview");
+const downloadZipBtn = $("#downloadZipBtn");
+const convertPreviewBtn = $("#convertPreviewBtn");
+const summary = $("#summary");
+const bar = $("#bar");
+const resizeW = $("#resizeW");
+const resizeH = $("#resizeH");
+const keepAR = $("#keepAR");
+const onlyDownscale = $("#onlyDownscale");
+const alerts = $("#alerts");
 
 // ===== Init =====
 let _initialized = false;
 function init() {
-  if (_initialized) return;
-  _initialized = true;
-
-  fileInput = $("#fileInput");
-  dropzone = $("#dropzone");
-  clearBtn = $("#clearBtn");
-  qualityRange = $("#quality");
-  qualityOut = $("#qualityOut");
-  previewGrid = $("#preview");
-  downloadZipBtn = $("#downloadZipBtn");
-  convertPreviewBtn = $("#convertPreviewBtn");
-  summary = $("#summary");
-  bar = $("#bar");
-  resizeW = $("#resizeW");
-  resizeH = $("#resizeH");
-  keepAR = $("#keepAR");
-  onlyDownscale = $("#onlyDownscale");
-  alerts = $("#alerts");
-
-  if (!fileInput || !dropzone || !previewGrid) return;
-
   bindEvents();
   readQuality();
 }

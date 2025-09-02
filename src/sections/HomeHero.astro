@@ -9,10 +9,9 @@ const { title, topTitle, subTitle, ctaBtn, heroImage, backgroundImage } =
   <div class="hero-copy">
     <span>{topTitle}</span>
     <h1>{title}</h1>
-    <div>
-      <p>{subTitle}</p>
-    </div>
-
+   
+    <p>{subTitle}</p>
+    
     <a
       aria-label="neem vrijblijvend contact met mij op"
       class="btn btn-hero"
@@ -41,6 +40,7 @@ const { title, topTitle, subTitle, ctaBtn, heroImage, backgroundImage } =
 
     .hero-copy {
       flex-grow: 1;
+      height: fit-content;
       width: 50%;
 
       span {
@@ -51,7 +51,7 @@ const { title, topTitle, subTitle, ctaBtn, heroImage, backgroundImage } =
         margin-block: var(--size-2);
       }
 
-      div {
+      p {
         display: grid;
         gap: var(--size-1);
         width: 100%;
@@ -69,7 +69,7 @@ const { title, topTitle, subTitle, ctaBtn, heroImage, backgroundImage } =
   @media (width >= 984px) {
     header {
       .hero-copy {
-        div {
+        p {
           width: 80%;
         }
       }

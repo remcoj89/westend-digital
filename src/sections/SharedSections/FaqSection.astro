@@ -1,0 +1,55 @@
+---
+// Data passed as props
+const { faqSection } = Astro.props;
+---
+
+<section class="wrapper faq-section hidden" id="faq-section">
+  <h2>{faqSection.title}</h2>
+  <article>
+    {
+      faqSection.faqs.map((faq) => (
+        <details>
+          <summary>{faq.question}</summary>
+          <p set:html={faq.answer} />
+        </details>
+      ))
+    }
+  </article>
+</section>
+
+<style>
+  .faq-section {
+    display: grid;
+    gap: var(--size-3);
+    margin-block: var(--size-5);
+    padding: var(--size-5) 0;
+
+    h2 {
+      text-align: center;
+      margin-bottom: var(--size-3);
+    }
+
+    article {
+      display: grid;
+      gap: var(--size-2);
+
+      details {
+        background-color: var(--clr-primary-100);
+        border-radius: var(--border-radius-card);
+        box-shadow: var(--box-shadow);
+
+        summary {
+          font-weight: bold;
+          cursor: pointer;
+          padding: var(--size-2);
+        }
+
+        p {
+          margin-block-start: var(--size-2);
+          padding-block-end: var(--size-2);
+          padding-inline-start: var(--size-2);
+        }
+      }
+    }
+  }
+</style>

@@ -1,0 +1,80 @@
+---
+
+// Data passed as props
+const { optimalImageSizesSection } = Astro.props;
+---
+
+<section class="wrapper optimal-image-size-section hidden">
+  <div>
+    <h2 set:html={optimalImageSizesSection.title} />
+    <article>
+      <p set:html={optimalImageSizesSection.description} />
+      <ul>
+        {
+          optimalImageSizesSection.imageSizes.map((size) => (
+            <li set:html={size} />
+          ))
+        }
+      </ul>
+
+      <table>
+        <tr>
+          {
+            optimalImageSizesSection.optimalImageSizesTable.headers.map(
+              (header) => <th set:html={header} />
+            )
+          }
+        </tr>
+        <tbody>
+          {
+            optimalImageSizesSection.optimalImageSizesTable.rows.map((row) => (
+              <tr>
+                <td set:html={row.type} />
+                <td set:html={row.desktop} />
+                <td set:html={row.mobile} />
+                <td set:html={row.aspect_ratio} />
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      {
+        optimalImageSizesSection.lastDescription.map((paragraph) => (
+          <p set:html={paragraph} />
+        ))
+      }
+    </article>
+  </div>
+</section>
+
+<style>
+  .optimal-image-size-section {
+    display: grid;
+    div {
+      h2 {
+        margin-block-end: var(--size-3);
+      }
+
+      article {
+        display: grid;
+        gap: var(--size-3);
+
+        ul {
+          margin-inline-start: var(--size-2);
+        }
+      }
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 0.5rem 1rem;
+    }
+  }
+</style>

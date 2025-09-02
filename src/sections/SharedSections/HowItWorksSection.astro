@@ -1,0 +1,68 @@
+---
+import CardComponent from "../../components/Card.astro"; 
+// Data passed as props
+const { title, steps, lastStepDescription } = Astro.props;
+---
+
+<section
+  class="wrapper how-it-works-section hidden"
+  id="webp-converter-how-it-work-section"
+>
+  <h2>{title}</h2>
+  <div class="how-it-works-steps">
+    {
+      steps.map((step, i) => (
+        <CardComponent>
+          <h3>{i + 1}</h3>
+          <p set:html={step.title} />
+        </CardComponent>
+      ))
+    }
+  </div>
+  <p id="lastDescription" set:html={lastStepDescription} />
+</section>
+
+<style>
+  .how-it-works-section {
+    display: grid;
+    gap: var(--size-3);
+    margin-block: var(--size-5);
+    padding: var(--size-5) 0;
+    h2 {
+      text-align: center;
+      margin-bottom: var(--size-3);
+    }
+    .how-it-works-steps {
+      display: grid;
+      gap: var(--size-3);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin: 0 auto;
+      width: 100%;
+
+      h3 {
+        margin-bottom: var(--size-2);
+      }
+      
+
+      .card {
+        background-color: var(--clr-primary-100);
+        border-radius: var(--border-radius-card);
+        box-shadow: var(--box-shadow);
+        padding: var(--size-1);
+        width: 100%;
+
+        h3 {
+          font-size: var(--size-4);
+          margin-bottom: var(--size-1);
+        }
+
+        p {
+          margin-block-end: var(--size-2);
+        }
+      }
+    }
+    #lastDescription {
+      margin-block-start: var(--size-2);
+    }
+  }
+</style>

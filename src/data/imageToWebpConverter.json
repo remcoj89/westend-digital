@@ -15,8 +15,8 @@
       "cardImageAlt": "jpg en png naar webp converter tool"
     },
     "converterCardPageLink": "/tools/webp-converter",
-    "heroTitle": "Gratis WebP Converter, zet PNG/JPG om naar WebP voor een Snellere Website",
-    "heroSubtitle": "Sleep je afbeeldingen, kies kwaliteit en (optioneel) afmetingen. Bekijk previews en download alles als ZIP.",
+    "heroTitle": "Verklein je afbeeldingen in seconden, zonder kwaliteitsverlies",
+    "heroSubtitle": "100% gratis • geen uploads naar server • geen e‑mail nodig",
     "heroImage": {
       "imageUrl": "/images/web-converter-image.webp",
       "altText": "Illustratie van een JPG naar WebP converter: bestanden worden omgezet voor snellere laadtijden en betere beeldkwaliteit."
@@ -41,6 +41,18 @@
         }
       ],
       "lastStepDescription": "Je ontvangt een <strong>ZIP-bestand</strong> met alle geconverteerde WebP-afbeeldingen."
+    },
+    "ctaSection": {
+      "title": "Heb je hulp nodig bij het sneller maken van je website?",
+      "description": "Een snelle website is niet alleen prettig voor je bezoekers, maar ook cruciaal voor je zichtbaarheid in Google. Met de juiste optimalisaties zorg je ervoor dat je site soepel draait, beter converteert en schaalbaar blijft voor de groei van je bedrijf.",
+      "contactBtn": {
+        "buttonText": "Plan een gratis strategiegesprek",
+        "buttonLink": "https://calendly.com/remco-westend-digital/30min"
+      },
+      "serviceBtn": {
+        "buttonText": "Bekijk onze website diensten",
+        "buttonLink": "/website"
+      }
     },
     "optimalImageSizesSection": {
       "title": "Wat zijn de optimale afbeeldingsformaten voor je website?",
@@ -112,6 +124,31 @@
         "Door je afbeeldingen slim te verkleinen en te comprimeren, verbeter je niet alleen de snelheid maar ook de gebruikservaring van je bezoekers.",
         "ℹ️ Meer praktische tips lees je in ons artikel over <a href='/blog-artikelen/website-optimalisatie/' target='_blank'> website optimalisatie.</a>"
       ]
+    },
+    "secondCtaSection": {
+      "title": "Ontdek wat we voor jouw website kunnen doen",
+      "description": "Een website die langzaam laadt of niet goed is ingericht, kost je bezoekers en dus klanten. Met de juiste aanpak haal je méér resultaat uit dezelfde online basis. Wij kijken samen met jou hoe je website sneller, gebruiksvriendelijker en effectiever kan worden ingericht, zodat jij je kunt focussen op het laten groeien van je bedrijf.",
+      "contactBtn": {
+        "buttonText": "Plan mijn gratis strategiegesprek",
+        "buttonLink": "https://calendly.com/remco-westend-digital/30min"
+      }
+    },
+    "beforeAndAfterSection": {
+      "title": "Voor en na het converteren naar WebP",
+      "description": "Bekijk hieronder een voorbeeld van een afbeelding vóór en na het omzetten naar WebP. Let op hoe de bestandsgrootte aanzienlijk is verminderd, terwijl de visuele kwaliteit behouden blijft.",
+      "beforeImage": {
+        "imageUrl": "../../assets/images/webp-converter-page/vulkaan-in-png.png",
+        "altText": "Voorbeeld van een afbeelding in PNG-formaat"
+      },
+      "afterImage": {
+        "imageUrl": "/images/after-webp.webp",
+        "altText": "Voorbeeld van dezelfde afbeelding na conversie naar WebP-formaat"
+      },
+      "compareImage": {
+        "altText": "Grafiek met laadsnelheden images in png of webp formaat",
+        "imageUrl": "../../assets/images/webp-converter-page/grafiek-laadsnelheid-images.webp",
+        "spanText":  "Grafiek: totale besparing bij 10 afbeeldingen."
+      }
     },
     "faqSection": {
       "title": "Veelgestelde vragen (FAQ)",

@@ -9,41 +9,40 @@ const { cardStyle = "primary" } = Astro.props;
 <style>
   .card {
     border-radius: var(--border-radius-card);
+    height: 100%;
 
-    
     .card-info {
       display: grid;
       gap: var(--size-1);
       padding: var(--size-2) var(--size-1);
+      height: 100%;
 
       .card-title {
         font-size: var(--fs-700);
+        margin-block-end: var(--size-1);
       }
     }
   }
 
-  
   .primary {
     color: var(--clr-primary-900);
 
     img {
       height: 12rem;
-      width: 12rem;
-      object-fit: cover;
       margin-block-end: var(--size-2);
+      object-fit: cover;
+      width: 12rem;
     }
-
   }
 
   .list-card {
     background-color: var(--clr-primary-100);
     box-shadow: 2px 5px 9px hsl(from var(--clr-primary-700) H S L / 0.5);
     color: var(--clr-primary-900);
-    display: grid;;
-    gap: var(--size-2);
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-1);
     width: 100%;
-
 
     img {
       border-radius: var(--border-radius-card);
@@ -52,6 +51,13 @@ const { cardStyle = "primary" } = Astro.props;
       width: 100%;
     }
 
+    p {
+      margin-block-end: auto;
+    }
+
+    button {
+      align-self: end;
+    }
   }
 
   .card.review {

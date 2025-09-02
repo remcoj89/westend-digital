@@ -1,0 +1,339 @@
+---
+import previewToolScript from "../../lib/googleSerpPreviewTool.js?url";
+---
+
+<section class="wrapper" id="serp-tool">
+  <div id="serp-tool-wrapper">
+    <span id="text-width-helper"></span>
+
+    <div class="flex">
+      <div class="form-container">
+        <h2>SERP Preview Tool</h2>
+
+        <div>
+          <label for="urlInput" class="input-label">URL</label>
+          <input
+            type="text"
+            id="urlInput"
+            class="input-field"
+            placeholder="e.g., https://www.jouw-website.nl/pagina"
+          />
+        </div>
+
+        <div>
+          <label for="titleInput" class="input-label">Titel</label>
+          <input
+            type="text"
+            id="titleInput"
+            class="input-field"
+            placeholder="Vul hier je paginatitel in"
+            maxlength="100"
+          />
+          <div id="titleCounter" class="char-counter">0 karakters / 0px</div>
+          <button id="capitalizeButton" class="btn capitalize-button">
+            Capitalize Title
+          </button>
+        </div>
+
+        <div>
+          <label for="descriptionInput" class="input-label">Beschrijving</label>
+          <textarea
+            id="descriptionInput"
+            class="input-field"
+            placeholder="Vul hier je meta beschrijving in"
+            maxlength="200"></textarea>
+          <div id="descriptionCounter" class="char-counter">
+            0 karakters / 0px
+          </div>
+        </div>
+
+        <div>
+          <label for="keywordsInput" class="input-label"
+            >Vetgedrukte trefwoorden</label
+          >
+          <input
+            type="text"
+            id="keywordsInput"
+            class="input-field"
+            placeholder="Bijv. keywoord1, keywoord2, keywoord3"
+          />
+        </div>
+      </div>
+
+      <div class="previews-column">
+        <div class="serp-preview-container">
+          <h2 class="preview-heading">Desktop Preview</h2>
+          <div class="serp-url">
+            <img
+              id="faviconPreview"
+              src="https://www.google.com/s2/favicons?domain=google.com&sz=16"
+              alt="favicon"
+              class="favicon"
+              onerror="this.style.display='none'"
+            />
+            <span id="urlPreview">https://www.jouw-website.nl/pagina</span>
+            <span>&#8942;</span>
+          </div>
+          <a
+            href="#"
+            id="titleLinkPreview"
+            class="serp-title"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span id="titlePreview">Je website titel verschijnd hier</span>
+          </a>
+          <div class="serp-description" id="descriptionPreview">
+            Jouw meta beschrijving verschijnt hier....
+          </div>
+        </div>
+
+        <div class="mobile-serp-preview-container">
+          <h2 class="preview-heading">Mobile Preview</h2>
+          <div class="mobile-serp-url">
+            <img
+              id="mobileFaviconPreview"
+              src="https://www.google.com/s2/favicons?domain=google.com&sz=16"
+              alt="favicon"
+              class="favicon"
+              onerror="this.style.display='none'"
+            />
+            <span id="mobileUrlPreview">https://www.jouw-website.nl/pagina</span
+            >
+          </div>
+          <a
+            href="#"
+            id="mobileTitleLinkPreview"
+            class="mobile-serp-title"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span id="mobileTitlePreview">Je website titel verschijnd hier</span
+            >
+          </a>
+          <div class="mobile-serp-description" id="mobileDescriptionPreview">
+            Jouw meta beschrijving verschijnt hier....
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline type="module" src={previewToolScript}></script>
+
+<style>
+  #serp-tool-wrapper {
+    width: 100%;
+
+    .preview-heading {
+      color: var(--clr-primary-900);
+      font-size: var(--size-2);
+      font-weight: 600;
+      margin-block-end: 0.8rem;
+      text-align: center;
+    }
+
+    .serp-preview-container,
+    .mobile-serp-preview-container,
+    .form-container {
+      background-color: var(--clr-neutral-100);
+      border-radius: var(--border-radius-card);
+      display: grid;
+      gap: var(--size-1);
+      box-shadow: var(--box-shadow);
+      font-family: "Arial", sans-serif;
+      height: fit-content;
+      overflow: hidden;
+      padding: var(--size-3);
+    }
+
+    .form-container {
+      width: 50%;
+
+      .input-label {
+        color: #333;
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      .input-field {
+        border-radius: 4px;
+        border: 1px solid #dfe1e5;
+        font-family: inherit;
+        font-size: 14px;
+        margin-bottom: 15px;
+        padding: 10px;
+        width: 100%;
+      }
+
+      textarea.input-field {
+        min-height: 80px;
+        resize: vertical;
+      }
+
+      .char-counter {
+        color: #70757a;
+        font-size: 12px;
+        margin-bottom: 15px;
+        margin-top: -10px;
+        text-align: right;
+      }
+
+      .capitalize-button {
+        background-color: #e7e7e7;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        color: #333;
+        cursor: pointer;
+        font-size: 14px;
+        margin-bottom: 15px;
+        margin-right: 10px;
+        margin-top: -10px;
+        padding: 8px 16px;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: #dcdcdc;
+        }
+      }
+    }
+
+    .previews-column {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 2.5rem;
+      width: 50%;
+
+      .serp-preview-container {
+        width: 100%;
+
+        .serp-url {
+          align-items: center;
+          color: #202124;
+          display: flex;
+          font-size: 14px;
+          gap: 6px;
+          margin-bottom: 2px;
+          word-break: break-word;
+        }
+
+        .serp-title {
+          color: #1a0dab;
+          display: block;
+          font-family: inherit;
+          font-size: 20px;
+          font-weight: normal;
+          line-height: 1.3;
+          margin-bottom: 3px;
+          overflow: hidden;
+          text-decoration: none;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .serp-description {
+          color: #4d5156;
+          font-family: inherit;
+          font-size: 14px;
+          line-height: 1.57;
+          white-space: normal;
+        }
+      }
+
+      .mobile-serp-preview-container {
+        /* margin-inline: auto; */
+        max-width: 38rem;
+        overflow: hidden;
+
+        .mobile-serp-url {
+          align-items: center;
+          color: #3c4043;
+          display: flex;
+          font-size: 12px;
+          gap: 6px;
+          margin-bottom: 4px;
+          word-break: break-word;
+        }
+
+        .mobile-serp-title {
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          color: #1a0dab;
+          display: -webkit-box;
+          font-family: inherit;
+          font-size: 18px;
+          font-weight: normal;
+          line-height: 1.3;
+          margin-bottom: 4px;
+          overflow: hidden;
+          text-decoration: none;
+          text-overflow: ellipsis;
+          white-space: normal;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .mobile-serp-description {
+          color: #4d5156;
+          font-family: inherit;
+          font-size: 13px;
+          line-height: 1.4;
+          white-space: normal;
+        }
+      }
+    }
+
+    .favicon {
+      flex-shrink: 0;
+      height: 16px;
+      margin-right: 6px;
+      vertical-align: middle;
+      width: 16px;
+    }
+
+    .bold-keyword {
+      font-weight: bold;
+    }
+
+    #text-width-helper {
+      font-family: inherit;
+      height: auto;
+      position: absolute;
+      visibility: hidden;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    @media (max-width: 767px) {
+      .form-container,
+      .serp-preview-container,
+      .mobile-serp-preview-container {
+        margin-inline: auto;
+        max-width: 95%;
+      }
+
+      .mobile-serp-preview-container {
+        max-width: 380px;
+      }
+
+      .previews-column {
+        margin-top: 20px;
+        padding-top: 0;
+      }
+
+      .md\:grid {
+        display: block;
+      }
+    }
+  }
+</style>

@@ -1,201 +1,130 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import pageData from "../../data/imageToWebpConverter.json";
-import WebpConverterComponent from "../../components/WebpConverter.astro";
-import FaqSection from "../../sections/FaqSection.astro";
+import { Image } from "astro:assets";
+
+// Components
+import ButtonWrapper from "../../components/ButtonWrapper.astro";
+import WebpConverterComponent from "../../components/toolsComponent/WebpConverter.astro";
 import Footer from "../../sections/FooterSection.astro";
 
+// Sections
+import BeforeAndAfterSection from "../../sections/WebpConverterPageSections/BeforeAndAfterSection.astro";
+import CtaSection from "../../sections/WebpConverterPageSections/CtaSection.astro";
+import FaqSection from "../../sections/SharedSections/FaqSection.astro";
+import FinalCtaSection from "../../sections/WebpConverterPageSections/FinalCtaSection.astro";
+import HowItWorksSection from "../../sections/SharedSections/HowItWorksSection.astro";
+import OptimalImageSection from "../../sections/WebpConverterPageSections/OptimalImageSection.astro";
+
+// Data & Schemas
+import pageData from "../../data/imageToWebpConverter.json";
 import SchemaHead from "../../components/SchemaHead.astro";
 import { webpSchemas } from "../../schemas/tools/webp-converter.js";
 
-
 const {
-  metaTitle,
-  metaDescription,
-  ogImage,
-  ogUrl,
-  heroTitle,
-  heroSubtitle,
-  heroImage,
-  howItWorksSection,
-  optimalImageSizesSection,
-  faqSection,
+  beforeAndAfterSection,
   callToActionSection,
+  ctaSection,
+  faqSection,
+  heroImage,
+  heroSubtitle,
+  heroTitle,
+  howItWorksSection,
+  metaDescription,
+  metaTitle,
+  ogImage,
+  ogSiteName,
+  ogUrl,
+  optimalImageSizesSection,
+  secondCtaSection,
 } = pageData.pageContent;
 ---
 
 <Layout
-  title={metaTitle}
   description={metaDescription}
-  ogTitle={metaTitle}
   ogDescription={metaDescription}
-  ogImageUrl={ogImage.ogImageUrl}
   ogImageAlt={ogImage.ogImageAlt}
+  ogImageUrl={ogImage.ogImageUrl}
+  ogSiteName={ogSiteName}
+  ogTitle={metaTitle}
   ogUrl={ogUrl}
+  title={metaTitle}
 >
-<Fragment slot="head">
-  <SchemaHead items={webpSchemas} />
-</Fragment>
-
+  <Fragment slot="head">
+    <SchemaHead items={webpSchemas} />
+  </Fragment>
 
   <header class="wrapper">
     <div class="hero-copy">
+      <!-- Hero: abstracte conversie‑illustratie (+ micro‑badge “gratis”). Alt‑tekst + lazy‑load. -->
       <h1 class="margin-bottom-1">
         {heroTitle}
       </h1>
       <p class="margin-bottom-2">
         {heroSubtitle}
       </p>
+      <ButtonWrapper>
+        <a href="#webp-converter" class="btn btn-secondary">Start nu gratis</a>
+        <a
+          href="#webp-converter-how-it-work-section"
+          class="btn btn-secondary-open">Hoe het werkt</a
+        >
+      </ButtonWrapper>
     </div>
     <picture class="converter-tool-hero-image">
-      <img alt={heroImage.altText} src={heroImage.imageUrl} />
+      <Image
+        alt={heroImage.altText}
+        src={heroImage.imageUrl}
+        height={500}
+        width={500}
+      />
     </picture>
   </header>
 
   <WebpConverterComponent />
   <!-- How it works section -->
-  <section class="wrapper how-it-works-section">
-    <h2>{howItWorksSection.title}</h2>
-    <article>
-      <div class="how-it-works-steps">
-        {
-          howItWorksSection.steps.map((step, i) => (
-            <div class="card">
-              <h3>{i + 1}</h3>
-              <p set:html={step.title} />
-              {/* <p set:html={step.description} /> */}
-            </div>
-          ))
-        }
-      </div>
-      <p
-        id="lastDescription"
-        set:html={howItWorksSection.lastStepDescription}
-      />
-    </article>
-  </section>
+  <HowItWorksSection
+    title={howItWorksSection.title}
+    steps={howItWorksSection.steps}
+    lastStepDescription={howItWorksSection.lastStepDescription}
+  />
   <!-- Cta section -->
-  <section class="wrapper cta-section">
-    <div class="cta-wrapper">
-      <div class="cta-content">
-        <h2>Heb je hulp nodig bij het sneller maken van je website?</h2>
-        <p>
-          Een snelle website is niet alleen prettig voor je bezoekers, maar ook
-          cruciaal voor je zichtbaarheid in Google. Met de juiste optimalisaties
-          zorg je ervoor dat je site soepel draait, beter converteert en
-          schaalbaar blijft voor de groei van je bedrijf.
-        </p>
-      </div>
-      <a
-        class="btn btn-secondary"
-        href="https://calendly.com/remco-westend-digital/30min"
-        >Plan een gratis strategiegesprek</a
-      >
-    </div>
-  </section>
+  <!-- Lead magnet (waarde‑first) Download: “Afbeeldingen‑optimalisatie Cheat Sheet (1
+  A4)” of “Automations voor beeldcompressie (CLI/Workflow)”. Form: voornaam + e‑mail.
+  Belofte: praktische stappen + tools + drempels voorkomen. -->
+  <CtaSection
+    title={ctaSection.title}
+    description={ctaSection.description}
+    contactBtn={ctaSection.contactBtn}
+  />
 
   <!-- Optimal image size section -->
-  <section class="wrapper optimal-image-size-section">
-    <div>
-      <h2 set:html={optimalImageSizesSection.title} />
-      <article>
-        <p set:html={optimalImageSizesSection.description} />
-        <ul>
-          {
-            optimalImageSizesSection.imageSizes.map((size) => (
-              <li set:html={size} />
-            ))
-          }
-        </ul>
+  <OptimalImageSection optimalImageSizesSection={optimalImageSizesSection} />
 
-        <table>
-          <tr>
-            {
-              optimalImageSizesSection.optimalImageSizesTable.headers.map(
-                (header) => <th set:html={header} />
-              )
-            }
-          </tr>
-          <tbody>
-            {
-              optimalImageSizesSection.optimalImageSizesTable.rows.map(
-                (row) => (
-                  <tr>
-                    <td set:html={row.type} />
-                    <td set:html={row.desktop} />
-                    <td set:html={row.mobile} />
-                    <td set:html={row.aspect_ratio} />
-                  </tr>
-                )
-              )
-            }
-          </tbody>
-        </table>
-        {
-          optimalImageSizesSection.lastDescription.map((paragraph) => (
-            <p set:html={paragraph} />
-          ))
-        }
-      </article>
-    </div>
-  </section>
+  <!-- Before and After Section -->
+  <BeforeAndAfterSection
+    afterImage={beforeAndAfterSection.afterImage}
+    beforeImage={beforeAndAfterSection.beforeImage}
+    compareImage={beforeAndAfterSection.compareImage}
+    description={beforeAndAfterSection.description}
+    title={beforeAndAfterSection.title}
+  />
 
+  <!-- Lead magnet: mockup van 1‑pager PDF/e‑book. Beschrijf inhoud in 3 bullets. -->
   <!-- Cta Section -->
-  <section class="wrapper cta-section">
-    <div class="cta-wrapper">
-      <div class="cta-content">
-        <h2>Ontdek wat we voor jouw website kunnen doen</h2>
-        <p>
-          Een website die langzaam laadt of niet goed is ingericht, kost je
-          bezoekers en dus klanten. Met de juiste aanpak haal je méér resultaat
-          uit dezelfde online basis. Wij kijken samen met jou hoe je website
-          sneller, gebruiksvriendelijker en effectiever kan worden ingericht,
-          zodat jij je kunt focussen op het laten groeien van je bedrijf.
-        </p>
-      </div>
-      <a
-        class="btn btn-secondary"
-        href="https://calendly.com/remco-westend-digital/30min"
-        >Plan mijn gratis strategiegesprek</a
-      >
-    </div>
-  </section>
+  <CtaSection
+    title={secondCtaSection.title}
+    description={secondCtaSection.description}
+    contactBtn={secondCtaSection.contactBtn}
+  />
+
+  <!-- Gerelateerde resources / cross‑sell Kaarten naar SERP preview tool, blog
+  ‘Website optimalisatie’, handleiding alt‑teksten. -->
 
   <!-- Faq Section -->
-  <section class="wrapper faq-section">
-    <h2>{faqSection.title}</h2>
-    <article>
-      {
-        faqSection.faqs.map((faq) => (
-          <details>
-            <summary>{faq.question}</summary>
-            <p set:html={faq.answer} />
-          </details>
-        ))
-      }
-    </article>
-  </section>
-  <!-- <FaqSection /> -->
+  <FaqSection faqSection={faqSection} />
 
-  <!-- Cta Section -->
-  <section class="final-cta-section">
-    <div class="wrapper">
-      <h2>{callToActionSection.title}</h2>
-      <p set:html={callToActionSection.description} />
-      <div class="btn-wrapper">
-        <a
-          href={callToActionSection.contactBtn.buttonLink}
-          class="btn btn-secondary"
-          >{callToActionSection.contactBtn.buttonText}</a
-        >
-        <a
-          href={callToActionSection.serviceBtn.buttonLink}
-          class="btn btn-secondary-open"
-          >{callToActionSection.serviceBtn.buttonText}</a
-        >
-      </div>
-    </div>
-  </section>
+  <!-- Final Cta Section -->
+  <FinalCtaSection callToActionSection={callToActionSection} />
 
   <!-- Other tools section -->
   <Footer />
@@ -222,7 +151,7 @@ const {
         margin-block: var(--size-2);
       }
 
-      div {
+      .hero-copy {
         display: grid;
         gap: var(--size-1);
         width: 100%;
@@ -240,165 +169,6 @@ const {
       max-width: 100%;
       overflow: hidden;
       width: 40%;
-    }
-  }
-
-  .how-it-works-section {
-    display: grid;
-    gap: var(--size-3);
-    margin-block: var(--size-5);
-    padding: var(--size-5) 0;
-    h2 {
-      text-align: center;
-      margin-bottom: var(--size-3);
-    }
-
-    article {
-      margin: 0 auto;
-      width: 100%;
-      h3 {
-        margin-bottom: var(--size-2);
-      }
-
-      .how-it-works-steps {
-        display: grid;
-        gap: var(--size-3);
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        width: 100%;
-
-        .card {
-          background-color: var(--clr-primary-100);
-          border-radius: var(--border-radius-card);
-          box-shadow: var(--box-shadow);
-          padding: var(--size-1);
-          width: 100%;
-
-          h3 {
-            font-size: var(--size-4);
-            margin-bottom: var(--size-1);
-          }
-
-          p {
-            margin-block-end: var(--size-2);
-          }
-        }
-      }
-      #lastDescription {
-        margin-block-start: var(--size-2);
-      }
-    }
-  }
-
-  .cta-wrapper {
-    align-items: center;
-    background: radial-gradient(hsl(224, 35%, 28%, 1), hsl(224, 75%, 11%, 1));
-    color: var(--clr-primary-100);
-    display: flex;
-    padding: var(--size-4) var(--size-5);
-    border-radius: var(--border-radius-card);
-    gap: var(--size-4);
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-
-    h2 {
-      color: var(--clr-primary-100);
-      margin-block-end: var(--size-2);
-    }
-  }
-
-  .optimal-image-size-section {
-    display: grid;
-    div {
-      h2 {
-        margin-block-end: var(--size-3);
-      }
-
-      article {
-        display: grid;
-        gap: var(--size-3);
-
-        ul {
-          margin-inline-start: var(--size-2);
-        }
-      }
-    }
-
-    table,
-    th,
-    td {
-      border: 1px solid black;
-      border-collapse: collapse;
-    }
-
-    th,
-    td {
-      padding: 0.5rem 1rem;
-    }
-  }
-
-  .faq-section {
-    display: grid;
-    gap: var(--size-3);
-    margin-block: var(--size-5);
-    padding: var(--size-5) 0;
-
-    h2 {
-      text-align: center;
-      margin-bottom: var(--size-3);
-    }
-
-    article {
-      display: grid;
-      gap: var(--size-2);
-
-      details {
-        background-color: var(--clr-primary-100);
-        border-radius: var(--border-radius-card);
-        box-shadow: var(--box-shadow);
-
-        summary {
-          font-weight: bold;
-          cursor: pointer;
-          padding: var(--size-2);
-        }
-
-        p {
-          margin-block-start: var(--size-2);
-          padding-block-end: var(--size-2);
-          padding-inline-start: var(--size-2);
-        }
-      }
-    }
-  }
-
-  .final-cta-section {
-    padding: var(--size-10) 0;
-    margin-block-end: 0;
-    background:
-      linear-gradient(315deg, hsl(224, 35%, 28%, 0.7), hsl(224, 75%, 11%, 0.8)),
-      url("/images/remco-programming.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    .wrapper {
-      display: grid;
-      gap: var(--size-3);
-      text-align: center;
-      justify-content: center;
-      color: var(--clr-primary-100);
-
-      h2 {
-        color: var(--clr-primary-100);
-      }
-
-      .btn-wrapper {
-        display: flex;
-        gap: var(--size-1);
-        justify-content: center;
-      }
     }
   }
 

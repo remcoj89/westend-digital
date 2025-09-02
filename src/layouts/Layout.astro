@@ -20,22 +20,22 @@ const {
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta charset="UTF-8" />
     <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width" />
+    <meta property="og:description" content={ogDescription} />
     <meta property="og:site_name" content={ogSiteName} />
     <meta property="og:title" content={ogTitle} />
-    <meta property="og:description" content={ogDescription} />
     <meta property="og:url" content={ogUrl} />
     <meta
-      property="og:image"
-      content=`https://www.westend-digital.nl${ogImageUrl}`
+    property="og:image"
+    content=`https://www.westend-digital.nl${ogImageUrl}`
     />
     <meta property="og:image:alt" content={ogImageAlt} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <slot name="head" />
     <Fragment slot="head">
       <SchemaHead items={commonSchemas} />

@@ -1,0 +1,168 @@
+---
+// Data passed as props
+const { commonMistakes } = Astro.props;
+const { title, body, mistakes, quote, ctaToTool, linkToArticle } =
+  commonMistakes;
+---
+
+<section
+  id="meta-mistakes"
+  class="wrapper meta-mistakes"
+  aria-labelledby="meta-mistakes-title"
+>
+  <header class="mm-header">
+    <h2 id="meta-mistakes-title" class="mm-title">{title}</h2>
+    <p class="mm-intro">{body}</p>
+  </header>
+
+  <ul class="mm-grid" role="list">
+    {
+      mistakes.map((mistake) => (
+        <li class="mm-card">
+          <h3 class="mm-card-title" set:html={mistake.title} />
+          <p class="mm-card-text" set:html={mistake.text} />
+        </li>
+      ))
+    }
+  </ul>
+
+  <blockquote class="mm-quote">
+    <p>{quote}</p>
+  </blockquote>
+
+  <div class="mm-cta-wrapper">
+    <div class="mm-cta">
+      <p class="mm-cta-help">
+        {ctaToTool.title}
+      </p>
+      <a
+        class="btn btn-secondary"
+        href={ctaToTool.linkUrl}
+        aria-label="Open de SERP preview tool en check je meta's"
+      >
+        {ctaToTool.linkText}</a
+      >
+    </div>
+    <div class="mm-cta">
+      <p class="mm-cta-help">
+        {linkToArticle.title}
+      </p>
+      <a
+        class="btn btn-secondary-open"
+        href={linkToArticle.linkUrl} 
+        aria-label="Open de SERP preview tool en check je meta's"
+      >{linkToArticle.linkText}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Section */
+  #serp-tool-wrapper .meta-mistakes,
+  .meta-mistakes {
+    background: var(--clr-neutral-100);
+    border-radius: var(--border-radius-card);
+    border: 1px dashed rgba(7, 19, 51, 0.18);
+    display: grid;
+    gap: var(--size-3);
+    margin: clamp(1.5rem, 2vw + 1rem, 3rem) auto;
+    padding: var(--size-4) var(--size-2);
+
+    /* Header */
+    .mm-header {
+      margin-bottom: var(--size-3);
+      text-align: center;
+
+      .mm-title {
+        color: var(--clr-primary-900);
+        font-family: var(--ff-header);
+        font-size: var(--fs-600);
+        margin-block-end: var(--size-1);
+      }
+
+      .mm-intro {
+        color: var(--primary-900);
+        font-size: var(--fs-400);
+        margin-inline: auto;
+      }
+    }
+
+    /* Grid */
+    .mm-grid {
+      display: inline-grid;
+      gap: var(--size-1);
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    }
+
+    /* Cards */
+    .mm-card {
+      background: var(--clr-primary-300);
+      border-radius: var(--border-radius-card);
+      border: 1px solid rgba(7, 19, 51, 0.12);
+      box-shadow: var(--box-shadow);
+      padding: var(--size-1);
+
+      .mm-card-title {
+        align-items: center;
+        color: var(--clr-primary-900);
+        display: flex;
+        font-size: var(--fs-600);
+        gap: var(--size-1);
+        margin-block-end: 0.5rem;
+
+        .mm-ico {
+          align-items: center;
+          background: color-mix(in srgb, var(--clr-primary-900) 22%, #fff);
+          border-radius: 6px;
+          display: flex;
+          font-size: var(--fs-400);
+          height: var(--size-2);
+          justify-content: center;
+          place-items: center;
+          width: var(--size-2);
+          outline: 1px dashed
+            color-mix(
+              in srgb,
+              var(--clr-primary-900) 50%,
+              var(--clr-primary-900)
+            );
+        }
+      }
+
+      .mm-card-text {
+        color: rgba(7, 19, 51, 0.9);
+        font-size: var(--fs-400);
+      }
+    }
+
+    /* Quote */
+    .mm-quote {
+      background: var(--clr-neutral-100);
+      border-radius: var(--border-radius-card);
+      border: 2px dashed var(--clr-primary-900);
+      font-style: var(--fw-italic);
+      padding: 0.9rem 1rem;
+      text-align: center;
+
+      p {
+        margin-inline: auto;
+      }
+    }
+
+    .mm-cta-wrapper {
+      display: flex;
+      gap: var(--size-2);
+
+      .mm-cta {
+        border-radius: var(--border-radius-card);
+        /* border: solid 2px var(--clr-secondary-900); */
+        display: grid;
+        gap: var(--size-1);
+        padding: var(--size-2) var(--size-1);
+        place-items: center;
+        text-align: center;
+      }
+    }
+  }
+</style>

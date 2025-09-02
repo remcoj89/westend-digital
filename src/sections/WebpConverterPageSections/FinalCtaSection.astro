@@ -1,0 +1,53 @@
+---
+// Data passed as props
+const { callToActionSection } = Astro.props;
+---
+
+<section class="final-cta-section hidden">
+  <div class="wrapper">
+    <h2>{callToActionSection.title}</h2>
+    <p set:html={callToActionSection.description} />
+    <div class="btn-wrapper">
+      <a
+        href={callToActionSection.contactBtn.buttonLink}
+        class="btn btn-secondary">{callToActionSection.contactBtn.buttonText}</a
+      >
+      <a
+        href={callToActionSection.serviceBtn.buttonLink}
+        class="btn btn-secondary-open"
+        >{callToActionSection.serviceBtn.buttonText}</a
+      >
+    </div>
+  </div>
+</section>
+
+<style>
+  .final-cta-section {
+    padding: var(--size-10) 0;
+    margin-block-end: 0;
+    background:
+      linear-gradient(315deg, hsl(224, 35%, 28%, 0.7), hsl(224, 75%, 11%, 0.8)),
+      url("/images/remco-programming.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .wrapper {
+      display: grid;
+      gap: var(--size-3);
+      text-align: center;
+      justify-content: center;
+      color: var(--clr-primary-100);
+
+      h2 {
+        color: var(--clr-primary-100);
+      }
+
+      .btn-wrapper {
+        display: flex;
+        gap: var(--size-1);
+        justify-content: center;
+      }
+    }
+  }
+</style>
