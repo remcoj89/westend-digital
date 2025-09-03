@@ -1,9 +1,9 @@
 ---
 // Data passed as props
-const { faqSection } = Astro.props;
+const { faqSection, id } = Astro.props;
 ---
 
-<section class="wrapper faq-section hidden" id="faq-section">
+<section class="wrapper faq-section hidden" id={id}>
   <h2>{faqSection.title}</h2>
   <article>
     {

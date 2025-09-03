@@ -111,7 +111,7 @@
         "linkUrl": "/blog-artikelen/hoe-schrijf-je-goede-metas"
       }
     },
-    "ctaSection": {
+    "firstCtaSection": {
       "title": "Heb je hulp nodig bij het sneller maken van je website?",
       "description": "Een snelle website is niet alleen prettig voor je bezoekers, maar ook cruciaal voor je zichtbaarheid in Google. Met de juiste optimalisaties zorg je ervoor dat je site soepel draait, beter converteert en schaalbaar blijft voor de groei van je bedrijf.",
       "contactBtn": {
@@ -123,12 +123,32 @@
         "buttonLink": "/website"
       }
     },
+    "seoTipsSection": {
+      "title": "SEO in 2025: jouw meta titels en beschrijvingen maken het verschil",
+      "description": "In 2025 draait SEO niet alleen om zoekwoorden, maar vooral om relevantie, autoriteit en gebruiksvriendelijkheid. Je meta titel en beschrijving zijn daarbij je eerste indruk in Google: ze bepalen of iemand wel of niet op jouw link klikt.",
+      "tipsTitle": "Korte tips:",
+      "tips": [
+        "<strong>Hou het kort en krachtig:</strong> titels max. 60 karakters, beschrijvingen 140–160.",
+        "<strong>Voeg je zoekwoord in</strong> maar zonder te overdrijven.",
+        "<strong>Maak het aantrekkelijk:</strong> benoem een voordeel of USP.",
+        "<strong>Test je meta’s</strong> direct in de SERP Preview tool en kijk hoe ze eruitzien in Google."
+      ],
+      "quote": "Wil je meer weten over hoe je in 2025 scoort met SEO? Lees dan het volledige artikel:",
+      "internalLink": {
+        "url": "/tools/google-serp-preview-tool/",
+        "title": "SEO in 2025: de spelregels en best practices"
+      },
+      "image": {
+        "url": "/images/serp-preview-tool/seo-meta.webp",
+        "altText": "Donkere illustratie die meta tags weergeeft"
+      }
+    },
     "secondCtaSection": {
-      "title": "Ontdek wat we voor jouw website kunnen doen",
-      "description": "Een website die langzaam laadt of niet goed is ingericht, kost je bezoekers en dus klanten. Met de juiste aanpak haal je méér resultaat uit dezelfde online basis. Wij kijken samen met jou hoe je website sneller, gebruiksvriendelijker en effectiever kan worden ingericht, zodat jij je kunt focussen op het laten groeien van je bedrijf.",
+      "title": "Download gratis SEO Quick Guide",
+      "description": "Ontvang een checklist voor perfecte meta titels & descriptions.",
       "contactBtn": {
-        "buttonText": "Plan mijn gratis strategiegesprek",
-        "buttonLink": "https://calendly.com/remco-westend-digital/30min"
+        "buttonText": "Download gratis",
+        "buttonLink": "#"
       }
     },
     "faqSection": {
@@ -173,11 +193,11 @@
       ]
     },
     "callToActionSection": {
-      "title": "Klaar voor een snellere website?",
-      "description": "Met deze gratis tool zet je je afbeeldingen direct om naar WebP. Wil je méér snelheid en resultaat uit je website halen? Bekijk dan onze pagina <a href='/website'>website </a> laten maken en ontdek hoe we jouw bedrijf online laten groeien.",
+      "title": "Meer uit je website halen?",
+      "description": "Ontdek hoe wij jouw site winstgevend maken.",
       "contactBtn": {
-        "buttonText": "Plan een vrijblijvend gesprek",
-        "buttonLink": "/contact"
+        "buttonText": "Vraag gratis adviesgesprek aan",
+        "buttonLink": "https://calendly.com/remco-westend-digital/30min"
       },
       "serviceBtn": {
         "buttonText": "Bekijk onze website diensten",

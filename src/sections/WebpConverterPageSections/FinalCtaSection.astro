@@ -1,22 +1,23 @@
 ---
 // Data passed as props
-const { callToActionSection } = Astro.props;
+const { callToActionSection, id } = Astro.props;
 ---
 
-<section class="final-cta-section hidden">
+<section class="final-cta-section hidden" id={id}>
   <div class="wrapper">
     <h2>{callToActionSection.title}</h2>
     <p set:html={callToActionSection.description} />
     <div class="btn-wrapper">
       <a
         href={callToActionSection.contactBtn.buttonLink}
-        class="btn btn-secondary">{callToActionSection.contactBtn.buttonText}</a
+        class="btn btn-secondary"
+        target="_blank" >{callToActionSection.contactBtn.buttonText}</a
       >
-      <a
+      <!-- <a
         href={callToActionSection.serviceBtn.buttonLink}
         class="btn btn-secondary-open"
         >{callToActionSection.serviceBtn.buttonText}</a
-      >
+      > -->
     </div>
   </div>
 </section>

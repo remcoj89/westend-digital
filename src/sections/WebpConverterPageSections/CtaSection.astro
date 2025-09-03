@@ -1,9 +1,9 @@
 ---
 // Data passed as props
-const { title, description, contactBtn } = Astro.props;
+const { title, description, contactBtn, id = "" } = Astro.props;
 ---
 
-<section class="wrapper cta-section hidden">
+<section class="wrapper cta-section hidden" id={id}>
   <div class="cta-wrapper">
     <div class="cta-content">
       <h2>{title}</h2>

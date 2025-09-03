@@ -1,0 +1,51 @@
+---
+import Image from "astro/components/Image.astro";
+
+// Data via props
+const { seoTipsSection } = Astro.props;
+---
+
+<section class="wrapper" id="seo-tips">
+  <article>
+    <h2>{seoTipsSection.title}</h2>
+    <p>{seoTipsSection.description}</p>
+
+    <div>
+      <h3>{seoTipsSection.tipsTitle}</h3>
+      <ul>
+        {seoTipsSection.tips.map((tip) => <li set:html={tip} />)}
+      </ul>
+    </div>
+
+    <span>{seoTipsSection.quote}</span>
+    <a href={seoTipsSection.internalLink.url}
+      >{seoTipsSection.internalLink.title}</a
+    >
+  </article>
+
+  <Image
+    src={seoTipsSection.image.url}
+    alt={seoTipsSection.image.altText}
+    height={300}
+    width={600}
+  />
+</section>
+
+<style>
+  #seo-tips {
+    gap: var(--size-3);
+    article {
+      display: grid;
+      gap: var(--size-2);
+      width: 50%;
+    }
+
+    img {
+      border-radius: var(--border-radius-img);
+      box-shadow: var(--box-shadow);
+      object-fit: cover;
+      object-position: 90%;
+      width: 50%;
+    }
+  }
+</style>
