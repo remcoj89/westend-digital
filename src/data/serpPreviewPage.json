@@ -135,7 +135,7 @@
       ],
       "quote": "Wil je meer weten over hoe je in 2025 scoort met SEO? Lees dan het volledige artikel:",
       "internalLink": {
-        "url": "/tools/google-serp-preview-tool/",
+        "url": "/blog-artikelen/seo-in-2025-de-spelregels-en-best-practices",
         "title": "SEO in 2025: de spelregels en best practices"
       },
       "image": {
@@ -155,40 +155,36 @@
       "title": "Veelgestelde vragen (FAQ)",
       "faqs": [
         {
-          "question": "Wat is WebP?",
-          "answer": "WebP is een modern afbeeldingsformaat ontwikkeld door Google. Het combineert de voordelen van JPG (kleine bestanden) en PNG (transparantie) in één formaat. Het grootste voordeel is dat je afbeeldingen aanzienlijk kleiner worden, zonder dat je bezoekers kwaliteitsverlies zien. Dat betekent dat jouw website sneller laadt en prettiger werkt, wat direct bijdraagt aan een betere online ervaring."
+          "question": "Wat is een meta titel en beschrijving eigenlijk?",
+          "answer": "Een meta titel is de blauwe klikbare link in Google en de beschrijving is de korte tekst eronder. Samen vormen ze je digitale visitekaartje: ze bepalen of iemand wél of niet doorklikt naar jouw website."
         },
         {
-          "question": "Werkt WebP in alle browsers?",
-          "answer": "Ja, bijna alle moderne browsers – zoals Chrome, Firefox, Edge en Safari – ondersteunen WebP standaard. Alleen heel oude browsers (die nog maar door een klein percentage gebruikers worden gebruikt) kunnen het niet aan. Voor die gevallen kun je een fallback instellen, zodat jouw website altijd goed zichtbaar blijft."
+          "question": "Waarom zijn meta titels en beschrijvingen zo belangrijk voor SEO?",
+          "answer": "Omdat Google en je bezoekers in één oogopslag moeten begrijpen waar je pagina over gaat. Een scherpe titel en beschrijving verhogen je zichtbaarheid, je klikratio (CTR) en zorgen dat je de juiste bezoekers aantrekt."
         },
         {
-          "question": "Hoeveel kleiner wordt mijn bestand?",
-          "answer": "Gemiddeld zijn WebP-bestanden 25–35% kleiner dan dezelfde afbeelding in JPG of PNG. Stel dat je een foto van 500KB hebt, dan kan die met WebP teruggebracht worden naar zo’n 325KB, terwijl de kwaliteit voor het oog vrijwel gelijk blijft. Zeker bij meerdere afbeeldingen op een pagina scheelt dat enorm in laadtijd."
+          "question": "Hoe lang mag een meta titel of beschrijving zijn?",
+          "answer": "Hou titels kort en krachtig: maximaal 60 karakters. Beschrijvingen werken het best tussen de 140–160 karakters. Langer? Dan kapt Google de tekst af en verlies je impact."
         },
         {
-          "question": "Verlies ik kwaliteit bij het omzetten?",
-          "answer": "Dat hangt af van de instellingen die je kiest. Met de standaardwaarde van 0.8 blijft je afbeelding scherp en levendig, terwijl het bestand flink verkleind wordt. Kies je voor een lagere waarde (bijvoorbeeld 0.5), dan wordt de afbeelding nog lichter, maar kan er wat detail verloren gaan. Voor de meeste websites is 0.8 een perfecte balans tussen kwaliteit en snelheid."
+          "question": "Moet ik altijd mijn zoekwoorden in de titel en beschrijving zetten?",
+          "answer": "Ja, maar doe het slim. Verwerk je zoekwoorden natuurlijk in de tekst. Keyword stuffing (je zoekwoord te vaak proppen) werkt averechts en schrikt lezers af."
         },
         {
-          "question": "Kan ik meerdere afbeeldingen tegelijk converteren?",
-          "answer": "Ja, je kunt eenvoudig meerdere JPG- en of PNG-afbeeldingen tegelijk uploaden en converteren naar WebP. Na het uploaden kun je de kwaliteit en afmetingen instellen voor elke afbeelding. Zodra je klaar bent, klik je op 'Converteren & Zip downloaden' om alle geconverteerde afbeeldingen in één ZIP-bestand te ontvangen."
+          "question": "Kan ik meerdere pagina’s dezelfde meta titel en beschrijving geven?",
+          "answer": "Beter van niet. Dubbele meta’s verlagen je vindbaarheid. Elke pagina verdient zijn eigen unieke insteek, afgestemd op het onderwerp en de doelgroep."
         },
         {
-          "question": "Hoe kan ik de geconverteerde WebP-afbeeldingen gebruiken?",
-          "answer": "Na het downloaden van het ZIP-bestand kun je de WebP-afbeeldingen eenvoudig toevoegen aan je website of blog. De meeste content management systemen (zoals WordPress) ondersteunen WebP, maar controleer altijd of jouw thema of plugins dit ook doen. Als je problemen ondervindt, kun je overwegen om een plugin te gebruiken die WebP ondersteunt of een fallback in te stellen voor oudere browsers."
+          "question": "Hoe helpt de SERP Preview Tool mij hierbij?",
+          "answer": "Je ziet direct hoe je titel en beschrijving eruitzien in Google, zowel op desktop als mobiel. Zo kun je finetunen tot je zeker weet dat jouw snippet eruit springt."
         },
         {
-          "question": "Is er een limiet aan het aantal afbeeldingen dat ik kan converteren?",
-          "answer": "Er is geen harde limiet aan het aantal afbeeldingen dat je kunt converteren, maar we raden aan om niet meer dan 10 afbeeldingen per keer te uploaden voor de beste prestaties. Als je meer afbeeldingen hebt, kun je ze in batches van 10 uploaden."
+          "question": "Wat zijn de meest gemaakte fouten bij meta’s?",
+          "answer": "Veel ondernemers maken ze te lang, te algemeen of vergeten hun USP te benoemen. Ook vakjargon, geen call-to-action of helemaal géén description zijn veelvoorkomende valkuilen."
         },
         {
-          "question": "Helpt WebP mijn SEO?",
-          "answer": "Absoluut. Google houdt van snelle websites. Een kortere laadtijd betekent dat bezoekers langer op je site blijven, minder snel afhaken en dat zoekmachines je pagina hoger waarderen. Door over te stappen op WebP verbeter je dus niet alleen de snelheid, maar ook je kansen op een betere ranking in de zoekresultaten. Lees meer in ons artikel over <a href='/blog-artikelen/website-optimalisatie/' target='_blacnk'>website optimalisatie.</a>"
-        },
-        {
-          "question": "Kan ik WebP gebruiken in WordPress, Webflow of andere CMS’en?",
-          "answer": "Ja, de meeste moderne CMS’en ondersteunen WebP zonder problemen. Je kunt je WebP-afbeeldingen direct uploaden en gebruiken zoals je gewend bent met JPG of PNG. Gebruik je een oudere versie van WordPress of een specifiek thema/plugin? Dan zijn er vaak gratis plugins beschikbaar die de ondersteuning uitbreiden, zodat je toch profiteert van snellere laadtijden."
+          "question": "Hoe weet ik of mijn meta’s écht goed zijn?",
+          "answer": "Test ze in de tool, maar kijk ook naar de resultaten: stijgt je klikratio in Google Search Console? Dan weet je dat je titel en beschrijving werken. Twijfel je? <a href='https://calendly.com/remco-westend-digital/30min'> Plan een gratis check</a> en we kijken samen met je mee."
         }
       ]
     },
