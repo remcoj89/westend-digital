@@ -1,91 +1,95 @@
 ---
-import SectionTitle from "../components/SectionTitle.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Image from "astro/components/Image.astro";
 
-const { title, faqs } = Astro.props;
-
-const { sectionId } = Astro.props;
+const { title, faqs, sectionId } = Astro.props;
 ---
 
-<section class="fb-col-wrapper" id={sectionId}>
-  <SectionTitle sectionTitle={title} />
-  <span class="section-subtitle"
-    >Niet het antwoord dat je zoekt? Je kunt ons ook altijd even
-    <a href="mailto:info@westend-digital.nl">mailen.</a>
-  </span>
+<section class="wrapper faq-section" id={sectionId}>
+  <header>
+    <h2>{title}</h2>
+    <span class="section-subtitle"
+      >Niet het antwoord dat je zoekt? Je kunt ons ook altijd even
+      <a href="mailto:info@westend-digital.nl">mailen.</a>
+    </span>
+  </header>
 
-  <ul class="faq-wrapper" role="list">
-    {
-      faqs.map((faq, i) => {
-        return (
-          <FaqAccordion
-            question={faq.question}
-            answer={faq.answer}
-            link={faq.internalLink}
-            index={i}
-          />
-        );
-      })
-    }
-  </ul>
-  <Image
-    alt="Vraagtekens om de FAQ sectie te symboliseren"
-    class="faq-image"
-    src="/images/questions-marks.webp"
-    height="500"
-    width="500"
-  />
+  <div class="faq-wrapper">
+    <ul class="faqs" role="list">
+      {
+        faqs.map((faq, i) => {
+          return (
+            <FaqAccordion
+              question={faq.question}
+              answer={faq.answer}
+              link={faq.internalLink}
+              index={i}
+            />
+          );
+        })
+      }
+    </ul>
+    <Image
+      alt="Vraagtekens om de FAQ sectie te symboliseren"
+      class="faq-image"
+      src="/images/questions-marks.webp"
+      height="500"
+      width="500"
+    />
+  </div>
 </section>
 
 <style>
   #webcheck-faq {
     margin-block-end: var(--size-10);
   }
+  .faq-section {
+    display: grid;
 
-  .section-subtitle {
-    grid-column: 2 / -2;
-    text-align: center;
-    font-size: var(--fs-500);
-    margin-block-end: var(--size-6);
-  }
+    header {
+      text-align: center;
+      margin-block-end: var(--size-6);
 
-  .faq-wrapper {
-    grid-column: -2 / 2;
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-2);
-  }
-
-  .faq-image {
-    display: none;
-    border-radius: var(--border-radius-img);
-    box-shadow: var(--box-shadow);
-    grid-column: 2 / -2;
-    object-fit: cover;
-    object-position: center;
-    height: 50vh;
-    width: 100%;
-  }
-
-  @media (width >= 43.75em) {
-    .faq-wrapper {
-      grid-column: 2 / -2;
-    }
-  }
-  @media (width >= 62.5em) {
-    .faq-wrapper {
-      grid-column: 2 / 9;
+      .section-subtitle {
+        font-size: var(--fs-500);
+      }
     }
 
-    .faq-image {
-      display: block;
-      grid-column: 9 / -2;
-      width: fit-content;
+    .faq-wrapper {
+      display: flex;
+      gap: var(--size-1);
+
+      .faqs {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-2);
+      }
+
+      .faq-image {
+        display: none;
+        border-radius: var(--border-radius-img);
+        box-shadow: var(--box-shadow);
+        object-fit: cover;
+        object-position: center;
+        height: 50vh;
+        width: 100%;
+      }
+      /*
+      @media (width >= 43.75em) {
+        .faq-wrapper {
+          grid-column: 2 / -2;
+        }
+      } */
+      @media (width >= 62.5em) {
+        .faq-image {
+          display: block;
+          grid-column: 9 / -2;
+          width: fit-content;
+        }
+      }
     }
   }
 </style>
-
 
 <script is:inline>
   const faqWrapper = document.querySelector(".faq-wrapper");

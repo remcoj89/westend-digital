@@ -1,0 +1,57 @@
+---
+import Image from "astro/components/Image.astro";
+// Components
+import Card from "../components/Card.astro";
+
+// Data via props
+const { review } = Astro.props;
+---
+
+<div class="testemonial">
+  <blockquote set:html={review.testemonial} />
+  <div class="testemonial__writer">
+    <Image
+      alt={review.avatar.altText}
+      class="testimonial-image"
+      height={50}
+      src={review.avatar.url}
+      width={50}
+    />
+    <div class="testimonial-text">
+      <h3>{review.author}</h3>
+      <p>{review.company}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .testemonial {
+    background-color: var(--clr-primary-300);
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    color: var(--clr-primary-900);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-2);
+    justify-content: space-between;
+    margin: 1rem;
+    padding: 2rem;
+    width: 100%;
+  }
+  .testemonial__writer {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+  .testimonial-image {
+    border-radius: 100%;
+    height: 7.5rem;
+    margin-right: 1rem;
+    object-fit: cover;
+    width: 7.5rem;
+  }
+  .testimonial-text {
+    display: flex;
+    flex-direction: column;
+  }
+</style>

@@ -1,9 +1,18 @@
 ---
-import FunnelLayout from "../layouts/FunnelLayout.astro";
-import Header from "../components/Header.astro";
+// Layouts
+import Layout from "../layouts/Layout.astro";
+
+// Sections
 import IntroSection from "../sections/IntroSection.astro";
 import FooterSection from "../sections/FooterSection.astro";
+import FaqSection from "../sections/SharedSections/FaqSection.astro";
+
+// Components
+import Header from "../components/Header.astro";
+
+// Data
 import PageData from "../data/website.json";
+import TestemonialSection from "../sections/websitePage/testemonialSection.astro";
 
 const {
   herkenbaarSection,
@@ -12,10 +21,12 @@ const {
   metaTitle,
   ogImage,
   ogUrl,
+  faqSection,
+  testemonialsSection,
 } = PageData.pageContent;
 ---
 
-<FunnelLayout
+<Layout
   description={metaDescription}
   ogDescription={metaDescription}
   ogImageAlt={ogImage.ogImageAlt}
@@ -54,100 +65,24 @@ const {
       </div>
     </section>
 
-    <section class="hidden" id="website-testimonialsection-1">
-      <div
-        class="wrapper flex-column-center dark-bg padding-block-4 padding-inline-2 border-radius-card"
-      >
-        <h2 class="text-center margin-bottom-3">
-          <span class="highlight-text">Ervaringen</span> van onderners zoals jij
-        </h2>
-        <div class="flex">
-          <div class="testemonial">
-            <p>
-              "Dankzij de website van Westend Digital hebben we meer klanten
-              kunnen aantrekken en onze omzet verhoogd."
-            </p>
-            <div class="testemonial__writer">
-              <img
-                src="/images/sampel-avatar.jpg"
-                alt="Linda Munster"
-                width="50"
-                height="50"
-                class="testimonial-image"
-              />
-              <div class="testimonial-text">
-                <h3>Linda Munster</h3>
-                <p>Schermer Eylandt</p>
-              </div>
-            </div>
-          </div>
+    <TestemonialSection testemonialsSection={testemonialsSection} />
 
-          <div class="testemonial">
-            <p>
-              "Dankzij de website van Westend Digital hebben we meer klanten
-              kunnen aantrekken en onze omzet verhoogd."
-            </p>
-            <div class="testemonial__writer">
-              <img
-                src="/images/sampel-avatar.jpg"
-                alt="Linda Munster"
-                width="50"
-                height="50"
-                class="testimonial-image"
-              />
-              <div class="testimonial-text">
-                <h3>Linda Munster</h3>
-                <p>Schermer Eylandt</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrapper hidden">
-      <div class="text-center margin-inline-auto">
-        <h2>Onze diensten</h2>
-        <p>
-          Wij bieden verschillende diensten aan, van het ontwerpen van een
-          nieuwe website tot het optimaliseren van je bestaande site. Ook bieden
-          we ondersteuning bij het onderhouden van je website.
-        </p>
-      </div>
-    </section>
-
-    <section class="wrapper hidden">
-      <h2>Veelgestelde vragen</h2>
-      <!-- <FaqSection /> -->
-    </section>
   </main>
 
-  <FooterSection />
-</FunnelLayout>
+  <section class="wrapper hidden">
+    <div class="text-center margin-inline-auto">
+      <h2>Onze diensten</h2>
+      <p>
+        Wij bieden verschillende diensten aan, van het ontwerpen van een nieuwe
+        website tot het optimaliseren van je bestaande site. Ook bieden we
+        ondersteuning bij het onderhouden van je website.
+      </p>
+    </div>
+  </section>
 
-<style>
-  .testemonial {
-    color: var(--clr-primary-900);
-    background-color: var(--clr-primary-300);
-    border-radius: 1rem;
-    box-shadow: var(--box-shadow);
-    margin: 1rem;
-    padding: 2rem;
-  }
-  .testemonial__writer {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .testimonial-image {
-    border-radius: 100%;
-    width: 7.5rem;
-    height: 7.5rem;
-    object-fit: cover;
-    margin-right: 1rem;
-  }
-  .testimonial-text {
-    display: flex;
-    flex-direction: column;
-  }
-</style>
+  <FaqSection faqSection={faqSection} sectionId="website-faq-section" />
+</Layout>
+
+<FooterSection />
+
+
