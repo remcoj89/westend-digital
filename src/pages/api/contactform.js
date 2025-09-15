@@ -2,7 +2,6 @@ import nodemailer from "nodemailer";
 export const prerender = false;
 
 export const POST = async ({ request }) => {
-  console.log('Request Headers:', request.headers.get('Content-Type'));
 
   const data = await request.formData();
   const name = data.get("name");

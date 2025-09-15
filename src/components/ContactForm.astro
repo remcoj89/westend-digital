@@ -6,12 +6,19 @@ if (Astro.request.method === "POST") {
   errors = { name: "", email: "", message: "", subject: "" };
   try {
     const data = await Astro.request.formData();
-    const name = data.get("name")
-    const email = data.get("email")
-    const message = data.get("message")
-    const subject = data.get("subject")
+    const name = data.get("name");
+    const email = data.get("email");
+    const message = data.get("message");
+    const subject = data.get("subject");
 
     // Validation logic
+    // Example validation (add your own as needed)
+    if (!name) errors.name = "Naam is verplicht";
+    if (!email) errors.email = "Email is verplicht";
+    if (!subject) errors.subject = "Onderwerp is verplicht";
+    if (!message) errors.message = "Wat is je vraag?";
+
+    const hasErrors = Object.values(errors).some((val) => val);
 
     if (!hasErrors) {
       const payload = {
@@ -21,9 +28,7 @@ if (Astro.request.method === "POST") {
         subject: subject,
       };
       await sendEmail(payload);
-      console.log("Email sent successfully");
     }
-
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
@@ -31,6 +36,7 @@ if (Astro.request.method === "POST") {
   }
 }
 ---
+
 <form method="POST">
   <div>
     <label for="name">Your Name: *</label>

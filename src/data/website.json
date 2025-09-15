@@ -23,7 +23,7 @@
         ],
         "ctaBtn": "Laten we kennis maken",
         "ctaBtnUrl": "/contact",
-        "imageUrl": "/images/herkenbaar.webp",
+        "imageUrl": "/images/herken-je-dit.webp",
         "altText": "Ondernemer in legergroen shirt met een laptop in zijn handen, die een website review geeft aan een klant"
       },
       "testemonialsSection": {
@@ -34,7 +34,7 @@
             "author": "Jordi Oostmeijer",
             "company": "Grafisch vormgever",
             "avatar": {
-              "url": "https://lh3.googleusercontent.com/a-/ALV-UjX95TEpH0EjXUampBjwFu_iAraGp9DP-j2rREKUYDeORwSTNEk=w72-h72-p-rp-mo-br100",
+              "url": "/images/avatar-jordi.webp",
               "altText": "Avatar van Jordi Oosmeijer"
             }
           },
@@ -43,7 +43,7 @@
             "author": "Linda Munster",
             "company": "B&B SchermerEylandt",
             "avatar": {
-              "url": "",
+              "url": "/images/logo-schermer-eylandt.webp",
               "altText": "Avatar van Linda Munster"
             }
           }

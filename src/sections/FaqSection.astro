@@ -63,6 +63,7 @@ const { title, faqs, sectionId } = Astro.props;
         display: flex;
         flex-direction: column;
         gap: var(--size-2);
+        width: 100%;
       }
 
       .faq-image {
@@ -74,17 +75,10 @@ const { title, faqs, sectionId } = Astro.props;
         height: 50vh;
         width: 100%;
       }
-      /*
-      @media (width >= 43.75em) {
-        .faq-wrapper {
-          grid-column: 2 / -2;
-        }
-      } */
+
       @media (width >= 62.5em) {
         .faq-image {
           display: block;
-          grid-column: 9 / -2;
-          width: fit-content;
         }
       }
     }
