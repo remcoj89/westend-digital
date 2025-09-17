@@ -3,26 +3,51 @@
 import Layout from "../layouts/Layout.astro";
 
 // Sections
-import IntroSection from "../sections/IntroSection.astro";
 import FooterSection from "../sections/FooterSection.astro";
 import FaqSection from "../sections/SharedSections/FaqSection.astro";
+import SolutionSection from "../sections/websitePage/solutionSection.astro";
+import ReviewSection from "../sections/websitePage/reviewSection.astro";
+import ResultSection from "../sections/websitePage/resultSection.astro";
+import PracticalInfoSection from "../sections/websitePage/practicalInfoSection.astro";
+import PricingSectionA from "../sections/websitePage/pricingSectionA.astro";
+// import PricingSectionB from "../sections/websitePage/pricingSectionB.astro"
+import CtaSection from "../sections/websitePage/ctaSection.astro";
+import TrustSection from "../sections/websitePage/trustSection.astro";
+import AboutMeSection from "../sections/websitePage/aboutMeSection.astro";
+import ForWhoSection from "../sections/websitePage/forWhoSection.astro";
+import WhyNowSection from "../sections/websitePage/whyNowSection.astro";
+import LastCallCtaSection from "../sections/websitePage/lastCallCtaSection.astro";
+import IntroSection from "../sections/IntroSection.astro";
 
 // Components
 import Header from "../components/Header.astro";
 
 // Data
 import PageData from "../data/website.json";
-import TestemonialSection from "../sections/websitePage/testemonialSection.astro";
 
 const {
-  herkenbaarSection,
+  aboutMeSection,
+  ctaSection,
+  faqSection,
+  firstReviewSection,
+  forthReviewSection,
+  forWhoSection,
   heroSection,
+  lastCallCtaSection,
   metaDescription,
   metaTitle,
   ogImage,
   ogUrl,
-  faqSection,
-  testemonialsSection,
+  practivalInfoSection,
+  pricingSectionA,
+  pricingSectionB,
+  problemSection,
+  resultSection,
+  secondReviewSection,
+  solutionSection,
+  thirdReviewSection,
+  trustSection,
+  whyNowSection,
 } = PageData.pageContent;
 ---
 
@@ -39,50 +64,79 @@ const {
     <div>
       <h1 set:html={heroSection.title} />
       <p set:html={heroSection.subtitle} />
-      <a href={heroSection.ctaBtnUrl} class="btn btn-cta"
-        >{heroSection.ctaBtn}</a
+      <a href={heroSection.cta.url} class="btn btn-cta"
+        >{heroSection.cta.title}</a
       >
     </div>
   </Header>
 
   <main>
+    <!-- Intro section what is the problem -->
     <IntroSection
-      altText={herkenbaarSection.altText}
-      imageUrl={herkenbaarSection.imageUrl}
-      paragraph={herkenbaarSection.paragraph}
-      title={herkenbaarSection.title}
+      altText={problemSection.image.altText}
+      imageUrl={problemSection.image.url}
+      paragraph={problemSection.content}
+      sectionId="problemSection"
+      title={problemSection.title}
     />
-
-    <!-- <section class="wrapper hidden" id="website-how-we-work">
-      <div class="text-center margin-inline-auto">
-        <h2>Onze aanpak</h2>
-
-        <p>
-          Wij geloven in een persoonlijke aanpak. Samen met jou kijken we naar
-          jouw wensen en doelen, zodat we een website kunnen creëren die perfect
-          aansluit bij jouw bedrijf.
-        </p>
-      </div>
-    </section> -->
-
-    <TestemonialSection testemonialsSection={testemonialsSection} />
-
+    <!-- Intro section what is the solution -->
+    <IntroSection
+      altText={solutionSection.image.altText}
+      cta={solutionSection.cta}
+      flexDirection="flex-reverse"
+      imageUrl={solutionSection.image.url}
+      paragraph={solutionSection.content}
+      sectionId="solutionSection"
+      title={solutionSection.title}
+    />
+    <!-- First testemonial -->
+    <ReviewSection
+      content={firstReviewSection}
+      sectionId="firstReviewSection"
+    />
+    <!-- Result section -->
+    <ResultSection content={resultSection} sectionId="resultSection" />
+    <!-- Practical info -->
+    <PracticalInfoSection
+      content={practivalInfoSection}
+      sectionId="practicalInfoSection"
+    />
+    <!-- Second testemonial -->
+    <ReviewSection
+      content={secondReviewSection}
+      sectionId="secondReviewSection"
+    />
+    <!-- Pricing Section A-->
+    <PricingSectionA content={pricingSectionA} sectionId="pricingSectionA" />
+    <!-- Pricing Section B-->
+    <!-- <PricingSectionB content={pricingSectionB} sectionId="pricingSectionB"/> -->
+    <!-- ctaSection -->
+    <CtaSection content={ctaSection} sectionId="ctaSection" />
+    <!-- trustSection -->
+    <TrustSection content={trustSection} sectionId="trustSection" />
+    <!-- thirdReviewSection -->
+    <ReviewSection
+      content={thirdReviewSection}
+      sectionId="thirdReviewSection"
+    />
+    <!-- aboutMeSection -->
+    <AboutMeSection content={aboutMeSection} sectionId="aboutMeSection" />
+    <!-- forWhoSection -->
+    <ForWhoSection content={forWhoSection} sectionId="forWhoSection" />
+    <!-- whyNowSection -->
+    <WhyNowSection content={whyNowSection} sectionId="whyNowSection" />
+    <!-- forthReviewSection -->
+    <ReviewSection
+      content={forthReviewSection}
+      sectionId="forthReviewSection"
+    />
+    <!-- faqSection -->
+    <FaqSection faqSection={faqSection} sectionId="website-faq-section" />
+    <!-- lastCallCtaSection -->
+    <LastCallCtaSection
+      content={lastCallCtaSection}
+      sectionId="lastCallCtaSection"
+    />
   </main>
-
-  <section class="wrapper hidden">
-    <div class="text-center margin-inline-auto">
-      <h2>Onze diensten</h2>
-      <p>
-        Wij bieden verschillende diensten aan, van het ontwerpen van een nieuwe
-        website tot het optimaliseren van je bestaande site. Ook bieden we
-        ondersteuning bij het onderhouden van je website.
-      </p>
-    </div>
-  </section>
-
-  <FaqSection faqSection={faqSection} sectionId="website-faq-section" />
+  <FooterSection />
 </Layout>
-
-<FooterSection />
-
-

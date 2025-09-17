@@ -1,0 +1,8 @@
+---
+// Data via props
+const { content, sectionId } = Astro.props;
+---
+
+<section class="wrapper hidden" id={sectionId}>
+  <h2>{content.title}</h2>
+</section>

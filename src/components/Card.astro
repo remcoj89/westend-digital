@@ -60,6 +60,15 @@ const { cardStyle = "primary" } = Astro.props;
     }
   }
 
+  .service-card {
+    background-color: var(--clr-neutral-100);
+    box-shadow: var(--box-shadow);
+    padding-block: var(--size-1);
+    padding-inline: var(--size-2);
+    text-align: center;
+    width: 100%;
+  }
+
   .card.review {
     box-shadow: 2px 5px 9px hsl(from var(--clr-secondary-700) H S L / 0.5);
     color: var(--clr-primary-900);
