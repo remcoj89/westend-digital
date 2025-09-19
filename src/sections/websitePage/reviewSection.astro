@@ -1,0 +1,60 @@
+---
+// Astro Components
+import Image from "astro/components/Image.astro";
+
+// Data via props
+const { content, sectionId } = Astro.props;
+---
+
+<section class="wrapper hidden" id={sectionId}>
+  <div class="review">
+    <p set:html={content.content}></p>
+    <div class="author">
+      <Image src={content.image.url} alt={content.image.altText} width={300} height={300} />
+      <div>
+        <p>{content.author.name}</p>
+        <span>{content.author.company}</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+  .wrapper {
+    margin-block: var(--size-5);
+    
+    .review {
+      background-color: var(--clr-primary-700);
+      color: var(--clr-primary-100);
+      padding: var(--size-2) var(--size-3);
+      border-radius: var(--border-radius-card);
+      width: 50%;
+      margin-inline: auto;
+
+      .author {
+        display: flex;
+        align-items: center;
+        gap: var(--size-1);
+        margin-block-start: var(--size-3);
+        p {
+          font-weight: var(--fw-bold);
+          font-size: var(--fs-500);
+        }
+        span {
+          font-size: var(--fs-400);
+        }
+
+        img {
+          border-radius: 500px;
+          border: solid 1px var(--clr-primary);
+          box-shadow: var(--box-shadow);
+          height: 7.5rem;
+          width: 7.5rem;
+        }
+      }
+    }
+  }
+
+</style>

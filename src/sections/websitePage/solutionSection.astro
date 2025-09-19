@@ -1,0 +1,25 @@
+---
+// Astro Components
+import Image from "astro/components/Image.astro";
+
+// Data via props
+const { content, sectionId } = Astro.props;
+---
+
+<section class="wrapper hidden" id={sectionId}>
+  <Image src={content.image.url}  alt={content.image.altText} width={500} height={500}/>
+
+  <article>
+    <h2>{content.title}</h2>
+    {content.content.map((paragraph) => <p set:html={paragraph} />)}
+  </article>
+</section>
+
+<style>
+
+  .wrapper {
+    margin-block: unset;
+    gap: var(--size-2);
+    padding: var(--size-2);
+  }
+</style>

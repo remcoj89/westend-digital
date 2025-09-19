@@ -1,0 +1,77 @@
+---
+// Astrpo components
+import Image from "astro/components/Image.astro";
+
+// Data via props
+const { content, sectionId } = Astro.props;
+
+// Icons
+import {
+  ClockIcon,
+  ConversionIcon,
+  FlashIcon,
+  MobileIcon,
+  SecureIcon,
+} from "../../assets/icons";
+
+const iconComponents = {
+  clockIcon: ClockIcon,
+  conversionIcon: ConversionIcon,
+  flashIcon: FlashIcon,
+  mobileIcon: MobileIcon,
+  secureIcon: SecureIcon,
+};
+---
+
+<section class="wrapper hidden" id={sectionId}>
+  <h2>{content.title}</h2>
+  <div class="results">
+    {
+      content.resultaten.map((resultaat) => {
+        const IconComponent = iconComponents[resultaat.icon.name];
+
+        return (
+          <div class="result">
+            {IconComponent && (
+              <IconComponent
+                className="resultaat-icoon"
+              />
+            )}
+            <div>
+              <h3>{resultaat.resultaat.title}</h3>
+              <p>{resultaat.resultaat.title}</p>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
+
+<style>
+  .wrapper {
+    background-color: var(--size-clr-500);
+    padding-block: var(--size-3);
+    padding-inline: var(--size-1);
+    flex-direction: column;
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      column-gap: var(--size-1);
+      row-gap: var(--size-2);
+
+      .result {
+        display: flex;
+        gap: var(--size-1);
+
+        svg {
+          color: var(--clr-secondary-100);
+          fill: var(--clr-secondary-900);
+          height: var(--size-6);
+          width: var(--size-6);
+        }
+      }
+    }
+  }
+</style>
