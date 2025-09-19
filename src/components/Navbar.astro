@@ -39,9 +39,11 @@ const logo = "/assets/logos/WestendDigitalLogo.svg";
       </ul>
     </div>
     <label for="cancelButton" class="cancelButton">
+      <input type="checkbox" name="cancleButton" id="cancleButton" />
       <CloseIcon iconFill="var(--clr-primary-100" />
     </label>
     <label for="menuButton" class="burgerMenu">
+      <input type="checkbox" name="menuButton" id="cancleButton" />
       <BurgerMenu iconFill="var(--clr-primary-100" />
     </label>
   </div>
@@ -105,7 +107,7 @@ const logo = "/assets/logos/WestendDigitalLogo.svg";
       }
 
       .nav-list-wrapper {
-        display: grid;
+        display: none;
         grid-template-rows: 0fr;
         inset-block-start: var(--size-10);
         justify-content: center;
@@ -269,6 +271,10 @@ const logo = "/assets/logos/WestendDigitalLogo.svg";
   .nav-wrapper:has(#menuButton:checked) {
     background-color: var(--clr-primary-900);
     box-shadow: 0 0 0.75rem hsl(224 76% 11% / 0.3);
+
+    .nav-list-wrapper {
+      display: grid;
+    }
   }
 
   .hidden {
