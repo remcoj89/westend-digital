@@ -114,8 +114,8 @@
       ]
     },
     "practivalInfoSection": {
-      "title": "Praktische zaken + CTA",
-      "content": [
+      "title": "Ons bewezen proces",
+      "steps": [
         {
           "title": "Missie briefing",
           "text": "Een strategisch gesprek van 90 minuten om jouw doelen, doelgroep en aanbod scherp te krijgen."
@@ -125,7 +125,7 @@
           "text": "Teksten, ontwerp en structuur die jouw verhaal vertalen naar een overtuigende website."
         },
         {
-          "title": "Ontwikkeling & lancering ",
+          "title": "Ontwikkelen & lanceren ",
           "text": "We ontwikkelen jouw website, gaat live, getest en veilig."
         },
         {

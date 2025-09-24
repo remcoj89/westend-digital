@@ -23,6 +23,7 @@
   --border-radius-input-field: 4px;
   --border-radius-card: 8px;
   --border-radius-img: 8px;
+  --border-radius-full: 100%;
 
   --clr-primary-100: hsl(0, 0%, 96%);
   --clr-primary-300: hsl(0, 0%, 90%);
@@ -134,7 +135,6 @@ img {
 
 section {
   margin-block: var(--size-15);
-  /* margin-block-end: var(--size-15); */
 
   .section-header {
     text-align: center;
