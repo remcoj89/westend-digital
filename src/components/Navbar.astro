@@ -227,6 +227,10 @@ const logo = "/assets/logos/WestendDigitalLogo.svg";
       }
 
       @media (width <= 850px) {
+        .nav-list-wrapper {
+          display: none;
+        }
+
         #menuButton:checked ~ .cancelButton {
           display: block;
         }
@@ -239,11 +243,13 @@ const logo = "/assets/logos/WestendDigitalLogo.svg";
           background-color: var(--clr-primary-900);
           grid-template-rows: 1fr;
           padding-block: var(--size-5);
+          display: block;
         }
 
         #menuButton:checked ~ .nav-wrapper {
           background-color: var(--clr-primary-900);
         }
+
       }
     }
   }

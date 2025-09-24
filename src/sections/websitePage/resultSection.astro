@@ -32,15 +32,11 @@ const iconComponents = {
 
         return (
           <div class="result">
-            {IconComponent && (
-              <IconComponent
-                className="resultaat-icoon"
-              />
-            )}
-            <div>
-              <h3>{resultaat.resultaat.title}</h3>
+            {IconComponent && <IconComponent className="resultaat-icoon" />}
+
+              <h3 class="title">{resultaat.resultaat.title}</h3>
               <p>{resultaat.resultaat.title}</p>
-            </div>
+
           </div>
         );
       })
@@ -55,15 +51,27 @@ const iconComponents = {
     padding-inline: var(--size-1);
     flex-direction: column;
 
+    h2 {
+      margin-inline: auto;
+      padding-block-end: var(--size-5);
+    }
+
     .results {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      column-gap: var(--size-1);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      /* column-gap: var(--size-3); */
       row-gap: var(--size-2);
 
       .result {
-        display: flex;
-        gap: var(--size-1);
+        flex-basis: calc(33.333% - 10px);
+        text-align: center;
+
+        .title {
+          padding-block: var(--size-1);
+        }
 
         svg {
           color: var(--clr-secondary-100);
@@ -71,6 +79,12 @@ const iconComponents = {
           height: var(--size-6);
           width: var(--size-6);
         }
+      }
+
+    }
+    @media (width >= 618px) {
+      .results {
+        flex-direction: row;
       }
     }
   }
