@@ -10,6 +10,7 @@ export default async function fetchProjects() {
       posts(where: {categoryId: 3}) {
         edges {
           node {
+            slug
             id
             title
             content(format: RENDERED)

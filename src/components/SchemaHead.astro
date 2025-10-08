@@ -1,9 +1,13 @@
 ---
 const { items = [] } = Astro.props;
+
+const validItems = Array.isArray(items)
+  ? items.filter((i) => typeof i === "object" && i !== null)
+  : [];
 ---
 
 {
-  items.map((obj) => (
+  validItems.map((obj) => (
     <script
       is:inline
       set:html={JSON.stringify(obj)}
