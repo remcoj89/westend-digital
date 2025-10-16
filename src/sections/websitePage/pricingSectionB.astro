@@ -1,8 +1,157 @@
 ---
 // Data via props
 const { content, sectionId } = Astro.props;
+
+// Components
+import CardGrid from "../../components/CardGrid.astro";
+import Button from "../../components/Button.astro";
 ---
 
 <section class="wrapper hidden" id={sectionId}>
   <h2>{content.title}</h2>
+  <CardGrid>
+    <!-- Pakket 1 -->
+    <div class="package-card">
+      <h3>Lead Engine Website – €3.500,-</h3>
+      <p>
+        Voor ondernemers die leads willen genereren met een krachtige eerste
+        indruk.
+      </p>
+      <p>
+        <strong>Doel:</strong> Een conversiegerichte website die als leadmachine
+        werkt, zonder ruis of onnodige complexiteit.
+      </p>
+      <span><strong>Inbegrepen:</strong></span>
+      <ul>
+        <li>Strategisch kick-off gesprek</li>
+        <li>Design op maat (Figma)</li>
+        <li>
+          5 pagina’s (Homepage + Sales pagina + Over + Contact + Weggever)
+        </li>
+        <li>Conversiegerichte structuur (CTA’s, overtuigende elementen)</li>
+        <li>Basis SEO: zoekwoorden koppeling, metadata, technische setup</li>
+        <li>Mobielvriendelijk & supersnel</li>
+        <li>Koppeling met e-mail of CRM (Mail blue)</li>
+        <li>Beveiliging (SSL), cookie-banner en basis privacy setup</li>
+        <li>Live binnen 4–6 weken</li>
+      </ul>
+      <span><strong>Bonus</strong></span>
+      <ul>
+        <li>Intakeformulier-template + automatisering</li>
+        <li>Weggever-pagina of strategiegesprek-boekmodule</li>
+        <li>Mini-rapportage performance na 30 dagen</li>
+      </ul>
+
+      <Button>Kies dit pakket</Button>
+    </div>
+    <!-- Pakket 2 -->
+    <div class="package-card">
+      <h3>Growth Machine – €7.000</h3>
+      <p>
+        Voor ondernemers die hun website willen inzetten als actieve
+        groeiversneller.
+      </p>
+      <p>
+        <strong>Doel:</strong> Meer bezoekers, meer conversies, meer grip op data.
+      </p>
+      <span><strong>Inbegrepen:</strong></span>
+      <span><strong>Alles uit Lead Engine, plus: </strong></span>
+      <ul>
+        <li>Copywriting & SEO optimalisatie op 3 kern pagina's</li>
+        <li>3 extra landingspagina’s (voor advertenties of campagnes)</li>
+        <li>Blog-integratie + instructie</li>
+        <li>
+          Setup & integratie van analytics stack:
+          <ul>
+            <li>GA4 + Clarity</li>
+            <li>UTM-template</li>
+            <li>Automatische rapportage dashboard(Looker)</li>
+          </ul>
+        </li>
+        <li>CRM-integratie & segmentatie (bijv. ActiveCampaign tagging)</li>
+        <li>Mini A/B test (bijv. 2x CTA vs headline)</li>
+        <li>Conversie-analyse + aanbevelingen voor optimalisatie</li>
+        <li>Automatisering van leadopvolging (mailflows of alerts)</li>
+        <li>Live binnen 6–8 weken</li>
+      </ul>
+      <span><strong>Bonus</strong></span>
+      <ul>
+        <li>Landingspagina-template in Figma</li>
+        <li>E Mail Template voor opvolging na aanvraag</li>
+        <li>Video Tutorials om zelf content aan te passen</li>
+      </ul>
+      <Button>Kies dit pakket</Button>
+    </div>
+    <!-- Pakket 3 -->
+    <div class="package-card">
+      <h3>Authority Platform – €12.000+</h3>
+      <p>
+        Voor ondernemers die hun website willen gebruiken als marketing motor en
+        autoriteit platform.
+      </p>
+      <p>
+        <strong>Doel:</strong> Wekelijks zichtbaar zijn, klanten aantrekken via waarde
+        en vertrouwen, volledig schaalbaar.
+      </p>
+      <span><strong>Inbegrepen:</strong></span>
+      <span><strong>Alles uit Growth Machine, plus: </strong></span>
+      <ul>
+        <li>
+          Persoonlijk merkverhaal schrijven & integreren (Storytelling blokken)
+        </li>
+        <li>1 SEO-blog schrijven per maand (3 maanden inbegrepen)</li>
+        <li>Sales funnel design: intake → funnelpagina’s → opvolgmails</li>
+        <li>Social content feed + design & instructie</li>
+        <li>
+          Strategie en creatie van contentblokken (USP-sectie, klantverhalen,
+          trust building)
+        </li>
+        <li>Diepgaande CRO audit + implementatie van optimalisaties</li>
+        <li>
+          Setup van e-mail marketing automation:
+          <ul>
+            <li>Funnel (weggever → nurture → call-to-action)</li>
+            <li>3 e-mails in eerste flow</li>
+          </ul>
+        </li>
+        <li>
+          API-koppelingen met externe tools (bijv. Notion, Zapier, e-mail)
+        </li>
+        <li>Uitgebreide SEO-setup met keywordstrategie & rank tracking</li>
+        <li>3 maanden support + rapportages inbegrepen</li>
+      </ul>
+      <span><strong>Bonus</strong></span>
+      <ul>
+        <li>
+          Videomodule: “Zo haal je alles uit je nieuwe website” (tutorial)
+        </li>
+        <li>1:1 Strategische marketing cal per maand (3x)</li>
+        <li>Alle content wordt geleverd in Notion-dashboard</li>
+      </ul>
+      <Button>Kies dit pakket</Button>
+    </div>
+  </CardGrid>
 </section>
+
+<style>
+  .wrapper {
+    flex-direction: column;
+    gap: var(--size-4);
+
+    h2 {
+      text-align: center;
+    }
+    .package-card {
+      background-color: var(--clr-neutral-100);
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-2);
+      padding-block: var(--size-2);
+      padding-inline: var(--size-1);
+      
+      ul {
+        margin-inline-start: var(--size-2);
+      }
+    }
+  }
+</style>

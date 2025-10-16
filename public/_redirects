@@ -1,0 +1,5 @@
+# ✅ Redirects om oude [object Object] fouten op te vangen
+/*[object Object]* / 301
+/*%5Bobject%20Object%5D* / 301
+/*%5Bobject%2C%20Object%5D* / 301
+/*%5Bobject%2CObject%5D* / 301

@@ -209,14 +209,48 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText;
         }
       }
 
-      .wp-block-quote{
+      .wp-block-quote {
         background-color: var(--clr-primary-300);
         border-left: solid 2px var(--clr-primary-800);
         padding-inline-start: var(--size-4);
         padding-block: var(--size-2);
         margin-inline-start: var(--size-3);
         max-width: 65ch;
+
+        a {
+          text-decoration: none;
+        }
       }
+
+      .wp-cta-wrapper {
+        background-color: var(--clr-primary-900);
+        border-radius: var(--border-radius-card);
+        color: var(--clr-neutral-100);
+        text-align: center;
+        max-width: 65ch;
+
+        margin-inline: auto;
+
+        .wp-block-group {
+          padding-block: var(--size-4);
+          padding-inline: var(--size-2);
+          margin-block: var(--size-8);
+
+          h2 {
+            color: inherit;
+            margin: 0;
+          }
+          .btn {
+            margin-inline: auto;
+
+            a {
+              text-decoration: none;
+            }
+          }
+        }
+
+      }
+
 
 
       .next-article-wrapper {
