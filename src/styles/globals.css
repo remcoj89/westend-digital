@@ -17,7 +17,8 @@
 
   --article-width: 65ch;
 
-  --box-shadow: 0px 2px 15px 0px rgba(7, 18, 49, 0.4);
+  --box-shadow: 0px 2px 15px 0px hsl(224, 75%, 11%, 40%);
+  --box-shadow-gold: 0px 2px 15px 0px hsl(36, 59%, 58%, 40%);
 
   --border-radius-btn: 8px;
   --border-radius-input-field: 4px;

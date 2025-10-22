@@ -8,29 +8,33 @@ const { content, sectionId } = Astro.props;
 
 <section class="wrapper hidden" id={sectionId}>
   <div class="review">
-    <p set:html={content.content}></p>
+    <p set:html={content.content} />
     <div class="author">
-      <Image src={content.image.url} alt={content.image.altText} width={300} height={300} />
+      <Image
+        src={content.image.url}
+        alt={content.image.altText}
+        width={300}
+        height={300}
+      />
       <div>
         <p>{content.author.name}</p>
         <span>{content.author.company}</span>
       </div>
     </div>
-
   </div>
 </section>
-
 
 <style>
   .wrapper {
     margin-block: var(--size-5);
-    
+
     .review {
-      background-color: var(--clr-primary-700);
-      color: var(--clr-primary-100);
+      background-color: var(--clr-neutral-100);
+      box-shadow: var(--box-shadow);
+      color: var(--clr-primary-900);
       padding: var(--size-2) var(--size-3);
       border-radius: var(--border-radius-card);
-      width: 50%;
+      width: 75%;
       margin-inline: auto;
 
       .author {
@@ -48,13 +52,12 @@ const { content, sectionId } = Astro.props;
 
         img {
           border-radius: 500px;
-          border: solid 1px var(--clr-primary);
-          box-shadow: var(--box-shadow);
+          border: solid 2px var(--clr-secondary-900);
+          box-shadow: var(--box-shadow-gold);
           height: 7.5rem;
           width: 7.5rem;
         }
       }
     }
   }
-
 </style>

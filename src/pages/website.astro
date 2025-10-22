@@ -3,6 +3,7 @@
 import Layout from "../layouts/Layout.astro";
 
 // Sections
+import SalesHero from "../sections/websitePage/salesHero.astro";
 import FooterSection from "../sections/FooterSection.astro";
 import FaqSection from "../sections/SharedSections/FaqSection.astro";
 import SolutionSection from "../sections/websitePage/solutionSection.astro";
@@ -20,11 +21,14 @@ import LastCallCtaSection from "../sections/websitePage/lastCallCtaSection.astro
 import IntroSection from "../sections/IntroSection.astro";
 
 // Components
-import Header from "../components/Header.astro";
+import Image from "astro/components/Image.astro";
+import Button from "../components/Button.astro";
+import SectionHeader from "../components/SectionHeader.astro";
 
 // Data
 import PageData from "../data/website.json";
 import PricingSectionB from "../sections/websitePage/pricingSectionB.astro";
+import ContactForm from "../components/salepageComponents/contactForm.astro";
 
 const {
   aboutMeSection,
@@ -61,15 +65,20 @@ const {
   ogUrl={ogUrl}
   title={metaTitle}
 >
-  <Header>
-    <div>
+  <SalesHero>
+    <div class="hero-content">
       <h1 set:html={heroSection.title} />
       <p set:html={heroSection.subtitle} />
-      <a href={heroSection.cta.url} class="btn btn-cta"
-        >{heroSection.cta.title}</a
-      >
+      <!-- <a href={heroSection.cta.url} class="btn btn-cta"
+          >{heroSection.cta.title}</a
+        > -->
     </div>
-  </Header>
+
+    <div class="contact-form-wrapper">
+      <h2>Start jouw strategie gesprek</h2>
+      <ContactForm />
+    </div>
+  </SalesHero>
 
   <main>
     <!-- Intro section what is the problem -->
@@ -77,11 +86,31 @@ const {
       altText={problemSection.image.altText}
       imageUrl={problemSection.image.url}
       paragraph={problemSection.content}
+      list={problemSection.list}
       sectionId="problemSection"
       title={problemSection.title}
     />
+    <section class="dark-bg solution-section">
+      <div class="wrapper solution-wrapper">
+        <div class="solution">
+          <SectionHeader
+            title={solutionSection.title}
+            intro={solutionSection.content}
+          />
+          <Button buttonStyle="btn-secondary">Vind vandaag nog jouw oplossing</Button>
+        </div>
+
+        <Image
+          alt={solutionSection.image.altText}
+          src={solutionSection.image.url}
+          width={600}
+          height={400}
+        />
+      </div>
+    </section>
     <!-- Intro section what is the solution -->
-    <IntroSection
+
+    <!-- <IntroSection
       altText={solutionSection.image.altText}
       cta={solutionSection.cta}
       flexDirection="flex-reverse"
@@ -89,7 +118,8 @@ const {
       paragraph={solutionSection.content}
       sectionId="solutionSection"
       title={solutionSection.title}
-    />
+    /> -->
+
     <!-- First testemonial -->
     <ReviewSection
       content={firstReviewSection}
@@ -141,3 +171,35 @@ const {
   </main>
   <FooterSection />
 </Layout>
+
+<style>
+  .solution-section {
+    color: var(--clr-primary-100);
+    padding-block-start: var(--size-8);
+
+    .solution-wrapper {
+      align-content: center;
+      gap: var(--size-2);
+      justify-content: center;
+      text-align: center;
+
+      .solution {
+        width: 60%;
+
+        p {
+          max-width: 65ch;
+        }
+
+        button {
+          margin-block: var(--size-4);
+        }
+      }
+
+      img {
+        object-fit: cover;
+        width: 40%;
+      }
+
+    }
+  }
+</style>

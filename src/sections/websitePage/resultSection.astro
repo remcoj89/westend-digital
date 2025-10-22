@@ -34,9 +34,8 @@ const iconComponents = {
           <div class="result">
             {IconComponent && <IconComponent className="resultaat-icoon" />}
 
-              <h3 class="title">{resultaat.resultaat.title}</h3>
-              <p>{resultaat.resultaat.title}</p>
-
+            <h3 class="title">{resultaat.resultaat.title}</h3>
+            <p>{resultaat.resultaat.title}</p>
           </div>
         );
       })
@@ -57,16 +56,22 @@ const iconComponents = {
     }
 
     .results {
+      column-gap: var(--size-1);
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      justify-content: space-evenly;
-
+      justify-content: center;
       row-gap: var(--size-2);
 
       .result {
-        flex-basis: calc(33.333% - 10px);
+        background-color: white;
+        border-radius: var(--border-radius-card);
+        box-shadow: var(--box-shadow);
+        flex-basis: calc(33.333% - 30px);
+        padding: var(--size-2);
         text-align: center;
+        transition: transform 0.3s ease-in-out;
+        ;
 
         .title {
           padding-block: var(--size-1);
@@ -78,8 +83,11 @@ const iconComponents = {
           height: var(--size-6);
           width: var(--size-6);
         }
-      }
 
+        &:hover, &:focus {
+          transform: translateY(-5px);
+        }
+      }
     }
     @media (width >= 618px) {
       .results {

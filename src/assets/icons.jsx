@@ -105,7 +105,7 @@ export function DotIcon() {
 
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 16.5C13.1935 16.5 14.3381 16.0259 15.182 15.182C16.0259 14.3381 16.5 13.1935 16.5 12C16.5 10.8065 16.0259 9.66193 15.182 8.81802C14.3381 7.97411 13.1935 7.5 12 7.5C10.8065 7.5 9.66193 7.97411 8.81802 8.81802C7.97411 9.66193 7.5 10.8065 7.5 12C7.5 13.1935 7.97411 14.3381 8.81802 15.182C9.66193 16.0259 10.8065 16.5 12 16.5Z" fill={color} stroke={color} stroke-width="2"/>
+      <path d="M12 16.5C13.1935 16.5 14.3381 16.0259 15.182 15.182C16.0259 14.3381 16.5 13.1935 16.5 12C16.5 10.8065 16.0259 9.66193 15.182 8.81802C14.3381 7.97411 13.1935 7.5 12 7.5C10.8065 7.5 9.66193 7.97411 8.81802 8.81802C7.97411 9.66193 7.5 10.8065 7.5 12C7.5 13.1935 7.97411 14.3381 8.81802 15.182C9.66193 16.0259 10.8065 16.5 12 16.5Z" fill={color} stroke={color} strokeWidth="2"/>
     </svg>
   )
 }
@@ -124,9 +124,9 @@ export function BookOpen({iconFill}) {
       <path
         fill="none"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
         d="M12 9.8V20m0-10.2c0-1.704.107-3.584-1.638-4.473C9.72 5 8.88 5 7.2 5H4.6C3.364 5 3 5.437 3 6.6v8.8c0 .568-.036 1.195.546 1.491c.214.109.493.109 1.052.109H7.43c2.377 0 3.26 1.036 4.569 3m0-10.2c0-1.704-.108-3.584 1.638-4.473C14.279 5 15.12 5 16.8 5h2.6c1.235 0 1.6.436 1.6 1.6v8.8c0 .567.035 1.195-.546 1.491c-.213.109-.493.109-1.052.109h-2.833c-2.377 0-3.26 1.036-4.57 3"
       />
     </svg>
@@ -146,9 +146,9 @@ export function SendIcon({iconFill}) {
       <path
         fill="none"
         stroke={color}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
         d="m14 10l-3 3m9.288-9.969a.535.535 0 0 1 .68.681l-5.924 16.93a.535.535 0 0 1-.994.04l-3.219-7.242a.54.54 0 0 0-.271-.271l-7.242-3.22a.535.535 0 0 1 .04-.993z"
       />
     </svg>
@@ -166,11 +166,11 @@ export function FlashIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="var(--clr-secondary-900)"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-zap text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
-      aria-hidden="true"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-zap text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
+      ariaHidden="true"
     >
       <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
     </svg>
@@ -186,11 +186,11 @@ export function ConversionIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-target text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
-      aria-hidden="true"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-target text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
+      ariaHidden="true"
     >
       <circle cx="12" cy="12" r="10"></circle>
       <circle cx="12" cy="12" r="6"></circle>
@@ -208,11 +208,11 @@ export function MobileIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-smartphone text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
-      aria-hidden="true"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-smartphone text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
+      ariaHidden="true"
     >
       <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
       <path d="M12 18h.01"></path>
@@ -229,11 +229,11 @@ export function SecureIcon () {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-shield text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
-      aria-hidden="true"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-shield text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
+      ariaHidden="true"
     >
       <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
     </svg>
@@ -249,11 +249,11 @@ export function ClockIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-clock text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
-      aria-hidden="true"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-clock text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
+      ariaHidden="true"
     >
       <circle cx="12" cy="12" r="10"></circle>
       <polyline points="12 6 12 12 16 14"></polyline>
@@ -270,11 +270,11 @@ export function CircleCheckIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-circle-check-big w-8 h-8 mr-3"
-      aria-hidden="true"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-circle-check-big w-8 h-8 mr-3"
+      ariaHidden="true"
     >
       <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
       <path d="m9 11 3 3L22 4"></path>
@@ -291,15 +291,41 @@ export function CircleXIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-circle-x w-8 h-8 mr-3"
-      aria-hidden="true"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-circle-x w-8 h-8 mr-3"
+      ariaHidden="true"
     >
       <circle cx="12" cy="12" r="10"></circle>
       <path d="m15 9-6 6"></path>
       <path d="m9 9 6 6"></path>
+    </svg>
+  );
+}
+
+
+export function RedXIcon() {
+  return (
+    <svg
+      width="16"
+      height="24"
+      viewBox="0 0 16 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M16 24H0V0H16V24Z" stroke="#E5E7EB" />
+      <g clipPath="url(#clip0_528_2259)">
+        <path
+          d="M8 19C10.1217 19 12.1566 18.1571 13.6569 16.6569C15.1571 15.1566 16 13.1217 16 11C16 8.87827 15.1571 6.84344 13.6569 5.34315C12.1566 3.84285 10.1217 3 8 3C5.87827 3 3.84344 3.84285 2.34315 5.34315C0.842855 6.84344 0 8.87827 0 11C0 13.1217 0.842855 15.1566 2.34315 16.6569C3.84344 18.1571 5.87827 19 8 19ZM5.46875 8.46875C5.7625 8.175 6.2375 8.175 6.52812 8.46875L7.99687 9.9375L9.46562 8.46875C9.75937 8.175 10.2344 8.175 10.525 8.46875C10.8156 8.7625 10.8187 9.2375 10.525 9.52812L9.05625 10.9969L10.525 12.4656C10.8187 12.7594 10.8187 13.2344 10.525 13.525C10.2312 13.8156 9.75625 13.8187 9.46562 13.525L7.99687 12.0562L6.52812 13.525C6.23438 13.8187 5.75938 13.8187 5.46875 13.525C5.17812 13.2312 5.175 12.7562 5.46875 12.4656L6.9375 10.9969L5.46875 9.52812C5.175 9.23438 5.175 8.75938 5.46875 8.46875Z"
+          fill="#EF4444"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_528_2259">
+          <path d="M0 3H16V19H0V3Z" fill="white" />
+        </clipPath>
+      </defs>
     </svg>
   );
 }
