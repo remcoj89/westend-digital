@@ -187,6 +187,7 @@
     },
     "ctaSection": {
       "title": "Laatste call to action",
+      "content": "Klaar om jouw website te laten werken als een geoliede eenheid?",
       "cta": {
         "title": "Plan een gratis kennismaking",
         "url": "/"
@@ -195,6 +196,11 @@
     "trustSection": {
       "title": "Zekerheid en Grip",
       "content": "Geen zorgen: je houdt altijd grip op het proces. Je krijgt previews, feedbackmomenten en volledige controle over het eindresultaat. Bovendien blijf ik na oplevering nog 3 maanden aan boord voor updates en support.",
+      "list": [
+        "<span class='list-icon'>✔</span><strong>Previews & Feedback:</strong> Je ziet elke stap en geeft feedback op cruciale momenten.",
+        "<span class='list-icon'>✔</span><strong>Heldere Communicatie:</strong> Wekelijkse updates over de voortgang. Geen jargon, maar duidelijke taal.",
+        "<span class='list-icon'>✔</span><strong>Toegewijde Support:</strong> Na lancering sta ik 3 maanden voor je klaar voor vragen en kleine aanpassingen."
+      ],
       "cta": {
         "title": "Plan een kennismaking",
         "url": "/"

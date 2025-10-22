@@ -99,7 +99,6 @@ export function LocationIcon({iconFill}) {
   )
 }
 
-
 export function DotIcon() {
   const color =  "var(--clr-primary-100)"
 
@@ -109,7 +108,6 @@ export function DotIcon() {
     </svg>
   )
 }
-
 
 export function BookOpen({iconFill}) {
   const color = iconFill || "var(--clr-primary-100)";
@@ -154,7 +152,6 @@ export function SendIcon({iconFill}) {
     </svg>
   );
 }
-
 
 export function FlashIcon() {
 
@@ -326,6 +323,25 @@ export function RedXIcon() {
           <path d="M0 3H16V19H0V3Z" fill="white" />
         </clipPath>
       </defs>
+    </svg>
+  );
+}
+
+export function SheeldIcon() {
+  return (
+    <svg
+      width="48"
+      height="76"
+      viewBox="0 0 48 76"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M48 76H0V0H48V76Z" stroke="#E5E7EB" />
+      <path d="M48 61H0V13H48V61Z" stroke="#E5E7EB" />
+      <path
+        d="M24 13C24.4313 13 24.8625 13.0938 25.2563 13.2719L42.9094 20.7625C44.9719 21.6344 46.5094 23.6688 46.5 26.125C46.4532 35.425 42.6282 52.4406 26.475 60.175C24.9094 60.925 23.0907 60.925 21.525 60.175C5.37192 52.4406 1.54692 35.425 1.50004 26.125C1.49067 23.6688 3.02817 21.6344 5.09067 20.7625L22.7532 13.2719C23.1375 13.0938 23.5688 13 24 13ZM24 19.2625V54.7C36.9375 48.4375 40.4157 34.5719 40.5 26.2563L24 19.2625Z"
+        fill="#DBB171"
+      />
     </svg>
   );
 }
