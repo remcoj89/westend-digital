@@ -250,7 +250,11 @@
     },
     "whyNowSection": {
       "title": "Waarom nu?",
-      "content": "Elke dag dat je wacht, kost je klanten. Concurrenten verbeteren hun online aanwezigheid terwijl jij blijft hangen in een website die je groei tegenhoudt. Hoe eerder je start, hoe sneller jouw website voor je werkt."
+      "content": "Elke dag dat je wacht, kost je klanten. Concurrenten verbeteren hun online aanwezigheid terwijl jij blijft hangen in een website die je groei tegenhoudt. Hoe eerder je start, hoe sneller jouw website voor je werkt.",
+      "button": {
+        "title": "Stop met wachten, start met groeien",
+        "url": "/"
+      }
     },
     "forthReviewSection": {
       "author": {

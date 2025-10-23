@@ -1,8 +1,29 @@
 ---
+
+// Components
+import Button from "../../components/Button.astro";
+
 // Data via props
 const { content, sectionId } = Astro.props;
 ---
 
-<section class="wrapper hidden" id={sectionId}>
-  <h2>{content.title}</h2>
+<section class="dark-bg hidden" id={sectionId}>
+  <div class="wrapper flex-column">
+
+    <h2>{content.title}</h2>
+    <p set:html={content.content} />
+    <Button buttonStyle="btn-white">{content.button.title}</Button>
+  </div>
 </section>
+
+<style>
+  section {
+    padding-block: var(--size-8);
+
+    .wrapper {
+      align-items: center;
+      gap:var(--size-2);
+      text-align: center;
+    }
+  }
+</style>
