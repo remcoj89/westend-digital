@@ -4,7 +4,7 @@ import CtaDownloadButton from "../components/CtaDownloadButton.astro";
 import ListItemWithIcon from "../components/ListItemWithIcon.astro";
 
 // Astro helpers
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 
 const {
   altText,
@@ -26,10 +26,7 @@ const {
       <ul role="list">
         {
           listItems.map((item) => (
-            <ListItemWithIcon
-              icon="✅"
-              listItem={item}
-            />
+            <ListItemWithIcon icon="✅" listItem={item} />
           ))
         }
       </ul>

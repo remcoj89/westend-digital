@@ -1,13 +1,18 @@
 ---
 // Astro Components
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 
 // Data via props
 const { content, sectionId } = Astro.props;
 ---
 
 <section class="wrapper hidden" id={sectionId}>
-  <Image src={content.image.url}  alt={content.image.altText} width={500} height={500}/>
+  <Image
+    src={content.image.url}
+    alt={content.image.altText}
+    width={500}
+    height={500}
+  />
 
   <article>
     <h2>{content.title}</h2>
@@ -16,7 +21,6 @@ const { content, sectionId } = Astro.props;
 </section>
 
 <style>
-
   .wrapper {
     margin-block: unset;
     gap: var(--size-2);

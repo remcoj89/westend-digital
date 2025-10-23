@@ -1,6 +1,6 @@
 ---
 // Astrpo components
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 
 // Data via props
 const { content, sectionId } = Astro.props;
@@ -71,8 +71,6 @@ const iconComponents = {
         padding: var(--size-2);
         text-align: center;
         transition: transform 0.3s ease-in-out;
-        ;
-
         .title {
           padding-block: var(--size-1);
         }
@@ -84,7 +82,8 @@ const iconComponents = {
           width: var(--size-6);
         }
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           transform: translateY(-5px);
         }
       }

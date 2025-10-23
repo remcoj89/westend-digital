@@ -219,8 +219,11 @@
     },
     "aboutMeSection": {
       "title": "Even voorstellen",
-      "content": ["Als ondernemer weet ik hoe frustrerend het is als je website niet de resultaten levert die je nodig hebt. Daarom ontwikkelen wij websites die niet alleen mooi zijn, maar ook strategisch werken voor uw bedrijf.", "<strong>Remco Jonk</strong> - Oprichter Westend Digital", "Met 10+ jaar ervaring in digitale strategie en een achtergrond in operationele excellentie, begrijp ik precies wat ondernemers nodig hebben om online te slagen."]
-
+      "content": ["Als ondernemer weet ik hoe frustrerend het is als je website niet de resultaten levert die je nodig hebt. Daarom ontwikkelen wij websites die niet alleen mooi zijn, maar ook strategisch werken voor uw bedrijf.", "<strong>Remco Jonk</strong> - Oprichter Westend Digital", "Met 10+ jaar ervaring in digitale strategie en een achtergrond in operationele excellentie, begrijp ik precies wat ondernemers nodig hebben om online te slagen."],
+      "image": {
+        "url": "/images/website-sales-page/remco-at-his-desk.webp",
+        "altText": "foto van Remco Jonk"
+      }
     },
     "forWhoSection": {
       "title": "Voor wie wel/niet + CTA",
