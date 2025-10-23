@@ -46,8 +46,9 @@ const { cardStyle = "primary" } = Astro.props;
 
     img {
       border-radius: var(--border-radius-card);
-      height: 30rem;
+      height: 35rem;
       object-fit: cover;
+      object-position: center;
       width: 100%;
     }
 
@@ -109,4 +110,117 @@ const { cardStyle = "primary" } = Astro.props;
       }
     }
   }
+
+  .card.price-card {
+    background-color: var(--clr-dark-card-bg);
+    border: 3px solid var(--clr-primary-800);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-2);
+    justify-content: space-between;
+    padding-block: var(--size-4) var(--size-2);
+    padding-inline: var(--size-1);
+    transition:
+      transform 0.3s ease,
+      border 0.3s ease;
+
+    &.active {
+      border: 3px solid var(--clr-secondary-900);
+      transform: scale(1.1);
+    }
+
+    &.enlarged {
+      border: 3px solid var(--clr-secondary-900);
+      transform: scale(1.1);
+      z-index: 3;
+    }
+
+    &.shrunk {
+      border: 3px solid var(--clr-secondary-900);
+      transform: scale(0.95);
+      z-index: 1;
+    }
+
+    .card-header {
+      display: grid;
+      gap: var(--size-1);
+
+      h3 {
+        color: var(--clr-secondary-900);
+      }
+    }
+
+    ul {
+      margin-inline-start: var(--size-2);
+
+      li {
+        padding-inline-start: var(--size-1);
+
+        &::marker {
+          content: "✔";
+          color: var(--clr-secondary-900);
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+    }
+
+    #card-message {
+      background-color: var(--clr-secondary-900);
+      border-radius: 500vw;
+      color: var(--clr-primary-900);
+      font-weight: 600;
+      padding: var(--size-1);
+      position: absolute;
+      top: -3.5rem;
+      inset-inline: 20%;
+      text-align: center;
+      box-shadow: var(--box-shadow-gold);
+    }
+  }
+
+  .card.bonus-card {
+    background-color: var(--clr-dark-card-bg);
+    box-shadow: var(--box-shadow);
+    color: var(--clr-neutral-100);
+    display: grid;
+    gap: var(--size-2);
+    height: unset;
+    padding: var(--size-4) var(--size-2);
+    text-align: center;
+    width: 100%;
+
+    h3 {
+      color: var(--clr-primary-100);
+    }
+  }
 </style>
+
+<script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".card.price-card");
+    const activeCard = document.querySelector(".card.price-card.active");
+
+    cards.forEach((card) => {
+      if (!card.classList.contains("active")) {
+        card.addEventListener("mouseenter", () => {
+          // Vergroot gehoverde kaart
+          card.classList.add("enlarged");
+          // Verklein de actieve kaart
+          activeCard.classList.add("shrunk");
+          activeCard.classList.remove("active");
+        });
+
+        card.addEventListener("mouseleave", () => {
+          // Reset alles
+          card.classList.remove("enlarged");
+          activeCard.classList.remove("shrunk");
+          activeCard.classList.add("active");
+        });
+      }
+    });
+  });
+</script>

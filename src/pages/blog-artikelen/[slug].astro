@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
 import fetchBlogArticles from "../../lib/fetchBlogArticles";
 import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
@@ -114,7 +115,7 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText;
             {selectedOtherBlogs.map((otherBlog) => (
               <a href={`/blog-artikelen/${otherBlog.node.slug}`} class="hidden">
                 <Card cardStyle="list-card">
-                  <img
+                  <Image
                     alt={otherBlog.node.featuredImage.node.altText}
                     height={500}
                     src={otherBlog.node.featuredImage.node.mediaItemUrl}
@@ -180,7 +181,9 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText;
 
       .wp-block-heading {
         margin-block-start: var(--size-2);
+        /* max-width: 45ch; */
         padding-block-end: var(--size-1);
+        text-wrap: pretty;
       }
 
       .wp-block-heading.h2 {
@@ -194,6 +197,61 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText;
       .wp-block-list {
         margin-inline-start: var(--size-3);
       }
+
+      .wp-block-image {
+        padding-block: var(--size-4);
+        max-width: var(--article-width);
+
+        img {
+          border-radius: var(--border-radius-card);
+          box-shadow: var(--box-shadow);
+          width: 100%;
+        }
+      }
+
+      .wp-block-quote {
+        background-color: var(--clr-primary-300);
+        border-left: solid 2px var(--clr-primary-800);
+        padding-inline-start: var(--size-4);
+        padding-block: var(--size-2);
+        margin-inline-start: var(--size-3);
+        max-width: 65ch;
+
+        a {
+          text-decoration: none;
+        }
+      }
+
+      .wp-cta-wrapper {
+        background-color: var(--clr-primary-900);
+        border-radius: var(--border-radius-card);
+        color: var(--clr-neutral-100);
+        text-align: center;
+        max-width: 65ch;
+
+        margin-inline: auto;
+
+        .wp-block-group {
+          padding-block: var(--size-4);
+          padding-inline: var(--size-2);
+          margin-block: var(--size-8);
+
+          h2 {
+            color: inherit;
+            margin: 0;
+          }
+          .btn {
+            margin-inline: auto;
+
+            a {
+              text-decoration: none;
+            }
+          }
+        }
+
+      }
+
+
 
       .next-article-wrapper {
         align-items: center;
@@ -228,7 +286,7 @@ const opengraphImageAlt = blogData.node.seo.opengraphImage.altText;
       li,
       ol {
         margin-block-end: var(--size-2);
-        max-width: var(--article-width);
+        max-width: unset;
       }
 
       a {

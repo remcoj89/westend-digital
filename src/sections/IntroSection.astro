@@ -1,9 +1,12 @@
 ---
 import Image from "astro/components/Image.astro";
 
+import { RedXIcon } from "../assets/icons";
+
 const {
   title,
   paragraph,
+  list,
   imageUrl,
   altText,
   flexDirection = "flex",
@@ -19,6 +22,22 @@ const {
       paragraph.map((par: string) => {
         return <p set:html={par} />;
       })
+    }
+    {
+      list && (
+        <ul>
+          {list.map((item: string) => {
+            return (
+              <li>
+                <span>
+                  <RedXIcon />
+                </span>
+                {item}
+              </li>
+            );
+          })}
+        </ul>
+      )
     }
     {
       cta && (
@@ -50,6 +69,22 @@ const {
       flex-direction: column;
       gap: var(--size-1);
       width: 100%;
+
+      li {
+        align-items:normal;
+        display: flex;
+        gap: var(--size-1);
+        list-style: none;
+        margin-inline-start: var(--size-1);
+
+        span {
+          align-items: center;
+          display: flex;
+          height: var(--size-2);
+          justify-content: center;
+          width: var(--size-2);
+        }
+      }
 
       .italic-text {
         font-style: italic;

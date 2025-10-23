@@ -1,20 +1,24 @@
 ---
-
 const {
   label,
   inputType = "text",
   placeHolder,
   name,
   id,
-  formStyle = "default"
-} = Astro.props
+  formStyle = "default",
+  inputStyle = "",
+} = Astro.props;
 ---
 
 <label for={name} class={formStyle} class="formStyle">
   {label}
-  <input type={inputType} name={name} placeholder={placeHolder}/>
+  <input
+    class={inputStyle}
+    type={inputType}
+    name={name}
+    placeholder={placeHolder}
+  />
 </label>
-
 
 <style>
   label {
@@ -39,6 +43,14 @@ const {
     .input[disabled] {
       background-color: #eee;
       cursor: not-allowed;
+    }
+
+    .transparent-bg {
+      background-color: hsl(224, 75%, 11%, 20%);
+
+      &::placeholder {
+        color: hsl(0, 0%, 96%, 70%);
+      }
     }
   }
 </style>

@@ -1,4 +1,7 @@
 ---
+// Astro assets
+import { Image } from "astro:assets";
+
 // Layout
 import Layout from "../../layouts/Layout.astro";
 
@@ -43,7 +46,7 @@ const { metaTitle, metaDescription, ogImage, ogUrl, heroTitle } =
         blogs.map((blog) => (
           <a href={`/blog-artikelen/${blog.node.slug}`} class="hidden blog">
             <Card cardStyle="list-card">
-              <img
+              <Image
                 src={blog.node.featuredImage.node.mediaItemUrl}
                 width={500}
                 height={500}

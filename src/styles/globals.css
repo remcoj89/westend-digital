@@ -17,12 +17,14 @@
 
   --article-width: 65ch;
 
-  --box-shadow: 0px 2px 15px 0px rgba(7, 18, 49, 0.4);
+  --box-shadow: 0px 2px 15px 0px hsl(224, 75%, 11%, 40%);
+  --box-shadow-gold: 0px 2px 15px 0px hsl(36, 59%, 58%, 40%);
 
   --border-radius-btn: 8px;
   --border-radius-input-field: 4px;
   --border-radius-card: 8px;
   --border-radius-img: 8px;
+  --border-radius-full: 100%;
 
   --clr-primary-100: hsl(0, 0%, 96%);
   --clr-primary-300: hsl(0, 0%, 90%);
@@ -49,6 +51,8 @@
   --clr-alert-yellow-900: hsl(46, 100%, 51%);
   --clr-alert-red-900: hsl(0, 100%, 33%);
   --clr-cta-green-900: hsl(120, 54%, 55%);
+
+  --clr-dark-card-bg: hsl(215, 28%, 17%);
 
   --lh-200: 125%;
   --lh-300: 150%;
@@ -134,7 +138,6 @@ img {
 
 section {
   margin-block: var(--size-15);
-  /* margin-block-end: var(--size-15); */
 
   .section-header {
     text-align: center;

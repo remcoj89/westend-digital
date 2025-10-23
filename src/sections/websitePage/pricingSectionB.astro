@@ -1,8 +1,118 @@
 ---
 // Data via props
 const { content, sectionId } = Astro.props;
+
+// Components
+import Button from "../../components/Button.astro";
+import Card from "../../components/Card.astro";
+import CardGrid from "../../components/CardGrid.astro";
 ---
 
-<section class="wrapper hidden" id={sectionId}>
-  <h2>{content.title}</h2>
+<section class="whidden dark-bg" id={sectionId}>
+  <div class="wrapper">
+    <h2>{content.title}</h2>
+    <CardGrid cardStyle="small-cards">
+      <!-- Pakket 1 -->
+      <a href="#">
+        <Card cardStyle="price-card">
+          <div class="card-header">
+            <h3>Lead Engine – €3.500,-</h3>
+            <p>
+              Voor ondernemers die leads willen genereren met een krachtige
+              eerste indruk.
+            </p>
+          </div>
+          <ul>
+            <li>Strategisch kick-off gesprek</li>
+            <li>Conversie gericht ontwerp</li>
+            <li>Basis SEO</li>
+            <li>5 pagina’s</li>
+            <li>Binnen 4 - 6 weken live</li>
+          </ul>
+          <Button buttonStyle="btn-secondary">Kies dit pakket</Button>
+        </Card>
+      </a>
+      <!-- Pakket 2 -->
+      <a href="#">
+        <Card cardStyle="price-card active">
+          <div class="card-header">
+            <h3>Growth Machine – €7.000</h3>
+            <p>
+              Voor ondernemers die hun website willen inzetten als actieve
+              groeiversneller.
+            </p>
+          </div>
+          <ul>
+            <li><strong>Alles uit Lead Engine</strong></li>
+            <li>SEO & UX-copy</li>
+            <li>Ontwerp op maat</li>
+            <li>CRM integratie & dashboard</li>
+            <li>Blog-integratie</li>
+          </ul>
+          <Button buttonStyle="btn-secondary">Kies dit pakket</Button>
+
+          <span id="card-message">Meest gekozen</span>
+        </Card>
+      </a>
+      <!-- Pakket 3 -->
+      <a href="#">
+        <Card cardStyle="price-card">
+          <div class="card-header">
+            <h3>Growth Partner – €12.000+</h3>
+            <p>
+              Voor ondernemers die hun website willen gebruiken als marketing
+              motor en autoriteit platform.
+            </p>
+          </div>
+          <ul>
+            <li><strong>Alles uit Growth machine</strong></li>
+            <li>1 SEO-blog per maand (3 maanden inbegrepen)</li>
+            <li>Funnels & automatisering</li>
+            <li>Dashboards & rapportage</li>
+            <li>Uitgebreide SEO-setup</li>
+          </ul>
+          <Button buttonStyle="btn-secondary">Kies dit pakket</Button>
+        </Card>
+      </a>
+    </CardGrid>
+
+    <div class="card-wrapper">
+      <Card cardStyle="bonus-card">
+        <h3>🎁 Inclusief waardevolle bonussen</h3>
+        <p>
+          Elk pakket bevat templates voor content, een gestroomlijnde intakeflow
+          en 3 maanden prioriteitssupport.
+        </p>
+      </Card>
+      <Card cardStyle="bonus-card">
+        <h3>✅ Resultaatgarantie</h3>
+        <p>
+          Niet 100% tevreden bij de lancering? Dan werk ik door tot de website
+          perfect aansluit op de missie.
+        </p>
+      </Card>
+    </div>
+  </div>
 </section>
+
+<style>
+  section {
+    padding-block: var(--size-15);
+    margin-block-end: 0;
+
+    .wrapper {
+      flex-direction: column;
+      gap: var(--size-8);
+
+      h2 {
+        text-align: center;
+      }
+
+      .card-wrapper {
+        display: flex;
+        gap: var(--size-4);
+        margin-block-start: var(--size-8);
+      }
+    }
+  }
+</style>

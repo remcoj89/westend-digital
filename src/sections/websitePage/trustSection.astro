@@ -1,0 +1,30 @@
+---
+// SVG Icons
+import { SheeldIcon } from "../../assets/icons";
+// Data via props
+const { content, sectionId } = Astro.props;
+---
+
+<div class="wrapper hidden trust-section" id={sectionId}>
+  <div class="dark-bg">
+    <SheeldIcon />
+    <h2>{content.title}</h2>
+    <p>{content.content}</p>
+    <ul>
+      {content.list.map((item) => (
+        <li set:html={item} />
+      ))}
+    </ul>
+  </div>
+</div>
+
+
+
+<style>
+
+  .trust-section {
+    padding: var(--size-2);
+    border-radius: var(--border-radius-card);
+  }
+
+</style>

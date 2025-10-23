@@ -21,20 +21,25 @@
       }
     },
     "problemSection": {
-      "title": "Waar gaat het mis?",
+      "title": "Is jouw website je zwakste schakel?",
       "content": ["Herken je dit? Je bedrijf groeit, maar je website voelt als een zwakke schakel. Hij is traag, rommelig of verouderd. Bezoekers haken af, je inbox blijft leeg en je twijfelt: ligt het aan mijn verhaal of werkt mijn website me tegen?","Ondertussen blijf je tijd verspillen aan technische details die je eigenlijk helemaal niet wilt doen. Het voelt alsof je website je tegenwerkt in plaats van ondersteunt."],
+      "list": [
+        "Je mist kansen omdat bezoekers afhaken.",
+        "Je voelt je niet professioneel vertegenwoordigd.",
+        "Je besteedt te veel tijd aan taken die geautomatiseerd kunnen worden."
+      ],
       "image": {
         "url": "/images/website-sales-page/herkenbaar.jpeg",
         "altText": "probleem image"
       }
     },
     "solutionSection": {
-      "title": "De oplossing die werkt",
+      "title": "Stel je voor: een website die wél meewerkt.",
       "content": [
         "Stel je voor: een website die wél meewerkt. Een digitale basis die je verhaal vertelt, klanten overtuigt en processen automatiseert. Eén die snel, veilig en onderhoudsvrij draait – alsof je er een extra teamlid bij hebt.Dat is precies wat wij voor je bouwen."
       ],
       "image": {
-        "url": "/images/website-sales-page/herkenbaar.jpeg",
+        "url": "/images/remco-bg-transparent.png",
         "altText": "probleem image"
       },
       "cta": {
@@ -47,14 +52,14 @@
         "name":"Linda Munster",
         "company":"B&B Schermer Eylandt"
       },
-      "content": "Plaats hier een klantreview placeholder.",
+      "content": "We zijn erg blij dat Remco ons heeft geholpen met het maken van de website voor onze B&B. Hij luisterde naar ons verhaal, wat ons doel was, stelde concrete vragen en gaf goede suggesties. We konden hem altijd goed bereiken en de overleggen waren ook gezellig. Helemaal top, dankjewel!",
       "image": {
         "url": "",
         "altText": "avatar van de schrijver van de review"
       }
     },
     "resultSection": {
-      "title": "Resultaten die je krijgt",
+      "title": "Meetbare resultaten, geen loze beloftes.",
       "resultaten": [
         {
           "resultaat": {
@@ -114,8 +119,8 @@
       ]
     },
     "practivalInfoSection": {
-      "title": "Praktische zaken + CTA",
-      "content": [
+      "title": "Ons bewezen proces",
+      "steps": [
         {
           "title": "Missie briefing",
           "text": "Een strategisch gesprek van 90 minuten om jouw doelen, doelgroep en aanbod scherp te krijgen."
@@ -125,7 +130,7 @@
           "text": "Teksten, ontwerp en structuur die jouw verhaal vertalen naar een overtuigende website."
         },
         {
-          "title": "Ontwikkeling & lancering ",
+          "title": "Ontwikkelen & lanceren ",
           "text": "We ontwikkelen jouw website, gaat live, getest en veilig."
         },
         {
@@ -140,12 +145,12 @@
     },
     "secondReviewSection": {
       "author": {
-        "name": "Linda Munster",
-        "company": "B&B Schermer Eylandt"
+        "name": "Jordi Oostmeijer",
+        "company": "Grafisch ontwerper"
       },
-      "content": "Plaats hier een klantreview placeholder.",
+      "content": "In Remco heb ik een uiterst vakkundig en toegewijde web-ontwikkelaar gevonden die de 'technische kant' makkelijk vertaalt naar visueel resultaat. Maar belangrijker nog is zijn prettige manier van samenwerken.",
       "image": {
-        "url": "",
+        "url": "/images/avatar-jordi.webp",
         "altText": "avatar van de schrijver van de review"
       }
     },
@@ -182,6 +187,7 @@
     },
     "ctaSection": {
       "title": "Laatste call to action",
+      "content": "Klaar om jouw website te laten werken als een geoliede eenheid?",
       "cta": {
         "title": "Plan een gratis kennismaking",
         "url": "/"
@@ -190,6 +196,11 @@
     "trustSection": {
       "title": "Zekerheid en Grip",
       "content": "Geen zorgen: je houdt altijd grip op het proces. Je krijgt previews, feedbackmomenten en volledige controle over het eindresultaat. Bovendien blijf ik na oplevering nog 3 maanden aan boord voor updates en support.",
+      "list": [
+        "<span class='list-icon'>✔</span><strong>Previews & Feedback:</strong> Je ziet elke stap en geeft feedback op cruciale momenten.",
+        "<span class='list-icon'>✔</span><strong>Heldere Communicatie:</strong> Wekelijkse updates over de voortgang. Geen jargon, maar duidelijke taal.",
+        "<span class='list-icon'>✔</span><strong>Toegewijde Support:</strong> Na lancering sta ik 3 maanden voor je klaar voor vragen en kleine aanpassingen."
+      ],
       "cta": {
         "title": "Plan een kennismaking",
         "url": "/"

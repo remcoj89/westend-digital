@@ -32,15 +32,10 @@ const iconComponents = {
 
         return (
           <div class="result">
-            {IconComponent && (
-              <IconComponent
-                className="resultaat-icoon"
-              />
-            )}
-            <div>
-              <h3>{resultaat.resultaat.title}</h3>
-              <p>{resultaat.resultaat.title}</p>
-            </div>
+            {IconComponent && <IconComponent className="resultaat-icoon" />}
+
+            <h3 class="title">{resultaat.resultaat.title}</h3>
+            <p>{resultaat.resultaat.title}</p>
           </div>
         );
       })
@@ -51,19 +46,36 @@ const iconComponents = {
 <style>
   .wrapper {
     background-color: var(--size-clr-500);
-    padding-block: var(--size-3);
+    padding-block: var(--size-8);
     padding-inline: var(--size-1);
     flex-direction: column;
 
+    h2 {
+      margin-inline: auto;
+      padding-block-end: var(--size-5);
+    }
+
     .results {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       column-gap: var(--size-1);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
       row-gap: var(--size-2);
 
       .result {
-        display: flex;
-        gap: var(--size-1);
+        background-color: white;
+        border-radius: var(--border-radius-card);
+        box-shadow: var(--box-shadow);
+        flex-basis: calc(33.333% - 30px);
+        padding: var(--size-2);
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        ;
+
+        .title {
+          padding-block: var(--size-1);
+        }
 
         svg {
           color: var(--clr-secondary-100);
@@ -71,6 +83,15 @@ const iconComponents = {
           height: var(--size-6);
           width: var(--size-6);
         }
+
+        &:hover, &:focus {
+          transform: translateY(-5px);
+        }
+      }
+    }
+    @media (width >= 618px) {
+      .results {
+        flex-direction: row;
       }
     }
   }

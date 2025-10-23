@@ -1,13 +1,65 @@
 ---
 const { items = [] } = Astro.props;
+
+// ✅ Helperfunctie om alle schema's te valideren en debug-logs te tonen
+function validateSchemas(items) {
+  if (!Array.isArray(items)) {
+    console.warn("⚠️ Schema lint: items is geen array:", items);
+    return [];
+  }
+
+  return items
+    .map((item, index) => {
+      if (typeof item === "function") {
+        console.warn(
+          `⚠️ Schema lint: item[${index}] is een functie. Heb je breadcrumb() wel aangeroepen?`
+        );
+        // probeer functie uit te voeren, zodat de build niet breekt
+        try {
+          return item();
+        } catch (err) {
+          console.error(
+            `❌ Schema lint: fout bij uitvoeren item[${index}]:`,
+            err
+          );
+          return null;
+        }
+      }
+
+      if (typeof item !== "object" || item === null) {
+        console.warn(
+          `⚠️ Schema lint: item[${index}] is geen geldig object:`,
+          item
+        );
+        return null;
+      }
+
+      // 🧩 Hier wordt jouw snippet gebruikt — test of het serialiseerbaar is
+      try {
+        JSON.stringify(item);
+      } catch (err) {
+        console.error(
+          `❌ Schema lint: item[${index}] kon niet worden geserialiseerd:`,
+          err
+        );
+        return null;
+      }
+
+      return item;
+    })
+    .filter(Boolean);
+}
+
+const validItems = validateSchemas(items);
 ---
 
 {
-  items.map((obj) => (
+  validItems.map((obj, i) => (
     <script
       is:inline
-      set:html={JSON.stringify(obj)}
       type="application/ld+json"
+      set:html={JSON.stringify(obj)}
+      key={`schema-${i}`}
     />
   ))
 }
