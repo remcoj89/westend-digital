@@ -1,8 +1,40 @@
 ---
 // Data via props
 const { content, sectionId } = Astro.props;
+
+// Components
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
 ---
 
-<section class="wrapper hidden" id={sectionId}>
+<section class="wrapper flex-column hidden" id={sectionId}>
   <h2>{content.title}</h2>
+  <div class="flex">
+    <Card cardStyle="compare-card" cardId="compare-card-yes">
+      <h3>{content.content.wel.title}</h3>
+      <ul>
+        {content.content.wel.list.map((point) => <li>{point}</li>)}
+      </ul>
+    </Card>
+    <Card cardStyle="compare-card" cardId="compare-card-no">
+      <h3>{content.content.niet.title}</h3>
+      <ul>
+        {content.content.niet.list.map((point) => <li>{point}</li>)}
+      </ul>
+    </Card>
+  </div>
+  <Button>Check of dit bij jou past</Button>
 </section>
+
+<style>
+  .wrapper {
+    gap: var(--size-6);
+    align-items: center;
+
+    .flex {
+      gap: var(--size-4);
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+</style>

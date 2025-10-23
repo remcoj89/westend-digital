@@ -226,23 +226,24 @@
       }
     },
     "forWhoSection": {
-      "title": "Voor wie wel/niet + CTA",
+      "title": "Is dit voor jou?",
       "content": {
         "wel": {
-          "title": "Dit is WEL voor jou als:",
+          "title": "✅ Voor jou als je...",
           "list": [
-          "Je serieus wil opschalen",
-          "Je een website wilt die écht resultaat oplevert.",
-          "Je klaar ben om je verhaal scherp neer te zetten"
+          "Ambitieus bent en wilt opschalen.",
+          "Een partner zoekt, geen leverancier.",
+          "Geloof in een strategische aanpak.",
+          "Klaar bent om te investeren in groei."
 
         ]},
         "niet": {
-          "title": "Dit is NIET voor jou als:",
+          "title": "❌ Dit is NIET voor jou als:",
           "list": [
-          "Je alleen zoekt naar de goedkoopste optie.",
-          "Je genoegen neemt met een website die er alleen maar mooi uitziet.",
-          "Je geen tijd wilt steken in het proces.",
-          "Je verwacht dat een website je bedrijf instant succesvol maakt."
+          "Een snelle, goedkope 'oplossing' zoekt.",
+          "Genoegen neemt met half werk.",
+          "Niet openstaat voor strategisch advies.",
+          "Geen duidelijke bedrijfsdoelen hebt."
         ]}
       },
       "cta": "Check of dit bij jou past"

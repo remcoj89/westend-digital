@@ -1,8 +1,8 @@
 ---
-const { cardStyle = "primary" } = Astro.props;
+const { cardStyle = "primary", cardId = "" } = Astro.props;
 ---
 
-<div class={`card ${cardStyle}`}>
+<div class={`card ${cardStyle}`} id={cardId}>
   <slot />
 </div>
 
@@ -195,6 +195,36 @@ const { cardStyle = "primary" } = Astro.props;
 
     h3 {
       color: var(--clr-primary-100);
+    }
+  }
+
+  .card.compare-card {
+    background-color: var(--clr-neutral-100);
+    box-shadow: var(--box-shadow-light);
+    padding: var(--size-2);
+    height: unset;
+
+    h3 {
+      margin-block-end: var(--size-2);
+    }
+
+    li {
+      margin-left: var(--size-2);
+    }
+  }
+
+  #compare-card-no {
+    border-left: 4px solid var(--clr-alert-red-900);
+
+    h3 {
+      color: var(--clr-alert-red-900);
+    }
+  }
+  #compare-card-yes {
+    border-left: 4px solid var(--clr-alert-green-900);
+
+    h3 {
+      color: var(--clr-alert-green-900);
     }
   }
 </style>
