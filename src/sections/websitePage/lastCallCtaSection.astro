@@ -1,8 +1,41 @@
 ---
 // Data via props
 const { content, sectionId } = Astro.props;
+
+// Components
+import Button from "../../components/Button.astro";
 ---
 
-<section class="wrapper hidden" id={sectionId}>
-  <h2>{content.title}</h2>
+<section class="hidden" id={sectionId}>
+  <div class="wrapper flex-column cta-content">
+    <h2>{content.title}</h2>
+    <p>{content.content}</p>
+    <Button buttonStyle="btn-secondary">{content.cta.title}</Button>
+  </div>
 </section>
+
+<style>
+  section {
+    align-content: center;
+    background:
+      linear-gradient(315deg, hsl(224, 35%, 28%, 0.7), hsl(224, 75%, 11%, 0.8)),
+      url("/images/remco-programming.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--clr-primary-100);
+    height: 50vh;
+    margin-block-end: 0;
+
+    .cta-content {
+      color: var(--clr-primary-100);
+      align-items: center;
+      text-align: center;
+      gap: var(--size-2);
+
+      h2 {
+        color: inherit;
+      }
+    }
+  }
+</style>

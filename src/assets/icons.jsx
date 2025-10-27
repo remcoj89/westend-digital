@@ -187,7 +187,7 @@ export function ConversionIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
       className="lucide lucide-target text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
-      ariaHidden="true"
+      aria-hidden="true"
     >
       <circle cx="12" cy="12" r="10"></circle>
       <circle cx="12" cy="12" r="6"></circle>

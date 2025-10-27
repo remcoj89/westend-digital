@@ -305,9 +305,13 @@
       ]
     },
     "lastCallCtaSection": {
-      "title": "Laatste call to action",
-      "content": "Ben jij klaar om jouw website te laten werken als een geoliede eenheid?",
-      "cta": "Plan jouw strategiegesprek"
+      "title": "Ben jij klaar om jouw website te laten werken als een geoliede eenheid?",
+      "content": "Laten we in een vrijblijvend gesprek ontdekken hoe we jouw online basis kunnen versterken voor maximale groei.",
+      "cta": {
+        "title": "Plan een gratis strategiegesprek",
+        "url": "/"
+      },
+      "backgroundImageUrl": "/images/kennismaking.webp"
     }
   }
 }
