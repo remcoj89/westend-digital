@@ -25,12 +25,9 @@
   --border-radius-input-field: 4px;
   --border-radius-card: 8px;
   --border-radius-img: 8px;
-<<<<<<< HEAD
   --border-radius-label: 50px;
   --border-radius-full: 100%;
-=======
-  --border-radius-full: 500vw;
->>>>>>> 7841ad8b29164d48226f2e21e33c34436b848a4d
+
 
   --clr-primary-100: hsl(0, 0%, 96%);
   --clr-primary-300: hsl(0, 0%, 90%);

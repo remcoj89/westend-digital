@@ -1,20 +1,14 @@
 ---
-<<<<<<< HEAD
 // Astro asstes
 import { Image } from "astro:assets";
 // Components
 import FlexWrapper from "../../components/FlexWrapper.astro";
-=======
-// Astro Assets
-import { Image } from "astro:assets";
 
->>>>>>> 7841ad8b29164d48226f2e21e33c34436b848a4d
 // Data via props
 const { content, sectionId } = Astro.props;
 ---
 
 <section class="wrapper hidden" id={sectionId}>
-<<<<<<< HEAD
   <FlexWrapper flexAlignment="align-center">
     <picture>
       <Image
@@ -63,39 +57,6 @@ const { content, sectionId } = Astro.props;
 
     p:not(:last-child) {
       margin-block-end: var(--size-1);
-=======
-  <Image
-    alt={content.image.altText}
-    src={content.image.url}
-    width={500}
-    height={400}
-  />
-  <div class="about-me-content">
-    <h2>{content.title}</h2>
-    {content.content.map((paragraph) => <p set:html={paragraph} />)}
-  </div>
-</section>
-
-<style>
-  .wrapper {
-    gap: var(--size-8);
-    align-items: flex-end;
-
-    img {
-      object-position: right;
-      border-radius: var(--border-radius-card);
-      box-shadow: var(--box-shadow);
-    }
-
-   .about-me-content {
-      h2 {
-        margin-block-end: var(--size-3)
-      }
-
-      p:not(:last-child) {
-        margin-block-end: var(--size-2);
-      }
->>>>>>> 7841ad8b29164d48226f2e21e33c34436b848a4d
     }
   }
 </style>

@@ -5,21 +5,15 @@ import { SheeldIcon, CircleCheckIconGold } from "../../assets/icons";
 const { content, sectionId } = Astro.props;
 ---
 
-<<<<<<< HEAD
 <section>
   <div class="wrapper hidden dark-bg trust-section" id={sectionId}>
     <div class="title-wrapper">
-=======
-<div class="wrapper hidden trust-section" id={sectionId}>
-  <div class="dark-bg">
-    <div class="section-header">
->>>>>>> 7841ad8b29164d48226f2e21e33c34436b848a4d
+
       <SheeldIcon />
       <h2>{content.title}</h2>
       <p>{content.content}</p>
     </div>
     <ul role="list">
-<<<<<<< HEAD
       {
         content.list.map((item) => (
           <li class="list-item">
@@ -55,48 +49,5 @@ const { content, sectionId } = Astro.props;
       display: flex;
       gap: var(--size-1);
     }
-=======
-      {content.list.map((item) => <li set:html={item} />)}
-    </ul>
-  </div>
-</div>
-
-<style>
-  .trust-section {
-    overflow: hidden;
-
-    .dark-bg {
-      border-radius: var(--border-radius-card);
-      padding: var(--size-4) var(--size-7);
-      display: flex;
-      flex-direction: column;
-      gap: var(--size-2);
-
-      .section-header {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        gap: var(--size-1);
-        text-align: center;
-
-        h2 {
-          color: var(--clr-secondary-900);
-        }
-
-        p {
-          color: var(--clr-neutral-100);
-        }
-      }
-
-      ul {
-        li {
-          .list-icon {
-            margin-inline-end: var(--size-1);
-            color: var(--clr-secondary-900);
-          }
-        }
-      }
-    }
->>>>>>> 7841ad8b29164d48226f2e21e33c34436b848a4d
   }
 </style>
