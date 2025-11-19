@@ -24,6 +24,7 @@
   --border-radius-input-field: 4px;
   --border-radius-card: 8px;
   --border-radius-img: 8px;
+  --border-radius-label: 50px;
   --border-radius-full: 100%;
 
   --clr-primary-100: hsl(0, 0%, 96%);
@@ -184,7 +185,12 @@ section {
   h2 {
     color: var(--clr-primary-100);
   }
+
+  ::selection {
+    background-color: var(--clr-secondary-900);
+  }
 }
+
 /* End colors */
 
 /* Text styling */
@@ -691,7 +697,6 @@ input[type="range"] {
 }
 
 /* End Buttons */
-
 
 /* Section animation */
 

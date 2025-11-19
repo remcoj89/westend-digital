@@ -197,33 +197,26 @@
       "title": "Zekerheid en Grip",
       "content": "Geen zorgen: je houdt altijd grip op het proces. Je krijgt previews, feedbackmomenten en volledige controle over het eindresultaat. Bovendien blijf ik na oplevering nog 3 maanden aan boord voor updates en support.",
       "list": [
-        "<span class='list-icon'>✔</span><strong>Previews & Feedback:</strong> Je ziet elke stap en geeft feedback op cruciale momenten.",
-        "<span class='list-icon'>✔</span><strong>Heldere Communicatie:</strong> Wekelijkse updates over de voortgang. Geen jargon, maar duidelijke taal.",
-        "<span class='list-icon'>✔</span><strong>Toegewijde Support:</strong> Na lancering sta ik 3 maanden voor je klaar voor vragen en kleine aanpassingen."
+        "<strong>Previews & Feedback:</strong> Je ziet elke stap en geeft feedback op cruciale momenten.",
+        "<strong>Heldere Communicatie:</strong> Wekelijkse updates over de voortgang. Geen jargon, maar duidelijke taal.",
+        "<strong>Toegewijde Support:</strong> Na lancering sta ik 3 maanden voor je klaar voor vragen en kleine aanpassingen."
       ],
       "cta": {
         "title": "Plan een kennismaking",
         "url": "/"
       }
     },
-    "thirdReviewSection": {
-      "author": {
-        "name": "Linda Munster",
-        "company": "B&B Schermer Eylandt"
-      },
-      "content": "Plaats hier een klantreview placeholder.",
-      "image": {
-        "url": "",
-        "altText": "avatar van de schrijver van de review"
-      }
-    },
     "aboutMeSection": {
       "title": "Even voorstellen",
-      "content": ["Als ondernemer weet ik hoe frustrerend het is als je website niet de resultaten levert die je nodig hebt. Daarom ontwikkelen wij websites die niet alleen mooi zijn, maar ook strategisch werken voor uw bedrijf.", "<strong>Remco Jonk</strong> - Oprichter Westend Digital", "Met 10+ jaar ervaring in digitale strategie en een achtergrond in operationele excellentie, begrijp ik precies wat ondernemers nodig hebben om online te slagen."]
+      "content": ["Als ondernemer weet ik hoe frustrerend het is als je website niet de resultaten levert die je nodig hebt. Daarom ontwikkelen wij websites die niet alleen mooi zijn, maar ook strategisch werken voor uw bedrijf.", "<strong>Remco Jonk</strong> - Oprichter Westend Digital", "Met 10+ jaar ervaring in digitale strategie en een achtergrond in operationele excellentie, begrijp ik precies wat ondernemers nodig hebben om online te slagen."],
+      "image": {
+        "url": "/images/remco-jonk.webp",
+        "altText": "Remco met een blauw t-shirt"
+      }
 
     },
     "forWhoSection": {
-      "title": "Voor wie wel/niet + CTA",
+      "title": "Is dit voor jou?",
       "content": {
         "wel": {
           "title": "Dit is WEL voor jou als:",
@@ -242,21 +235,17 @@
           "Je verwacht dat een website je bedrijf instant succesvol maakt."
         ]}
       },
-      "cta": "Check of dit bij jou past"
+      "cta": {
+        "btnText": "Plan een kennismakings gesprek",
+        "url": "https://calendly.com/remco-westend-digital/30min?month=2025-11"
+      }
     },
     "whyNowSection": {
-      "title": "Waarom nu?",
-      "content": "Elke dag dat je wacht, kost je klanten. Concurrenten verbeteren hun online aanwezigheid terwijl jij blijft hangen in een website die je groei tegenhoudt. Hoe eerder je start, hoe sneller jouw website voor je werkt."
-    },
-    "forthReviewSection": {
-      "author": {
-        "name": "Linda Munster",
-        "company": "B&B Schermer Eylandt"
-      },
-      "content": "Plaats hier een klantreview placeholder.",
-      "image": {
-        "url": "",
-        "altText": "avatar van de schrijver van de review"
+      "label": "Waarom nu?",
+      "title": "Elke dag dat je wacht, kost je klanten. Concurrenten verbeteren hun online aanwezigheid terwijl jij blijft hangen in een website die je groei tegenhoudt. Hoe eerder je start, hoe sneller jouw website voor je werkt.",
+      "button": {
+        "url": "https://calendly.com/remco-westend-digital/30min?month=2025-11",
+        "btnText": "Stop met wachten start met groeien"
       }
     },
     "faqSection": {
@@ -297,9 +286,12 @@
       ]
     },
     "lastCallCtaSection": {
-      "title": "Laatste call to action",
-      "content": "Ben jij klaar om jouw website te laten werken als een geoliede eenheid?",
-      "cta": "Plan jouw strategiegesprek"
+      "title": "Ben jij klaar om jouw website te laten werken als een geoliede eenheid?",
+      "content": "Laten we in een vrijblijvend gesprek ontdekken hoe we jouw online basis kunnen versterken voor maximale groei.",
+      "cta": {
+        "btnText": "Plan jouw strategiegesprek",
+        "url": "https://calendly.com/remco-westend-digital/30min?month=2025-11"
+      }
     }
   }
 }

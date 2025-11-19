@@ -1,0 +1,25 @@
+---
+const { flexAlignment = "" } = Astro.props;
+---
+
+<div class={`flex-wrapper ${flexAlignment}`}>
+  <slot />
+</div>
+
+<style>
+
+
+  .flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-5);
+
+    @media( width >= 833px) {
+      flex-direction: row;
+    }
+  }
+
+  .align-center {
+    align-items: center;
+  }
+</style>

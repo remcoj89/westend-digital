@@ -8,7 +8,7 @@ const currentYear = new Date().getFullYear();
 const { pages, adress, legalPages, footer } = data;
 ---
 
-<footer class="fb-col-wrapper">
+<footer class="fb-col-wrapper dark-bg">
   <div class="logo-section">
     <a href="/">
       <Image
@@ -30,7 +30,7 @@ const { pages, adress, legalPages, footer } = data;
           pages.map((page) => {
             return (
               <li>
-                <a href={page.href}>{page.title}</a>
+                <a href={typeof page.href === "string" ? page.href : ""}>{page.title}</a>
               </li>
             );
           })
@@ -74,7 +74,6 @@ const { pages, adress, legalPages, footer } = data;
 
 <style>
   footer {
-    background-color: var(--clr-primary-900);
     color: var(--clr-primary-100);
     padding-block: var(--size-4);
 

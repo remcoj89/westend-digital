@@ -1,8 +1,61 @@
 ---
+// Astro asstes
+import { Image } from "astro:assets";
+// Components
+import FlexWrapper from "../../components/FlexWrapper.astro";
 // Data via props
 const { content, sectionId } = Astro.props;
 ---
 
 <section class="wrapper hidden" id={sectionId}>
-  <h2>{content.title}</h2>
+  <FlexWrapper flexAlignment="align-center">
+    <picture>
+      <Image
+        alt={content.image.altText}
+        height={500}
+        src={content.image.url}
+        width={500}
+      />
+    </picture>
+    <article>
+      <h2>{content.title}</h2>
+      {content.content.map((p: string) => <p set:html={p} />)}
+    </article>
+  </FlexWrapper>
 </section>
+
+<style>
+  picture {
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow);
+    height: 50rem;
+    overflow: hidden;
+
+    @media (width >= 833px) {
+      width: 50%;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+    }
+  }
+
+  article {
+    text-align: center;
+    width: 100%;
+
+    @media (width >= 833px) {
+      text-align: start;
+    }
+    h2 {
+      margin-block-end: var(--size-2);
+    }
+
+    p:not(:last-child) {
+      margin-block-end: var(--size-1);
+    }
+  }
+</style>

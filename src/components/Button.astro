@@ -1,25 +1,44 @@
 ---
-
 const {
+  ariaLabel = "knop",
+  buttonId,
   buttonStyle = "btn-primary",
   buttonType = "button",
-  buttonId,
-  ariaLabel = "knop"
-} = Astro.props
+  href = "",
+  onClick = null,
+  target = null,
+} = Astro.props;
 
+// Check of het een externe link is én of het een nieuw tabblad opent
+const isExternal = href.startsWith("https://");
+const openInNewTab = target === "_blank";
+const rel = isExternal && openInNewTab ? "noopener noreferrer" : undefined;
 ---
 
-<button type={buttonType} class={`btn ${buttonStyle}`} id={buttonId} aria-label={ariaLabel}>
-  <slot />
-</button>
-
+{
+  href ? (
+    <a href={href} class={`btn ${buttonStyle}`} target={target} rel={rel}>
+      <slot />
+    </a>
+  ) : (
+    <button
+      aria-label={ariaLabel}
+      class={`btn ${buttonStyle}`}
+      id={buttonId}
+      onclick={onClick}
+      type={buttonType}
+    >
+      <slot />
+    </button>
+  )
+}
 
 <style>
   .btn {
     border: none;
     border-radius: var(--border-radius-btn);
     cursor: pointer;
-    padding-block: 1rem;
+    padding-block: var(--size-2);
     height: fit-content;
     padding-inline: var(--size-3);
     font-size: var(--fs-400);
@@ -88,7 +107,7 @@ const {
     margin-inline-start: auto;
     padding: 0;
     width: fit-content;
-   }
+  }
 
   .arrow-btn {
     background-color: transparent;
@@ -96,5 +115,14 @@ const {
     width: fit-content;
   }
 
+  .white-btn {
+    background-color: var(--clr-primary-100);
+    border: solid 1px var(--clr-primary-100);
 
+    &:hover,
+    &:active {
+      background-color: transparent;
+      color: var(--clr-secondary-100);
+    }
+  }
 </style>

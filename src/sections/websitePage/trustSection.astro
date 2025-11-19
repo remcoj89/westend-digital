@@ -1,30 +1,52 @@
 ---
 // SVG Icons
-import { SheeldIcon } from "../../assets/icons";
+import { SheeldIcon, CircleCheckIconGold } from "../../assets/icons";
 // Data via props
 const { content, sectionId } = Astro.props;
 ---
 
-<div class="wrapper hidden trust-section" id={sectionId}>
-  <div class="dark-bg">
-    <SheeldIcon />
-    <h2>{content.title}</h2>
-    <p>{content.content}</p>
-    <ul>
-      {content.list.map((item) => (
-        <li set:html={item} />
-      ))}
+<section>
+  <div class="wrapper hidden dark-bg trust-section" id={sectionId}>
+    <div class="title-wrapper">
+      <SheeldIcon />
+      <h2>{content.title}</h2>
+      <p>{content.content}</p>
+    </div>
+    <ul role="list">
+      {
+        content.list.map((item) => (
+          <li class="list-item">
+            <CircleCheckIconGold />
+            <span set:html={item} />
+          </li>
+        ))
+      }
     </ul>
   </div>
-</div>
-
-
+</section>
 
 <style>
-
   .trust-section {
-    padding: var(--size-2);
+    align-items: center;
     border-radius: var(--border-radius-card);
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--size-4);
+    max-width: 80ch;
 
+    .title-wrapper {
+      text-align: center;
+      margin-block-end: var(--size-4);
+
+      h2 {
+        margin-block: var(--size-2) var(--size-1);
+      }
+    }
+    .list-item {
+      align-items: center;
+      display: flex;
+      gap: var(--size-1);
+    }
+  }
 </style>

@@ -1,8 +1,44 @@
 ---
+// Components
+import Button from "../../components/Button.astro";
+import Card from "../../components/Card.astro";
+import FlexWrapper from "../../components/FlexWrapper.astro";
+import SectionTitle from "../../components/SectionTitle.astro";
 // Data via props
 const { content, sectionId } = Astro.props;
 ---
 
 <section class="wrapper hidden" id={sectionId}>
-  <h2>{content.title}</h2>
+  <SectionTitle sectionTitle={content.title} />
+  <FlexWrapper>
+    <Card cardStyle="for-who-card" cardId="green-border">
+      <h3>✅ {content.content.wel.title}</h3>
+      <ul>
+        {content.content.wel.list.map((li: string) => <li set:html={li} />)}
+      </ul>
+    </Card>
+    <Card cardStyle="for-who-card" cardId="red-border">
+      <h3>❌ {content.content.niet.title}</h3>
+      <ul>
+        {content.content.niet.list.map((li: string) => <li set:html={li} />)}
+      </ul>
+    </Card>
+  </FlexWrapper>
+
+  <Button href={content.cta.url} target="_blank">{content.cta.btnText}</Button>
 </section>
+
+<style>
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      margin-block-end: var(--size-7);
+    }
+
+    a,
+    button {
+      margin-block-start: var(--size-10);
+    }
+  }
+</style>
