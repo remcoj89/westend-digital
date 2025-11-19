@@ -1,15 +1,8 @@
 ---
-import CtaDownloadButton from "../components/CtaDownloadButton.astro"
-import Image from "astro/components/Image.astro";
+import CtaDownloadButton from "../components/CtaDownloadButton.astro";
+import { Image } from "astro:assets";
 
-const {
-  title,
-  paragraph,
-  ctaBtn,
-  ctaBtnUrl,
-  imageUrl,
-  altText,
-} = Astro.props;
+const { title, paragraph, ctaBtn, ctaBtnUrl, imageUrl, altText } = Astro.props;
 ---
 
 <section id="herkenbaar-section">

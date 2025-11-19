@@ -6,8 +6,6 @@ export async function POST({ request }) {
   const formData = await request.json();
   const { naam, email, subject } = formData;
 
-  console.log("Ontvangen formuliergegevens:", formData);
-
   if (!naam || !email) {
     return new Response(
       JSON.stringify({

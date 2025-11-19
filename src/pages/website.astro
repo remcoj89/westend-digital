@@ -2,6 +2,9 @@
 // Layouts
 import Layout from "../layouts/Layout.astro";
 
+// Astro assets
+import { Image } from "astro:assets";
+
 // Sections
 import SalesHero from "../sections/websitePage/salesHero.astro";
 import FooterSection from "../sections/FooterSection.astro";
@@ -21,7 +24,6 @@ import LastCallCtaSection from "../sections/websitePage/lastCallCtaSection.astro
 import IntroSection from "../sections/IntroSection.astro";
 
 // Components
-import Image from "astro/components/Image.astro";
 import Button from "../components/Button.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 
@@ -35,7 +37,6 @@ const {
   ctaSection,
   faqSection,
   firstReviewSection,
-  forthReviewSection,
   forWhoSection,
   heroSection,
   lastCallCtaSection,
@@ -50,7 +51,6 @@ const {
   resultSection,
   secondReviewSection,
   solutionSection,
-  thirdReviewSection,
   trustSection,
   whyNowSection,
 } = PageData.pageContent;
@@ -90,6 +90,8 @@ const {
       sectionId="problemSection"
       title={problemSection.title}
     />
+
+    <!--Section what is the solution -->
     <section class="dark-bg solution-section">
       <div class="wrapper solution-wrapper">
         <div class="solution">
@@ -97,7 +99,9 @@ const {
             title={solutionSection.title}
             intro={solutionSection.content}
           />
-          <Button buttonStyle="btn-secondary">Vind vandaag nog jouw oplossing</Button>
+          <Button buttonStyle="btn-secondary"
+            >Vind vandaag nog jouw oplossing</Button
+          >
         </div>
 
         <Image
@@ -108,17 +112,6 @@ const {
         />
       </div>
     </section>
-    <!-- Intro section what is the solution -->
-
-    <!-- <IntroSection
-      altText={solutionSection.image.altText}
-      cta={solutionSection.cta}
-      flexDirection="flex-reverse"
-      imageUrl={solutionSection.image.url}
-      paragraph={solutionSection.content}
-      sectionId="solutionSection"
-      title={solutionSection.title}
-    /> -->
 
     <!-- First testemonial -->
     <ReviewSection
@@ -189,7 +182,6 @@ const {
         object-fit: cover;
         width: 40%;
       }
-
     }
   }
 </style>

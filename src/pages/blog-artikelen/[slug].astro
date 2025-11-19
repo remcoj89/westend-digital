@@ -1,14 +1,23 @@
 ---
+// Layouts
 import Layout from "../../layouts/Layout.astro";
+
+// Astro assets
 import { Image } from "astro:assets";
+
+// Data
 import fetchBlogArticles from "../../lib/fetchBlogArticles";
+// Sections
 import CtaSection from "../../sections/CtaSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
+
+// Components
 import Button from "../../components/Button.astro";
 import SmallCtaSection from "../../sections/SmallCtaSection.astro";
 import Card from "../../components/Card.astro";
 import CardGrid from "../../components/CardGrid.astro";
 
+// Functions
 export async function getStaticPaths() {
   const allBlogs = await fetchBlogArticles();
 
@@ -34,9 +43,7 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 
 const allBlogs = await fetchBlogArticles();
-const blogData = allBlogs.find(
-  (blog: { node: { slug: any } }) => blog.node.slug === slug
-);
+const blogData = allBlogs.find((blog) => blog.node.slug === slug);
 
 if (!blogData) {
   throw new Error("Blog not found");

@@ -3,11 +3,11 @@
 import Button from "../../components/Button.astro";
 // Data via props
 const { content, sectionId } = Astro.props;
+
 ---
 
 <section class="hidden" id={sectionId}>
   <div class="wrapper">
-
     <h2>{content.title}</h2>
     <p>{content.content}</p>
     <Button href={content.cta.url} target="_blank" buttonStyle="btn-secondary">
@@ -42,7 +42,6 @@ const { content, sectionId } = Astro.props;
         padding-block: var(--size-2) var(--size-4);
         margin-block-end: var(--size-4);
       }
-
     }
   }
 </style>

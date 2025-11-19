@@ -190,7 +190,7 @@
       "content": "Klaar om jouw website te laten werken als een geoliede eenheid?",
       "cta": {
         "title": "Plan een gratis kennismaking",
-        "url": "/"
+        "url": "https://calendly.com/remco-westend-digital/30min"
       }
      },
     "trustSection": {
@@ -203,7 +203,7 @@
       ],
       "cta": {
         "title": "Plan een kennismaking",
-        "url": "/"
+        "url": "https://calendly.com/remco-westend-digital/30min"
       }
     },
     "aboutMeSection": {
@@ -213,38 +213,38 @@
         "url": "/images/remco-jonk.webp",
         "altText": "Remco met een blauw t-shirt"
       }
-
     },
     "forWhoSection": {
       "title": "Is dit voor jou?",
       "content": {
         "wel": {
-          "title": "Dit is WEL voor jou als:",
+          "title": "✅ Voor jou als je...",
           "list": [
-          "Je serieus wil opschalen",
-          "Je een website wilt die écht resultaat oplevert.",
-          "Je klaar ben om je verhaal scherp neer te zetten"
+          "Ambitieus bent en wilt opschalen.",
+          "Een partner zoekt, geen leverancier.",
+          "Geloof in een strategische aanpak.",
+          "Klaar bent om te investeren in groei."
 
         ]},
         "niet": {
-          "title": "Dit is NIET voor jou als:",
+          "title": "❌ Dit is NIET voor jou als:",
           "list": [
-          "Je alleen zoekt naar de goedkoopste optie.",
-          "Je genoegen neemt met een website die er alleen maar mooi uitziet.",
-          "Je geen tijd wilt steken in het proces.",
-          "Je verwacht dat een website je bedrijf instant succesvol maakt."
+          "Een snelle, goedkope 'oplossing' zoekt.",
+          "Genoegen neemt met half werk.",
+          "Niet openstaat voor strategisch advies.",
+          "Geen duidelijke bedrijfsdoelen hebt."
         ]}
       },
       "cta": {
         "btnText": "Plan een kennismakings gesprek",
-        "url": "https://calendly.com/remco-westend-digital/30min?month=2025-11"
+        "url": "https://calendly.com/remco-westend-digital/30min"
       }
     },
     "whyNowSection": {
       "label": "Waarom nu?",
       "title": "Elke dag dat je wacht, kost je klanten. Concurrenten verbeteren hun online aanwezigheid terwijl jij blijft hangen in een website die je groei tegenhoudt. Hoe eerder je start, hoe sneller jouw website voor je werkt.",
       "button": {
-        "url": "https://calendly.com/remco-westend-digital/30min?month=2025-11",
+        "url": "https://calendly.com/remco-westend-digital/30min",
         "btnText": "Stop met wachten start met groeien"
       }
     },
@@ -290,7 +290,7 @@
       "content": "Laten we in een vrijblijvend gesprek ontdekken hoe we jouw online basis kunnen versterken voor maximale groei.",
       "cta": {
         "btnText": "Plan jouw strategiegesprek",
-        "url": "https://calendly.com/remco-westend-digital/30min?month=2025-11"
+        "url": "https://calendly.com/remco-westend-digital/30min"
       }
     }
   }

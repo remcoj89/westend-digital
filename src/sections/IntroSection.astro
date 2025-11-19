@@ -1,5 +1,5 @@
 ---
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 
 import { RedXIcon } from "../assets/icons";
 
@@ -71,7 +71,7 @@ const {
       width: 100%;
 
       li {
-        align-items:normal;
+        align-items: normal;
         display: flex;
         gap: var(--size-1);
         list-style: none;

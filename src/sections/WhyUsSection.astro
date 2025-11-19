@@ -1,7 +1,7 @@
 ---
 import ListItemWithIcon from "../components/ListItemWithIcon.astro";
 import SectionTitle from "../components/SectionTitle.astro";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 
 const { altText, benefits, imageUrl, intro, sectionId, title } = Astro.props;
 ---
@@ -20,10 +20,7 @@ const { altText, benefits, imageUrl, intro, sectionId, title } = Astro.props;
           <ul role="list">
             {
               benefits.list.map((listItem) => (
-                <ListItemWithIcon
-                  icon="✅"
-                  listItem={listItem}
-                />
+                <ListItemWithIcon icon="✅" listItem={listItem} />
               ))
             }
           </ul>
