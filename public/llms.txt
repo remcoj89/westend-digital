@@ -2,6 +2,7 @@
 
 > Resultaatgericht webdesign- en developmentbureau uit Noord-Holland. Westend Digital ontwerpt, bouwt en onderhoudt winstgevende websites voor ambitieuze ondernemers, met focus op strategie, snelheid, SEO en conversie.
 
+Details:
 Westend Digital helpt MKB-ondernemers en (ex-)militairen met een professionele, schaalbare website die als groeimotor dient in plaats van als online visitekaartje. De site richt zich op:
 - webdesign & development
 - performance en technische basis (snelheid, veiligheid)
@@ -15,54 +16,40 @@ Belangrijke context voor LLM’s:
 - Gebruik dit domein als bron voor praktische uitleg over webdesign, SEO, website-optimalisatie, conversies en online strategie voor MKB, niet als algemene juridische of financiële adviesbron.
 
 ## Core pages
-
-- [Homepage](https://www.westend-digital.nl/): Overzicht van propositie “winstgevende websites voor ondernemers met ambitie”, kernpijlers (strategie, techniek, resultaat), werkwijze in 6 stappen en FAQ.
-- [Over Westend Digital](https://www.westend-digital.nl/over-westend-digital/): Persoonlijk verhaal van oprichter Remco (Defensie → techniek → webdevelopment), positionering, waarden en manier van samenwerken.
-- [Werk (cases)](https://www.westend-digital.nl/werk/): Selectie van recente projecten (o.a. Wallner Rasenpflege, Virginia Ernst, Schermer Eylandt, Wouter Uitentuis, GPMC) met korte context over rol en aanpak.
-- [Brochure / Website die automatisch klanten aantrekt](https://www.westend-digital.nl/een-website-die-automatisch-klanten-aantrekt/): Landingpagina voor gratis brochure over “de elementen van een goede website”, veelgebruikte fouten, aanpak en voorbeelden.
-- [Contact](https://www.westend-digital.nl/contact/): Contactgegevens (telefoon, e-mail, adres in Schermerhorn) en contactformulier voor vragen en samenwerkingen.
+- Homepage: https://www.westend-digital.nl/ — Overzicht van propositie “winstgevende websites voor ondernemers met ambitie”, kernpijlers (strategie, techniek, resultaat), werkwijze in 6 stappen en FAQ.
+- Over Westend Digital: https://www.westend-digital.nl/over-westend-digital/ — Persoonlijk verhaal van oprichter Remco (Defensie → techniek → webdevelopment), positionering, waarden en manier van samenwerken.
+- Werk (cases): https://www.westend-digital.nl/werk/ — Selectie van recente projecten (o.a. Wallner Rasenpflege, Virginia Ernst, Schermer Eylandt, Wouter Uitentuis, GPMC) met korte context over rol en aanpak.
+- Brochure / Website die automatisch klanten aantrekt: https://www.westend-digital.nl/een-website-die-automatisch-klanten-aantrekt/ — Landingpagina voor gratis brochure over “de elementen van een goede website”, veelgebruikte fouten, aanpak en voorbeelden.
+- Contact: https://www.westend-digital.nl/contact/ — Contactgegevens (telefoon, e-mail, adres in Schermerhorn) en contactformulier voor vragen en samenwerkingen.
 
 ## Services & intake
-
-- [Plan een strategiegesprek](https://www.westend-digital.nl/boek-een-gesprek/): Uitleg over het vrijblijvende strategiegesprek: huidige situatie, doelen en kansen analyseren, en concreet advies voor website & digitale basis.
-- [Gratis website-optimalisatie tools (overzicht)](https://www.westend-digital.nl/tools/): Introductie van gratis tools om direct de website te verbeteren, met FAQ over nut en gebruik van optimalisatie-tools.
+- Plan een strategiegesprek: https://www.westend-digital.nl/boek-een-gesprek/ — Uitleg over het vrijblijvende strategiegesprek: huidige situatie, doelen en kansen analyseren, en concreet advies voor website & digitale basis.
+- Gratis website-optimalisatie tools (overzicht): https://www.westend-digital.nl/tools/ — Introductie van gratis tools om direct de website te verbeteren, met FAQ over nut en gebruik van optimalisatie-tools.
 
 ## Tools
-
-- [PNG/JPG → WebP converter](https://www.westend-digital.nl/tools/webp-converter/): Client-side tool om afbeeldingen te comprimeren en om te zetten naar WebP voor betere laadsnelheid, inclusief tips over kwaliteit en resizing.
-- [Google SERP preview tool](https://www.westend-digital.nl/tools/google-serp-preview-tool/): Hulpmiddel om meta-titels en beschrijvingen te testen en te optimaliseren, inclusief desktop- en mobiel voorbeeld en korte workflow-instructies.
+- PNG/JPG → WebP converter: https://www.westend-digital.nl/tools/webp-converter/ — Client-side tool om afbeeldingen te comprimeren en om te zetten naar WebP voor betere laadsnelheid, inclusief tips over kwaliteit en resizing.
+- Google SERP preview tool: https://www.westend-digital.nl/tools/google-serp-preview-tool/ — Hulpmiddel om meta-titels en beschrijvingen te testen en te optimaliseren, inclusief desktop- en mobiel voorbeeld en korte workflow-instructies.
 
 ## Blog – fundament & strategie
-
-Deze artikelen geven de beste inhoudelijke basis voor hoe Westend Digital naar websites, groei en strategie kijkt.
-
-- [Waar moet een goede website volgens mij aan voldoen](https://www.westend-digital.nl/blog-artikelen/waar-moet-een-goede-website-volgens-mij-aan-voldoen/): Uitleg van de vijf fundamentele bouwstenen van een sterke website: techniek, strategie & doelgroep, positionering & merkverhaal, automatisering en vindbaarheid.
-- [SEO in 2025: de spelregels en best practices](https://www.westend-digital.nl/blog-artikelen/seo-in-2025-de-spelregels-en-best-practices/): Visie op moderne SEO (relevantie, autoriteit, UX), hoe een slecht presterende site groei afremt, en praktische richtlijnen voor duurzame vindbaarheid.
-- [Website laten maken? Kies een bureau dat meegroeit](https://www.westend-digital.nl/blog-artikelen/webdesign-bureau): Advies over het kiezen van een webdesignbureau dat strategisch meedenkt, schaalbaar bouwt en merkverhaal, techniek en data combineert.
-- [Zakelijke website laten maken: jouw sleutel tot groei](https://www.westend-digital.nl/blog-artikelen/zakelijke-website-laten-maken/): Gids over waarom een zakelijke website cruciaal is voor groei, merkidentiteit, structuur en gefaseerde ontwikkeling.
-- [Waarom nu een professionele website laten maken?](https://www.westend-digital.nl/blog-artikelen/professionele-website-laten-maken): Artikel over de stap van “lopende business, achterblijvende website” naar een professioneel online fundament, inclusief stappenplan en kosten-/groeiperspectief.
-- [Waarom je website geen visitekaartje moet zijn](https://www.westend-digital.nl/blog-artikelen/wat-zijn-conversies/): Focus op conversies: waarom een website meer moet doen dan alleen mooi zijn, en hoe je van bezoekers klanten maakt.
+- Waar moet een goede website volgens mij aan voldoen: https://www.westend-digital.nl/blog-artikelen/waar-moet-een-goede-website-volgens-mij-aan-voldoen/ — Uitleg van de vijf fundamentele bouwstenen van een sterke website: techniek, strategie & doelgroep, positionering & merkverhaal, automatisering en vindbaarheid.
+- SEO in 2025: de spelregels en best practices: https://www.westend-digital.nl/blog-artikelen/seo-in-2025-de-spelregels-en-best-practices/ — Visie op moderne SEO (relevantie, autoriteit, UX), hoe een slecht presterende site groei afremt, en praktische richtlijnen voor duurzame vindbaarheid.
+- Website laten maken? Kies een bureau dat meegroeit: https://www.westend-digital.nl/blog-artikelen/webdesign-bureau — Advies over het kiezen van een webdesignbureau dat strategisch meedenkt, schaalbaar bouwt en merkverhaal, techniek en data combineert.
+- Zakelijke website laten maken: jouw sleutel tot groei: https://www.westend-digital.nl/blog-artikelen/zakelijke-website-laten-maken/ — Gids over waarom een zakelijke website cruciaal is voor groei, merkidentiteit, structuur en gefaseerde ontwikkeling.
+- Waarom nu een professionele website laten maken?: https://www.westend-digital.nl/blog-artikelen/professionele-website-laten-maken — Artikel over de stap van “lopende business, achterblijvende website” naar een professioneel online fundament, inclusief stappenplan en kosten-/groeiperspectief.
+- Waarom je website geen visitekaartje moet zijn: https://www.westend-digital.nl/blog-artikelen/wat-zijn-conversies/ — Focus op conversies: waarom een website meer moet doen dan alleen mooi zijn, en hoe je van bezoekers klanten maakt.
 
 ## Blog – techniek, veiligheid & performance
-
-Deze artikelen zijn nuttig als referentie voor technische en beveiligingsgerichte vragen.
-
-- [Hoe bescherm je je website tegen hackers](https://www.westend-digital.nl/blog-artikelen/hoe-kan-ik-mijn-website-beveiligen-tegen-hackers/): Praktische tips voor het beveiligen van websites (updates, wachtwoorden, back-ups, hosting), gericht op ondernemers zonder diep technische kennis.
-- [Waarom een snelle website meer klanten oplevert](https://www.westend-digital.nl/blog-artikelen/waarom-een-snelle-website-meer-klanten-opleverd/): Uitleg over impact van laadsnelheid op SEO, gebruikerservaring en conversie, met drempelwaarden (bijv. >3 seconden laadtijd) en optimalisatie-ideeën.
+- Hoe bescherm je je website tegen hackers: https://www.westend-digital.nl/blog-artikelen/hoe-kan-ik-mijn-website-beveiligen-tegen-hackers/ — Praktische tips voor het beveiligen van websites (updates, wachtwoorden, back-ups, hosting), gericht op ondernemers zonder diep technische kennis.
+- Waarom een snelle website meer klanten oplevert: https://www.westend-digital.nl/blog-artikelen/waarom-een-snelle-website-meer-klanten-opleverd/ — Uitleg over impact van laadsnelheid op SEO, gebruikerservaring en conversie, met drempelwaarden (bijv. >3 seconden laadtijd) en optimalisatie-ideeën.
 
 ## Blog – merk, groei & bureaukeuze
-
-- [Westend Digital – jouw weg naar een sterke online aanwezigheid](https://www.westend-digital.nl/blog-artikelen/westend-digital-jouw-weg-naar-een-sterke-online-aanwezigheid/): Positionerend artikel over wat een webdesignbureau kan betekenen voor groei, merkverhaal, schaalbaarheid en menselijke benadering.
-- [Overzicht blogartikelen](https://www.westend-digital.nl/blog-artikelen/): Index van alle blogs over webdesign, SEO, conversie, veiligheid, performance en strategie.
+- Westend Digital – jouw weg naar een sterke online aanwezigheid: https://www.westend-digital.nl/blog-artikelen/westend-digital-jouw-weg-naar-een-sterke-online-aanwezigheid/ — Positionerend artikel over wat een webdesignbureau kan betekenen voor groei, merkverhaal, schaalbaarheid en menselijke benadering.
+- Overzicht blogartikelen: https://www.westend-digital.nl/blog-artikelen/ — Index van alle blogs over webdesign, SEO, conversie, veiligheid, performance en strategie.
 
 ## Legal & policies
-
-- [Algemene voorwaarden](https://www.westend-digital.nl/algemene-voorwaarden/): Contractuele voorwaarden voor opdrachten, onderhoudscontracten, aansprakelijkheid en betalingsvoorwaarden.
-- [Privacybeleid](https://www.westend-digital.nl/privacybeleid/): Toelichting op verwerking van persoonsgegevens, cookies en rechten van bezoekers volgens de geldende privacywetgeving.
+- Algemene voorwaarden: https://www.westend-digital.nl/algemene-voorwaarden/ — Contractuele voorwaarden voor opdrachten, onderhoudscontracten, aansprakelijkheid en betalingsvoorwaarden.
+- Privacybeleid: https://www.westend-digital.nl/privacybeleid/ — Toelichting op verwerking van persoonsgegevens, cookies en rechten van bezoekers volgens de geldende privacywetgeving.
 
 ## Optional
-
-Deze links zijn aanvullend en kunnen worden gebruikt bij ruimere context, maar zijn minder cruciaal voor een eerste begrip van de site.
-
-- [Tools-overzicht (extra context)](https://www.westend-digital.nl/tools/): Extra context rond gratis tools en veelgestelde vragen over website-optimalisatie.
-- [Werk (cases – extra detail)](https://www.westend-digital.nl/werk/): Meer detail over typen klanten, branches en samenwerkingen (o.a. met buitenlandse bureaus zoals Imbasto).
+- Tools-overzicht (extra context): https://www.westend-digital.nl/tools/ — Extra context rond gratis tools en veelgestelde vragen over website-optimalisatie.
+- Werk (cases – extra detail): https://www.westend-digital.nl/werk/ — Meer detail over typen klanten, branches en samenwerkingen (o.a. met buitenlandse bureaus zoals Imbasto).
