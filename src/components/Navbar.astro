@@ -1,10 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import { BurgerMenu, CloseIcon } from "../assets/icons.jsx";
+import { ArrowIconDown, BurgerMenu, CloseIcon } from "../assets/icons.jsx";
 
 import data from "../data/site.json";
-
-const { pages } = data;
 
 const logo = "/assets/logos/WestendDigitalLogo.svg";
 ---
@@ -26,9 +24,15 @@ const logo = "/assets/logos/WestendDigitalLogo.svg";
     <div class="nav-list-wrapper">
       <ul role="list" class="nav-list">
         <li class="nav-link"><a href="/">Home</a></li>
+        <li class="dropdown">
+          <button class="dropbtn">Diensten <ArrowIconDown /></button>
+          <ul role="list" class="dropdown-content" id="myDropdown">
+            <li class="nav-link"><a href="/diensten/websites">Websites</a></li>
+          </ul>
+        </li>
         <li class="nav-link"><a href="/werk">Werk</a></li>
         <li class="dropdown">
-          <button class="dropbtn">Resources</button>
+          <button class="dropbtn">Resources <ArrowIconDown /></button>
           <ul role="list" class="dropdown-content" id="myDropdown">
             <li class="nav-link"><a href="/blog-artikelen">Blog</a></li>
             <li class="nav-link"><a href="/tools">Tools</a></li>
@@ -50,36 +54,42 @@ const logo = "/assets/logos/WestendDigitalLogo.svg";
 </nav>
 
 <script>
-  const dropdown = document.querySelector(".dropdown");
-  if (dropdown) {
+  document.querySelectorAll(".dropdown").forEach((dropdown) => {
     const dropbtn = dropdown.querySelector(".dropbtn");
     const dropdownContent = dropdown.querySelector(".dropdown-content");
 
-    // Open/close
-    if (dropbtn) {
+    // Open/close voor elke dropdown
+    if (dropbtn && dropdownContent) {
       dropbtn.addEventListener("click", (e) => {
-        e.stopPropagation(); // voorkom dat document-click ‘m meteen sluit
-        if (dropdownContent) {
-          dropdownContent.classList.toggle("show");
-        }
+        e.stopPropagation(); // voorkom directe sluiting
+
+        // Eerst alle andere dropdowns sluiten
+        document.querySelectorAll(".dropdown-content.show")
+          .forEach((openDropdown) => {
+            if (openDropdown !== dropdownContent) {
+              openDropdown.classList.remove("show");
+            }
+          });
+
+        // Toggle huidige dropdown
+        dropdownContent.classList.toggle("show");
       });
     }
 
-    // Klik BUITEN de dropdown => sluiten
+    // Klik BUITEN deze specifieke dropdown => sluit 'm
     document.addEventListener("click", (e) => {
       if (!dropdown.contains(e.target as Node)) {
-        if (dropdownContent) {
-          dropdownContent.classList.remove("show");
-        }
+        dropdownContent?.classList.remove("show");
       }
     });
 
-    // Klik ESCAPE => sluiten
+    // ESC sluit alleen als deze dropdown open is
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && dropdownContent)
-        dropdownContent.classList.remove("show");
+      if (e.key === "Escape") {
+        dropdownContent?.classList.remove("show");
+      }
     });
-  }
+  });
 </script>
 
 <style>
@@ -138,9 +148,12 @@ const logo = "/assets/logos/WestendDigitalLogo.svg";
 
         /* Dropdown Button */
         .dropbtn {
+          align-items: center;
           background-color: transparent;
           border: none;
+          display: flex;
           font-weight: var(--fw-regular);
+          gap: 0.5rem;
           margin: 0;
           padding: 0;
         }
@@ -159,6 +172,7 @@ const logo = "/assets/logos/WestendDigitalLogo.svg";
             position: absolute;
             z-index: 9999;
 
+
             .nav-link a {
               padding: var(--size-1) var(--size-2);
               color: var(--clr-primary-900);
@@ -176,6 +190,7 @@ const logo = "/assets/logos/WestendDigitalLogo.svg";
           /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
           .show {
             display: block;
+            top: 7rem;
           }
         }
 
@@ -251,7 +266,6 @@ const logo = "/assets/logos/WestendDigitalLogo.svg";
         #menuButton:checked ~ .nav-wrapper {
           background-color: var(--clr-primary-900);
         }
-
       }
     }
   }

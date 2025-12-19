@@ -1,3 +1,20 @@
+export function ArrowIconDown() {
+  return (
+    <svg
+      width="13"
+      height="8"
+      viewBox="0 0 13 8"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.364 4.95L11.314 0L12.728 1.415L6.364 7.779L0 1.415L1.414 0.0010004L6.364 4.95Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
 export function BurgerMenu({ iconFill }) {
   const color = iconFill || "var(--clr-primary-100)";
 
