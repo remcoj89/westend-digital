@@ -12,13 +12,13 @@ const { content, sectionId } = Astro.props;
   <SectionTitle sectionTitle={content.title} />
   <FlexWrapper>
     <Card cardStyle="for-who-card" cardId="green-border">
-      <h3>✅ {content.content.wel.title}</h3>
+      <h3> {content.content.wel.title}</h3>
       <ul>
         {content.content.wel.list.map((li: string) => <li set:html={li} />)}
       </ul>
     </Card>
     <Card cardStyle="for-who-card" cardId="red-border">
-      <h3>❌ {content.content.niet.title}</h3>
+      <h3>{content.content.niet.title}</h3>
       <ul>
         {content.content.niet.list.map((li: string) => <li set:html={li} />)}
       </ul>

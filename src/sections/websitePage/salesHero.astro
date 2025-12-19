@@ -16,30 +16,33 @@
     background-size: cover;
     color: var(--clr-primary-100);
     padding-block: 12rem;
-    margin-block-start: 6rem;
+
 
     .wrapper {
       align-items: center;
       gap: var(--size-4);
+      flex-direction: column;
 
       .hero-content {
         color: var(--clr-primary-100);
         text-align: center;
-        width: 55%;
+        width: 100%;
 
         h1 {
           color: inherit;
         }
       }
 
-      .contact-form-wrapper{
+      .contact-form-wrapper {
         background-color: var(--clr-dark-card-bg);
         border-radius: var(--border-radius-card);
         border: solid 1px var(--clr-primary-100);
-        display: grid;
+        display: flex;
+        flex-direction: column;
+
         justify-content: space-between;
         padding: var(--size-3);
-        width: 45%;
+        width: 100%;
 
         h2 {
           color: var(--clr-primary-100);
@@ -50,15 +53,35 @@
           gap: var(--size-1);
           margin-block-start: var(--size-2);
 
+
+
           button {
             margin-block-start: var(--size-1);
-            width: 100%;
+
           }
 
           span {
             display: block;
           }
         }
+      }
+    }
+  }
+
+  @media (width > 870px) {
+    .sales-hero {
+      margin-block-start: 6rem;
+
+      .wrapper {
+        flex-direction: row;
+
+        .hero-content {
+          text-align: left;
+          width: 55%;
+        }
+
+        .contact-form-wrapper {
+          width: 45%;
       }
     }
   }

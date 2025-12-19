@@ -99,8 +99,10 @@ const {
             title={solutionSection.title}
             intro={solutionSection.content}
           />
-          <Button buttonStyle="btn-secondary"
-            >Vind vandaag nog jouw oplossing</Button
+          <Button
+            buttonStyle="btn-secondary"
+            href={solutionSection.cta.url}
+            target="_blank">Vind vandaag nog jouw oplossing</Button
           >
         </div>
 
@@ -158,7 +160,7 @@ const {
 <style>
   .solution-section {
     color: var(--clr-primary-100);
-    padding-block-start: var(--size-8);
+    padding-block: var(--size-8);
 
     .solution-wrapper {
       align-content: center;
@@ -167,20 +169,32 @@ const {
       text-align: center;
 
       .solution {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        gap: var(--size-5);
         width: 60%;
 
         p {
           max-width: 65ch;
         }
 
-        button {
-          margin-block: var(--size-4);
+        a {
+          justify-self: center;
         }
       }
 
       img {
         object-fit: cover;
         width: 40%;
+        margin-block-end: -7rem;
+        display: none;
+      }
+
+      @media (width > 870px) {
+        img {
+          display: block;
+        }
       }
     }
   }

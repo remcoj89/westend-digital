@@ -29,12 +29,12 @@
   --border-radius-full: 100%;
 
 
-  --clr-primary-100: hsl(0, 0%, 96%);
-  --clr-primary-300: hsl(0, 0%, 90%);
+  --clr-primary-100: #f5f5f5;
+  --clr-primary-300: #e6e6e6;
   --clr-primary-500: hsl(224, 10%, 56%);
   --clr-primary-700: hsl(224, 21%, 38%);
   --clr-primary-800: hsl(222, 35%, 28%);
-  --clr-primary-900: hsl(224, 75%, 11%);
+  --clr-primary-900: #071231;
 
   --clr-secondary-100: hsl(0, 0%, 96%);
   --clr-secondary-300: hsl(34, 88%, 97%);
@@ -81,7 +81,7 @@
   --clr-background: var(--clr-primary-100);
   --clr-heading: var(--clr-primary-900);
 
-  --ff-header: "Josefin Sans", serif;
+  --ff-header: "Josefin Sans", sans-serif;
   --ff-base: "Quicksand", serif;
 
   --size-1: 1.6rem;
@@ -204,7 +204,8 @@ h5,
 h6 {
   color: var(--clr-heading);
   font-family: var(--ff-header);
-  font-weight: var(--fw-bold);
+  font-style: normal;
+  font-weight: var(--fw-semi-bold);
   line-height: var(--lh-300);
   text-wrap: balance;
 }

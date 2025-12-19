@@ -110,9 +110,21 @@ import CardGrid from "../../components/CardGrid.astro";
 
       .card-wrapper {
         display: flex;
+        flex-direction: column;
         gap: var(--size-4);
         margin-block-start: var(--size-8);
       }
     }
   }
+
+    @media(width > 870px) {
+
+      section {
+        .wrapper {
+          .card-wrapper {
+            flex-direction: row;
+        }
+        }
+      }
+    }
 </style>

@@ -12,7 +12,7 @@ const { content, sectionId } = Astro.props;
       {content.label}
     </span>
     <h2 class="section-header">"{content.title}"</h2>
-    <Button buttonStyle="white-btn">{content.button.btnText}</Button>
+    <Button buttonStyle="white-btn" href={content.button.url} target="_blank">{content.button.btnText}</Button>
   </div>
 </section>
 

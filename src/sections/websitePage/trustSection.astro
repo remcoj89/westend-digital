@@ -5,7 +5,7 @@ import { SheeldIcon, CircleCheckIconGold } from "../../assets/icons";
 const { content, sectionId } = Astro.props;
 ---
 
-<section>
+<section id="trust-section">
   <div class="wrapper hidden dark-bg trust-section" id={sectionId}>
     <div class="title-wrapper">
 
@@ -27,6 +27,10 @@ const { content, sectionId } = Astro.props;
 </section>
 
 <style>
+
+  #trust-section {
+   margin-block: unset;
+  }
   .trust-section {
     align-items: center;
     border-radius: var(--border-radius-card);
