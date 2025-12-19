@@ -2,28 +2,71 @@
 // Astro Components
 import { Image } from "astro:assets";
 
+// Components
+import Button from "../../components/Button.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+
 // Data via props
 const { content, sectionId } = Astro.props;
 ---
 
-<section class="wrapper hidden" id={sectionId}>
-  <Image
-    src={content.image.url}
-    alt={content.image.altText}
-    width={500}
-    height={500}
-  />
+<section class="dark-bg solution-section" id={sectionId}>
+  <div class="wrapper solution-wrapper">
+    <div class="solution">
+      <SectionHeader title={content.title} intro={content.content} />
+      <Button buttonStyle="btn-secondary" href={content.cta.url} target="_blank"
+        >Vind vandaag nog jouw oplossing</Button
+      >
+    </div>
 
-  <article>
-    <h2>{content.title}</h2>
-    {content.content.map((paragraph) => <p set:html={paragraph} />)}
-  </article>
+    <Image
+      alt={content.image.altText}
+      src={content.image.url}
+      width={600}
+      height={400}
+    />
+  </div>
 </section>
 
 <style>
-  .wrapper {
-    margin-block: unset;
-    gap: var(--size-2);
-    padding: var(--size-2);
+  .solution-section {
+    color: var(--clr-primary-100);
+    padding-block: var(--size-8);
+
+    .solution-wrapper {
+      align-content: center;
+      gap: var(--size-2);
+      justify-content: center;
+      text-align: center;
+
+      .solution {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        gap: var(--size-5);
+        width: 60%;
+
+        p {
+          max-width: 65ch;
+        }
+
+        a {
+          justify-self: center;
+        }
+      }
+
+      img {
+        object-fit: cover;
+        width: 40%;
+        margin-block-end: -7rem;
+        display: none;
+      }
+
+      @media (width > 870px) {
+        img {
+          display: block;
+        }
+      }
+    }
   }
 </style>

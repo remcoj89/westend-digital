@@ -92,28 +92,7 @@ const {
     />
 
     <!--Section what is the solution -->
-    <section class="dark-bg solution-section">
-      <div class="wrapper solution-wrapper">
-        <div class="solution">
-          <SectionHeader
-            title={solutionSection.title}
-            intro={solutionSection.content}
-          />
-          <Button
-            buttonStyle="btn-secondary"
-            href={solutionSection.cta.url}
-            target="_blank">Vind vandaag nog jouw oplossing</Button
-          >
-        </div>
-
-        <Image
-          alt={solutionSection.image.altText}
-          src={solutionSection.image.url}
-          width={600}
-          height={400}
-        />
-      </div>
-    </section>
+    <SolutionSection sectionId="solutionSection" content={solutionSection} />
 
     <!-- First testemonial -->
     <ReviewSection
@@ -156,46 +135,3 @@ const {
   </main>
   <FooterSection />
 </Layout>
-
-<style>
-  .solution-section {
-    color: var(--clr-primary-100);
-    padding-block: var(--size-8);
-
-    .solution-wrapper {
-      align-content: center;
-      gap: var(--size-2);
-      justify-content: center;
-      text-align: center;
-
-      .solution {
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        gap: var(--size-5);
-        width: 60%;
-
-        p {
-          max-width: 65ch;
-        }
-
-        a {
-          justify-self: center;
-        }
-      }
-
-      img {
-        object-fit: cover;
-        width: 40%;
-        margin-block-end: -7rem;
-        display: none;
-      }
-
-      @media (width > 870px) {
-        img {
-          display: block;
-        }
-      }
-    }
-  }
-</style>
