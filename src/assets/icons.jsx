@@ -1,10 +1,10 @@
 export function ArrowIconDown() {
   return (
     <svg
-      width="13"
+      fill="none"
       height="8"
       viewBox="0 0 13 8"
-      fill="none"
+      width="13"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -20,10 +20,10 @@ export function BurgerMenu({ iconFill }) {
 
   return (
     <svg
-      width="36"
+      fill="none"
       height="36"
       viewBox="0 0 24 24"
-      fill="none"
+      width="36"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -42,10 +42,10 @@ export function CloseIcon({ iconFill }) {
 
   return (
     <svg
-      width="36"
+      fill="none"
       height="36"
       viewBox="0 0 16 16"
-      fill="none"
+      width="36"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -59,10 +59,10 @@ export function CloseIcon({ iconFill }) {
 export function PlusIcon() {
   return (
     <svg
-      width="24"
+      fill="none"
       height="24"
       viewBox="0 0 24 24"
-      fill="none"
+      width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -79,17 +79,17 @@ export function ArrowButtonLeft({ iconFill }) {
   const color = iconFill || "white";
   return (
     <svg
-      width="39"
+      fill="none"
       height="46"
       viewBox="0 0 39 46"
-      fill="none"
+      width="39"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M37.5 42.5982L3 22.6796L37.5 2.76098L37.5 42.5982Z"
+        id="icon-arrow-left"
         stroke={color}
         strokeWidth="3"
-        id="icon-arrow-left"
       />
     </svg>
   );
@@ -99,17 +99,17 @@ export function ArrowButtonRight({ iconFill }) {
   const color = iconFill || "white";
   return (
     <svg
-      width="41"
+      fill="none"
       height="46"
       viewBox="0 0 41 46"
-      fill="none"
+      width="41"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M2.58395 2.83159L37.061 22.9426L2.40579 42.7451L2.58395 2.83159Z"
+        id="icon-arrow-right"
         stroke={color}
         strokeWidth="3"
-        id="icon-arrow-right"
       />
     </svg>
   );
@@ -120,10 +120,10 @@ export function AccordionIcon({ iconFill }) {
 
   return (
     <svg
-      width="20"
+      fill="none"
       height="20"
       viewBox="0 0 16 17"
-      fill="none"
+      width="20"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#clip0_262_351)">
@@ -141,10 +141,10 @@ export function AccordionIcon({ iconFill }) {
       <defs>
         <clipPath id="clip0_262_351">
           <rect
-            width="20"
-            height="20"
             fill={color}
+            height="20"
             transform="translate(0 0.987305)"
+            width="20"
           />
         </clipPath>
       </defs>
@@ -157,10 +157,10 @@ export function PhoneIcon({ iconFill }) {
 
   return (
     <svg
-      width="25"
+      fill="none"
       height="24"
       viewBox="0 0 25 24"
-      fill="none"
+      width="25"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -179,10 +179,10 @@ export function EmailIcon({ iconFill }) {
 
   return (
     <svg
-      width="25"
+      fill="none"
       height="24"
       viewBox="0 0 25 24"
-      fill="none"
+      width="25"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -197,10 +197,10 @@ export function LocationIcon({ iconFill }) {
 
   return (
     <svg
-      width="25"
+      fill="none"
       height="24"
       viewBox="0 0 25 24"
-      fill="none"
+      width="25"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -216,10 +216,10 @@ export function DotIcon() {
 
   return (
     <svg
-      width="24"
+      fill="none"
       height="24"
       viewBox="0 0 24 24"
-      fill="none"
+      width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -237,10 +237,10 @@ export function BookOpen({ iconFill }) {
 
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="48"
       height="48"
       viewBox="0 0 24 24"
+      width="48"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         fill="none"
@@ -259,10 +259,10 @@ export function SendIcon({ iconFill }) {
 
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
       height="24"
       viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         fill="none"
@@ -279,17 +279,17 @@ export function SendIcon({ iconFill }) {
 export function FlashIcon() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="lucide lucide-zap text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
       fill="none"
+      height="24"
       stroke="var(--clr-secondary-900)"
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-zap text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
-      ariaHidden="true"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
     </svg>
@@ -299,17 +299,17 @@ export function FlashIcon() {
 export function ConversionIcon() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="lucide lucide-target text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
       fill="none"
+      height="24"
       stroke="currentColor"
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-target text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
-      aria-hidden="true"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <circle cx="12" cy="12" r="10"></circle>
       <circle cx="12" cy="12" r="6"></circle>
@@ -321,17 +321,17 @@ export function ConversionIcon() {
 export function MobileIcon() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="lucide lucide-smartphone text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
       fill="none"
+      height="24"
       stroke="currentColor"
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-smartphone text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
-      ariaHidden="true"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
       <path d="M12 18h.01"></path>
@@ -342,17 +342,17 @@ export function MobileIcon() {
 export function SecureIcon() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="lucide lucide-shield text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
       fill="none"
+      height="24"
       stroke="currentColor"
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-shield text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
-      ariaHidden="true"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
     </svg>
@@ -362,17 +362,17 @@ export function SecureIcon() {
 export function ClockIcon() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="lucide lucide-clock text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
       fill="none"
+      height="24"
       stroke="currentColor"
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-clock text-[#DBB171] w-8 h-8 flex-shrink-0 mt-1"
-      ariaHidden="true"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <circle cx="12" cy="12" r="10"></circle>
       <polyline points="12 6 12 12 16 14"></polyline>
@@ -383,17 +383,17 @@ export function ClockIcon() {
 export function CircleCheckIcon() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="lucide lucide-circle-check-big w-8 h-8 mr-3"
       fill="none"
+      height="24"
       stroke="currentColor"
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-circle-check-big w-8 h-8 mr-3"
-      ariaHidden="true"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
       <path d="m9 11 3 3L22 4"></path>
@@ -404,17 +404,17 @@ export function CircleCheckIcon() {
 export function CircleXIcon() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="lucide lucide-circle-x w-8 h-8 mr-3"
       fill="none"
+      height="24"
       stroke="currentColor"
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-circle-x w-8 h-8 mr-3"
-      ariaHidden="true"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <circle cx="12" cy="12" r="10"></circle>
       <path d="m15 9-6 6"></path>
@@ -426,10 +426,10 @@ export function CircleXIcon() {
 export function CircleCheckIconGold() {
   return (
     <svg
-      width="16"
+      fill="none"
       height="16"
       viewBox="0 0 16 16"
-      fill="none"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -443,10 +443,10 @@ export function CircleCheckIconGold() {
 export function RedXIcon() {
   return (
     <svg
-      width="16"
+      fill="none"
       height="24"
       viewBox="0 0 16 24"
-      fill="none"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path d="M16 24H0V0H16V24Z" stroke="#E5E7EB" />
@@ -468,10 +468,10 @@ export function RedXIcon() {
 export function SheeldIcon() {
   return (
     <svg
-      width="48"
+      fill="none"
       height="76"
       viewBox="0 0 48 76"
-      fill="none"
+      width="48"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path d="M48 76H0V0H48V76Z" stroke="#E5E7EB" />

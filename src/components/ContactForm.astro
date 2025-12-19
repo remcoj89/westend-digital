@@ -1,5 +1,5 @@
 ---
-import { sendEmail } from "../pages/api/contactForm";
+import { sendEmail } from "../pages/api/contactform.js";
 
 let errors = { name: "", email: "", message: "", subject: "" };
 if (Astro.request.method === "POST") {
