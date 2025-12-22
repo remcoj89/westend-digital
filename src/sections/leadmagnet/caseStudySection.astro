@@ -1,0 +1,49 @@
+---
+// Astro Components
+import { Image } from "astro:assets";
+
+// Data via props
+const { content, sectionId } = Astro.props;
+---
+
+<section id={sectionId}>
+  <div class="wrapper case-study-wrapper">
+    <div class="case-study">
+      <h2>{content.title}</h2>
+      {
+        content.content.map((paragraph) => (
+          <p set:html={paragraph}></p>
+        ))
+      }
+    </div>
+
+    <picture>
+      <Image
+        alt={content.image.altText}
+        src={content.image.url}
+        width={800}
+        height={600}
+      />
+    </picture>
+  </div>
+</section>
+
+
+<style>
+
+.case-study-wrapper {
+  justify-content: space-between;
+
+  .case-study {
+    width: 45%;
+
+    h2 {
+      margin-block-end: var(--size-2);
+    }
+
+    p:not(:last-child) {
+      margin-bottom: var(--size-1);
+    }
+  }
+}
+</style>

@@ -17,7 +17,6 @@
     color: var(--clr-primary-100);
     padding-block: 12rem;
 
-
     .wrapper {
       align-items: center;
       gap: var(--size-4);
@@ -30,7 +29,25 @@
 
         h1 {
           color: inherit;
-          margin-block-end: var(--size-2)
+          margin-block-end: var(--size-2);
+        }
+
+        p {
+          margin-block-end: var(--size-2);
+        }
+
+        ul {
+          margin-inline-start: var(--size-2);
+
+          li {
+            line-height: var(--size-3);
+
+            &::marker {
+              content: "✔ ";
+              color: var(--clr-secondary-900);
+              font-size: var(--size-2);
+            }
+          }
         }
       }
 
@@ -48,7 +65,6 @@
         h2 {
           color: var(--clr-primary-100);
         }
-
       }
     }
   }

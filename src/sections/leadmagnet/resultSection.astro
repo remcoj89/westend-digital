@@ -1,0 +1,96 @@
+---
+// Astrpo components
+import { Image } from "astro:assets";
+
+// Data via props
+const { content, sectionId } = Astro.props;
+
+// Icons
+import {
+  ClockIcon,
+  ConversionIcon,
+  FlashIcon,
+  MobileIcon,
+  SecureIcon,
+} from "../../assets/icons";
+
+const iconComponents = {
+  clockIcon: ClockIcon,
+  conversionIcon: ConversionIcon,
+  flashIcon: FlashIcon,
+  mobileIcon: MobileIcon,
+  secureIcon: SecureIcon,
+};
+---
+
+<section class="wrapper hidden" id={sectionId}>
+  <h2>{content.title}</h2>
+  <div class="results">
+    {
+      content.resultaten.map((resultaat) => {
+        const IconComponent = iconComponents[resultaat.icon.name];
+
+        return (
+          <div class="result">
+            {IconComponent && <IconComponent className="resultaat-icoon" />}
+
+            <h3 class="title">{resultaat.resultaat.title}</h3>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
+
+<style>
+  .wrapper {
+    background-color: var(--size-clr-500);
+    padding-block: var(--size-8);
+    padding-inline: var(--size-1);
+    flex-direction: column;
+
+    h2 {
+      margin-inline: auto;
+      padding-block-end: var(--size-5);
+    }
+
+    .results {
+      column-gap: var(--size-1);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: var(--size-2);
+
+      .result {
+        background-color: white;
+        border-radius: var(--border-radius-card);
+        box-shadow: var(--box-shadow);
+        flex-basis: calc(33.333% - 30px);
+        padding: var(--size-2);
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        .title {
+          padding-block: var(--size-1);
+        }
+
+        svg {
+          color: var(--clr-secondary-100);
+          fill: var(--clr-secondary-900);
+          height: var(--size-6);
+          width: var(--size-6);
+        }
+
+        &:hover,
+        &:focus {
+          transform: translateY(-5px);
+        }
+      }
+    }
+    @media (width >= 618px) {
+      .results {
+        flex-direction: row;
+      }
+    }
+  }
+</style>
