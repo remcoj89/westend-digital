@@ -30,7 +30,7 @@ const {
       color: var(--clr-primary-900);
       display: block;
       padding: 1rem;
-      margin-top: 0.5rem;
+      margin-top: var(--size-1);
       width: 100%;
     }
 
@@ -52,6 +52,10 @@ const {
       &::placeholder {
         color: hsl(0, 0%, 96%, 70%);
       }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: var(--size-1);
     }
   }
 </style>

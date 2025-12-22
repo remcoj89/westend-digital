@@ -1,3 +1,93 @@
-<div class="_form_1"></div><script
-  src="https://westenddigital.activehosted.com/f/embed.php?id=1"
-  charset="utf-8"></script>
+---
+// Components
+import Button from "../Button.astro";
+import FormInput from "../FormInput.astro";
+---
+
+<form id="salesForm">
+  <FormInput
+    label="Naam:"
+    inputStyle="transparent-bg"
+    inputType="text"
+    name="naam"
+    placeHolder="Jouw naam"
+  />
+  <FormInput
+    label="E-mail:"
+    inputStyle="transparent-bg"
+    inputType="email"
+    name="email"
+    placeHolder="Jouw e-mail"
+  />
+  <input
+    type="hidden"
+    name="subject"
+    value="Afspraak inplannen nieuwe Website"
+  />
+  <Button buttonType="submit" buttonStyle="btn-secondary">Verzenden</Button>
+  <span id="notification">Geen verplichtingen. Wel een helder plan.</span>
+</form>
+
+<script>
+  document.getElementById("salesForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = "Verzenden...";
+
+    const data = {
+      naam: form.naam.value,
+      email: form.email.value,
+      subject: form.subject?.value || "Standaard formulier ingestuurd ✔️",
+    };
+
+    const res = await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (!res.ok) {
+      const errorText = await res.text(); // lees error response als tekst
+      console.error("Server error:", errorText);
+      alert("Server fout ❌");
+      return;
+    }
+
+    const result = await res.json();
+    if (result.success) {
+      form.reset();
+      submitButton.disabled = false;
+      submitButton.textContent = "Gelukt! Doorverwijzen...";
+      setTimeout(() => {
+        window.location.href = "/bedankt-pagina";
+      }, 1000); // 1 seconde vertraging
+    } else {
+      form.reset();
+      alert("Er is iets misgegaan. Probeer het later opnieuw. ❌");
+      submitButton.disabled = false;
+      submitButton.textContent = "Verzenden";
+    }
+  });
+</script>
+
+<style>
+  form {
+    display: grid;
+    margin-block-start: var(--size-4);
+    width: 100%;
+
+    button {
+      margin-block-start: var(--size-3);
+    }
+
+    #notification {
+      display: block;
+      margin-block-start: var(--size-2);
+      font-size: var(--fs-300);
+      color: var(--clr-neutral-400);
+    }
+  }
+</style>
