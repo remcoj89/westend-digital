@@ -1,0 +1,274 @@
+{
+  "pageContent": {
+    "metaTitle": "Website Laten Maken | Westend Digital",
+    "metaDescription": "Website Laten Maken die Converteert | Westend Digita",
+    "ogSiteName": "Westend Digital",
+    "ogImage": {
+      "ogImageUrl": "/assets/logos/WestendDigitalLogo.svg",
+      "ogImageAlt": "Logo van Westend Digital"
+    },
+    "ogUrl": "https://www.westend-digital.nl/website",
+    "lastMinuteMessage": {
+      "title": "Last minute mededeling",
+      "content": "(Optioneel: Plaats hier een tijdelijke actie of lanceringstekst, bijv. \"Nog 3 plekken beschikbaar dit kwartaal\")"
+    },
+    "heroSection": {
+      "title": "Een website die draait als een operationele basis – betrouwbaar, doelgericht en klaar voor groei.",
+      "subtitle": "Binnen 3 maanden staat jouw nieuwe website online: professioneel, snel en schaalbaar. Jij richt je op je missie, wij regelen de digitale basis.",
+      "cta": {
+        "title": "Plan een strategiegesprek",
+        "url": "/"
+      }
+    },
+    "problemSection": {
+      "title": "Is jouw website je zwakste schakel?",
+      "content": [
+        "Herken je dit? Je bedrijf groeit, maar je website voelt als een zwakke schakel. Hij is traag, rommelig of verouderd. Bezoekers haken af, je inbox blijft leeg en je twijfelt: ligt het aan mijn verhaal of werkt mijn website me tegen?",
+        "Ondertussen blijf je tijd verspillen aan technische details die je eigenlijk helemaal niet wilt doen. Het voelt alsof je website je tegenwerkt in plaats van ondersteunt."
+      ],
+      "list": [
+        "Je mist kansen omdat bezoekers afhaken.",
+        "Je voelt je niet professioneel vertegenwoordigd.",
+        "Je besteedt te veel tijd aan taken die geautomatiseerd kunnen worden."
+      ],
+      "image": {
+        "url": "/images/website-sales-page/herkenbaar.jpeg",
+        "altText": "probleem image"
+      }
+    },
+    "solutionSection": {
+      "title": "Stel je voor: een website die wél meewerkt.",
+      "content": [
+        "Stel je voor: een website die wél meewerkt. Een digitale basis die je verhaal vertelt, klanten overtuigt en processen automatiseert. Eén die snel, veilig en onderhoudsvrij draait – alsof je er een extra teamlid bij hebt.Dat is precies wat wij voor je bouwen."
+      ],
+      "image": {
+        "url": "/images/remco-bg-transparent.png",
+        "altText": "probleem image"
+      },
+      "cta": {
+        "title": "Vindt vandaag nog jouw oplossing",
+        "url": "https://calendly.com/remco-westend-digital/30min"
+      }
+    },
+    "firstReviewSection": {
+      "author": {
+        "name": "Linda Munster",
+        "company": "B&B Schermer Eylandt"
+      },
+      "content": "We zijn erg blij dat Remco ons heeft geholpen met het maken van de website voor onze B&B. Hij luisterde naar ons verhaal, wat ons doel was, stelde concrete vragen en gaf goede suggesties. We konden hem altijd goed bereiken en de overleggen waren ook gezellig. Helemaal top, dankjewel!",
+      "image": {
+        "url": "",
+        "altText": "avatar van de schrijver van de review"
+      }
+    },
+    "resultSection": {
+      "title": "Meetbare resultaten, geen loze beloftes.",
+      "resultaten": [
+        {
+          "resultaat": {
+            "title": "Meer klanten",
+            "result": "Je trekt meer klanten aan die écht bij je passen."
+          },
+          "icon": {
+            "name": "conversionIcon",
+            "url": "/assets/icons/conversion-icon.svg",
+            "altText": "icon van meer klanten"
+          }
+        },
+        {
+          "resultaat": {
+            "title": "Altijd uptodate",
+            "result": "Je website draait stabiel en wordt proactief onderhouden."
+          },
+          "icon": {
+            "name": "secureIcon",
+            "url": "/assets/icons/secure-icon.svg",
+            "altText": "icon van veilige website"
+          }
+        },
+        {
+          "resultaat": {
+            "title": "24/7 Online",
+            "result": "Je verhaal komt krachtig en professioneel over."
+          },
+          "icon": {
+            "name": "clockIcon",
+            "url": "/assets/icons/clock-icon.svg",
+            "altText": "icon van professioneel"
+          }
+        },
+        {
+          "resultaat": {
+            "title": "Snel en mobiel vriendelijk",
+            "result": "Je website is snel, mobielvriendelijk en gebruiksvriendelijk."
+          },
+          "icon": {
+            "name": "mobileIcon",
+            "url": "/assets/icons/mobile-icon.svg",
+            "altText": "icon van snel en gebruiksvriendelijk"
+          }
+        },
+        {
+          "resultaat": {
+            "title": "Geoptimaliseerde processen",
+            "result": "Je processen worden geautomatiseerd zodat je tijd wint."
+          },
+          "icon": {
+            "name": "flashIcon",
+            "url": "/assets/icons/flash-icon.svg",
+            "altText": "icon van processen"
+          }
+        }
+      ]
+    },
+    "practivalInfoSection": {
+      "title": "Ons bewezen proces",
+      "steps": [
+        {
+          "title": "Missie briefing",
+          "text": "Een strategisch gesprek van 90 minuten om jouw doelen, doelgroep en aanbod scherp te krijgen."
+        },
+        {
+          "title": "Voorbereiding ",
+          "text": "Teksten, ontwerp en structuur die jouw verhaal vertalen naar een overtuigende website."
+        },
+        {
+          "title": "Ontwikkelen & lanceren ",
+          "text": "We ontwikkelen jouw website, gaat live, getest en veilig."
+        },
+        {
+          "title": "Nazorg",
+          "text": "3 maanden support & onderhoud inbegrepen."
+        }
+      ],
+      "cta": {
+        "title": "Plan jouw briefing",
+        "url": "/"
+      }
+    },
+    "secondReviewSection": {
+      "author": {
+        "name": "Jordi Oostmeijer",
+        "company": "Grafisch ontwerper"
+      },
+      "content": "In Remco heb ik een uiterst vakkundig en toegewijde web-ontwikkelaar gevonden die de 'technische kant' makkelijk vertaalt naar visueel resultaat. Maar belangrijker nog is zijn prettige manier van samenwerken.",
+      "image": {
+        "url": "/images/avatar-jordi.webp",
+        "altText": "avatar van de schrijver van de review"
+      }
+    },
+    "ctaSection": {
+      "title": "Laatste call to action",
+      "content": "Klaar om jouw website te laten werken als een geoliede eenheid?",
+      "cta": {
+        "title": "Plan een gratis kennismaking",
+        "url": "https://calendly.com/remco-westend-digital/30min"
+      }
+    },
+    "trustSection": {
+      "title": "Zekerheid en Grip",
+      "content": "Geen zorgen: je houdt altijd grip op het proces. Je krijgt previews, feedbackmomenten en volledige controle over het eindresultaat. Bovendien blijf ik na oplevering nog 3 maanden aan boord voor updates en support.",
+      "list": [
+        "<strong>Previews & Feedback:</strong> Je ziet elke stap en geeft feedback op cruciale momenten.",
+        "<strong>Heldere Communicatie:</strong> Wekelijkse updates over de voortgang. Geen jargon, maar duidelijke taal.",
+        "<strong>Toegewijde Support:</strong> Na lancering sta ik 3 maanden voor je klaar voor vragen en kleine aanpassingen."
+      ],
+      "cta": {
+        "title": "Plan een kennismaking",
+        "url": "https://calendly.com/remco-westend-digital/30min"
+      }
+    },
+    "aboutMeSection": {
+      "title": "Even voorstellen",
+      "content": [
+        "Als ondernemer weet ik hoe frustrerend het is als je website niet de resultaten levert die je nodig hebt. Daarom ontwikkelen wij websites die niet alleen mooi zijn, maar ook strategisch werken voor uw bedrijf.",
+        "<strong>Remco Jonk</strong> - Oprichter Westend Digital",
+        "Met 10+ jaar ervaring in digitale strategie en een achtergrond in operationele excellentie, begrijp ik precies wat ondernemers nodig hebben om online te slagen."
+      ],
+      "image": {
+        "url": "/images/remco-jonk.webp",
+        "altText": "Remco met een blauw t-shirt"
+      }
+    },
+    "forWhoSection": {
+      "title": "Is dit voor jou?",
+      "content": {
+        "wel": {
+          "title": "✅ Voor jou als je...",
+          "list": [
+            "Ambitieus bent en wilt opschalen.",
+            "Een partner zoekt, geen leverancier.",
+            "Geloof in een strategische aanpak.",
+            "Klaar bent om te investeren in groei."
+          ]
+        },
+        "niet": {
+          "title": "❌ Dit is NIET voor jou als:",
+          "list": [
+            "Een snelle, goedkope 'oplossing' zoekt.",
+            "Genoegen neemt met half werk.",
+            "Niet openstaat voor strategisch advies.",
+            "Geen duidelijke bedrijfsdoelen hebt."
+          ]
+        }
+      },
+      "cta": {
+        "btnText": "Plan een kennismakings gesprek",
+        "url": "https://calendly.com/remco-westend-digital/30min"
+      }
+    },
+    "whyNowSection": {
+      "label": "Waarom nu?",
+      "title": "Elke dag dat je wacht, kost je klanten. Concurrenten verbeteren hun online aanwezigheid terwijl jij blijft hangen in een website die je groei tegenhoudt. Hoe eerder je start, hoe sneller jouw website voor je werkt.",
+      "button": {
+        "url": "https://calendly.com/remco-westend-digital/30min",
+        "btnText": "Stop met wachten start met groeien"
+      }
+    },
+    "faqSection": {
+      "title": "Heb je een vraag? Check hieronder het antwoord",
+      "faqs": [
+        {
+          "question": "Hoe lang duurt het voordat mijn nieuwe website live staat?",
+          "answer": "De exacte doorlooptijd hangt af van de omvang en complexiteit van jouw website. Gemiddeld leveren we binnen <strong>drie maanden</strong> een professioneel platform op dat vertrouwen wekt, klanten aantrekt en jouw groei ondersteunt. Door onze gestructureerde werkwijze en duidelijke afspraken zorgen we dat je website snel online staat, zonder dat jij wordt belast met de technische rompslomp – zodat jij je kunt blijven focussen op je bedrijf."
+        },
+        {
+          "question": "Wat maakt de aanpak van Westend Digital uniek?",
+          "answer": "Wij combineren persoonlijke betrokkenheid met militaire precisie. Dat betekent dat we <strongsamen met jou</stong> kijken naar je doelen en wensen, en die vertalen naar een website die echt resultaat oplevert. Geen standaard templates, maar een doordachte strategie die past bij jouw bedrijf en jouw groei."
+        },
+        {
+          "question": "Wat doet Westend Digital naast het ontwerpen van een website?",
+          "answer": "Onze diensten gaan veel verder dan alleen het ontwerpen van een mooie site. We <strong>optimaliseren bestaande websites</strong>, nemen het <strong>onderhoud</strong> voor onze rekening en zorgen dat alles technisch veilig en schaalbaar blijft. Daarnaast ondersteunen we je met <strong>copywriting die raakt, hosting die betrouwbaar draait, SEO die je vindbaarheid vergroot</strong> én het <strong>doorontwikkelen</strong> van je website zodra jouw bedrijf groeit. Zo heb jij één partner voor de complete online basis van je onderneming"
+        },
+        {
+          "question": "Levert een nieuwe website écht resultaat op?",
+          "answer": "Absoluut. Onze klanten ervaren al snel groei doordat hun website vertrouwen uitstraalt, beter gevonden wordt en slimmer converteert. Of het nu gaat om meer aanvragen, hogere omzet of schaalbaarheid: wij zorgen dat jouw website een investering is die zichzelf terugverdient."
+        },
+        {
+          "question": "Kan Westend Digital ook mijn huidige website verbeteren?",
+          "answer": "Ja. Als je al een website hebt die niet brengt wat je had gehoopt, analyseren we eerst waar het misgaat. Daarna pakken we zaken als <strong>snelheid, structuur, SEO en design</strong> aan zodat jouw bestaande site alsnog resultaat oplevert."
+        },
+        {
+          "question": "Hoe zit het met support en onderhoud na oplevering?",
+          "answer": "Je staat er niet alleen voor. Wij zorgen voor updates, beveiliging en doorlopend onderhoud. Zo blijft jouw website snel, veilig en up-to-date – en hoef jij je geen zorgen te maken over technische haperingen."
+        },
+        {
+          "question": "Wat kost een website laten maken bij Westend Digital?",
+          "answer": "De investering hangt af van de grootte en complexiteit van je website. Wij werken altijd met een <strong>heldere prijsafspraak vooraf</strong>, zodat je precies weet waar je aan toe bent. Geen verborgen kosten, wel een duidelijke belofte: een winstgevende website die jouw bedrijf vooruithelpt."
+        },
+        {
+          "question": "Kan mijn website meegroeien met mijn bedrijf?",
+          "answer": "Zeker. We bouwen schaalbare websites die met jouw ambities meebewegen. Of je nu meer pagina’s, nieuwe functionaliteiten of een webshop wilt toevoegen: jouw site groeit met je mee, zonder dat je telkens opnieuw hoeft te beginnen."
+        }
+      ]
+    },
+    "lastCallCtaSection": {
+      "title": "Ben jij klaar om jouw website te laten werken als een geoliede eenheid?",
+      "content": "Laten we in een vrijblijvend gesprek ontdekken hoe we jouw online basis kunnen versterken voor maximale groei.",
+      "cta": {
+        "btnText": "Plan jouw strategiegesprek",
+        "url": "https://calendly.com/remco-westend-digital/30min"
+      }
+    }
+  }
+}
