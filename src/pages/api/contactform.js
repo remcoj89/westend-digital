@@ -10,18 +10,18 @@ export const POST = async ({ request }) => {
   const message = data.get("message");
 
   const transporter = nodemailer.createTransport({
-    host: import.meta.env.EMAIL_HOST,
-    port: import.meta.env.EMAIL_PORT,
+    host: import.meta.env.SMTP_HOST,
+    port: import.meta.env.SMTP_PORT,
     secure: true,
     auth: {
-      user: import.meta.env.EMAIL_USER,
-      pass: import.meta.env.EMAIL_PASS,
+      user: import.meta.env.SMTP_USER,
+      pass: import.meta.env.SMTP_PASS,
     },
   });
 
   const mailOptions = {
-    from: `${name} <${email}>`,
-    to: import.meta.env.EMAIL_RECIPIENT,
+    from: `"Website Form" <${import.meta.env.SMTP_USER}>`,
+    to: import.meta.env.SMTP_RECIEVER,
     subject: subject,
     text: `Naam: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
