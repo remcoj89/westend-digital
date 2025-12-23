@@ -1,0 +1,58 @@
+---
+// layout
+import Layout from "../layouts/Layout.astro";
+
+// Data
+import PageData from "../data/leadmagnet-thank-you.json";
+
+const { heroSection, metaTitle, ogImage, ogUrl } =
+  PageData.pageContent;
+---
+
+<Layout
+  ogImageAlt={ogImage.ogImageAlt}
+  ogImageUrl={ogImage.ogImageUrl}
+  ogTitle={metaTitle}
+  ogUrl={ogUrl}
+  title={metaTitle}
+  noIndex={true}
+>
+  <section class="thank-you-section">
+    <div class="wrapper thank-you-wrapper">
+      <h1>{heroSection.title}</h1>
+      <p set:html={heroSection.subtitle} class="fs-lg" />
+      <p set:html={heroSection.text} class="fs-m" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .thank-you-section {
+    display: grid;
+    height: 100vh;
+    margin: unset;
+    padding: unset;
+    place-items: center;
+
+    .thank-you-wrapper {
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      h1 {
+        font-size: var(--fs-900);
+        margin-bottom: var(--size-2);
+      }
+
+      .fs-lg {
+        font-size: var(--fs-600);
+        margin-bottom: var(--size-1);
+      }
+
+      .fs-m {
+        font-size: var(--fs-500);
+      }
+    }
+  }
+</style>

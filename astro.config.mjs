@@ -9,8 +9,8 @@ export default defineConfig({
   adapter: netlify(),
   image: {
     domains: [
-      "https://mediumturquoise-sparrow-543006.hostingersite.com/",
-      "https://lh3.googleusercontent.com",
+      "mediumturquoise-sparrow-543006.hostingersite.com/",
+      "lh3.googleusercontent.com",
     ],
   },
   integrations: [
@@ -19,9 +19,8 @@ export default defineConfig({
       changefreq: "weekly",
       priority: 0.8,
       lastmod: new Date(),
+      // FILTER: Controleer of de URL eindigt op /bedankt of /bedankt/
+      filter: (page) => !page.match(/\/bedankt\/?$/),
     }),
   ],
-  experimental: {
-    // svg: true,
-  },
 });

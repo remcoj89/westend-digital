@@ -14,6 +14,7 @@ const {
   ogImageUrl,
   ogImageAlt,
   ogUrl,
+  noIndex = false,
 } = Astro.props;
 ---
 
@@ -29,6 +30,7 @@ const {
     <meta property="og:site_name" content={ogSiteName} />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:url" content={ogUrl} />
+    {noIndex ? <meta name="robots" content="noindex,nofollow" /> : null}
     <meta
       property="og:image"
       content=`https://www.westend-digital.nl${ogImageUrl}`

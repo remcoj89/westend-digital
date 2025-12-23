@@ -1,0 +1,20 @@
+{
+  "pageContent": {
+    "metaTitle": "Dank je wel voor je aanvraag",
+    "ogSiteName": "Westend Digital",
+    "ogImage": {
+      "ogImageUrl": "/assets/logos/WestendDigitalLogo.svg",
+      "ogImageAlt": "Logo van Westend Digital"
+    },
+    "ogUrl": "https://www.westend-digital.nl/website",
+    "lastMinuteMessage": {
+      "title": "Last minute mededeling",
+      "content": "(Optioneel: Plaats hier een tijdelijke actie of lanceringstekst, bijv. \"Nog 3 plekken beschikbaar dit kwartaal\")"
+    },
+    "heroSection": {
+      "title": "Dank je wel",
+      "subtitle": "We hebben de handleiding 'Maak van je website een klantenmagneet' zojuist naar je gemaild. Veel leesplezier!",
+      "text": "Heb je de mail niet ontvangen? Check dan je spamfolder of neem contact met ons op via info@westend-digital.nl"
+    }
+  }
+}
