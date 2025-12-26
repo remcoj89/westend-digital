@@ -1,15 +1,12 @@
 ---
-
+const { title, paragraph, buttonText, buttonLink  } = Astro.props;
 ---
 
 <section class="wrapper small-cta-section" id="small-cta-section">
-  <h2>Jij wilt vooruit. Je website ook?</h2>
-  <p>
-    Plan een vrijblijvend gesprek en krijg concreet advies waarmee je rust,
-    structuur en meer klanten uit je website haalt.
-  </p>
-  <a class="btn btn-secondary-open" href="/boek-een-gesprek"
-    >Plan een vrijblijvend strategie gesprek</a
+  <h2>{title}</h2>
+  <p>{paragraph}</p>
+  <a class="btn btn-secondary-open" href={buttonLink}
+    >{buttonText}</a
   >
 </section>
 
@@ -19,16 +16,15 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background: radial-gradient(
-      var(--clr-primary-900) 40%,
-      var(--clr-secondary-800)
-    );
+    background: var(--clr-primary-900);
+
     border-radius: var(--border-radius-card);
     box-shadow: var(--box-shadow);
     color: var(--clr-primary-100);
     flex-direction: column;
     gap: var(--size-2);
     padding: var(--size-4) var(--size-2);
+    text-align: center;
 
     h2 {
       color: var(--clr-primary-100);

@@ -1,36 +1,20 @@
 ---
 // Sections
-import Layout from "../../layouts/Layout.astro";
-import FaqSection from "../../sections/FaqSection.astro";
 import CtaSection from "../../sections/CtaSection.astro";
+import FaqSection from "../../sections/FaqSection.astro";
 import FooterSection from "../../sections/FooterSection.astro";
+import Layout from "../../layouts/Layout.astro";
+import ToolSection from "../../sections/ToolsSection/toolSetcion.astro";
+import SmallCtaSection from "../../sections/SmallCtaSection.astro";
 
 // Components
-import CardGrid from "../../components/CardGrid.astro";
-import Card from "../../components/Card.astro";
 import Header from "../../components/Header.astro";
-import Button from "../../components/Button.astro";
 
 // Page data
 import pageData from "../../data/toolsPage.json";
-import webpConverterData from "../../data/imageToWebpConverter.json";
-import serpPreviewData from "../../data/serpPreviewPage.json";
 
-const { metaTitle, metaDescription, ogImage, ogUrl, heroTitle, faqSection } =
+const { metaTitle, metaDescription, ogImage, ogUrl, heroTitle, subtitle, tools, faqSection } =
   pageData.pageContent;
-
-const {
-  converterCardTitle,
-  converterCardDescription,
-  converterCardImage,
-  converterCardPageLink,
-} = webpConverterData.pageContent;
-const {
-  serpToolCardTitle,
-  serpToolCardDescription,
-  serpToolCardImage,
-  serpToolCardPageLink,
-} = serpPreviewData.pageContent;
 ---
 
 <Layout
@@ -88,56 +72,39 @@ const {
   <Header>
     <div>
       <h1>{heroTitle}</h1>
+      {
+        subtitle.map((part) => (
+         <p set:html={part}></p>
+        ))
+      }
+
     </div>
   </Header>
-
-  <section class="wrapper">
-    <!-- WebpConverter -->
-    <CardGrid>
-      <a href={converterCardPageLink} class="hidden blog">
-        <Card cardStyle="list-card">
-          <img
-            alt={converterCardImage.cardImageAlt}
-            height={500}
-            src={converterCardImage.cardImageUrl}
-            width={500}
-          />
-
-          <div class="card-info">
-            <div>
-              <h2 class="card-title">{converterCardTitle}</h2>
-              <p>{converterCardDescription}</p>
-            </div>
-
-            <Button buttonStyle="btn-primary-open">Lees meer</Button>
-          </div>
-        </Card>
-      </a>
-
-      <!-- SerpPreviewTool -->
-
-      <a href={serpToolCardPageLink} class="hidden blog">
-        <Card cardStyle="list-card">
-          <img
-            alt={serpToolCardImage.cardImageAlt}
-            height={500}
-            src={serpToolCardImage.cardImageUrl}
-            width={500}
-          />
-
-          <div class="card-info">
-            <div>
-              <h2 class="card-title">{serpToolCardTitle}</h2>
-              <p>{serpToolCardDescription}</p>
-            </div>
-            <Button buttonStyle="btn-primary-open">Lees meer</Button>
-          </div>
-        </Card>
-      </a>
-    </CardGrid>
+  <section class="wrapper tools-section">
+    <ToolSection
+      flexDirection="row"
+      content={tools[0]}
+    />
+    <ToolSection
+      flexDirection="row-reverse"
+      content={tools[1]}
+    />
   </section>
-
+  <SmallCtaSection
+    title={pageData.pageContent.ctaSection.title}
+    paragraph={pageData.pageContent.ctaSection.paragraph}
+    buttonText={pageData.pageContent.ctaSection.buttonText}
+    buttonLink={pageData.pageContent.ctaSection.buttonLink}
+    />
   <FaqSection title={faqSection.title} faqs={faqSection.faqs} />
   <CtaSection />
   <FooterSection />
 </Layout>
+
+
+<style>
+  .tools-section {
+    flex-direction: column;
+    gap: var(--size-6);
+  }
+</style>

@@ -1,0 +1,74 @@
+---
+// Astro Components
+import Image from "astro/components/Image.astro";
+// Components
+import Button from "../../components/Button.astro";
+import Card from "../../components/Card.astro";
+
+const { flexDirection = "row", content } = Astro.props;
+---
+
+<div class=`tool-wrapper ${flexDirection} hidden blog`>
+  <article>
+    <h2>{content.title}</h2>
+    {content.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+  </article>
+
+  <a href={content.link} class="tool">
+    <Card cardStyle="list-card tools-card">
+      <Image
+        alt={content.cardImage.alt}
+        height={500}
+        src={content.cardImage.url}
+        width={500}
+      />
+
+      <div class="card-info">
+        <div>
+          <h2 class="card-title">{content.cardTitle}</h2>
+          <p>{content.cardDescription}</p>
+        </div>
+        <Button buttonStyle="btn-primary-open">Lees meer</Button>
+      </div>
+    </Card>
+  </a>
+</div>
+
+<style>
+  .tool-wrapper {
+    display: flex;
+    gap: var(--size-10);
+    margin-bottom: 4rem;
+
+    article,
+    .tool {
+      flex: 1;
+    }
+
+    .tool {
+      align-self: center;
+      text-decoration: none;
+    }
+
+    article {
+      h2 {
+        margin-bottom: var(--size-2);
+      }
+      p {
+        max-width: unset;
+
+        &:not(:last-child) {
+          margin-bottom: var(--size-1);
+        }
+      }
+    }
+
+  }
+
+  .tool-wrapper.row {
+    flex-direction: row;
+  }
+  .tool-wrapper.row-reverse {
+    flex-direction: row-reverse;
+  }
+</style>

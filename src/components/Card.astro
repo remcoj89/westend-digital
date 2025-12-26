@@ -61,6 +61,15 @@ const { cardStyle = "primary", cardId = "" } = Astro.props;
     }
   }
 
+  .list-card.tools-card {
+   background-color: var(--clr-neutral-100);
+
+   img {
+    object-fit: cover;
+    object-position: center;
+   }
+  }
+
   .service-card {
     background-color: var(--clr-neutral-100);
     box-shadow: var(--box-shadow);

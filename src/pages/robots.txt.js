@@ -4,6 +4,7 @@ Allow: /
 Noindex: /bedankt-pagina
 Noindex: /privarybeleid
 Noindex: /algemene-voorwaarden
+Noindex: /boek-een-gesprek
 
 Sitemap: ${sitemapURL.href}
 `;
