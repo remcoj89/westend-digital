@@ -1,6 +1,9 @@
 const getRobotsTxt = (sitemapURL) => `
 User-agent: *
 Allow: /
+Noindex: /bedankt-pagina
+Noindex: /privarybeleid
+Noindex: /algemene-voorwaarden
 
 Sitemap: ${sitemapURL.href}
 `;
