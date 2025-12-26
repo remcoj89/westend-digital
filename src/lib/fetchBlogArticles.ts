@@ -73,15 +73,22 @@ export default async function fetchBlogArticles(): Promise<PostEdge[]> {
   const json = await res.json();
   const data = json.data as { posts: { edges: PostEdge[] } };
 
+  function normalizeSlug(slug: SlugValue): string {
+    if (typeof slug === "string") return slug;
+    if (Array.isArray(slug)) return slug[0] || "";
+    if (typeof slug === "object" && slug !== null) {
+      return slug.rendered || slug.current || "";
+    }
+    return "";
+  }
+
 
 
 return data.posts.edges.map((edge: PostEdge) => ({
   ...edge,
   node: {
     ...edge.node,
-    slug: typeof edge.node.slug === 'object' && edge.node.slug !== null
-      ? (edge.node.slug as any).rendered || (edge.node.slug as any).current || (edge.node.slug as any)[0]
-      : String(edge.node.slug || ''),
-  }
+    slug: normalizeSlug(edge.node.slug ?? null),
+  },
 }));
 }

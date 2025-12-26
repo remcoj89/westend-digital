@@ -38,7 +38,14 @@ export default async function fetchProjects() {
     throw new Error(`Network response was not ok: ${res.statusText}`);
   }
 
-  const { data } = await res.json(); // Destructure the data from the response
+const json = await res.json();
+
+if (json.errors) {
+  console.error("GraphQL errors:", json.errors);
+  throw new Error("GraphQL returned errors");
+}
+
+const { data } = json;
 
 
   // Sanitize de content van elk project
