@@ -1,5 +1,8 @@
 
 User-agent: *
 Allow: /
+Noindex: /bedankt-pagina
+Noindex: /privarybeleid
+Noindex: /algemene-voorwaarden
 
 Sitemap: https://westend-digital.nl/sitemap-index.xml
