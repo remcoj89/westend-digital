@@ -1,12 +1,30 @@
 ---
 import Card from "../components/Card.astro";
-const {sectionId = ""} = Astro.props;
+const { sectionId = "" } = Astro.props;
 ---
 
 <section class="flex-column hidden" id={sectionId}>
   <div class="dark-bg" id="double-review-wrapper">
     <div class="wrapper">
       <div class="reviews-wrapper">
+        <Card cardStyle="review">
+          <p>
+            "Remco is een hele kundige en ervaren web-ontwikkelaar, die een
+            prachtige nieuwe website heeft gebouwd voor mijn praktijk! Ik ben er
+            heel erg blij mee. Hij communiceert duidelijk en helder, en maakt
+            echt een website die past bij je bedrijf. Bedankt Remco!"
+          </p>
+
+          <div class="avatar-details">
+            <picture class="review-avatar">
+              <img src="" alt="Eline Pesser" />
+            </picture>
+            <div>
+              <h3>Eline Pesser</h3>
+              <span>Mama Mentaal</span>
+            </div>
+          </div>
+        </Card>
         <Card cardStyle="review">
           <p>
             "We zijn erg blij dat Remco ons heeft geholpen met het maken van de
@@ -18,28 +36,12 @@ const {sectionId = ""} = Astro.props;
 
           <div class="avatar-details">
             <picture class="review-avatar">
-              <img src="/images/sampel-avatar.jpg" alt="Review 1" />
-            </picture>
-            <div>
-              <h3>Linda Munster</h3>
-              <span>Schermer Eylandt</span>
-            </div>
-          </div>
-        </Card>
-        <Card cardStyle="review">
-          <p>
-            "Sinds de nieuwe website begrijpen mensen meteen wat we doen. Dat
-            scheelt me zoveel uitleg."
-          </p>
-
-          <div class="avatar-details">
-            <picture class="review-avatar">
-              <img src="/images/sampel-avatar.jpg" alt="Review 1" />
+              <img src="" alt="Linda Munster" />
             </picture>
 
             <div>
               <h3>Linda Munster</h3>
-              <span>Schermer Eylandt</span>
+              <span>B&B Schermer Eylandt</span>
             </div>
           </div>
         </Card>

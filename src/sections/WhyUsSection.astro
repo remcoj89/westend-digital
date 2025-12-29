@@ -12,8 +12,9 @@ const { altText, benefits, imageUrl, intro, sectionId, title } = Astro.props;
       <SectionTitle sectionTitle={title} />
       <p set:html={intro} />
     </div>
-    <div class="flex align-center justify-between">
-      <div class="flex">
+
+    <div class="columns-wrapper">
+
         <div class="why-us-column">
           <h3 set:html={benefits.title} />
 
@@ -34,13 +35,29 @@ const { altText, benefits, imageUrl, intro, sectionId, title } = Astro.props;
             width={500}
           />
         </picture>
-      </div>
+
     </div>
   </div>
 </section>
 
 <style>
   #why-us {
+
+    .columns-wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: var(--size-6);
+      margin-block-start: var(--size-4);
+    }
+
+    @media (width >= 865px) {
+      .columns-wrapper {
+        flex-direction: row;
+        gap: var(--size-8);
+      }
+    }
+
     .why-us-column {
       width: 50%;
 

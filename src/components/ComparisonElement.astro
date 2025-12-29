@@ -4,7 +4,7 @@ import ListItemWithIcon from "../components/ListItemWithIcon.astro";
 const { competition, westendDigital } = Astro.props;
 ---
 
-<div class="flex">
+<div class="columns-wrapper">
   <div class="who-is-this-for-column">
     <h3 set:html={competition.title} />
 
@@ -29,13 +29,29 @@ const { competition, westendDigital } = Astro.props;
 </div>
 
 <style>
-  .who-is-this-for-column {
-    width: 50%;
+  .columns-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--size-6);
+    margin-block-start: var(--size-4);
 
-    h3 {
-      font-size: var(--fs-600);
-      height: calc(var(--fs-700) * 2);
-      margin-block-end: var(--size-2);
+    .who-is-this-for-column {
+      width: 50%;
+
+      h3 {
+        font-size: var(--fs-600);
+        height: calc(var(--fs-700) * 2);
+        margin-block-end: var(--size-2);
+      }
+    }
+  }
+
+  @media (width >= 865px) {
+    .columns-wrapper {
+      align-items: flex-start;
+      flex-direction: row;
+      gap: var(--size-8);
     }
   }
 </style>

@@ -6,6 +6,7 @@ const BannerCta = () => {
   const lastScrollY = useRef(0);
   const direction = useRef("down");
 
+  // add scroll listener to track scroll direction
   useEffect(() => {
     const target = document.querySelector("#about-us-section");
 
@@ -40,8 +41,20 @@ const BannerCta = () => {
     };
   }, []);
 
+
+  // Function to handle click outside the component
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(`.${Style.bannerCta}`)) {
+        setVisible(false);
+      }
+    };
+
+    window.addEventListener("click", handleClickOutside);
+  }, []);
+
   // Function to handle button click
-  const handleClick = () => {
+  const handleDownloadButton = () => {
     const section = document.querySelector("#download-section");
 
     if(section) {
@@ -52,6 +65,7 @@ const BannerCta = () => {
       window.location.href = "/brochure";
     }
   }
+
 
   return (
     <>
@@ -67,10 +81,13 @@ const BannerCta = () => {
             </div>
             <div className={Style.bannerButtonWrapper}>
               <p>Download dan nu de gratis brochure</p>
-              <button className="btn btn-primary" onClick={handleClick}>
+              <button className="btn btn-primary" onClick={handleDownloadButton}>
                 Kom maar door met die brochure
               </button>
             </div>
+            <button id={Style.closeBtn} onClick={() => setVisible(false)}>
+              x
+            </button>
           </div>
         </div>
       )}
