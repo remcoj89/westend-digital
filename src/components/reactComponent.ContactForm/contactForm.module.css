@@ -64,4 +64,9 @@
     background-color: var(--clr-secondary-900);
     color: var(--clr-secondary-100);
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }

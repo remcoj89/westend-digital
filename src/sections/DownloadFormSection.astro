@@ -18,50 +18,46 @@ const iconColor = "var(--clr-primary-900)";
 
     <div class="wrapper">
       <div class="form-wrapper">
-        <div class="_form_1"></div>
-          <script
-            is:inline
-            src="https://westenddigital.activehosted.com/f/embed.php?id=1"
-            charset="utf-8">
-          </script>
-        <!-- <form action="" class="form">
-          <div class="form__field">
-            <label for="name">Naam *</label>
-            <input
-              id="name"
-              name="name"
-              placeholder="Naam"
-              required
-              type="text"
-            />
-          </div>
-          <div class="form__field">
-            <label for="phone">Telefoon *</label>
-            <input
-              id="phone"
-              name="phone"
-              placeholder="+31 6 12345678"
-              required
-              type="tel"
-            />
-          </div>
-          <div class="form__field">
-            <label for="email">Email *</label>
-            <input
-              id="email"
-              name="email"
-              placeholder="voorbeeld@email.com"
-              required
-              type="email"
-            />
-          </div>
-          <button class="btn btn-cta" aria-label={ariaLabel} type="submit">
-            <SendIcon iconFill={iconColor} />{ctaBtn}</button
-          >
-        </form> -->
-        <div class="spacer"></div>
-        <span class="form__notifiction" set:html={formNotification} />
-      </div>
+        <div class="_form_1"></div><script
+          src="https://westenddigital.activehosted.com/f/embed.php?id=1"
+          charset="utf-8"></script>
+
+        <div class="form__field">
+          <label for="name">Naam *</label>
+          <input
+            id="name"
+            name="name"
+            placeholder="Naam"
+            required
+            type="text"
+          />
+        </div>
+        <div class="form__field">
+          <label for="phone">Telefoon *</label>
+          <input
+            id="phone"
+            name="phone"
+            placeholder="+31 6 12345678"
+            required
+            type="tel"
+          />
+        </div>
+        <div class="form__field">
+          <label for="email">Email *</label>
+          <input
+            id="email"
+            name="email"
+            placeholder="voorbeeld@email.com"
+            required
+            type="email"
+          />
+        </div>
+        <button class="btn btn-cta" aria-label={ariaLabel} type="submit">
+          <SendIcon iconFill={iconColor} />{ctaBtn}</button
+        >
+      </div> -->
+      <div class="spacer"></div>
+      <span class="form__notifiction" set:html={formNotification} />
     </div>
   </div>
 </section>

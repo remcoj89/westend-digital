@@ -4,5 +4,6 @@ Allow: /
 Noindex: /bedankt-pagina
 Noindex: /privarybeleid
 Noindex: /algemene-voorwaarden
+Noindex: /boek-een-gesprek
 
 Sitemap: https://westend-digital.nl/sitemap-index.xml

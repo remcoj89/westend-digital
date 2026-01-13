@@ -29,6 +29,15 @@ export default function Form({ submitBtnText, legal, link }) {
   }
   return (
     <form ref={formRef} onSubmit={submit} className={Styles.contactForm}>
+      {/* honeypot */}
+      <input
+        type="text"
+        name="company"
+        tabIndex="-1"
+        autoComplete="off"
+        style={{ display: "none" }}
+      />
+
       <label htmlFor="name">
         Naam
         <input
@@ -81,9 +90,10 @@ export default function Form({ submitBtnText, legal, link }) {
 
       <div className={Styles.btnWrapper}>
         <button
-          type="submit"
-          className={`${Styles.btn} ${Styles.btnSubmit}`}
           aria-label="verstuur formulier"
+          className={`${Styles.btn} ${Styles.btnSubmit}`}
+          disabled={isLoading}
+          type="submit"
         >
           {isLoading ? "Versturen..." : submitBtnText}
         </button>

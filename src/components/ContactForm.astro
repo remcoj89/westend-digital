@@ -1,66 +1,68 @@
 ---
-import { sendEmail } from "../pages/api/contactform.js";
 
-let errors = { name: "", email: "", message: "", subject: "" };
-if (Astro.request.method === "POST") {
-  errors = { name: "", email: "", message: "", subject: "" };
-  try {
-    const data = await Astro.request.formData();
-    const name = data.get("name");
-    const email = data.get("email");
-    const message = data.get("message");
-    const subject = data.get("subject");
-
-    // Validation logic
-    // Example validation (add your own as needed)
-    if (!name) errors.name = "Naam is verplicht";
-    if (!email) errors.email = "Email is verplicht";
-    if (!subject) errors.subject = "Onderwerp is verplicht";
-    if (!message) errors.message = "Wat is je vraag?";
-
-    const hasErrors = Object.values(errors).some((val) => val);
-
-    if (!hasErrors) {
-      const payload = {
-        name: name,
-        email: email,
-        html: JSON.stringify(message),
-        subject: subject,
-      };
-      await sendEmail(payload);
-    }
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    }
-  }
-}
 ---
 
-<form method="POST">
+<form id="contactForm" method="POST" action="/api/contactform">
   <div>
     <label for="name">Your Name: *</label>
     <input type="text" id="name" name="name" required />
-    <div class="">{errors.name}</div>
   </div>
 
   <div>
     <label for="email">Your Email: *</label>
     <input type="email" id="email" name="email" required />
-    <div class="">{errors.email}</div>
   </div>
 
   <div>
     <label for="subject">Subject: *</label>
     <input type="text" id="subject" name="subject" required />
-    <div class="" id="error-subject">{errors.subject}</div>
   </div>
 
   <div>
     <label for="message">Message: *</label>
     <textarea id="message" name="message" rows="4" required></textarea>
-    <div class="">{errors.message}</div>
   </div>
+
+  <!-- reCAPTCHA token -->
+  <input type="hidden" name="recaptchaToken" id="recaptchaToken" />
+
+  <!-- honeypot -->
+  <input
+    type="text"
+    name="company"
+    tabindex="-1"
+    autocomplete="off"
+    style="display:none"
+  />
 
   <input type="submit" value="Send" />
 </form>
+
+<script
+  src=`https://www.google.com/recaptcha/api.js?render=${import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY}`
+  async
+  defer></script>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contactForm");
+    if (!form) return;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      console.log("form send")
+
+      if (!window.grecaptcha) return;
+
+      grecaptcha.ready(async () => {
+        const token = await grecaptcha.execute(
+          import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY,
+          { action: "contact_form" }
+        );
+
+        document.getElementById("recaptchaToken").value = token;
+        form.submit();
+      });
+    });
+  });
+</script>
