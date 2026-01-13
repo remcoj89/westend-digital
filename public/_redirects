@@ -1,2 +1,0 @@
-# Redirects om alle www naar non-www te leiden
-https://www.westend-digital.nl/* https://westend-digital.nl/:splat 301!
