@@ -4,38 +4,47 @@ import Styles from "./contactForm.module.css";
 export default function Form({ submitBtnText, legal, link }) {
   const [responseMessage, setReponseMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const formLoadTimeRef = useRef(Date.now());
 
   const formRef = useRef(null);
 
   async function submit(e) {
     e.preventDefault();
+    if (isLoading) return;
     setIsLoading(true);
-    const formData = new FormData(e.target);
 
-    const response = await fetch("/api/contactform", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const formData = new FormData(e.target);
+      const response = await fetch("/api/contactform", {
+        method: "POST",
+        body: formData,
+      });
 
-    const data = await response.json();
-    if (data.message) {
-      setReponseMessage(data.message);
+      const data = await response.json();
+      if (data.message) setReponseMessage(data.message);
+      if (response.ok) formRef.current.reset();
+    } catch {
+      setReponseMessage("Er ging iets mis. Probeer later opnieuw.");
+    } finally {
+      setIsLoading(false);
     }
-    if (response.status === 200) {
-      formRef.current.reset();
-    }
-    setIsLoading(false);
-
   }
   return (
     <form ref={formRef} onSubmit={submit} className={Styles.contactForm}>
       {/* honeypot */}
       <input
-        type="text"
-        name="company"
-        tabIndex="-1"
+        aria-hidden="true"
         autoComplete="off"
-        style={{ display: "none" }}
+        className={Styles.honeypot}
+        name="company"
+        tabIndex={-1}
+        type="text"
+      />
+      {/* Prevent bots submitting to fast */}
+      <input
+        name="formLoadTime"
+        type="hidden"
+        value={formLoadTimeRef.current}
       />
 
       <label htmlFor="name">
@@ -44,7 +53,6 @@ export default function Form({ submitBtnText, legal, link }) {
           autoComplete="name"
           id="name"
           name="name"
-          pattern="[A-Za-z ]+"
           placeholder="Naam"
           type="text"
           required
@@ -57,7 +65,6 @@ export default function Form({ submitBtnText, legal, link }) {
           autoComplete="subject"
           id="subject"
           name="subject"
-          pattern="[A-Za-z ]+"
           placeholder="onderwerp"
           type="text"
           required
@@ -97,7 +104,7 @@ export default function Form({ submitBtnText, legal, link }) {
         >
           {isLoading ? "Versturen..." : submitBtnText}
         </button>
-        {(responseMessage && <p>{responseMessage}</p>) || (
+        {(responseMessage && <p aria-live="polite">{responseMessage}</p>) || (
           <p>
             {legal} <a href={link.href}>Algmene voorwaarden</a>
           </p>
