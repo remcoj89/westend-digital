@@ -2,6 +2,21 @@ import nodemailer from "nodemailer";
 
 export const prerender = false;
 
+/* --------------------------------
+   Helper: detecteer random strings
+--------------------------------- */
+function looksLikeRandomString(text) {
+  if (!text) return true;
+
+  const cleaned = text.replace(/\s+/g, "");
+  if (cleaned.length < 6) return false; // korte namen niet blokkeren
+
+  const vowelCount = cleaned.match(/[aeiou]/gi)?.length || 0;
+  const vowelRatio = vowelCount / cleaned.length;
+
+  return vowelRatio < 0.25;
+}
+
 export const POST = async ({ request }) => {
   const data = await request.formData();
 
@@ -45,7 +60,24 @@ export const POST = async ({ request }) => {
   }
 
   /* -----------------------------
-     4. Validatie & sanitatie
+     4. Semantische / entropie checks
+  ------------------------------ */
+  const wordCount = message?.split(/\s+/).length || 0;
+
+  if (
+    looksLikeRandomString(name) ||
+    looksLikeRandomString(message) ||
+    wordCount < 3
+  ) {
+    // Stil negeren → bot denkt dat het gelukt is
+    return new Response(JSON.stringify({ message: "OK" }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  /* -----------------------------
+     5. Validatie & sanitatie
   ------------------------------ */
   if (
     !name ||
@@ -65,7 +97,7 @@ export const POST = async ({ request }) => {
   }
 
   /* -----------------------------
-     5. Nodemailer configuratie
+     6. Nodemailer configuratie
   ------------------------------ */
   const port = Number(import.meta.env.SMTP_PORT);
 
@@ -80,7 +112,7 @@ export const POST = async ({ request }) => {
   });
 
   /* -----------------------------
-     6. Mail versturen
+     7. Mail versturen
   ------------------------------ */
   try {
     await transporter.sendMail({
